@@ -4,19 +4,41 @@ import sys
 # Ajouter le dossier backend au path pour les imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
 from api.routes import router
+from services.database import db
 
 # Charger les variables d'environnement
 load_dotenv()
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Gestion du cycle de vie de l'application"""
+    # Startup
+    print("Démarrage de l'API 1xbet Predictions...")
+    connected = await db.connect()
+    if connected:
+        print("MongoDB connecté avec succès")
+    else:
+        print("Mode sans base de données (cache fichier)")
+
+    yield
+
+    # Shutdown
+    print("Arrêt de l'API...")
+    await db.disconnect()
+
+
 app = FastAPI(
     title="1xbet Prediction API",
-    description="API de prédiction de matchs de football",
-    version="1.0.0",
+    description="API de prédiction de matchs de football avec Polymarket",
+    version="2.0.0",
+    lifespan=lifespan,
 )
 
 # Configuration CORS pour le frontend
@@ -36,12 +58,14 @@ app.include_router(router)
 async def root():
     return {
         "name": "1xbet Prediction API",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "status": "running",
+        "database": "connected" if db.db is not None else "file_cache",
         "endpoints": {
-            "matches": "/api/matches/{date}",
-            "predictions": "/api/predictions/{date}",
-            "best_combos": "/api/best-combos/{date}",
+            "polymarket_predictions": "/api/polymarket/predictions",
+            "polymarket_combos": "/api/polymarket/combos",
+            "polymarket_football": "/api/polymarket/football",
+            "polymarket_sports": "/api/polymarket/sports",
             "auth": "/api/auth",
         },
     }
@@ -49,7 +73,10 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return {
+        "status": "healthy",
+        "database": "connected" if db.db is not None else "disconnected"
+    }
 
 
 if __name__ == "__main__":
