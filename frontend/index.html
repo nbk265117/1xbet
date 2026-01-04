@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1xbet Predictions - To The Moon</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Écran de connexion PIN -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <div class="logo">
+                <span class="logo-icon">⚽</span>
+                <h1>1xbet Predictions</h1>
+                <p class="tagline">To The Moon 🚀</p>
+            </div>
+            <div class="pin-container">
+                <h2>Entrez votre PIN</h2>
+                <div class="pin-display">
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                </div>
+                <div class="pin-keypad">
+                    <button class="pin-key" data-key="1">1</button>
+                    <button class="pin-key" data-key="2">2</button>
+                    <button class="pin-key" data-key="3">3</button>
+                    <button class="pin-key" data-key="4">4</button>
+                    <button class="pin-key" data-key="5">5</button>
+                    <button class="pin-key" data-key="6">6</button>
+                    <button class="pin-key" data-key="7">7</button>
+                    <button class="pin-key" data-key="8">8</button>
+                    <button class="pin-key" data-key="9">9</button>
+                    <button class="pin-key" data-key="clear">C</button>
+                    <button class="pin-key" data-key="0">0</button>
+                    <button class="pin-key" data-key="enter">→</button>
+                </div>
+                <p id="pin-error" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Écran principal -->
+    <div id="main-screen" class="screen">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <span class="logo-small">⚽</span>
+                    <h1>1xbet Predictions</h1>
+                </div>
+                <div class="header-right">
+                    <input type="date" id="date-picker" class="date-picker">
+                    <button id="logout-btn" class="btn-logout">Déconnexion</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Navigation par onglets -->
+            <nav class="tabs">
+                <button class="tab active" data-tab="predictions">Prédictions</button>
+                <button class="tab" data-tab="combos">Meilleurs Combinés</button>
+                <button class="tab" data-tab="matches">Tous les Matchs</button>
+            </nav>
+
+            <!-- Contenu des onglets -->
+            <div id="tab-content">
+                <!-- Prédictions -->
+                <section id="predictions-tab" class="tab-content active">
+                    <div class="section-header">
+                        <h2>Prédictions du Jour</h2>
+                        <div class="filters">
+                            <select id="confidence-filter">
+                                <option value="all">Toutes confiances</option>
+                                <option value="very_high">Très haute</option>
+                                <option value="high">Haute</option>
+                                <option value="medium">Moyenne</option>
+                            </select>
+                            <select id="league-filter">
+                                <option value="all">Toutes les ligues</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="predictions-list" class="predictions-grid">
+                        <div class="loading">Chargement des prédictions...</div>
+                    </div>
+                </section>
+
+                <!-- Combinés -->
+                <section id="combos-tab" class="tab-content">
+                    <div class="section-header">
+                        <h2>Meilleurs Combinés</h2>
+                        <p class="subtitle">Sélection optimisée pour maximiser vos gains</p>
+                    </div>
+                    <div id="combos-list" class="combos-container">
+                        <div class="loading">Chargement des combinés...</div>
+                    </div>
+                </section>
+
+                <!-- Matchs -->
+                <section id="matches-tab" class="tab-content">
+                    <div class="section-header">
+                        <h2>Tous les Matchs</h2>
+                    </div>
+                    <div id="matches-list" class="matches-container">
+                        <div class="loading">Chargement des matchs...</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Modal détail match -->
+        <div id="match-modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>

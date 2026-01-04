@@ -1,0 +1,692 @@
+/* Variables CSS */
+:root {
+    --primary: #1a73e8;
+    --primary-dark: #1557b0;
+    --success: #34a853;
+    --warning: #fbbc04;
+    --danger: #ea4335;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-hover: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --gradient-gold: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    --gradient-blue: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-green: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Écrans */
+.screen {
+    display: none;
+    min-height: 100vh;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Écran de connexion */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-icon {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 16px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.logo h1 {
+    font-size: 32px;
+    font-weight: 700;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.pin-container {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.pin-container h2 {
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.pin-display {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.pin-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all 0.2s;
+}
+
+.pin-dot.filled {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.pin-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.pin-key {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pin-key:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+.pin-key:active {
+    transform: scale(0.95);
+}
+
+.error-message {
+    color: var(--danger);
+    margin-top: 16px;
+    min-height: 20px;
+}
+
+/* Header */
+header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-small {
+    font-size: 28px;
+}
+
+.header-left h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.date-picker {
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* Main */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    background: var(--bg-card);
+}
+
+.tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section-header {
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.filters select {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Predictions Grid */
+.predictions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 20px;
+}
+
+.prediction-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--border);
+}
+
+.prediction-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.league-badge {
+    background: var(--bg-card-hover);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.match-time {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team {
+    text-align: center;
+    flex: 1;
+}
+
+.team-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: white;
+    padding: 4px;
+}
+
+.team-name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.vs {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 0 16px;
+}
+
+.prediction-result {
+    background: var(--bg-card-hover);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.prediction-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.prediction-row:last-child {
+    margin-bottom: 0;
+}
+
+.prediction-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.prediction-value {
+    font-weight: 600;
+}
+
+.probabilities {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.prob-item {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    background: var(--bg-dark);
+    border-radius: 8px;
+}
+
+.prob-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.prob-value {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.confidence-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.confidence-very_high {
+    background: rgba(52, 168, 83, 0.2);
+    color: #34a853;
+}
+
+.confidence-high {
+    background: rgba(26, 115, 232, 0.2);
+    color: #1a73e8;
+}
+
+.confidence-medium {
+    background: rgba(251, 188, 4, 0.2);
+    color: #fbbc04;
+}
+
+.confidence-low {
+    background: rgba(234, 67, 53, 0.2);
+    color: #ea4335;
+}
+
+/* Combos */
+.combos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.combo-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.combo-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.combo-header.safe {
+    background: var(--gradient-green);
+}
+
+.combo-header.moderate {
+    background: var(--gradient-blue);
+}
+
+.combo-header.risky {
+    background: var(--gradient-gold);
+}
+
+.combo-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.combo-stats {
+    text-align: right;
+}
+
+.combo-prob {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.combo-expected {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.combo-matches {
+    padding: 20px 24px;
+}
+
+.combo-match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.combo-match:last-child {
+    border-bottom: none;
+}
+
+.combo-match-teams {
+    font-weight: 500;
+}
+
+.combo-match-bet {
+    background: var(--bg-card-hover);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* Matches list */
+.matches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.match-item {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+}
+
+.match-item:hover {
+    border-color: var(--primary);
+}
+
+.match-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.match-league {
+    color: var(--text-secondary);
+    font-size: 13px;
+    min-width: 120px;
+}
+
+.match-teams-inline {
+    font-weight: 500;
+}
+
+.match-datetime {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+#modal-body {
+    padding: 32px;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 60px;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .predictions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .match-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.prediction-card, .combo-card, .match-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-card-hover);
+}
