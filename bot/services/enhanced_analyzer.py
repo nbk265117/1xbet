@@ -1140,58 +1140,85 @@ class EnhancedMatchAnalyzer:
             home_team, away_team, enriched, analysis
         )
 
-        # ========== 1X2 Match complet ==========
-        if home_prob >= 0.50:
-            result_1x2 = f"1 ({home_team})"
-        elif away_prob >= 0.45:
-            result_1x2 = f"2 ({away_team})"
-        elif draw_prob >= 0.30:
-            result_1x2 = "X (Nul)"
-        else:
-            result_1x2 = f"1 ({home_team})" if home_prob > away_prob else f"2 ({away_team})"
-
-        # ========== Over/Under ==========
-        if goals["over_25_prob"] >= 0.55:
-            over_under = "Over 2.5"
-        elif goals["over_25_prob"] <= 0.40:
-            over_under = "Under 2.5"
-        elif goals["over_15_prob"] >= 0.75:
-            over_under = "Over 1.5"
-        else:
-            over_under = "Under 2.5"
-
-        # ========== Team +1.5 ==========
-        team_plus_15 = f"{home_team} +1.5 buts" if home_prob > away_prob else f"{away_team} +1.5 buts"
-
-        # ========== Score exact ==========
+        # ========== Score exact (CALCULÉ EN PREMIER pour cohérence) ==========
         total_exp = goals["total_expected"]
+
+        # Déterminer le score exact basé sur les probabilités
         if home_prob >= 0.55:
-            score_exact = "3-1" if total_exp >= 3.0 else ("2-0" if total_exp >= 2.5 else "2-1")
+            # Victoire domicile claire
+            if total_exp >= 3.5:
+                score_exact = "3-1"
+            elif total_exp >= 2.8:
+                score_exact = "2-0"
+            else:
+                score_exact = "2-1"
             score_prob = 0.11
         elif away_prob >= 0.50:
-            score_exact = "1-3" if total_exp >= 3.0 else ("0-2" if total_exp >= 2.5 else "1-2")
+            # Victoire extérieur claire
+            if total_exp >= 3.5:
+                score_exact = "1-3"
+            elif total_exp >= 2.8:
+                score_exact = "0-2"
+            else:
+                score_exact = "1-2"
             score_prob = 0.10
-        elif home_prob > away_prob + 0.08:
-            score_exact = "2-1"
+        elif home_prob > away_prob + 0.10:
+            # Légère faveur domicile
+            score_exact = "2-1" if total_exp >= 2.5 else "1-0"
             score_prob = 0.10
-        elif away_prob > home_prob + 0.05:
-            score_exact = "1-2"
+        elif away_prob > home_prob + 0.08:
+            # Légère faveur extérieur
+            score_exact = "1-2" if total_exp >= 2.5 else "0-1"
             score_prob = 0.09
+        elif draw_prob >= 0.32:
+            # Match nul probable
+            if total_exp >= 3.0:
+                score_exact = "2-2"
+            elif total_exp >= 2.0:
+                score_exact = "1-1"
+            else:
+                score_exact = "0-0"
+            score_prob = 0.11
         elif total_exp >= 2.8:
             score_exact = "2-2"
             score_prob = 0.08
-        elif total_exp <= 2.0:
+        elif total_exp <= 1.8:
             score_exact = "1-0" if home_prob > away_prob else "0-1"
             score_prob = 0.10
         else:
             score_exact = "1-1"
             score_prob = 0.11
 
-        # ========== BTTS ==========
+        # Extraire les buts du score exact
         score_parts = score_exact.split("-")
         home_goals = int(score_parts[0])
         away_goals = int(score_parts[1])
+        total_goals = home_goals + away_goals
 
+        # ========== 1X2 Match complet (DÉRIVÉ DU SCORE EXACT) ==========
+        if home_goals > away_goals:
+            result_1x2 = f"1 ({home_team})"
+        elif away_goals > home_goals:
+            result_1x2 = f"2 ({away_team})"
+        else:
+            result_1x2 = "X (Nul)"
+
+        # ========== Over/Under (DÉRIVÉ DU SCORE EXACT) ==========
+        if total_goals >= 3:
+            over_under = "Over 2.5"
+        elif total_goals >= 2:
+            # 2 buts = Under 2.5, mais vérifier si on était proche de Over
+            if goals["over_25_prob"] >= 0.60:
+                over_under = "Over 2.5"  # Recommander Over même si score prédit = 2
+            else:
+                over_under = "Under 2.5"
+        else:
+            over_under = "Under 2.5"
+
+        # ========== Team +1.5 ==========
+        team_plus_15 = f"{home_team} +1.5 buts" if home_goals > away_goals else f"{away_team} +1.5 buts"
+
+        # ========== BTTS (utilise home_goals, away_goals déjà calculés) ==========
         if home_goals > 0 and away_goals > 0:
             btts = "Oui"
             btts_prob_final = max(goals["btts_prob"], 0.55)
@@ -1221,12 +1248,7 @@ class EnhancedMatchAnalyzer:
         ht_draw_prob = halftime.get('ht_draw_prob', 0.40)
         ht_away_prob = halftime.get('ht_away_prob', 0.30)
 
-        if ht_draw_prob >= max(ht_home_prob, ht_away_prob):
-            ht_result = "X (Nul MT)"
-        elif ht_home_prob > ht_away_prob:
-            ht_result = f"1 ({home_team} MT)"
-        else:
-            ht_result = f"2 ({away_team} MT)"
+        # Note: ht_result sera calculé plus bas, dérivé du ht_score_exact
 
         ht_over_05_prob = halftime.get('ht_over_05_prob', 0.55)
         ht_over_05 = "Oui" if ht_over_05_prob >= 0.55 else "Non"
@@ -1238,7 +1260,34 @@ class EnhancedMatchAnalyzer:
         ht_btts = "Oui" if ht_btts_prob >= 0.35 else "Non"
 
         ht_expected_goals = halftime.get('ht_expected_goals', total_exp * 0.42)
-        ht_score_exact = halftime.get('ht_score_exact', "0-0")
+
+        # ========== Score exact MT (cohérent avec ht_result) ==========
+        # Calculer le score MT basé sur les probabilités MT
+        if ht_draw_prob >= max(ht_home_prob, ht_away_prob):
+            # Nul à la MT
+            if ht_expected_goals >= 1.2:
+                ht_score_exact = "1-1"
+            else:
+                ht_score_exact = "0-0"
+        elif ht_home_prob > ht_away_prob:
+            # Domicile mène à la MT
+            ht_score_exact = "1-0"
+        else:
+            # Extérieur mène à la MT
+            ht_score_exact = "0-1"
+
+        # Extraire buts MT
+        ht_parts = ht_score_exact.split("-")
+        ht_home_goals = int(ht_parts[0])
+        ht_away_goals = int(ht_parts[1])
+
+        # ========== ht_result DÉRIVÉ du score MT ==========
+        if ht_home_goals > ht_away_goals:
+            ht_result = f"1 ({home_team} MT)"
+        elif ht_away_goals > ht_home_goals:
+            ht_result = f"2 ({away_team} MT)"
+        else:
+            ht_result = "X (Nul MT)"
 
         # ========== 2ème MI-TEMPS ==========
         h2_expected_goals = halftime.get('h2_expected_goals', total_exp * 0.58)
@@ -1248,11 +1297,26 @@ class EnhancedMatchAnalyzer:
         h2_over_15_prob = halftime.get('h2_over_15_prob', 0.35)
         h2_over_15 = "Oui" if h2_over_15_prob >= 0.45 else "Non"
 
-        # ========== HT/FT ==========
-        ht_ft_data = halftime.get('ht_ft', {})
-        best_ht_ft = ht_ft_data.get('best', 'X/1')
-        ht_ft_prob = ht_ft_data.get('best_prob', 0.20)
-        ht_ft_alternatives = list(ht_ft_data.get('all_probs', {}).keys())[:3]
+        # ========== HT/FT (DÉRIVÉ DES SCORES MT ET FT) ==========
+        # Déterminer résultat HT
+        if ht_home_goals > ht_away_goals:
+            ht_code = "1"
+        elif ht_away_goals > ht_home_goals:
+            ht_code = "2"
+        else:
+            ht_code = "X"
+
+        # Déterminer résultat FT (déjà calculé via score_exact)
+        if home_goals > away_goals:
+            ft_code = "1"
+        elif away_goals > home_goals:
+            ft_code = "2"
+        else:
+            ft_code = "X"
+
+        best_ht_ft = f"{ht_code}/{ft_code}"
+        ht_ft_prob = halftime.get('ht_ft', {}).get('best_prob', 0.22)
+        ht_ft_alternatives = []
 
         # Formater HT/FT
         ht_ft_map = {
