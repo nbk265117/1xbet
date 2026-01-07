@@ -52,9 +52,11 @@ class BettingBot:
         # Créer le dossier output si nécessaire
         Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
 
-    def run(self, send_telegram: bool = True, save_output: bool = True) -> bool:
+    def run(self, send_telegram: bool = True, save_output: bool = True, target_date: str = None) -> bool:
         """
-        Exécute le bot pour générer les prédictions du lendemain
+        Exécute le bot pour générer les prédictions
+        Args:
+            target_date: Date spécifique (YYYY-MM-DD) ou None pour demain
         """
         logger.info("=" * 60)
         logger.info("Starting betting bot...")
@@ -68,9 +70,15 @@ class BettingBot:
                 requests_remaining = api_status.get("requests", {}).get("current", 0)
                 logger.info(f"API Status: OK - Requests today: {requests_remaining}")
 
-            # 2. Récupérer les matchs de demain
-            logger.info("Fetching tomorrow's matches...")
-            matches = self.api.get_tomorrow_fixtures()
+            # 2. Récupérer les matchs
+            if target_date:
+                logger.info(f"Fetching matches for {target_date}...")
+                matches = self.api.get_fixtures_by_date(target_date)
+                self._current_date_str = target_date
+            else:
+                logger.info("Fetching tomorrow's matches...")
+                matches = self.api.get_tomorrow_fixtures()
+                self._current_date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
             logger.info(f"Found {len(matches)} matches in allowed leagues")
 
             if not matches:
@@ -132,14 +140,13 @@ class BettingBot:
             if save_output:
                 self._save_output(tickets, enriched_matches)
                 # Sauvegarder pour le suivi des résultats
-                tomorrow = datetime.now() + timedelta(days=1)
-                self.tracker.save_predictions(tickets, tomorrow)
+                target = datetime.strptime(self._current_date_str, "%Y-%m-%d")
+                self.tracker.save_predictions(tickets, target)
 
             # 6. Envoyer les Prédictions PRO sur Telegram (pas les tickets)
             if send_telegram:
                 logger.info("Sending PRO predictions to Telegram...")
-                date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
-                pro_file = os.path.join(OUTPUT_DIR, f"predictions_complete_{date_str}.json")
+                pro_file = os.path.join(OUTPUT_DIR, f"predictions_complete_{self._current_date_str}.json")
                 if os.path.exists(pro_file):
                     with open(pro_file, 'r', encoding='utf-8') as f:
                         pro_data = json.load(f)
@@ -159,7 +166,7 @@ class BettingBot:
 
     def _save_enhanced_predictions(self, enhanced_predictions):
         """[PRO] Sauvegarde les prédictions améliorées avec tous les marchés"""
-        date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+        date_str = getattr(self, '_current_date_str', (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d"))
         json_path = os.path.join(OUTPUT_DIR, f"predictions_complete_{date_str}.json")
 
         output = {
@@ -272,7 +279,7 @@ class BettingBot:
 
     def _save_output(self, tickets, matches):
         """Sauvegarde les résultats dans des fichiers"""
-        date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+        date_str = getattr(self, '_current_date_str', (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d"))
 
         # Sauvegarder en JSON
         json_path = os.path.join(OUTPUT_DIR, f"tickets_{date_str}.json")
@@ -471,7 +478,8 @@ def main():
     elif args.run:
         bot.run(
             send_telegram=not args.no_telegram,
-            save_output=not args.no_save
+            save_output=not args.no_save,
+            target_date=args.date
         )
     else:
         # Par défaut, afficher l'aide
