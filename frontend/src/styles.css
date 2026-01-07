@@ -366,6 +366,48 @@ main {
     padding: 0 16px;
 }
 
+.exact-score {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    padding: 0 20px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
+    border-radius: 12px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.winner-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, rgba(52, 168, 83, 0.2), rgba(52, 168, 83, 0.1));
+    border-radius: 10px;
+    border: 1px solid rgba(52, 168, 83, 0.3);
+}
+
+.winner-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.winner-value {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.winner-value.win {
+    color: #34a853;
+}
+
+.winner-value.draw {
+    color: #fbbc04;
+}
+
 .prediction-result {
     background: var(--bg-card-hover);
     border-radius: 12px;

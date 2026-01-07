@@ -31,10 +31,17 @@ class MatchFetcher:
         }
 
     def _get_headers(self) -> dict:
-        return {
-            "x-rapidapi-host": self.api_host,
-            "x-rapidapi-key": self.api_key,
-        }
+        # Support both RapidAPI and direct API-Sports endpoints
+        if "rapidapi" in self.api_host:
+            return {
+                "x-rapidapi-host": self.api_host,
+                "x-rapidapi-key": self.api_key,
+            }
+        else:
+            # Direct API-Sports endpoint
+            return {
+                "x-apisports-key": self.api_key,
+            }
 
     def _get_cache_path(self, cache_key: str) -> Path:
         return self.cache_dir / f"{cache_key}.json"

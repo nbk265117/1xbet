@@ -4,16 +4,17 @@ import sys
 # Ajouter le dossier backend au path pour les imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+# IMPORTANT: Charger les variables d'environnement AVANT les imports
+# pour que les services aient accès aux clés API
+from dotenv import load_dotenv
+load_dotenv()
+
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
 
 from api.routes import router
 from services.database import db
-
-# Charger les variables d'environnement
-load_dotenv()
 
 
 @asynccontextmanager

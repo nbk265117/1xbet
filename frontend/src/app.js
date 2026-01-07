@@ -5,12 +5,10 @@ const CORRECT_PIN = '1991';
 // État de l'application
 let state = {
     isAuthenticated: false,
-    currentDate: new Date().toISOString().split('T')[0],
     predictions: [],
     combos: [],
-    markets: [],
     activeTab: 'predictions',
-    dataSource: 'polymarket' // 'polymarket' ou 'api-football'
+    selectedDate: new Date().toISOString().split('T')[0]
 };
 
 // Éléments DOM
@@ -36,7 +34,6 @@ function initPinKeypad() {
         });
     });
 
-    // Support clavier
     document.addEventListener('keydown', (e) => {
         if (!state.isAuthenticated) {
             if (e.key >= '0' && e.key <= '9') {
@@ -93,30 +90,28 @@ async function verifyPin() {
 // ==================== Initialisation ====================
 
 function initApp() {
-    datePicker.value = state.currentDate;
-
-    datePicker.addEventListener('change', (e) => {
-        state.currentDate = e.target.value;
-        loadData();
-    });
+    datePicker.value = state.selectedDate;
 
     document.getElementById('logout-btn').addEventListener('click', logout);
 
-    // Tabs
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => switchTab(tab.dataset.tab));
     });
 
-    // Modal
     document.querySelector('.modal-close').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
 
-    // Filtres
     document.getElementById('confidence-filter').addEventListener('change', renderPredictions);
+    document.getElementById('league-filter').addEventListener('change', renderPredictions);
 
-    // Charger les données Polymarket
+    // Écouter le changement de date
+    datePicker.addEventListener('change', (e) => {
+        state.selectedDate = e.target.value;
+        loadData();
+    });
+
     loadData();
 }
 
@@ -128,65 +123,58 @@ function logout() {
     loginScreen.classList.add('active');
 }
 
-// ==================== Chargement des données Polymarket ====================
+// ==================== Chargement des données (API-Football + Odds API) ====================
 
 async function loadData() {
     await Promise.all([
-        loadPolymarketPredictions(),
-        loadPolymarketCombos(),
+        loadPredictions(),
+        loadCombos(),
     ]);
 }
 
-async function loadPolymarketPredictions() {
+async function loadPredictions() {
     const container = document.getElementById('predictions-list');
-    container.innerHTML = '<div class="loading">Chargement des marchés Polymarket...</div>';
+    container.innerHTML = '<div class="loading">Chargement des matchs...</div>';
 
     try {
         const response = await fetch(`${API_URL}/api/polymarket/predictions`);
 
-        if (!response.ok) {
-            throw new Error('Erreur serveur');
-        }
+        if (!response.ok) throw new Error('Erreur serveur');
 
         const data = await response.json();
         state.predictions = data.predictions || [];
-        state.markets = state.predictions;
+        updateLeagueFilter();
         renderPredictions();
     } catch (error) {
         console.error('Erreur:', error);
-        // Données de démonstration si l'API n'est pas disponible
-        state.predictions = generateDemoPolymarketData();
-        state.markets = state.predictions;
-        renderPredictions();
+        container.innerHTML = '<div class="loading">Erreur de chargement. Vérifiez que le backend est lancé.</div>';
     }
 }
 
-async function loadPolymarketCombos() {
+async function loadCombos() {
     const container = document.getElementById('combos-list');
     container.innerHTML = '<div class="loading">Chargement des combinés...</div>';
 
     try {
         const response = await fetch(`${API_URL}/api/polymarket/combos`);
 
-        if (!response.ok) {
-            throw new Error('Erreur serveur');
-        }
+        if (!response.ok) throw new Error('Erreur serveur');
 
         const data = await response.json();
         state.combos = data.combos || [];
         renderCombos();
     } catch (error) {
         console.error('Erreur:', error);
-        state.combos = generateDemoPolymarketCombos();
-        renderCombos();
+        container.innerHTML = '<div class="loading">Erreur de chargement.</div>';
     }
 }
 
-// ==================== Rendu Polymarket ====================
+// ==================== Rendu ====================
 
 function renderPredictions() {
     const container = document.getElementById('predictions-list');
     const confidenceFilter = document.getElementById('confidence-filter').value;
+    const leagueFilter = document.getElementById('league-filter').value;
 
     let filtered = state.predictions;
 
@@ -194,73 +182,68 @@ function renderPredictions() {
         filtered = filtered.filter(p => p.confidence === confidenceFilter);
     }
 
+    if (leagueFilter !== 'all') {
+        filtered = filtered.filter(p => p.league === leagueFilter);
+    }
+
     if (filtered.length === 0) {
-        container.innerHTML = `
-            <div class="loading">
-                <p>Aucun marché sportif disponible sur Polymarket.</p>
-                <p style="margin-top: 10px; font-size: 14px; color: var(--text-secondary);">
-                    Les marchés sportifs sont rares sur Polymarket. Consultez directement
-                    <a href="https://polymarket.com" target="_blank" style="color: var(--primary);">polymarket.com</a>
-                </p>
-            </div>
-        `;
+        container.innerHTML = '<div class="loading">Aucun match trouvé pour cette date.</div>';
         return;
     }
 
-    container.innerHTML = filtered.map((market, index) => `
-        <div class="prediction-card" onclick="showMarketDetail('${market.id || index}')">
+    container.innerHTML = filtered.map((match, index) => `
+        <div class="prediction-card" onclick="showMatchDetail('${match.id}')">
             <div class="match-header">
-                <span class="league-badge">Polymarket</span>
-                <span class="match-time">${market.volume_formatted || '$0'} volume</span>
+                <span class="league-badge">${match.league || 'Football'}</span>
+                <span class="match-time">${formatMatchTime(match.match_date)}</span>
             </div>
 
-            <div class="market-question">
-                <h3 style="font-size: 16px; margin-bottom: 12px; line-height: 1.4;">
-                    ${market.question || 'Question non disponible'}
-                </h3>
+            <div class="teams">
+                <div class="team">
+                    <img src="${match.home_logo || 'https://via.placeholder.com/48'}"
+                         alt="${match.home_team}"
+                         class="team-logo"
+                         onerror="this.src='https://via.placeholder.com/48?text=${match.home_team?.charAt(0) || 'H'}'">
+                    <div class="team-name">${match.home_team}</div>
+                </div>
+                <div class="exact-score">${match.exact_score || '?-?'}</div>
+                <div class="team">
+                    <img src="${match.away_logo || 'https://via.placeholder.com/48'}"
+                         alt="${match.away_team}"
+                         class="team-logo"
+                         onerror="this.src='https://via.placeholder.com/48?text=${match.away_team?.charAt(0) || 'A'}'">
+                    <div class="team-name">${match.away_team}</div>
+                </div>
             </div>
 
-            <div class="teams" style="margin-bottom: 16px;">
-                <div class="team">
-                    <div class="team-name" style="font-size: 14px;">${market.home_team || 'Option A'}</div>
-                </div>
-                <div class="vs">VS</div>
-                <div class="team">
-                    <div class="team-name" style="font-size: 14px;">${market.away_team || 'Option B'}</div>
-                </div>
+            <div class="winner-display">
+                <span class="winner-label">Gagnant:</span>
+                <span class="winner-value ${match.winner === 'Nul' ? 'draw' : 'win'}">${match.winner || match.recommended_bet}</span>
             </div>
 
             <div class="prediction-result">
-                <div class="prediction-row">
-                    <span class="prediction-label">Recommandation</span>
-                    <span class="prediction-value">${market.recommended_bet || 'N/A'}</span>
-                </div>
-                <div class="prediction-row">
-                    <span class="prediction-label">Probabilité</span>
-                    <span class="prediction-value">${(market.best_probability || 50).toFixed(1)}%</span>
-                </div>
-                ${market.probabilities ? `
-                    <div class="probabilities">
-                        ${Object.entries(market.probabilities).slice(0, 3).map(([outcome, prob]) => `
-                            <div class="prob-item">
-                                <span class="prob-label">${outcome.substring(0, 10)}</span>
-                                <span class="prob-value">${prob.toFixed(1)}%</span>
-                            </div>
-                        `).join('')}
+                <div class="odds-display">
+                    <div class="odd-item ${match.predicted_outcome === 'home' ? 'highlight' : ''}">
+                        <span class="odd-label">1</span>
+                        <span class="odd-value">${match.odds?.['1']?.toFixed(2) || '-'}</span>
+                        <span class="odd-prob">${match.probabilities?.['1']?.toFixed(0) || 0}%</span>
                     </div>
-                ` : ''}
+                    <div class="odd-item ${match.predicted_outcome === 'draw' ? 'highlight' : ''}">
+                        <span class="odd-label">X</span>
+                        <span class="odd-value">${match.odds?.['X']?.toFixed(2) || '-'}</span>
+                        <span class="odd-prob">${match.probabilities?.['X']?.toFixed(0) || 0}%</span>
+                    </div>
+                    <div class="odd-item ${match.predicted_outcome === 'away' ? 'highlight' : ''}">
+                        <span class="odd-label">2</span>
+                        <span class="odd-value">${match.odds?.['2']?.toFixed(2) || '-'}</span>
+                        <span class="odd-prob">${match.probabilities?.['2']?.toFixed(0) || 0}%</span>
+                    </div>
+                </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
-                <span class="confidence-badge confidence-${market.confidence || 'medium'}">
-                    ${getConfidenceLabel(market.confidence || 'medium')}
-                </span>
-                <a href="${market.polymarket_url || '#'}" target="_blank"
-                   onclick="event.stopPropagation();"
-                   style="color: var(--primary); font-size: 13px; text-decoration: none;">
-                    Voir sur Polymarket →
-                </a>
-            </div>
+            <span class="confidence-badge confidence-${match.confidence}">
+                ${getConfidenceLabel(match.confidence)}
+            </span>
         </div>
     `).join('');
 }
@@ -269,11 +252,7 @@ function renderCombos() {
     const container = document.getElementById('combos-list');
 
     if (state.combos.length === 0) {
-        container.innerHTML = `
-            <div class="loading">
-                <p>Pas assez de marchés pour générer des combinés.</p>
-            </div>
-        `;
+        container.innerHTML = '<div class="loading">Aucun combiné disponible.</div>';
         return;
     }
 
@@ -281,25 +260,25 @@ function renderCombos() {
         <div class="combo-card">
             <div class="combo-header ${combo.risk_level || 'moderate'}">
                 <div class="combo-info">
-                    <div class="combo-title">${combo.description || 'Combiné'}</div>
+                    <div class="combo-title">${combo.description}</div>
+                    <div class="combo-type">${combo.matches?.length || 0} matchs</div>
                 </div>
                 <div class="combo-stats">
-                    <div class="combo-prob">${(combo.total_probability || 0).toFixed(1)}%</div>
-                    <div class="combo-expected">Probabilité totale</div>
+                    <div class="combo-odds">Cote: ${combo.total_odds?.toFixed(2) || '-'}</div>
+                    <div class="combo-return">${combo.potential_return || ''}</div>
                 </div>
             </div>
             <div class="combo-matches">
                 ${(combo.matches || []).map(match => `
                     <div class="combo-match">
-                        <div style="flex: 1;">
-                            <div class="combo-match-teams" style="font-size: 13px; margin-bottom: 4px;">
-                                ${match.question || match.teams || 'Match'}
-                            </div>
-                            <div style="font-size: 12px; color: var(--text-secondary);">
-                                Prob: ${(match.probability || 50).toFixed(1)}%
-                            </div>
+                        <div class="combo-match-info">
+                            <div class="combo-match-teams">${match.teams || match.question}</div>
+                            <div class="combo-match-league">${match.league || ''}</div>
                         </div>
-                        <span class="combo-match-bet">${match.bet || match.prediction || 'Pari'}</span>
+                        <div class="combo-match-odds">
+                            <span class="combo-match-bet">${match.bet}</span>
+                            <span class="combo-match-odd">@${match.odds?.toFixed(2) || '-'}</span>
+                        </div>
                     </div>
                 `).join('')}
             </div>
@@ -310,18 +289,22 @@ function renderCombos() {
 function renderMatches() {
     const container = document.getElementById('matches-list');
 
-    if (state.markets.length === 0) {
-        container.innerHTML = '<div class="loading">Aucun marché disponible.</div>';
+    if (state.predictions.length === 0) {
+        container.innerHTML = '<div class="loading">Aucun match disponible.</div>';
         return;
     }
 
-    container.innerHTML = state.markets.map((market, index) => `
-        <div class="match-item" onclick="showMarketDetail('${market.id || index}')">
+    container.innerHTML = state.predictions.map(match => `
+        <div class="match-item" onclick="showMatchDetail('${match.id}')">
             <div class="match-info">
-                <span class="match-league">Polymarket</span>
-                <span class="match-teams-inline">${market.question || 'Question'}</span>
+                <span class="match-league">${match.league}</span>
+                <span class="match-teams-inline">${match.home_team} vs ${match.away_team}</span>
             </div>
-            <span class="match-datetime">${market.volume_formatted || ''}</span>
+            <div class="match-odds-inline">
+                <span class="odd-inline">${match.odds?.['1']?.toFixed(2) || '-'}</span>
+                <span class="odd-inline">${match.odds?.['X']?.toFixed(2) || '-'}</span>
+                <span class="odd-inline">${match.odds?.['2']?.toFixed(2) || '-'}</span>
+            </div>
         </div>
     `).join('');
 }
@@ -339,7 +322,6 @@ function switchTab(tabName) {
         content.classList.toggle('active', content.id === `${tabName}-tab`);
     });
 
-    // Charger les données du tab si nécessaire
     if (tabName === 'matches') {
         renderMatches();
     }
@@ -347,74 +329,81 @@ function switchTab(tabName) {
 
 // ==================== Modal ====================
 
-function showMarketDetail(marketId) {
+function showMatchDetail(matchId) {
     modal.classList.add('active');
 
-    const market = state.predictions.find(m => m.id === marketId) ||
-                   state.predictions[parseInt(marketId)] ||
-                   state.predictions[0];
+    const match = state.predictions.find(m => m.id === matchId);
 
-    if (!market) {
-        modalBody.innerHTML = '<div class="loading">Marché non trouvé</div>';
+    if (!match) {
+        modalBody.innerHTML = '<div class="loading">Match non trouvé</div>';
         return;
     }
 
     modalBody.innerHTML = `
         <div class="match-detail">
-            <div class="detail-header" style="margin-bottom: 20px;">
-                <span class="league-badge">Polymarket</span>
+            <div class="detail-header">
+                <span class="league-badge">${match.league}</span>
+                <span class="match-time">${formatMatchTime(match.match_date)}</span>
             </div>
 
-            <h2 style="font-size: 20px; margin-bottom: 20px; line-height: 1.4;">
-                ${market.question || 'Question'}
-            </h2>
-
-            ${market.description ? `
-                <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">
-                    ${market.description}
-                </p>
-            ` : ''}
+            <div class="teams" style="margin: 24px 0;">
+                <div class="team">
+                    <img src="${match.home_logo || 'https://via.placeholder.com/64'}"
+                         alt="${match.home_team}"
+                         class="team-logo" style="width: 64px; height: 64px;"
+                         onerror="this.src='https://via.placeholder.com/64'">
+                    <div class="team-name">${match.home_team}</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team">
+                    <img src="${match.away_logo || 'https://via.placeholder.com/64'}"
+                         alt="${match.away_team}"
+                         class="team-logo" style="width: 64px; height: 64px;"
+                         onerror="this.src='https://via.placeholder.com/64'">
+                    <div class="team-name">${match.away_team}</div>
+                </div>
+            </div>
 
             <div class="prediction-result">
-                <h3 style="margin-bottom: 12px;">Probabilités du marché</h3>
-                ${market.probabilities ? `
-                    <div class="probabilities" style="flex-wrap: wrap;">
-                        ${Object.entries(market.probabilities).map(([outcome, prob]) => `
-                            <div class="prob-item" style="min-width: 100px; margin: 4px;">
-                                <span class="prob-label">${outcome}</span>
-                                <span class="prob-value">${prob.toFixed(1)}%</span>
-                            </div>
-                        `).join('')}
+                <h3 style="margin-bottom: 12px;">Prédiction 1xbet</h3>
+                <div class="prediction-row">
+                    <span class="prediction-label">Recommandation</span>
+                    <span class="prediction-value" style="color: var(--success);">${match.recommended_bet}</span>
+                </div>
+                <div class="odds-display" style="margin-top: 16px;">
+                    <div class="odd-item ${match.predicted_outcome === 'home' ? 'highlight' : ''}">
+                        <span class="odd-label">1 (${match.home_team})</span>
+                        <span class="odd-value">${match.odds?.['1']?.toFixed(2) || '-'}</span>
+                        <span class="odd-prob">${match.probabilities?.['1']?.toFixed(0)}%</span>
                     </div>
-                ` : '<p>Pas de données de probabilité</p>'}
-            </div>
-
-            <div style="margin-top: 20px; padding: 16px; background: var(--bg-card-hover); border-radius: 12px;">
-                <h3 style="margin-bottom: 12px;">Informations du marché</h3>
-                <div style="display: grid; gap: 8px;">
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="color: var(--text-secondary);">Volume</span>
-                        <span>${market.volume_formatted || 'N/A'}</span>
+                    <div class="odd-item ${match.predicted_outcome === 'draw' ? 'highlight' : ''}">
+                        <span class="odd-label">X (Nul)</span>
+                        <span class="odd-value">${match.odds?.['X']?.toFixed(2) || '-'}</span>
+                        <span class="odd-prob">${match.probabilities?.['X']?.toFixed(0)}%</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="color: var(--text-secondary);">Liquidité</span>
-                        <span>${market.liquidity ? '$' + parseFloat(market.liquidity).toLocaleString() : 'N/A'}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="color: var(--text-secondary);">Date de fin</span>
-                        <span>${market.end_date ? new Date(market.end_date).toLocaleDateString('fr-FR') : 'N/A'}</span>
+                    <div class="odd-item ${match.predicted_outcome === 'away' ? 'highlight' : ''}">
+                        <span class="odd-label">2 (${match.away_team})</span>
+                        <span class="odd-value">${match.odds?.['2']?.toFixed(2) || '-'}</span>
+                        <span class="odd-prob">${match.probabilities?.['2']?.toFixed(0)}%</span>
                     </div>
                 </div>
             </div>
 
-            <div style="margin-top: 20px;">
-                <a href="${market.polymarket_url || 'https://polymarket.com'}"
-                   target="_blank"
-                   class="btn-primary"
-                   style="display: block; text-align: center; padding: 16px; background: var(--primary);
-                          color: white; border-radius: 12px; text-decoration: none; font-weight: 600;">
-                    Parier sur Polymarket →
-                </a>
+            ${match.factors && match.factors.length > 0 ? `
+                <div style="margin-top: 20px; padding: 16px; background: var(--bg-card-hover); border-radius: 12px;">
+                    <h3 style="margin-bottom: 12px;">Facteurs d'analyse</h3>
+                    ${match.factors.map(f => `
+                        <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+                            ✓ ${f}
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+
+            <div style="margin-top: 20px; display: flex; gap: 12px;">
+                <span class="confidence-badge confidence-${match.confidence}" style="flex: 1; text-align: center; padding: 12px;">
+                    ${getConfidenceLabel(match.confidence)}
+                </span>
             </div>
         </div>
     `;
@@ -426,12 +415,8 @@ function closeModal() {
 
 // ==================== Utilitaires ====================
 
-function formatTime(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
-}
-
-function formatDateTime(dateString) {
+function formatMatchTime(dateString) {
+    if (!dateString) return '';
     const date = new Date(dateString);
     return date.toLocaleDateString('fr-FR', {
         weekday: 'short',
@@ -444,178 +429,23 @@ function formatDateTime(dateString) {
 
 function getConfidenceLabel(confidence) {
     const labels = {
-        'very_high': 'Haute liquidité',
-        'high': 'Bonne liquidité',
-        'medium': 'Liquidité moyenne',
-        'low': 'Faible liquidité'
+        'very_high': 'Confiance Très Haute',
+        'high': 'Confiance Haute',
+        'medium': 'Confiance Moyenne',
+        'low': 'Confiance Basse'
     };
     return labels[confidence] || confidence;
 }
 
-// ==================== Données de démonstration Polymarket ====================
+function updateLeagueFilter() {
+    const filter = document.getElementById('league-filter');
+    const leagues = [...new Set(state.predictions.map(p => p.league).filter(Boolean))];
 
-function generateDemoPolymarketData() {
-    return [
-        {
-            id: "demo_1",
-            question: "Will Manchester City win the Premier League 2025-26?",
-            description: "Market resolves YES if Manchester City wins the Premier League title for the 2025-26 season.",
-            home_team: "Manchester City",
-            away_team: "Other Teams",
-            outcomes: ["Yes", "No"],
-            probabilities: { "Yes": 45.5, "No": 54.5 },
-            volume: 125000,
-            volume_formatted: "$125,000",
-            liquidity: 45000,
-            recommended_bet: "Yes",
-            best_probability: 45.5,
-            confidence: "very_high",
-            polymarket_url: "https://polymarket.com",
-            end_date: "2026-05-30",
-        },
-        {
-            id: "demo_2",
-            question: "Will Real Madrid win Champions League 2025-26?",
-            description: "Market resolves YES if Real Madrid wins the UEFA Champions League.",
-            home_team: "Real Madrid",
-            away_team: "Other Teams",
-            outcomes: ["Yes", "No"],
-            probabilities: { "Yes": 28.3, "No": 71.7 },
-            volume: 89000,
-            volume_formatted: "$89,000",
-            liquidity: 32000,
-            recommended_bet: "No",
-            best_probability: 71.7,
-            confidence: "high",
-            polymarket_url: "https://polymarket.com",
-            end_date: "2026-06-15",
-        },
-        {
-            id: "demo_3",
-            question: "Will France win the 2026 World Cup?",
-            description: "Market resolves YES if France wins the FIFA World Cup 2026.",
-            home_team: "France",
-            away_team: "Other Nations",
-            outcomes: ["Yes", "No"],
-            probabilities: { "Yes": 18.5, "No": 81.5 },
-            volume: 250000,
-            volume_formatted: "$250,000",
-            liquidity: 78000,
-            recommended_bet: "No",
-            best_probability: 81.5,
-            confidence: "very_high",
-            polymarket_url: "https://polymarket.com",
-            end_date: "2026-07-19",
-        },
-        {
-            id: "demo_4",
-            question: "Will Liverpool finish in Top 4 Premier League?",
-            description: "Market resolves YES if Liverpool finishes in the top 4 positions.",
-            home_team: "Liverpool",
-            away_team: "Others",
-            outcomes: ["Yes", "No"],
-            probabilities: { "Yes": 72.0, "No": 28.0 },
-            volume: 67000,
-            volume_formatted: "$67,000",
-            liquidity: 25000,
-            recommended_bet: "Yes",
-            best_probability: 72.0,
-            confidence: "high",
-            polymarket_url: "https://polymarket.com",
-            end_date: "2026-05-30",
-        },
-        {
-            id: "demo_5",
-            question: "Will PSG win Ligue 1 2025-26?",
-            description: "Paris Saint-Germain to win the French Ligue 1 championship.",
-            home_team: "PSG",
-            away_team: "Other Teams",
-            outcomes: ["Yes", "No"],
-            probabilities: { "Yes": 65.8, "No": 34.2 },
-            volume: 45000,
-            volume_formatted: "$45,000",
-            liquidity: 18000,
-            recommended_bet: "Yes",
-            best_probability: 65.8,
-            confidence: "medium",
-            polymarket_url: "https://polymarket.com",
-            end_date: "2026-05-25",
-        },
-    ];
+    filter.innerHTML = '<option value="all">Toutes les ligues</option>' +
+        leagues.map(league => `<option value="${league}">${league}</option>`).join('');
 }
 
-function generateDemoPolymarketCombos() {
-    const predictions = generateDemoPolymarketData();
-
-    return [
-        {
-            id: "safe_combo",
-            description: "Combiné Sécurisé - 2 marchés haute probabilité",
-            risk_level: "safe",
-            total_probability: 51.84,
-            matches: [
-                {
-                    question: "Will Liverpool finish in Top 4?",
-                    bet: "Yes (72%)",
-                    probability: 72.0,
-                },
-                {
-                    question: "Will PSG win Ligue 1?",
-                    bet: "Yes (65.8%)",
-                    probability: 65.8,
-                },
-            ],
-        },
-        {
-            id: "moderate_combo",
-            description: "Combiné Équilibré - 3 marchés",
-            risk_level: "moderate",
-            total_probability: 21.2,
-            matches: [
-                {
-                    question: "Liverpool Top 4?",
-                    bet: "Yes",
-                    probability: 72.0,
-                },
-                {
-                    question: "PSG champion Ligue 1?",
-                    bet: "Yes",
-                    probability: 65.8,
-                },
-                {
-                    question: "Man City Premier League?",
-                    bet: "Yes",
-                    probability: 45.5,
-                },
-            ],
-        },
-        {
-            id: "risky_combo",
-            description: "Combiné Ambitieux - Gros gains potentiels",
-            risk_level: "risky",
-            total_probability: 3.9,
-            matches: [
-                {
-                    question: "Liverpool Top 4?",
-                    bet: "Yes",
-                    probability: 72.0,
-                },
-                {
-                    question: "Real Madrid Champions League?",
-                    bet: "Yes",
-                    probability: 28.3,
-                },
-                {
-                    question: "France World Cup 2026?",
-                    bet: "Yes",
-                    probability: 18.5,
-                },
-            ],
-        },
-    ];
-}
-
-// ==================== Démarrage ====================
+// ==================== Styles supplémentaires ====================
 
 const style = document.createElement('style');
 style.textContent = `
@@ -624,11 +454,150 @@ style.textContent = `
         25% { transform: translateX(-10px); }
         75% { transform: translateX(10px); }
     }
+
+    .odds-display {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .odd-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 8px;
+        background: var(--bg-card-hover);
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .odd-item.highlight {
+        background: var(--primary) !important;
+        color: white !important;
+    }
+
+    .odd-item.highlight .odd-label,
+    .odd-item.highlight .odd-value,
+    .odd-item.highlight .odd-prob {
+        color: white !important;
+    }
+
+    .odd-label {
+        font-size: 12px;
+        color: var(--text-secondary);
+        margin-bottom: 4px;
+    }
+
+    .odd-value {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .odd-prob {
+        font-size: 11px;
+        color: var(--text-secondary);
+        margin-top: 2px;
+    }
+
+    .combo-stats {
+        text-align: right;
+    }
+
+    .combo-odds {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--success);
+    }
+
+    .combo-return {
+        font-size: 12px;
+        color: var(--text-secondary);
+        margin-top: 4px;
+    }
+
+    .combo-match {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .combo-match:last-child {
+        border-bottom: none;
+    }
+
+    .combo-match-info {
+        flex: 1;
+    }
+
+    .combo-match-teams {
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    .combo-match-league {
+        font-size: 12px;
+        color: var(--text-secondary);
+    }
+
+    .combo-match-odds {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+    }
+
+    .combo-match-bet {
+        background: var(--primary);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .combo-match-odd {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--success);
+    }
+
+    .combo-type {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 4px;
+    }
+
+    .match-odds-inline {
+        display: flex;
+        gap: 8px;
+    }
+
+    .odd-inline {
+        background: var(--bg-card-hover);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .prob-item.highlight {
+        background: var(--primary) !important;
+        color: white !important;
+    }
+
+    .prob-item.highlight .prob-label,
+    .prob-item.highlight .prob-value {
+        color: white !important;
+    }
 `;
 document.head.appendChild(style);
 
-// Initialiser le clavier PIN
+// ==================== Démarrage ====================
+
 initPinKeypad();
 
-// Exposer les fonctions globales
-window.showMarketDetail = showMarketDetail;
+window.showMatchDetail = showMatchDetail;

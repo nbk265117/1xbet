@@ -1,0 +1,338 @@
+#!/usr/bin/env python3
+"""
+Bot de prédictions de paris sportifs 1xBet
+Exécution automatique à 21h chaque jour
+"""
+import sys
+import os
+import json
+import logging
+import argparse
+from datetime import datetime, timedelta
+from pathlib import Path
+
+# Ajouter le dossier bot au path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from config.settings import (
+    EXECUTION_HOUR, OUTPUT_DIR, LOG_FILE,
+    MIN_TICKETS_PER_DAY, MAX_TICKETS_PER_DAY
+)
+from services.football_api import FootballAPIService
+from services.analyzer import MatchAnalyzer
+from services.ticket_generator import TicketGenerator
+from services.telegram_bot import TelegramNotifier
+from services.result_tracker import ResultTracker
+
+# Configuration du logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_FILE),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+
+class BettingBot:
+    """Bot principal de prédictions"""
+
+    def __init__(self):
+        self.api = FootballAPIService()
+        self.analyzer = MatchAnalyzer()
+        self.ticket_gen = TicketGenerator(self.analyzer)
+        self.telegram = TelegramNotifier()
+        self.tracker = ResultTracker()
+
+        # Créer le dossier output si nécessaire
+        Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+
+    def run(self, send_telegram: bool = True, save_output: bool = True) -> bool:
+        """
+        Exécute le bot pour générer les prédictions du lendemain
+        """
+        logger.info("=" * 60)
+        logger.info("Starting betting bot...")
+        logger.info("=" * 60)
+
+        try:
+            # 1. Vérifier l'API
+            logger.info("Checking API status...")
+            api_status = self.api.check_api_status()
+            if api_status:
+                requests_remaining = api_status.get("requests", {}).get("current", 0)
+                logger.info(f"API Status: OK - Requests today: {requests_remaining}")
+
+            # 2. Récupérer les matchs de demain
+            logger.info("Fetching tomorrow's matches...")
+            matches = self.api.get_tomorrow_fixtures()
+            logger.info(f"Found {len(matches)} matches in allowed leagues")
+
+            if not matches:
+                logger.warning("No matches found for tomorrow")
+                if send_telegram:
+                    self.telegram.send_message("⚠️ Aucun match trouvé pour demain dans les ligues suivies.")
+                return False
+
+            # 3. Enrichir les données des matchs (H2H, forme, classement)
+            logger.info("Enriching match data...")
+            enriched_matches = []
+            for i, match in enumerate(matches[:30]):  # Limiter pour éviter trop d'appels API
+                logger.info(f"  [{i+1}/{min(len(matches), 30)}] {match}")
+                try:
+                    enriched = self.api.enrich_match_data(match)
+                    enriched_matches.append(enriched)
+                except Exception as e:
+                    logger.error(f"Error enriching {match}: {e}")
+                    enriched_matches.append(match)  # Utiliser les données de base
+
+            # 4. Générer les tickets
+            logger.info("Generating tickets...")
+            tickets = self.ticket_gen.generate_tickets(enriched_matches)
+            logger.info(f"Generated {len(tickets)} tickets")
+
+            # 5. Sauvegarder les résultats
+            if save_output:
+                self._save_output(tickets, enriched_matches)
+                # Sauvegarder pour le suivi des résultats
+                tomorrow = datetime.now() + timedelta(days=1)
+                self.tracker.save_predictions(tickets, tomorrow)
+
+            # 6. Envoyer sur Telegram
+            if send_telegram:
+                logger.info("Sending to Telegram...")
+                self.telegram.send_tickets(tickets)
+
+            # 7. Afficher le résumé
+            self._print_summary(tickets, len(enriched_matches))
+
+            logger.info("Bot execution completed successfully!")
+            return True
+
+        except Exception as e:
+            logger.exception(f"Bot execution failed: {e}")
+            if send_telegram:
+                self.telegram.send_error_notification(str(e))
+            return False
+
+    def _save_output(self, tickets, matches):
+        """Sauvegarde les résultats dans des fichiers"""
+        date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+
+        # Sauvegarder en JSON
+        json_path = os.path.join(OUTPUT_DIR, f"tickets_{date_str}.json")
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(self.ticket_gen.export_to_json(tickets), f, ensure_ascii=False, indent=2)
+        logger.info(f"Saved JSON: {json_path}")
+
+        # Sauvegarder en texte
+        txt_path = os.path.join(OUTPUT_DIR, f"tickets_{date_str}.txt")
+        with open(txt_path, "w", encoding="utf-8") as f:
+            f.write(self.ticket_gen.format_tickets_for_output(tickets))
+        logger.info(f"Saved TXT: {txt_path}")
+
+    def _print_summary(self, tickets, matches_count):
+        """Affiche un résumé dans la console"""
+        print("\n" + "=" * 60)
+        print("📊 RÉSUMÉ DE L'EXÉCUTION")
+        print("=" * 60)
+        print(f"⚽ Matchs analysés: {matches_count}")
+        print(f"🎟️ Tickets générés: {len(tickets)}")
+
+        if tickets:
+            print("\n📋 TICKETS:")
+            for ticket in tickets:
+                print(f"  • {ticket.name}: {len(ticket)} sélections (Cote: {ticket.total_odds:.2f})")
+
+        print("=" * 60 + "\n")
+
+    def test_telegram(self):
+        """Teste la connexion Telegram"""
+        logger.info("Testing Telegram connection...")
+        if self.telegram.test_connection():
+            self.telegram.send_startup_notification()
+            logger.info("Telegram test successful!")
+            return True
+        logger.error("Telegram test failed!")
+        return False
+
+    def test_api(self):
+        """Teste la connexion à l'API Football"""
+        logger.info("Testing Football API connection...")
+        status = self.api.check_api_status()
+        if status:
+            account = status.get("account", {})
+            requests = status.get("requests", {})
+            print(f"✅ API OK")
+            print(f"   Account: {account.get('firstname', 'N/A')} {account.get('lastname', '')}")
+            print(f"   Plan: {status.get('subscription', {}).get('plan', 'N/A')}")
+            print(f"   Requests today: {requests.get('current', 0)} / {requests.get('limit_day', 0)}")
+            return True
+        logger.error("API test failed!")
+        return False
+
+    def check_results(self, date: str = None, send_telegram: bool = True) -> bool:
+        """
+        Vérifie les résultats des paris pour une date donnée
+        Args:
+            date: Date au format YYYY-MM-DD (défaut: aujourd'hui)
+            send_telegram: Envoyer les résultats sur Telegram
+        """
+        if date is None:
+            date = datetime.now().strftime("%Y-%m-%d")
+
+        logger.info("=" * 60)
+        logger.info(f"Checking results for {date}...")
+        logger.info("=" * 60)
+
+        try:
+            # Vérifier les résultats
+            results = self.tracker.check_results(date)
+
+            if not results:
+                logger.warning(f"No predictions found for {date}")
+                if send_telegram:
+                    self.telegram.send_message(f"📊 Aucune prédiction trouvée pour le {date}")
+                return False
+
+            # Calculer les statistiques
+            stats = self.tracker.get_daily_stats(date)
+
+            # Afficher le rapport
+            report = self.tracker.format_results_report(results, stats)
+            print(report)
+
+            # Envoyer sur Telegram
+            if send_telegram:
+                logger.info("Sending results to Telegram...")
+                self.telegram.send_results(results, stats)
+
+            logger.info("Results check completed!")
+            return True
+
+        except Exception as e:
+            logger.exception(f"Results check failed: {e}")
+            if send_telegram:
+                self.telegram.send_error_notification(str(e))
+            return False
+
+    def show_stats(self, days: int = 7, send_telegram: bool = False) -> bool:
+        """
+        Affiche les statistiques globales
+        Args:
+            days: Nombre de jours à analyser
+            send_telegram: Envoyer sur Telegram
+        """
+        logger.info(f"Generating statistics for last {days} days...")
+
+        stats = self.tracker.get_global_stats(days)
+
+        print("\n" + "=" * 60)
+        print(f"📊 STATISTIQUES ({days} DERNIERS JOURS)")
+        print("=" * 60)
+        print(f"\n🎯 PARIS")
+        print(f"   ✅ Gagnés: {stats['won']}")
+        print(f"   ❌ Perdus: {stats['lost']}")
+        print(f"   📈 Taux de réussite: {stats['win_rate']:.1f}%")
+        print(f"\n🎟️ TICKETS")
+        print(f"   ✅ Gagnés: {stats['tickets_won']}")
+        print(f"   ❌ Perdus: {stats['tickets_lost']}")
+        print(f"   📈 Taux de réussite: {stats['ticket_win_rate']:.1f}%")
+        print(f"\n💰 FINANCES")
+        print(f"   💵 Mise totale: {stats['total_stake']:.2f}€")
+        print(f"   {'📈' if stats['total_profit'] >= 0 else '📉'} Profit: {stats['total_profit']:+.2f}€")
+        print(f"   {'🟢' if stats['roi'] >= 0 else '🔴'} ROI: {stats['roi']:+.1f}%")
+
+        if stats.get("best_day"):
+            print(f"\n📅 JOURS REMARQUABLES")
+            print(f"   🏆 Meilleur: {stats['best_day']['date']} (+{stats['best_day']['profit']:.2f}€)")
+            print(f"   💀 Pire: {stats['worst_day']['date']} ({stats['worst_day']['profit']:.2f}€)")
+
+        print("=" * 60 + "\n")
+
+        if send_telegram:
+            self.telegram.send_weekly_stats(stats)
+
+        return True
+
+
+def run_scheduler():
+    """Lance le scheduler pour exécution à 21h"""
+    try:
+        import schedule
+        import time
+
+        bot = BettingBot()
+
+        logger.info(f"Scheduler started. Will run daily at {EXECUTION_HOUR}:00")
+        bot.telegram.send_startup_notification()
+
+        # Planifier l'exécution quotidienne
+        schedule.every().day.at(f"{EXECUTION_HOUR:02d}:00").do(bot.run)
+
+        while True:
+            schedule.run_pending()
+            time.sleep(60)  # Vérifier toutes les minutes
+
+    except ImportError:
+        logger.error("Module 'schedule' not installed. Run: pip install schedule")
+        sys.exit(1)
+
+
+def main():
+    """Point d'entrée principal"""
+    parser = argparse.ArgumentParser(description="Bot de prédictions 1xBet")
+    parser.add_argument("--run", action="store_true", help="Exécuter maintenant")
+    parser.add_argument("--scheduler", action="store_true", help="Lancer le scheduler (21h)")
+    parser.add_argument("--check-results", action="store_true", help="Vérifier les résultats du jour")
+    parser.add_argument("--stats", action="store_true", help="Afficher les statistiques")
+    parser.add_argument("--date", type=str, help="Date spécifique (YYYY-MM-DD)")
+    parser.add_argument("--days", type=int, default=7, help="Nombre de jours pour les stats")
+    parser.add_argument("--test-telegram", action="store_true", help="Tester Telegram")
+    parser.add_argument("--test-api", action="store_true", help="Tester l'API Football")
+    parser.add_argument("--no-telegram", action="store_true", help="Désactiver Telegram")
+    parser.add_argument("--no-save", action="store_true", help="Ne pas sauvegarder les fichiers")
+
+    args = parser.parse_args()
+
+    bot = BettingBot()
+
+    if args.test_telegram:
+        bot.test_telegram()
+    elif args.test_api:
+        bot.test_api()
+    elif args.scheduler:
+        run_scheduler()
+    elif args.check_results:
+        bot.check_results(
+            date=args.date,
+            send_telegram=not args.no_telegram
+        )
+    elif args.stats:
+        bot.show_stats(
+            days=args.days,
+            send_telegram=not args.no_telegram
+        )
+    elif args.run:
+        bot.run(
+            send_telegram=not args.no_telegram,
+            save_output=not args.no_save
+        )
+    else:
+        # Par défaut, afficher l'aide
+        parser.print_help()
+        print("\nExemples:")
+        print("  python main.py --run                    # Générer les prédictions")
+        print("  python main.py --check-results          # Vérifier les résultats du jour")
+        print("  python main.py --check-results --date 2026-01-07")
+        print("  python main.py --stats                  # Stats des 7 derniers jours")
+        print("  python main.py --stats --days 30        # Stats des 30 derniers jours")
+        print("  python main.py --scheduler              # Lancer le scheduler (21h)")
+        print("  python main.py --test-telegram          # Tester Telegram")
+        print("  python main.py --test-api               # Tester l'API")
+
+
+if __name__ == "__main__":
+    main()

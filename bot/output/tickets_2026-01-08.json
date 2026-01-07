@@ -1,0 +1,136 @@
+{
+  "date": "2026-01-08",
+  "generated_at": "2026-01-07T02:22:17.888181",
+  "predictions": [
+    {
+      "match": "Al-Jazira vs Ajman",
+      "league": "UAE Pro League",
+      "r1x2": "1",
+      "score": "2-0",
+      "ou25": "Under 2.5",
+      "btts": "Non",
+      "conf": "MOYEN"
+    },
+    {
+      "match": "Dibba Al-Fujairah vs Khorfakkan",
+      "league": "UAE Pro League",
+      "r1x2": "X",
+      "score": "1-1",
+      "ou25": "Under 2.5",
+      "btts": "Oui",
+      "conf": "FAIBLE"
+    },
+    {
+      "match": "Al Shahaniya vs Al-Duhail SC",
+      "league": "Qatar Stars League",
+      "r1x2": "2",
+      "score": "0-3",
+      "ou25": "Over 2.5",
+      "btts": "Non",
+      "conf": "ÉLEVÉ"
+    },
+    {
+      "match": "Al-Hilal Saudi FC vs Al-Hazm",
+      "league": "Saudi Pro League",
+      "r1x2": "1",
+      "score": "3-0",
+      "ou25": "Over 2.5",
+      "btts": "Non",
+      "conf": "ÉLEVÉ"
+    },
+    {
+      "match": "Al-Dhafra vs Al Ain",
+      "league": "UAE Pro League",
+      "r1x2": "2",
+      "score": "1-2",
+      "ou25": "Over 2.5",
+      "btts": "Oui",
+      "conf": "MOYEN"
+    },
+    {
+      "match": "Qatar SC vs Al Sadd",
+      "league": "Qatar Stars League",
+      "r1x2": "2",
+      "score": "1-3",
+      "ou25": "Over 2.5",
+      "btts": "Oui",
+      "conf": "ÉLEVÉ"
+    },
+    {
+      "match": "Cremonese vs Cagliari",
+      "league": "Serie A",
+      "r1x2": "X",
+      "score": "1-1",
+      "ou25": "Under 2.5",
+      "btts": "Oui",
+      "conf": "FAIBLE"
+    },
+    {
+      "match": "Al-Nassr vs Al-Qadisiyah FC",
+      "league": "Saudi Pro League",
+      "r1x2": "1",
+      "score": "3-1",
+      "ou25": "Over 2.5",
+      "btts": "Oui",
+      "conf": "ÉLEVÉ"
+    },
+    {
+      "match": "Al Najma vs Al-Ettifaq",
+      "league": "Saudi Pro League",
+      "r1x2": "2",
+      "score": "1-2",
+      "ou25": "Over 2.5",
+      "btts": "Oui",
+      "conf": "MOYEN"
+    },
+    {
+      "match": "Atletico Madrid vs Real Madrid",
+      "league": "Super Cup Spain",
+      "r1x2": "X",
+      "score": "1-1",
+      "ou25": "Under 2.5",
+      "btts": "Oui",
+      "conf": "FAIBLE"
+    },
+    {
+      "match": "AC Milan vs Genoa",
+      "league": "Serie A",
+      "r1x2": "1",
+      "score": "2-0",
+      "ou25": "Under 2.5",
+      "btts": "Non",
+      "conf": "MOYEN"
+    },
+    {
+      "match": "Arsenal vs Liverpool",
+      "league": "Premier League",
+      "r1x2": "X",
+      "score": "2-2",
+      "ou25": "Over 2.5",
+      "btts": "Oui",
+      "conf": "FAIBLE"
+    }
+  ],
+  "best_picks": [
+    {
+      "match": "Al-Hilal vs Al-Hazm",
+      "bet": "1",
+      "confidence": "ÉLEVÉ"
+    },
+    {
+      "match": "Al-Nassr vs Al-Qadisiyah",
+      "bet": "1",
+      "confidence": "ÉLEVÉ"
+    },
+    {
+      "match": "Qatar SC vs Al Sadd",
+      "bet": "2",
+      "confidence": "ÉLEVÉ"
+    },
+    {
+      "match": "Al Shahaniya vs Al-Duhail",
+      "bet": "2",
+      "confidence": "ÉLEVÉ"
+    }
+  ]
+}

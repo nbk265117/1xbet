@@ -8,6 +8,7 @@ from models.match import Match, Prediction, BestCombo
 from services.match_fetcher import MatchFetcher
 from services.predictor import MatchPredictor
 from services.polymarket_fetcher import PolymarketFetcher
+from services.xbet_fetcher import XbetFetcher
 
 router = APIRouter(prefix="/api", tags=["predictions"])
 
@@ -15,6 +16,7 @@ router = APIRouter(prefix="/api", tags=["predictions"])
 match_fetcher = MatchFetcher()
 predictor = MatchPredictor()
 polymarket = PolymarketFetcher()
+xbet = XbetFetcher(language="en")
 
 # PIN pour l'authentification
 APP_PIN = os.getenv("APP_PIN", "1991")
@@ -110,6 +112,108 @@ async def get_polymarket_market_detail(market_id: str):
     return {
         "market": parsed,
         "raw": market,
+    }
+
+
+# ==================== 1XBET ENDPOINTS ====================
+
+@router.get("/xbet/sports")
+async def get_xbet_sports():
+    """Récupère la liste des sports disponibles sur 1xbet"""
+    sports = await xbet.get_sports()
+    return {
+        "source": "1xbet",
+        "count": len(sports),
+        "sports": sports,
+    }
+
+
+@router.get("/xbet/leagues")
+async def get_xbet_leagues(sport_id: int = 1):
+    """Récupère les ligues pour un sport (1=Football)"""
+    leagues = await xbet.get_leagues(sport_id)
+    return {
+        "source": "1xbet",
+        "sport_id": sport_id,
+        "count": len(leagues),
+        "leagues": leagues,
+    }
+
+
+@router.get("/xbet/matches")
+async def get_xbet_matches(date_str: str = None, sport_id: int = 1):
+    """Récupère les matchs pour une date donnée depuis 1xbet"""
+    if date_str:
+        try:
+            target_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Format de date invalide. Utilisez YYYY-MM-DD")
+    else:
+        target_date = date.today()
+
+    matches = await xbet.get_matches_by_date(target_date, sport_id)
+
+    return {
+        "source": "1xbet",
+        "date": target_date.isoformat(),
+        "count": len(matches),
+        "matches": matches,
+    }
+
+
+@router.get("/xbet/match/{match_id}")
+async def get_xbet_match_detail(match_id: str):
+    """Récupère les détails d'un match avec TOUTES les cotes depuis 1xbet"""
+    match_details = await xbet.get_match_details(match_id)
+
+    if not match_details:
+        raise HTTPException(status_code=404, detail="Match non trouvé")
+
+    return {
+        "source": "1xbet",
+        "match": match_details,
+    }
+
+
+@router.get("/xbet/predictions")
+async def get_xbet_predictions(date_str: str = None):
+    """Génère des prédictions basées sur les cotes 1xbet"""
+    if date_str:
+        try:
+            target_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Format de date invalide. Utilisez YYYY-MM-DD")
+    else:
+        target_date = date.today()
+
+    predictions = await xbet.get_football_predictions(target_date)
+
+    return {
+        "source": "1xbet",
+        "date": target_date.isoformat(),
+        "count": len(predictions),
+        "predictions": predictions,
+    }
+
+
+@router.get("/xbet/combos")
+async def get_xbet_combos(date_str: str = None, max_combos: int = 5):
+    """Génère les meilleurs combinés basés sur les cotes 1xbet"""
+    if date_str:
+        try:
+            target_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Format de date invalide. Utilisez YYYY-MM-DD")
+    else:
+        target_date = date.today()
+
+    predictions = await xbet.get_football_predictions(target_date)
+    combos = await xbet.generate_best_combos(predictions, max_combos)
+
+    return {
+        "source": "1xbet",
+        "date": target_date.isoformat(),
+        "combos": combos,
     }
 
 
