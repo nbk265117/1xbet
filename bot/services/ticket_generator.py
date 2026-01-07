@@ -19,53 +19,58 @@ logger = logging.getLogger(__name__)
 class TicketGenerator:
     """Génère des tickets de paris optimisés"""
 
-    # Types de tickets
+    # Types de tickets - DIVERSIFIÉS
     TICKET_TYPES = {
         "safe": {
             "name": "Ticket Sécurisé",
             "min_confidence": CONFIDENCE_MEDIUM,
             "preferred_bets": [BetType.DOUBLE_CHANCE_1X, BetType.DOUBLE_CHANCE_X2,
-                              BetType.OVER_1_5, BetType.HOME_OVER_0_5, BetType.AWAY_OVER_0_5],
+                              BetType.OVER_1_5],
             "max_matches": 5,
-            "risk": "FAIBLE"
+            "risk": "FAIBLE",
+            "max_same_type": 2  # Max 2 paris du même type
         },
         "balanced": {
-            "name": "Ticket Équilibré",
+            "name": "Ticket Mixte",
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN, BetType.OVER_2_5,
-                              BetType.BTTS_YES, BetType.DOUBLE_CHANCE_1X],
-            "max_matches": 6,
-            "risk": "MOYEN"
+            "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN, BetType.BTTS_YES,
+                              BetType.DOUBLE_CHANCE_1X, BetType.DOUBLE_CHANCE_X2],
+            "max_matches": 5,
+            "risk": "MOYEN",
+            "max_same_type": 1  # Forcer la diversité - 1 seul pari par type
         },
         "goals": {
             "name": "Ticket Buts",
-            "min_confidence": CONFIDENCE_LOW,
-            "preferred_bets": [BetType.OVER_2_5, BetType.BTTS_YES, BetType.OVER_1_5,
-                              BetType.BTTS_AND_OVER_2_5],
-            "max_matches": 7,
-            "risk": "MOYEN"
+            "min_confidence": CONFIDENCE_MEDIUM,
+            "preferred_bets": [BetType.OVER_2_5, BetType.BTTS_YES, BetType.OVER_1_5],
+            "max_matches": 5,
+            "risk": "MOYEN",
+            "max_same_type": 2
         },
         "favorites": {
             "name": "Ticket Favoris",
             "min_confidence": CONFIDENCE_HIGH,
             "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN],
             "max_matches": 4,
-            "risk": "MOYEN"
+            "risk": "MOYEN",
+            "max_same_type": 3
         },
-        "risky": {
-            "name": "Ticket Risqué",
-            "min_confidence": CONFIDENCE_LOW,
-            "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN, BetType.BTTS_AND_OVER_2_5],
-            "max_matches": 9,
-            "risk": "ÉLEVÉ"
+        "btts": {
+            "name": "Ticket BTTS",
+            "min_confidence": CONFIDENCE_MEDIUM,
+            "preferred_bets": [BetType.BTTS_YES, BetType.BTTS_NO],
+            "max_matches": 5,
+            "risk": "MOYEN",
+            "max_same_type": 5
         },
         "combo": {
             "name": "Ticket Combo",
             "min_confidence": CONFIDENCE_MEDIUM,
             "preferred_bets": [BetType.HOME_WIN_AND_OVER_1_5, BetType.AWAY_WIN_AND_OVER_1_5,
-                              BetType.BTTS_AND_OVER_2_5, BetType.DOUBLE_CHANCE_1X],
-            "max_matches": 5,
-            "risk": "MOYEN"
+                              BetType.BTTS_AND_OVER_2_5],
+            "max_matches": 4,
+            "risk": "ÉLEVÉ",
+            "max_same_type": 2
         }
     }
 
@@ -103,39 +108,45 @@ class TicketGenerator:
                 predictions_by_match[match_id] = []
             predictions_by_match[match_id].append(pred)
 
-        # Générer les différents types de tickets
+        # Générer les différents types de tickets DIVERSIFIÉS
         tickets = []
         self.used_matches.clear()
 
-        # Ticket sécurisé (toujours en premier)
+        # Ticket 1: Sécurisé (Double Chance + Over 1.5)
         safe_ticket = self._generate_ticket_by_type("safe", predictions_by_match, 1)
         if safe_ticket:
             tickets.append(safe_ticket)
 
-        # Ticket équilibré
+        # Ticket 2: Mixte (1X2 + BTTS + DC) - MAXIMUM 1 pari par type
+        self.used_matches.clear()  # Reset pour permettre la réutilisation des matchs
         balanced_ticket = self._generate_ticket_by_type("balanced", predictions_by_match, 2)
         if balanced_ticket:
             tickets.append(balanced_ticket)
 
-        # Ticket buts
-        goals_ticket = self._generate_ticket_by_type("goals", predictions_by_match, 3)
-        if goals_ticket:
-            tickets.append(goals_ticket)
+        # Ticket 3: BTTS uniquement
+        self.used_matches.clear()
+        btts_ticket = self._generate_ticket_by_type("btts", predictions_by_match, 3)
+        if btts_ticket:
+            tickets.append(btts_ticket)
 
         # Tickets supplémentaires si assez de matchs
-        if len(matches) >= 15:
+        if len(matches) >= 10:
+            self.used_matches.clear()
             favorites_ticket = self._generate_ticket_by_type("favorites", predictions_by_match, 4)
             if favorites_ticket:
                 tickets.append(favorites_ticket)
 
-        if len(matches) >= 20:
-            combo_ticket = self._generate_ticket_by_type("combo", predictions_by_match, 5)
+        if len(matches) >= 12:
+            self.used_matches.clear()
+            goals_ticket = self._generate_ticket_by_type("goals", predictions_by_match, 5)
+            if goals_ticket:
+                tickets.append(goals_ticket)
+
+        if len(matches) >= 15:
+            self.used_matches.clear()
+            combo_ticket = self._generate_ticket_by_type("combo", predictions_by_match, 6)
             if combo_ticket:
                 tickets.append(combo_ticket)
-
-            risky_ticket = self._generate_ticket_by_type("risky", predictions_by_match, 6)
-            if risky_ticket:
-                tickets.append(risky_ticket)
 
         # S'assurer d'avoir au moins 3 tickets
         while len(tickets) < MIN_TICKETS_PER_DAY and len(matches) >= MIN_MATCHES_PER_TICKET:
@@ -154,7 +165,7 @@ class TicketGenerator:
         predictions_by_match: Dict[int, List[Prediction]],
         ticket_id: int
     ) -> Ticket:
-        """Génère un ticket selon un type spécifique"""
+        """Génère un ticket selon un type spécifique avec DIVERSITÉ"""
         config = self.TICKET_TYPES[ticket_type]
 
         ticket = Ticket(
@@ -162,6 +173,10 @@ class TicketGenerator:
             name=config["name"],
             risk_level=config["risk"]
         )
+
+        # Compteur pour limiter les paris du même type
+        bet_type_count: Dict[BetType, int] = {}
+        max_same_type = config.get("max_same_type", 3)
 
         # Sélectionner les meilleures prédictions pour ce type
         suitable_predictions = []
@@ -176,6 +191,10 @@ class TicketGenerator:
                 if not self._meets_confidence(pred.confidence, config["min_confidence"]):
                     continue
 
+                # Vérifier si c'est un type de pari préféré
+                if pred.bet_type not in config["preferred_bets"]:
+                    continue
+
                 # Bonus si c'est un type de pari préféré
                 score = self._calculate_prediction_score(pred, config["preferred_bets"])
                 suitable_predictions.append((pred, score))
@@ -183,20 +202,27 @@ class TicketGenerator:
         # Trier par score décroissant
         suitable_predictions.sort(key=lambda x: x[1], reverse=True)
 
-        # Sélectionner les prédictions pour le ticket
+        # Sélectionner les prédictions pour le ticket avec DIVERSITÉ
         max_matches = min(config["max_matches"], MAX_MATCHES_PER_TICKET)
         selected_matches: Set[int] = set()
 
         for pred, score in suitable_predictions:
             match_id = pred.match.id
+            bet_type = pred.bet_type
 
             # Un seul pari par match
             if match_id in selected_matches:
                 continue
 
+            # Limiter le nombre de paris du même type
+            current_count = bet_type_count.get(bet_type, 0)
+            if current_count >= max_same_type:
+                continue
+
             ticket.add_prediction(pred)
             selected_matches.add(match_id)
             self.used_matches.add(match_id)
+            bet_type_count[bet_type] = current_count + 1
 
             if len(ticket) >= max_matches:
                 break

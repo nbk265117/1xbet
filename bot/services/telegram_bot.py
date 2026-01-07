@@ -268,6 +268,104 @@ Le bot de prédictions 1xBet est en ligne!
 
         return self.send_message("\n".join(lines))
 
+    def send_pro_predictions(self, predictions: List[Dict]) -> bool:
+        """
+        [PRO] Envoie les prédictions détaillées avec mi-temps, cartons, corners
+        """
+        if not predictions:
+            return self.send_message("⚠️ Aucune prédiction Pro disponible.")
+
+        # Message d'introduction
+        date_str = datetime.now().strftime("%d/%m/%Y")
+        intro = f"""
+🎯 <b>PRÉDICTIONS PRO DU JOUR</b> 🎯
+━━━━━━━━━━━━━━━━━━━━
+📅 Date: {date_str}
+⚽ Matchs analysés: {len(predictions)}
+
+<i>Analyse complète avec Mi-temps, Cartons & Corners</i>
+"""
+        self.send_message(intro)
+
+        # Envoyer chaque match (max 10 pour éviter spam)
+        for pred in predictions[:10]:
+            msg = self._format_pro_prediction(pred)
+            self.send_message(msg)
+
+        return True
+
+    def _format_pro_prediction(self, pred: Dict) -> str:
+        """Formate une prédiction Pro complète"""
+        match = pred.get('match', 'Match inconnu')
+        league = pred.get('league', '')
+        date = pred.get('date', '')
+        importance = pred.get('match_importance', 'NORMAL')
+        description = pred.get('match_description', '')[:150]
+
+        # Importance emoji
+        imp_emoji = {"CRUCIAL": "🔥", "IMPORTANT": "⭐", "NORMAL": "⚽"}.get(importance, "⚽")
+
+        # Goals data
+        goals = pred.get('goals', {})
+        result = pred.get('result_1x2', '')
+        over_under = goals.get('over_under', '')
+        btts = goals.get('btts', '')
+        score_exact = goals.get('score_exact', '')
+
+        # First half data
+        first_half = pred.get('first_half', {})
+        ht_result = first_half.get('result', '')
+        ht_score = first_half.get('score_exact', '')
+        ht_over_05 = first_half.get('over_05_prob', 0)
+
+        # HT/FT
+        ht_ft_data = pred.get('ht_ft', {})
+        ht_ft = ht_ft_data.get('prediction', '')
+        ht_ft_prob = ht_ft_data.get('probability', 0)
+
+        # Corners
+        corners = pred.get('corners', {})
+        corners_pred = corners.get('prediction', '')
+        corners_expected = corners.get('expected', 0)
+        corners_rec = corners.get('recommendation', '')
+
+        # Cards
+        cards = pred.get('cards', {})
+        cards_expected = cards.get('expected_yellow', 0)
+        cards_rec = cards.get('recommendation', '')
+        red_prob = cards.get('red_card_prob', 0)
+
+        lines = [
+            f"{imp_emoji} <b>{match}</b>",
+            f"━━━━━━━━━━━━━━━━━━━━",
+            f"🏆 {league} | ⏰ {date}",
+            f"📝 <i>{description}</i>",
+            f"",
+            f"<b>📊 MATCH COMPLET</b>",
+            f"🎯 1X2: <b>{result}</b>",
+            f"⚽ Buts: <b>{over_under}</b> | BTTS: <b>{btts}</b>",
+            f"📌 Score exact: <b>{score_exact}</b>",
+            f"",
+            f"<b>⏱️ 1ÈRE MI-TEMPS</b>",
+            f"🎯 Résultat MT: <b>{ht_result}</b>",
+            f"📌 Score MT: <b>{ht_score}</b>",
+            f"⚽ MT Over 0.5: <b>{ht_over_05:.0f}%</b>",
+            f"",
+            f"<b>🔄 MI-TEMPS / FIN</b>",
+            f"🎯 HT/FT: <b>{ht_ft}</b> ({ht_ft_prob:.0f}%)",
+            f"",
+            f"<b>🚩 CORNERS</b>",
+            f"📊 Attendus: <b>{corners_expected:.1f}</b>",
+            f"🎯 Pari: <b>{corners_rec}</b>",
+            f"",
+            f"<b>🟨 CARTONS</b>",
+            f"📊 Jaunes attendus: <b>{cards_expected:.1f}</b>",
+            f"🎯 Pari: <b>{cards_rec}</b>",
+            f"🟥 Rouge: <b>{red_prob:.0f}%</b>",
+        ]
+
+        return "\n".join(lines)
+
     def send_weekly_stats(self, stats: Dict) -> bool:
         """Envoie les statistiques hebdomadaires"""
         profit_emoji = "📈" if stats["total_profit"] >= 0 else "📉"

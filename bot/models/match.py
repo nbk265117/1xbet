@@ -9,12 +9,15 @@ from enum import Enum
 
 class BetType(Enum):
     """Types de paris disponibles"""
+    # 1X2
     HOME_WIN = "1"
     DRAW = "X"
     AWAY_WIN = "2"
     DOUBLE_CHANCE_1X = "1X"
     DOUBLE_CHANCE_X2 = "X2"
     DOUBLE_CHANCE_12 = "12"
+
+    # Buts (Match entier)
     OVER_1_5 = "Over 1.5"
     OVER_2_5 = "Over 2.5"
     OVER_3_5 = "Over 3.5"
@@ -27,16 +30,64 @@ class BetType(Enum):
     HOME_OVER_1_5 = "Domicile +1.5"
     AWAY_OVER_0_5 = "Extérieur +0.5"
     AWAY_OVER_1_5 = "Extérieur +1.5"
+    HOME_CLEAN_SHEET = "Domicile sans encaisser"
+    AWAY_CLEAN_SHEET = "Extérieur sans encaisser"
+
+    # Mi-temps (1ère période)
+    HT_HOME_WIN = "MT 1"
+    HT_DRAW = "MT X"
+    HT_AWAY_WIN = "MT 2"
+    HT_OVER_0_5 = "MT Over 0.5"
+    HT_OVER_1_5 = "MT Over 1.5"
+    HT_UNDER_0_5 = "MT Under 0.5"
+    HT_UNDER_1_5 = "MT Under 1.5"
+    HT_BTTS_YES = "MT BTTS Oui"
+    HT_BTTS_NO = "MT BTTS Non"
+
+    # 2ème Mi-temps
+    H2_OVER_0_5 = "2MT Over 0.5"
+    H2_OVER_1_5 = "2MT Over 1.5"
+    H2_BTTS_YES = "2MT BTTS Oui"
+
+    # HT/FT (Mi-temps / Fin)
+    HT_FT_1_1 = "MT/FT 1/1"
+    HT_FT_1_X = "MT/FT 1/X"
+    HT_FT_1_2 = "MT/FT 1/2"
+    HT_FT_X_1 = "MT/FT X/1"
+    HT_FT_X_X = "MT/FT X/X"
+    HT_FT_X_2 = "MT/FT X/2"
+    HT_FT_2_1 = "MT/FT 2/1"
+    HT_FT_2_X = "MT/FT 2/X"
+    HT_FT_2_2 = "MT/FT 2/2"
+
+    # Corners
     CORNERS_OVER_7_5 = "Corners +7.5"
     CORNERS_OVER_8_5 = "Corners +8.5"
     CORNERS_OVER_9_5 = "Corners +9.5"
-    HOME_CLEAN_SHEET = "Domicile sans encaisser"
-    AWAY_CLEAN_SHEET = "Extérieur sans encaisser"
-    FIRST_HALF_OVER_0_5 = "MT Over 0.5"
-    FIRST_HALF_BTTS = "MT BTTS"
+    CORNERS_OVER_10_5 = "Corners +10.5"
+    CORNERS_UNDER_9_5 = "Corners -9.5"
+    CORNERS_UNDER_10_5 = "Corners -10.5"
+    HOME_CORNERS_OVER_4_5 = "Corners Dom +4.5"
+    AWAY_CORNERS_OVER_3_5 = "Corners Ext +3.5"
+
+    # Cartons
+    CARDS_OVER_2_5 = "Cartons +2.5"
+    CARDS_OVER_3_5 = "Cartons +3.5"
+    CARDS_OVER_4_5 = "Cartons +4.5"
+    CARDS_OVER_5_5 = "Cartons +5.5"
+    CARDS_UNDER_4_5 = "Cartons -4.5"
+    YELLOW_CARDS_OVER_2_5 = "Jaunes +2.5"
+    YELLOW_CARDS_OVER_3_5 = "Jaunes +3.5"
+    RED_CARD_YES = "Carton Rouge Oui"
+    RED_CARD_NO = "Carton Rouge Non"
+    HOME_CARD_FIRST = "1er Carton Dom"
+    AWAY_CARD_FIRST = "1er Carton Ext"
+
+    # Combinés
     HOME_WIN_AND_OVER_1_5 = "1 + Over 1.5"
     AWAY_WIN_AND_OVER_1_5 = "2 + Over 1.5"
     BTTS_AND_OVER_2_5 = "BTTS + Over 2.5"
+    FIRST_HALF_BTTS = "MT BTTS"
 
 
 @dataclass

@@ -20,6 +20,7 @@ from config.settings import (
 )
 from services.football_api import FootballAPIService
 from services.analyzer import MatchAnalyzer
+from services.enhanced_analyzer import EnhancedMatchAnalyzer
 from services.ticket_generator import TicketGenerator
 from services.telegram_bot import TelegramNotifier
 from services.result_tracker import ResultTracker
@@ -39,12 +40,14 @@ logger = logging.getLogger(__name__)
 class BettingBot:
     """Bot principal de prédictions"""
 
-    def __init__(self):
+    def __init__(self, use_pro_features: bool = True):
         self.api = FootballAPIService()
         self.analyzer = MatchAnalyzer()
+        self.enhanced_analyzer = EnhancedMatchAnalyzer() if use_pro_features else None
         self.ticket_gen = TicketGenerator(self.analyzer)
         self.telegram = TelegramNotifier()
         self.tracker = ResultTracker()
+        self.use_pro_features = use_pro_features
 
         # Créer le dossier output si nécessaire
         Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
@@ -78,15 +81,47 @@ class BettingBot:
 
             # 3. Enrichir les données des matchs (H2H, forme, classement)
             logger.info("Enriching match data...")
+            if self.use_pro_features:
+                logger.info("[PRO] Using enhanced analyzer with API predictions & odds")
+
             enriched_matches = []
+            enhanced_predictions = []
+
             for i, match in enumerate(matches[:30]):  # Limiter pour éviter trop d'appels API
                 logger.info(f"  [{i+1}/{min(len(matches), 30)}] {match}")
                 try:
+                    # Enrichissement de base
                     enriched = self.api.enrich_match_data(match)
                     enriched_matches.append(enriched)
+
+                    # [PRO] Analyse avancée avec prédictions API et cotes
+                    if self.use_pro_features and self.enhanced_analyzer:
+                        try:
+                            enhanced_pred = self.enhanced_analyzer.analyze_match_full(
+                                home_team=match.home_team.name,
+                                away_team=match.away_team.name,
+                                league=match.league_name,
+                                match_date=match.date.strftime("%Y-%m-%d %H:%M"),
+                                league_id=match.league_id,
+                                home_team_id=match.home_team.id,
+                                away_team_id=match.away_team.id,
+                                fixture_id=match.id
+                            )
+                            enhanced_predictions.append({
+                                'match': match,
+                                'prediction': enhanced_pred
+                            })
+                            logger.info(f"    [PRO] {enhanced_pred.result_1x2} | {enhanced_pred.over_under} | BTTS: {enhanced_pred.btts}")
+                        except Exception as e:
+                            logger.warning(f"    [PRO] Enhanced analysis failed: {e}")
+
                 except Exception as e:
                     logger.error(f"Error enriching {match}: {e}")
                     enriched_matches.append(match)  # Utiliser les données de base
+
+            # Sauvegarder les prédictions améliorées
+            if enhanced_predictions:
+                self._save_enhanced_predictions(enhanced_predictions)
 
             # 4. Générer les tickets
             logger.info("Generating tickets...")
@@ -100,10 +135,15 @@ class BettingBot:
                 tomorrow = datetime.now() + timedelta(days=1)
                 self.tracker.save_predictions(tickets, tomorrow)
 
-            # 6. Envoyer sur Telegram
+            # 6. Envoyer les Prédictions PRO sur Telegram (pas les tickets)
             if send_telegram:
-                logger.info("Sending to Telegram...")
-                self.telegram.send_tickets(tickets)
+                logger.info("Sending PRO predictions to Telegram...")
+                date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+                pro_file = os.path.join(OUTPUT_DIR, f"predictions_complete_{date_str}.json")
+                if os.path.exists(pro_file):
+                    with open(pro_file, 'r', encoding='utf-8') as f:
+                        pro_data = json.load(f)
+                    self.telegram.send_pro_predictions(pro_data.get('predictions', []))
 
             # 7. Afficher le résumé
             self._print_summary(tickets, len(enriched_matches))
@@ -116,6 +156,119 @@ class BettingBot:
             if send_telegram:
                 self.telegram.send_error_notification(str(e))
             return False
+
+    def _save_enhanced_predictions(self, enhanced_predictions):
+        """[PRO] Sauvegarde les prédictions améliorées avec tous les marchés"""
+        date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+        json_path = os.path.join(OUTPUT_DIR, f"predictions_complete_{date_str}.json")
+
+        output = {
+            "date": date_str,
+            "generated_at": datetime.now().isoformat(),
+            "total_matches": len(enhanced_predictions),
+            "predictions": []
+        }
+
+        for item in enhanced_predictions:
+            match = item['match']
+            pred = item['prediction']
+
+            output["predictions"].append({
+                "match": pred.match_name,
+                "league": pred.league,
+                "date": pred.date,
+                "match_description": pred.match_description,
+                "match_importance": pred.match_importance,
+                "confidence": pred.confidence,
+
+                # ========== 1X2 Match complet ==========
+                "result_1x2": pred.result_1x2,
+                "probabilities": {
+                    "home": round(pred.home_prob * 100, 1),
+                    "draw": round(pred.draw_prob * 100, 1),
+                    "away": round(pred.away_prob * 100, 1)
+                },
+
+                # ========== Buts ==========
+                "goals": {
+                    "over_under": pred.over_under,
+                    "expected_goals": round(pred.total_expected_goals, 2),
+                    "over_15_prob": round(pred.over_15_prob * 100, 1),
+                    "over_25_prob": round(pred.over_25_prob * 100, 1),
+                    "over_35_prob": round(pred.over_35_prob * 100, 1),
+                    "btts": pred.btts,
+                    "btts_prob": round(pred.btts_prob * 100, 1),
+                    "score_exact": pred.score_exact,
+                    "clean_sheet": pred.clean_sheet,
+                    "dc_btts": pred.dc_btts
+                },
+
+                # ========== Mi-temps (1ère période) ==========
+                "first_half": {
+                    "result": pred.ht_result,
+                    "probabilities": {
+                        "home": round(pred.ht_home_prob * 100, 1),
+                        "draw": round(pred.ht_draw_prob * 100, 1),
+                        "away": round(pred.ht_away_prob * 100, 1)
+                    },
+                    "expected_goals": round(pred.ht_expected_goals, 2),
+                    "over_05": pred.ht_over_05,
+                    "over_05_prob": round(pred.ht_over_05_prob * 100, 1),
+                    "over_15": pred.ht_over_15,
+                    "over_15_prob": round(pred.ht_over_15_prob * 100, 1),
+                    "btts": pred.ht_btts,
+                    "btts_prob": round(pred.ht_btts_prob * 100, 1),
+                    "score_exact": pred.ht_score_exact
+                },
+
+                # ========== 2ème Mi-temps ==========
+                "second_half": {
+                    "expected_goals": round(pred.h2_expected_goals, 2),
+                    "over_05": pred.h2_over_05,
+                    "over_05_prob": round(pred.h2_over_05_prob * 100, 1),
+                    "over_15": pred.h2_over_15,
+                    "over_15_prob": round(pred.h2_over_15_prob * 100, 1)
+                },
+
+                # ========== HT/FT ==========
+                "ht_ft": {
+                    "prediction": pred.ht_ft,
+                    "probability": round(pred.ht_ft_prob * 100, 1),
+                    "alternatives": pred.ht_ft_alternatives
+                },
+
+                # ========== Corners ==========
+                "corners": {
+                    "prediction": pred.corners,
+                    "expected": round(pred.expected_corners, 1),
+                    "home_avg": round(pred.home_corners_avg, 1),
+                    "away_avg": round(pred.away_corners_avg, 1),
+                    "over_85_prob": round(pred.corners_over_85_prob * 100, 1),
+                    "over_95_prob": round(pred.corners_over_95_prob * 100, 1),
+                    "over_105_prob": round(pred.corners_over_105_prob * 100, 1),
+                    "recommendation": pred.corners_recommendation
+                },
+
+                # ========== Cartons ==========
+                "cards": {
+                    "expected_yellow": round(pred.expected_yellow_cards, 1),
+                    "expected_total": round(pred.expected_total_cards, 1),
+                    "over_35_prob": round(pred.cards_over_35_prob * 100, 1),
+                    "over_45_prob": round(pred.cards_over_45_prob * 100, 1),
+                    "over_55_prob": round(pred.cards_over_55_prob * 100, 1),
+                    "red_card_prob": round(pred.red_card_prob * 100, 1),
+                    "recommendation": pred.cards_recommendation,
+                    "referee": pred.referee_name,
+                    "referee_strictness": pred.referee_strictness
+                },
+
+                "reasoning": pred.reasoning
+            })
+
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+
+        logger.info(f"[PRO] Saved enhanced predictions: {json_path}")
 
     def _save_output(self, tickets, matches):
         """Sauvegarde les résultats dans des fichiers"""

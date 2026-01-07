@@ -14,76 +14,207 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class EnhancedPrediction:
-    """Prédiction enrichie avec tous les types de paris"""
+    """Prédiction enrichie avec tous les types de paris PRO"""
     match_name: str
     league: str
     date: str
 
-    # 1X2
-    result_1x2: str
-    home_prob: float
-    draw_prob: float
-    away_prob: float
+    # Description du match
+    match_description: str = ""
+    match_importance: str = "NORMAL"  # NORMAL, IMPORTANT, CRUCIAL
 
-    # Goals
-    over_under: str
-    over_25_prob: float
-    total_expected_goals: float
+    # 1X2 Match complet
+    result_1x2: str = ""
+    home_prob: float = 0.0
+    draw_prob: float = 0.0
+    away_prob: float = 0.0
 
-    # Team +1.5
-    team_plus_15: str
-
-    # Corners
-    corners: str
-    expected_corners: float
-
-    # Score exact
-    score_exact: str
-    score_prob: float
-
-    # Clean sheet
-    clean_sheet: str
-    clean_sheet_prob: float
+    # Buts (Match complet)
+    over_under: str = ""
+    over_25_prob: float = 0.0
+    over_15_prob: float = 0.0
+    over_35_prob: float = 0.0
+    total_expected_goals: float = 0.0
 
     # BTTS
-    btts: str
-    btts_prob: float
+    btts: str = ""
+    btts_prob: float = 0.0
+
+    # Team +1.5
+    team_plus_15: str = ""
+
+    # Score exact
+    score_exact: str = ""
+    score_prob: float = 0.0
+
+    # Clean sheet
+    clean_sheet: str = ""
+    clean_sheet_prob: float = 0.0
 
     # Double Chance + BTTS
-    dc_btts: str
+    dc_btts: str = ""
 
-    # Mi-temps / Fin
-    ht_ft: str
+    # ========== MI-TEMPS (1ère période) ==========
+    ht_result: str = ""  # 1X2 mi-temps
+    ht_home_prob: float = 0.0
+    ht_draw_prob: float = 0.0
+    ht_away_prob: float = 0.0
+    ht_over_05: str = ""
+    ht_over_05_prob: float = 0.0
+    ht_over_15: str = ""
+    ht_over_15_prob: float = 0.0
+    ht_btts: str = ""
+    ht_btts_prob: float = 0.0
+    ht_expected_goals: float = 0.0
+    ht_score_exact: str = ""
 
-    # Confiance globale
-    confidence: str
-    reasoning: List[str]
+    # ========== 2ème MI-TEMPS ==========
+    h2_over_05: str = ""
+    h2_over_05_prob: float = 0.0
+    h2_over_15: str = ""
+    h2_over_15_prob: float = 0.0
+    h2_expected_goals: float = 0.0
+
+    # ========== HT/FT (Mi-temps / Fin) ==========
+    ht_ft: str = ""
+    ht_ft_prob: float = 0.0
+    ht_ft_alternatives: List[str] = None
+
+    # ========== CORNERS ==========
+    corners: str = ""
+    expected_corners: float = 0.0
+    corners_over_85_prob: float = 0.0
+    corners_over_95_prob: float = 0.0
+    corners_over_105_prob: float = 0.0
+    home_corners_avg: float = 0.0
+    away_corners_avg: float = 0.0
+    corners_recommendation: str = ""
+
+    # ========== CARTONS ==========
+    expected_yellow_cards: float = 0.0
+    expected_total_cards: float = 0.0
+    cards_over_35_prob: float = 0.0
+    cards_over_45_prob: float = 0.0
+    cards_over_55_prob: float = 0.0
+    red_card_prob: float = 0.0
+    cards_recommendation: str = ""
+    referee_name: str = ""
+    referee_strictness: str = ""
+
+    # ========== CONFIANCE & RAISONNEMENT ==========
+    confidence: str = ""
+    reasoning: List[str] = None
+
+    def __post_init__(self):
+        if self.reasoning is None:
+            self.reasoning = []
+        if self.ht_ft_alternatives is None:
+            self.ht_ft_alternatives = []
 
 
 class EnhancedMatchAnalyzer:
-    """Analyseur amélioré avec données multi-sources"""
+    """Analyseur amélioré avec données multi-sources DYNAMIQUES + Pro API"""
 
     def __init__(self):
         self.enricher = DataEnricher()
         self.home_advantage = 0.08
+        # Poids pour les différentes sources de données
+        self.weights = {
+            'form': 0.20,
+            'standings': 0.15,
+            'h2h': 0.15,
+            'home_adv': 0.10,
+            'api_predictions': 0.25,  # [PRO] Prédictions officielles
+            'odds_implied': 0.10,     # [PRO] Probabilités implicites des cotes
+            'motivation': 0.05,
+        }
 
     def analyze_match_full(self, home_team: str, away_team: str,
-                           league: str, match_date: str = "") -> EnhancedPrediction:
+                           league: str, match_date: str = "",
+                           league_id: int = None, home_team_id: int = None,
+                           away_team_id: int = None, fixture_id: int = None) -> EnhancedPrediction:
         """
-        Analyse complète d'un match avec toutes les sources de données
+        Analyse complète d'un match avec toutes les sources de données DYNAMIQUES + PRO
+
+        Args:
+            home_team: Nom de l'équipe à domicile
+            away_team: Nom de l'équipe à l'extérieur
+            league: Nom de la ligue
+            match_date: Date du match
+            league_id: ID de la ligue (API-Football)
+            home_team_id: ID de l'équipe à domicile (API-Football)
+            away_team_id: ID de l'équipe à l'extérieur (API-Football)
+            fixture_id: ID du match (API-Football) pour les prédictions/cotes PRO
         """
-        logger.info(f"Enhanced analysis: {home_team} vs {away_team}")
+        logger.info(f"[PRO] Enhanced analysis: {home_team} vs {away_team}")
 
-        # Enrichir les données
-        enriched = self.enricher.enrich_match(home_team, away_team, league)
+        # Enrichir les données DYNAMIQUEMENT avec les IDs
+        enriched = self.enricher.enrich_match(
+            home_team, away_team, league,
+            league_id=league_id,
+            home_team_id=home_team_id,
+            away_team_id=away_team_id
+        )
 
-        # Analyse détaillée
-        analysis = self._compute_analysis(home_team, away_team, enriched)
+        # [PRO] Récupérer les prédictions officielles de l'API
+        api_predictions = None
+        odds_data = None
+        halftime_odds = None
+        corners_odds = None
+        home_cards_stats = None
+        away_cards_stats = None
+        referee_stats = None
 
-        # Générer la prédiction
-        return self._generate_prediction(
+        if fixture_id:
+            api_predictions = self.enricher.get_predictions_api(fixture_id)
+            odds_data = self.enricher.get_odds_api(fixture_id)
+            halftime_odds = self.enricher.get_halftime_odds_api(fixture_id)
+            corners_odds = self.enricher.get_corners_odds_api(fixture_id)
+            referee_stats = self.enricher.get_referee_stats_api(fixture_id=fixture_id)
+            logger.info(f"[PRO] API Predictions: {api_predictions.get('advice') if api_predictions else 'N/A'}")
+
+        # [PRO] Récupérer les stats des derniers matchs (corners, tirs, etc.)
+        home_fixture_stats = None
+        away_fixture_stats = None
+        if home_team_id and league_id:
+            home_fixture_stats = self.enricher.get_team_last_fixtures_stats(home_team_id, league_id)
+            home_cards_stats = self.enricher.get_cards_stats_api(home_team_id, league_id)
+        if away_team_id and league_id:
+            away_fixture_stats = self.enricher.get_team_last_fixtures_stats(away_team_id, league_id)
+            away_cards_stats = self.enricher.get_cards_stats_api(away_team_id, league_id)
+
+        # Analyse détaillée avec données PRO
+        analysis = self._compute_analysis_pro(
+            home_team, away_team, enriched,
+            api_predictions, odds_data,
+            home_fixture_stats, away_fixture_stats
+        )
+
+        # [PRO] Analyse mi-temps
+        halftime_analysis = self._analyze_halftime_pro(
+            enriched, analysis, halftime_odds, api_predictions
+        )
+        analysis['halftime'] = halftime_analysis
+
+        # [PRO] Analyse cartons
+        cards_analysis = self._analyze_cards_pro(
+            home_cards_stats, away_cards_stats, referee_stats, league_id
+        )
+        analysis['cards'] = cards_analysis
+
+        # [PRO] Analyse corners améliorée
+        corners_analysis = self._analyze_corners_pro(
+            enriched.home_stats, enriched.away_stats,
+            home_fixture_stats, away_fixture_stats
+        )
+        if corners_odds:
+            corners_analysis['odds'] = corners_odds
+        analysis['corners'] = corners_analysis
+
+        # Générer la prédiction enrichie
+        return self._generate_prediction_pro(
             home_team, away_team, league, match_date,
-            enriched, analysis
+            enriched, analysis, referee_stats
         )
 
     def _compute_analysis(self, home_team: str, away_team: str,
@@ -156,6 +287,507 @@ class EnhancedMatchAnalyzer:
             "goals": goals_analysis,
             "corners": corners_analysis
         }
+
+    def _compute_analysis_pro(self, home_team: str, away_team: str,
+                               enriched: MatchEnrichedData,
+                               api_predictions: Dict = None,
+                               odds_data: Dict = None,
+                               home_fixture_stats: Dict = None,
+                               away_fixture_stats: Dict = None) -> Dict:
+        """[PRO] Calcule l'analyse avec données API-Football Pro"""
+
+        home_stats = enriched.home_stats
+        away_stats = enriched.away_stats
+
+        # Score de forme (basé sur les 5 derniers matchs)
+        home_form_score = self._form_to_score(home_stats.form)
+        away_form_score = self._form_to_score(away_stats.form)
+        form_diff = (home_form_score - away_form_score) / 100
+
+        # Score de classement
+        standings_diff = 0
+        if home_stats.league_position > 0 and away_stats.league_position > 0:
+            standings_diff = (away_stats.league_position - home_stats.league_position) / 20
+
+        # Score H2H
+        h2h_diff = 0
+        if enriched.h2h_matches > 0:
+            h2h_diff = (enriched.h2h_home_wins - enriched.h2h_away_wins) / enriched.h2h_matches
+
+        # Score de motivation
+        motivation_diff = self._get_motivation_diff(home_stats, away_stats)
+
+        # [PRO] Score des prédictions API
+        api_home_prob = 0.40
+        api_draw_prob = 0.25
+        api_away_prob = 0.35
+        api_advice = ""
+
+        if api_predictions:
+            # Parser les pourcentages (format "45%")
+            try:
+                api_home_prob = float(api_predictions.get('percent_home', '40%').replace('%', '')) / 100
+                api_draw_prob = float(api_predictions.get('percent_draw', '25%').replace('%', '')) / 100
+                api_away_prob = float(api_predictions.get('percent_away', '35%').replace('%', '')) / 100
+                api_advice = api_predictions.get('advice', '')
+            except (ValueError, AttributeError):
+                pass
+
+        # [PRO] Probabilités implicites des cotes
+        odds_home_prob = 0.40
+        odds_draw_prob = 0.25
+        odds_away_prob = 0.35
+
+        if odds_data and odds_data.get('match_winner', {}).get('home', 0) > 0:
+            home_odd = odds_data['match_winner']['home']
+            draw_odd = odds_data['match_winner']['draw']
+            away_odd = odds_data['match_winner']['away']
+
+            # Convertir cotes en probabilités (formule: 1/cote)
+            raw_home = 1 / home_odd if home_odd > 0 else 0.40
+            raw_draw = 1 / draw_odd if draw_odd > 0 else 0.25
+            raw_away = 1 / away_odd if away_odd > 0 else 0.35
+
+            # Normaliser (enlever la marge du bookmaker)
+            total = raw_home + raw_draw + raw_away
+            if total > 0:
+                odds_home_prob = raw_home / total
+                odds_draw_prob = raw_draw / total
+                odds_away_prob = raw_away / total
+
+        # Score global pondéré avec données PRO
+        # Combiner forme, standings, h2h, home advantage
+        base_score = (
+            form_diff * self.weights['form'] +
+            standings_diff * self.weights['standings'] +
+            h2h_diff * self.weights['h2h'] +
+            self.home_advantage * self.weights['home_adv'] +
+            motivation_diff * self.weights['motivation']
+        )
+
+        # Convertir le base_score en probabilités de base
+        base_home, base_draw, base_away = self._score_to_probs(base_score)
+
+        # [PRO] Fusionner avec les prédictions API et les cotes implicites
+        final_home_prob = (
+            base_home * 0.40 +
+            api_home_prob * self.weights['api_predictions'] +
+            odds_home_prob * self.weights['odds_implied'] +
+            base_home * 0.10  # Ajustement
+        )
+        final_draw_prob = (
+            base_draw * 0.40 +
+            api_draw_prob * self.weights['api_predictions'] +
+            odds_draw_prob * self.weights['odds_implied'] +
+            base_draw * 0.10
+        )
+        final_away_prob = (
+            base_away * 0.40 +
+            api_away_prob * self.weights['api_predictions'] +
+            odds_away_prob * self.weights['odds_implied'] +
+            base_away * 0.10
+        )
+
+        # Normaliser
+        total_prob = final_home_prob + final_draw_prob + final_away_prob
+        final_home_prob /= total_prob
+        final_draw_prob /= total_prob
+        final_away_prob /= total_prob
+
+        # [PRO] Analyse des buts avec stats de matchs réels
+        goals_analysis = self._analyze_goals_pro(
+            home_stats, away_stats, enriched,
+            api_predictions, odds_data,
+            home_fixture_stats, away_fixture_stats
+        )
+
+        # [PRO] Analyse des corners avec stats réelles
+        corners_analysis = self._analyze_corners_pro(
+            home_stats, away_stats,
+            home_fixture_stats, away_fixture_stats
+        )
+
+        return {
+            "weighted_score": base_score,
+            "home_prob": final_home_prob,
+            "draw_prob": final_draw_prob,
+            "away_prob": final_away_prob,
+            "form_diff": form_diff,
+            "standings_diff": standings_diff,
+            "h2h_diff": h2h_diff,
+            "motivation_diff": motivation_diff,
+            "api_advice": api_advice,
+            "api_probs": {"home": api_home_prob, "draw": api_draw_prob, "away": api_away_prob},
+            "odds_probs": {"home": odds_home_prob, "draw": odds_draw_prob, "away": odds_away_prob},
+            "odds_data": odds_data,
+            "goals": goals_analysis,
+            "corners": corners_analysis
+        }
+
+    def _analyze_goals_pro(self, home: TeamStats, away: TeamStats,
+                           enriched: MatchEnrichedData,
+                           api_predictions: Dict = None,
+                           odds_data: Dict = None,
+                           home_fixture_stats: Dict = None,
+                           away_fixture_stats: Dict = None) -> Dict:
+        """[PRO] Analyse des buts avec données API Pro"""
+
+        # Buts moyens par match
+        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.4
+        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.1
+        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.2
+        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.3
+
+        expected_home = (home_scored + away_conceded) / 2
+        expected_away = (away_scored + home_conceded) / 2
+        total_expected = expected_home + expected_away
+
+        # [PRO] Ajuster avec les prédictions API
+        if api_predictions:
+            api_goals_home = api_predictions.get('goals_home')
+            api_goals_away = api_predictions.get('goals_away')
+            if api_goals_home and api_goals_away:
+                try:
+                    api_home = float(api_goals_home.replace('-', '0'))
+                    api_away = float(api_goals_away.replace('-', '0'))
+                    # Moyenne pondérée avec les prédictions API
+                    expected_home = (expected_home * 0.6) + (api_home * 0.4)
+                    expected_away = (expected_away * 0.6) + (api_away * 0.4)
+                    total_expected = expected_home + expected_away
+                except (ValueError, AttributeError):
+                    pass
+
+        # Ajuster avec H2H
+        if enriched.h2h_avg_goals > 0:
+            total_expected = (total_expected * 0.7) + (enriched.h2h_avg_goals * 0.3)
+
+        # [PRO] Probabilités basées sur les cotes réelles
+        over_25_prob = self._calculate_over_prob(total_expected, 2.5)
+        if odds_data and odds_data.get('over_under_25', {}).get('over', 0) > 0:
+            odds_over = odds_data['over_under_25']['over']
+            odds_under = odds_data['over_under_25']['under']
+            # Probabilité implicite des cotes
+            odds_over_prob = (1 / odds_over) / ((1 / odds_over) + (1 / odds_under)) if odds_over > 0 and odds_under > 0 else 0.50
+            # Moyenne pondérée
+            over_25_prob = (over_25_prob * 0.5) + (odds_over_prob * 0.5)
+
+        over_15_prob = self._calculate_over_prob(total_expected, 1.5)
+        over_35_prob = self._calculate_over_prob(total_expected, 3.5)
+
+        # [PRO] BTTS avec cotes réelles
+        btts_prob = self._calculate_btts_prob(home, away, enriched)
+        if odds_data and odds_data.get('btts', {}).get('yes', 0) > 0:
+            odds_btts_yes = odds_data['btts']['yes']
+            odds_btts_no = odds_data['btts']['no']
+            odds_btts_prob = (1 / odds_btts_yes) / ((1 / odds_btts_yes) + (1 / odds_btts_no)) if odds_btts_yes > 0 and odds_btts_no > 0 else 0.50
+            btts_prob = (btts_prob * 0.5) + (odds_btts_prob * 0.5)
+
+        return {
+            "expected_home": expected_home,
+            "expected_away": expected_away,
+            "total_expected": total_expected,
+            "over_15_prob": over_15_prob,
+            "over_25_prob": over_25_prob,
+            "over_35_prob": over_35_prob,
+            "btts_prob": btts_prob
+        }
+
+    def _analyze_corners_pro(self, home: TeamStats, away: TeamStats,
+                              home_fixture_stats: Dict = None,
+                              away_fixture_stats: Dict = None) -> Dict:
+        """[PRO] Analyse des corners avec stats de matchs réels"""
+
+        # Utiliser les stats des derniers matchs si disponibles
+        home_corners = 5.0
+        away_corners = 4.5
+
+        if home_fixture_stats and home_fixture_stats.get('avg_corners', 0) > 0:
+            home_corners = home_fixture_stats['avg_corners']
+        elif home.avg_corners > 0:
+            home_corners = home.avg_corners
+
+        if away_fixture_stats and away_fixture_stats.get('avg_corners', 0) > 0:
+            away_corners = away_fixture_stats['avg_corners']
+        elif away.avg_corners > 0:
+            away_corners = away.avg_corners
+
+        total_corners = home_corners + away_corners
+
+        # Calcul des probabilités basé sur la distribution de Poisson simplifiée
+        over_75_prob = 0.70 if total_corners >= 10.0 else (0.60 if total_corners >= 9.0 else (0.50 if total_corners >= 8.0 else 0.40))
+        over_85_prob = 0.60 if total_corners >= 11.0 else (0.50 if total_corners >= 10.0 else (0.40 if total_corners >= 9.0 else 0.30))
+        over_95_prob = 0.50 if total_corners >= 12.0 else (0.40 if total_corners >= 11.0 else (0.30 if total_corners >= 10.0 else 0.22))
+        over_105_prob = 0.40 if total_corners >= 13.0 else (0.30 if total_corners >= 12.0 else 0.20)
+
+        return {
+            "home_avg": home_corners,
+            "away_avg": away_corners,
+            "expected": total_corners,
+            "over_75_prob": over_75_prob,
+            "over_85_prob": over_85_prob,
+            "over_95_prob": over_95_prob,
+            "over_105_prob": over_105_prob
+        }
+
+    def _analyze_halftime_pro(self, enriched: 'MatchEnrichedData', analysis: Dict,
+                               halftime_odds: Dict = None, api_predictions: Dict = None) -> Dict:
+        """[PRO] Analyse des mi-temps avec cotes et prédictions"""
+
+        # Estimation des buts en 1ère mi-temps (généralement ~40% des buts)
+        total_expected = analysis['goals']['total_expected']
+        ht_expected_goals = total_expected * 0.42  # 42% des buts en MT1
+
+        # Estimation 2ème mi-temps
+        h2_expected_goals = total_expected * 0.58  # 58% des buts en MT2
+
+        # Probabilités 1X2 mi-temps basées sur les probabilités finales
+        home_prob = analysis['home_prob']
+        away_prob = analysis['away_prob']
+        draw_prob = analysis['draw_prob']
+
+        # En mi-temps, plus de matchs nuls (moins de temps pour marquer)
+        ht_draw_prob = min(0.50, draw_prob * 1.4)
+        ht_home_prob = home_prob * 0.75
+        ht_away_prob = away_prob * 0.70
+
+        # Normaliser
+        total = ht_home_prob + ht_draw_prob + ht_away_prob
+        ht_home_prob /= total
+        ht_draw_prob /= total
+        ht_away_prob /= total
+
+        # [PRO] Ajuster avec les cotes si disponibles
+        if halftime_odds and halftime_odds.get('ht_1x2', {}).get('home', 0) > 0:
+            ht_odds = halftime_odds['ht_1x2']
+            # Probabilités implicites
+            raw_home = 1 / ht_odds['home'] if ht_odds['home'] > 0 else ht_home_prob
+            raw_draw = 1 / ht_odds['draw'] if ht_odds['draw'] > 0 else ht_draw_prob
+            raw_away = 1 / ht_odds['away'] if ht_odds['away'] > 0 else ht_away_prob
+            total = raw_home + raw_draw + raw_away
+            if total > 0:
+                # Moyenne pondérée avec les cotes
+                ht_home_prob = (ht_home_prob * 0.5) + ((raw_home / total) * 0.5)
+                ht_draw_prob = (ht_draw_prob * 0.5) + ((raw_draw / total) * 0.5)
+                ht_away_prob = (ht_away_prob * 0.5) + ((raw_away / total) * 0.5)
+
+        # Probabilités Over/Under mi-temps
+        ht_over_05_prob = self._calculate_over_prob(ht_expected_goals, 0.5)
+        ht_over_15_prob = self._calculate_over_prob(ht_expected_goals, 1.5)
+
+        # BTTS mi-temps (plus rare)
+        btts_prob = analysis['goals']['btts_prob']
+        ht_btts_prob = btts_prob * 0.35  # Beaucoup plus rare en MT
+
+        # Score exact mi-temps le plus probable
+        if ht_draw_prob > max(ht_home_prob, ht_away_prob):
+            if ht_expected_goals >= 1.2:
+                ht_score_exact = "1-1"
+            else:
+                ht_score_exact = "0-0"
+        elif ht_home_prob > ht_away_prob:
+            ht_score_exact = "1-0"
+        else:
+            ht_score_exact = "0-1"
+
+        # HT/FT predictions
+        ht_ft_predictions = self._calculate_ht_ft_probs(
+            ht_home_prob, ht_draw_prob, ht_away_prob,
+            home_prob, draw_prob, away_prob
+        )
+
+        return {
+            "ht_expected_goals": ht_expected_goals,
+            "h2_expected_goals": h2_expected_goals,
+            "ht_home_prob": ht_home_prob,
+            "ht_draw_prob": ht_draw_prob,
+            "ht_away_prob": ht_away_prob,
+            "ht_over_05_prob": ht_over_05_prob,
+            "ht_over_15_prob": ht_over_15_prob,
+            "ht_btts_prob": ht_btts_prob,
+            "ht_score_exact": ht_score_exact,
+            "h2_over_05_prob": self._calculate_over_prob(h2_expected_goals, 0.5),
+            "h2_over_15_prob": self._calculate_over_prob(h2_expected_goals, 1.5),
+            "ht_ft": ht_ft_predictions
+        }
+
+    def _calculate_ht_ft_probs(self, ht_home: float, ht_draw: float, ht_away: float,
+                                ft_home: float, ft_draw: float, ft_away: float) -> Dict:
+        """Calcule les probabilités HT/FT"""
+        probs = {
+            "1/1": ht_home * ft_home * 1.2,  # Plus probable si mène à la MT
+            "1/X": ht_home * ft_draw * 0.6,  # Moins probable
+            "1/2": ht_home * ft_away * 0.3,  # Comeback rare
+            "X/1": ht_draw * ft_home * 0.9,
+            "X/X": ht_draw * ft_draw * 1.3,
+            "X/2": ht_draw * ft_away * 0.9,
+            "2/1": ht_away * ft_home * 0.3,  # Comeback rare
+            "2/X": ht_away * ft_draw * 0.6,
+            "2/2": ht_away * ft_away * 1.2,
+        }
+
+        # Normaliser
+        total = sum(probs.values())
+        for k in probs:
+            probs[k] = probs[k] / total
+
+        # Trier par probabilité
+        sorted_probs = sorted(probs.items(), key=lambda x: x[1], reverse=True)
+        best_ht_ft = sorted_probs[0][0]
+        best_prob = sorted_probs[0][1]
+
+        return {
+            "best": best_ht_ft,
+            "best_prob": best_prob,
+            "all_probs": dict(sorted_probs[:5])  # Top 5
+        }
+
+    def _analyze_cards_pro(self, home_cards_stats: Dict = None, away_cards_stats: Dict = None,
+                           referee_stats: Dict = None, league_id: int = None) -> Dict:
+        """[PRO] Analyse des cartons avec stats d'équipes et arbitre"""
+
+        # Valeurs par défaut
+        home_avg_yellow = 1.5
+        away_avg_yellow = 1.5
+        home_avg_red = 0.1
+        away_avg_red = 0.1
+
+        if home_cards_stats:
+            home_avg_yellow = home_cards_stats.get('avg_yellow_per_match', 1.5)
+            home_avg_red = home_cards_stats.get('avg_red_per_match', 0.1)
+        if away_cards_stats:
+            away_avg_yellow = away_cards_stats.get('avg_yellow_per_match', 1.5)
+            away_avg_red = away_cards_stats.get('avg_red_per_match', 0.1)
+
+        total_yellow_expected = home_avg_yellow + away_avg_yellow
+        total_red_expected = home_avg_red + away_avg_red
+        total_cards_expected = total_yellow_expected + total_red_expected
+
+        # Ajuster selon l'arbitre
+        referee_multiplier = 1.0
+        referee_name = ""
+        referee_strictness = "MOYEN"
+
+        if referee_stats:
+            referee_name = referee_stats.get('name', '')
+            referee_strictness = referee_stats.get('strictness', 'MOYEN')
+            if referee_strictness == 'STRICT':
+                referee_multiplier = 1.25
+            elif referee_strictness == 'FAIBLE':
+                referee_multiplier = 0.80
+
+        total_yellow_expected *= referee_multiplier
+        total_cards_expected *= referee_multiplier
+
+        # Ajuster selon la ligue (certaines ligues sont plus physiques)
+        physical_leagues = [39, 40, 140]  # Premier League, Championship, La Liga
+        if league_id in physical_leagues:
+            total_yellow_expected *= 1.1
+
+        # Probabilités
+        cards_over_25_prob = self._calculate_cards_over_prob(total_yellow_expected, 2.5)
+        cards_over_35_prob = self._calculate_cards_over_prob(total_yellow_expected, 3.5)
+        cards_over_45_prob = self._calculate_cards_over_prob(total_yellow_expected, 4.5)
+        cards_over_55_prob = self._calculate_cards_over_prob(total_yellow_expected, 5.5)
+
+        # Probabilité carton rouge
+        red_card_prob = min(0.40, total_red_expected * 2.5)
+
+        # Recommandation
+        if total_yellow_expected >= 5.0:
+            recommendation = f"Cartons +4.5 ({cards_over_45_prob:.0%})"
+        elif total_yellow_expected >= 4.0:
+            recommendation = f"Cartons +3.5 ({cards_over_35_prob:.0%})"
+        else:
+            recommendation = f"Cartons +2.5 ({cards_over_25_prob:.0%})"
+
+        return {
+            "home_avg_yellow": home_avg_yellow,
+            "away_avg_yellow": away_avg_yellow,
+            "expected_yellow": total_yellow_expected,
+            "expected_total": total_cards_expected,
+            "cards_over_25_prob": cards_over_25_prob,
+            "cards_over_35_prob": cards_over_35_prob,
+            "cards_over_45_prob": cards_over_45_prob,
+            "cards_over_55_prob": cards_over_55_prob,
+            "red_card_prob": red_card_prob,
+            "recommendation": recommendation,
+            "referee_name": referee_name,
+            "referee_strictness": referee_strictness
+        }
+
+    def _calculate_cards_over_prob(self, expected: float, threshold: float) -> float:
+        """Calcule la probabilité de plus de X cartons"""
+        diff = expected - threshold
+        prob = 0.50 + (diff * 0.15)
+        return max(0.20, min(0.85, prob))
+
+    def _generate_match_description(self, home_team: str, away_team: str,
+                                     enriched: 'MatchEnrichedData', analysis: Dict) -> Tuple[str, str]:
+        """Génère une description détaillée du match"""
+
+        home_stats = enriched.home_stats
+        away_stats = enriched.away_stats
+
+        # Déterminer l'importance
+        importance = "NORMAL"
+        importance_reasons = []
+
+        if home_stats.motivation in ['title', 'relegation'] or away_stats.motivation in ['title', 'relegation']:
+            importance = "CRUCIAL"
+            if home_stats.motivation == 'title' or away_stats.motivation == 'title':
+                importance_reasons.append("course au titre")
+            if home_stats.motivation == 'relegation' or away_stats.motivation == 'relegation':
+                importance_reasons.append("lutte pour le maintien")
+        elif home_stats.motivation in ['champions_league', 'europa'] or away_stats.motivation in ['champions_league', 'europa']:
+            importance = "IMPORTANT"
+            importance_reasons.append("qualification européenne en jeu")
+
+        # Construire la description
+        parts = []
+
+        # Forme
+        home_form_score = self._form_to_score(home_stats.form)
+        away_form_score = self._form_to_score(away_stats.form)
+
+        if home_form_score >= 80:
+            parts.append(f"{home_team} en excellente forme ({home_stats.form})")
+        elif home_form_score <= 30:
+            parts.append(f"{home_team} en difficulté ({home_stats.form})")
+
+        if away_form_score >= 80:
+            parts.append(f"{away_team} en pleine confiance ({away_stats.form})")
+        elif away_form_score <= 30:
+            parts.append(f"{away_team} en crise ({away_stats.form})")
+
+        # Classement
+        if home_stats.league_position > 0 and away_stats.league_position > 0:
+            pos_diff = abs(home_stats.league_position - away_stats.league_position)
+            if pos_diff >= 10:
+                if home_stats.league_position < away_stats.league_position:
+                    parts.append(f"écart au classement: {home_team} ({home_stats.league_position}e) vs {away_team} ({away_stats.league_position}e)")
+                else:
+                    parts.append(f"écart au classement: {away_team} ({away_stats.league_position}e) vs {home_team} ({home_stats.league_position}e)")
+
+        # H2H
+        if enriched.h2h_matches >= 3:
+            if enriched.h2h_home_wins > enriched.h2h_away_wins + 2:
+                parts.append(f"H2H favorable à {home_team} ({enriched.h2h_home_wins}V-{enriched.h2h_draws}N-{enriched.h2h_away_wins}D)")
+            elif enriched.h2h_away_wins > enriched.h2h_home_wins + 2:
+                parts.append(f"H2H favorable à {away_team} ({enriched.h2h_away_wins}V-{enriched.h2h_draws}N-{enriched.h2h_home_wins}D)")
+
+        # Tendance buts
+        goals_expected = analysis['goals']['total_expected']
+        if goals_expected >= 3.5:
+            parts.append(f"match à buts attendu ({goals_expected:.1f} buts prévus)")
+        elif goals_expected <= 2.0:
+            parts.append(f"match potentiellement fermé ({goals_expected:.1f} buts prévus)")
+
+        description = ". ".join(parts) if parts else f"Match équilibré entre {home_team} et {away_team}"
+
+        if importance_reasons:
+            description += f". Enjeu: {', '.join(importance_reasons)}"
+
+        return description, importance
 
     def _form_to_score(self, form: str) -> float:
         """Convertit la forme en score (0-100)"""
@@ -283,13 +915,10 @@ class EnhancedMatchAnalyzer:
         return max(0.30, min(0.80, base_prob))
 
     def _analyze_corners(self, home: TeamStats, away: TeamStats) -> Dict:
-        """Analyse des corners"""
-        # Récupérer les moyennes de corners si disponibles
-        home_data = self.enricher._get_known_team_data(home.name, "")
-        away_data = self.enricher._get_known_team_data(away.name, "")
-
-        home_corners = home_data.get('avg_corners', 5.0)
-        away_corners = away_data.get('avg_corners', 4.5)
+        """Analyse des corners basée sur les stats dynamiques"""
+        # Utiliser les moyennes de corners des stats d'équipe
+        home_corners = home.avg_corners if home.avg_corners > 0 else 5.0
+        away_corners = away.avg_corners if away.avg_corners > 0 else 4.5
 
         total_corners = home_corners + away_corners
 
@@ -487,6 +1116,290 @@ class EnhancedMatchAnalyzer:
             btts_prob=btts_prob_final,
             dc_btts=dc_btts,
             ht_ft=ht_ft,
+            confidence=confidence,
+            reasoning=reasoning
+        )
+
+    def _generate_prediction_pro(self, home_team: str, away_team: str,
+                                  league: str, match_date: str,
+                                  enriched: MatchEnrichedData,
+                                  analysis: Dict,
+                                  referee_stats: Dict = None) -> EnhancedPrediction:
+        """[PRO] Génère la prédiction enrichie avec tous les marchés"""
+
+        home_prob = analysis["home_prob"]
+        draw_prob = analysis["draw_prob"]
+        away_prob = analysis["away_prob"]
+        goals = analysis["goals"]
+        corners = analysis["corners"]
+        halftime = analysis.get("halftime", {})
+        cards = analysis.get("cards", {})
+
+        # ========== Description du match ==========
+        match_description, match_importance = self._generate_match_description(
+            home_team, away_team, enriched, analysis
+        )
+
+        # ========== 1X2 Match complet ==========
+        if home_prob >= 0.50:
+            result_1x2 = f"1 ({home_team})"
+        elif away_prob >= 0.45:
+            result_1x2 = f"2 ({away_team})"
+        elif draw_prob >= 0.30:
+            result_1x2 = "X (Nul)"
+        else:
+            result_1x2 = f"1 ({home_team})" if home_prob > away_prob else f"2 ({away_team})"
+
+        # ========== Over/Under ==========
+        if goals["over_25_prob"] >= 0.55:
+            over_under = "Over 2.5"
+        elif goals["over_25_prob"] <= 0.40:
+            over_under = "Under 2.5"
+        elif goals["over_15_prob"] >= 0.75:
+            over_under = "Over 1.5"
+        else:
+            over_under = "Under 2.5"
+
+        # ========== Team +1.5 ==========
+        team_plus_15 = f"{home_team} +1.5 buts" if home_prob > away_prob else f"{away_team} +1.5 buts"
+
+        # ========== Score exact ==========
+        total_exp = goals["total_expected"]
+        if home_prob >= 0.55:
+            score_exact = "3-1" if total_exp >= 3.0 else ("2-0" if total_exp >= 2.5 else "2-1")
+            score_prob = 0.11
+        elif away_prob >= 0.50:
+            score_exact = "1-3" if total_exp >= 3.0 else ("0-2" if total_exp >= 2.5 else "1-2")
+            score_prob = 0.10
+        elif home_prob > away_prob + 0.08:
+            score_exact = "2-1"
+            score_prob = 0.10
+        elif away_prob > home_prob + 0.05:
+            score_exact = "1-2"
+            score_prob = 0.09
+        elif total_exp >= 2.8:
+            score_exact = "2-2"
+            score_prob = 0.08
+        elif total_exp <= 2.0:
+            score_exact = "1-0" if home_prob > away_prob else "0-1"
+            score_prob = 0.10
+        else:
+            score_exact = "1-1"
+            score_prob = 0.11
+
+        # ========== BTTS ==========
+        score_parts = score_exact.split("-")
+        home_goals = int(score_parts[0])
+        away_goals = int(score_parts[1])
+
+        if home_goals > 0 and away_goals > 0:
+            btts = "Oui"
+            btts_prob_final = max(goals["btts_prob"], 0.55)
+        elif goals["btts_prob"] >= 0.55:
+            btts = "Oui"
+            btts_prob_final = goals["btts_prob"]
+        else:
+            btts = "Non"
+            btts_prob_final = goals["btts_prob"]
+
+        # ========== Clean Sheet ==========
+        if btts == "Non" and home_goals > 0 and away_goals == 0:
+            clean_sheet = f"{home_team} gagne à 0"
+            clean_sheet_prob = home_prob * 0.6
+        elif btts == "Non" and away_goals > 0 and home_goals == 0:
+            clean_sheet = f"{away_team} gagne à 0"
+            clean_sheet_prob = away_prob * 0.5
+        else:
+            clean_sheet = "Non recommandé"
+            clean_sheet_prob = 0.0
+
+        # ========== Double Chance + BTTS ==========
+        dc_btts = "1X + BTTS Oui" if home_prob > away_prob else "X2 + BTTS Oui"
+
+        # ========== MI-TEMPS (1ère période) ==========
+        ht_home_prob = halftime.get('ht_home_prob', 0.30)
+        ht_draw_prob = halftime.get('ht_draw_prob', 0.40)
+        ht_away_prob = halftime.get('ht_away_prob', 0.30)
+
+        if ht_draw_prob >= max(ht_home_prob, ht_away_prob):
+            ht_result = "X (Nul MT)"
+        elif ht_home_prob > ht_away_prob:
+            ht_result = f"1 ({home_team} MT)"
+        else:
+            ht_result = f"2 ({away_team} MT)"
+
+        ht_over_05_prob = halftime.get('ht_over_05_prob', 0.55)
+        ht_over_05 = "Oui" if ht_over_05_prob >= 0.55 else "Non"
+
+        ht_over_15_prob = halftime.get('ht_over_15_prob', 0.25)
+        ht_over_15 = "Oui" if ht_over_15_prob >= 0.40 else "Non"
+
+        ht_btts_prob = halftime.get('ht_btts_prob', 0.20)
+        ht_btts = "Oui" if ht_btts_prob >= 0.35 else "Non"
+
+        ht_expected_goals = halftime.get('ht_expected_goals', total_exp * 0.42)
+        ht_score_exact = halftime.get('ht_score_exact', "0-0")
+
+        # ========== 2ème MI-TEMPS ==========
+        h2_expected_goals = halftime.get('h2_expected_goals', total_exp * 0.58)
+        h2_over_05_prob = halftime.get('h2_over_05_prob', 0.70)
+        h2_over_05 = "Oui" if h2_over_05_prob >= 0.60 else "Non"
+
+        h2_over_15_prob = halftime.get('h2_over_15_prob', 0.35)
+        h2_over_15 = "Oui" if h2_over_15_prob >= 0.45 else "Non"
+
+        # ========== HT/FT ==========
+        ht_ft_data = halftime.get('ht_ft', {})
+        best_ht_ft = ht_ft_data.get('best', 'X/1')
+        ht_ft_prob = ht_ft_data.get('best_prob', 0.20)
+        ht_ft_alternatives = list(ht_ft_data.get('all_probs', {}).keys())[:3]
+
+        # Formater HT/FT
+        ht_ft_map = {
+            "1/1": f"1/1 ({home_team}/{home_team})",
+            "1/X": f"1/X ({home_team}/Nul)",
+            "1/2": f"1/2 ({home_team}/{away_team})",
+            "X/1": f"X/1 (Nul/{home_team})",
+            "X/X": "X/X (Nul/Nul)",
+            "X/2": f"X/2 (Nul/{away_team})",
+            "2/1": f"2/1 ({away_team}/{home_team})",
+            "2/X": f"2/X ({away_team}/Nul)",
+            "2/2": f"2/2 ({away_team}/{away_team})",
+        }
+        ht_ft = ht_ft_map.get(best_ht_ft, best_ht_ft)
+
+        # ========== CORNERS ==========
+        expected_corners = corners.get("expected", 9.5)
+        corners_over_85_prob = corners.get("over_85_prob", 0.50)
+        corners_over_95_prob = corners.get("over_95_prob", 0.35)
+        corners_over_105_prob = corners.get("over_105_prob", 0.25)
+
+        if expected_corners >= 11.5:
+            corners_pred = "+10.5"
+            corners_recommendation = f"Corners +10.5 ({corners_over_105_prob:.0%})"
+        elif expected_corners >= 10.5:
+            corners_pred = "+9.5"
+            corners_recommendation = f"Corners +9.5 ({corners_over_95_prob:.0%})"
+        elif expected_corners >= 9.5:
+            corners_pred = "+8.5"
+            corners_recommendation = f"Corners +8.5 ({corners_over_85_prob:.0%})"
+        else:
+            corners_pred = "+7.5"
+            corners_recommendation = f"Corners +7.5 ({corners.get('over_75_prob', 0.55):.0%})"
+
+        # ========== CARTONS ==========
+        expected_yellow = cards.get('expected_yellow', 3.0)
+        expected_total_cards = cards.get('expected_total', 3.2)
+        cards_over_35_prob = cards.get('cards_over_35_prob', 0.50)
+        cards_over_45_prob = cards.get('cards_over_45_prob', 0.35)
+        cards_over_55_prob = cards.get('cards_over_55_prob', 0.25)
+        red_card_prob = cards.get('red_card_prob', 0.15)
+        cards_recommendation = cards.get('recommendation', "Cartons +3.5")
+        referee_name = cards.get('referee_name', '')
+        referee_strictness = cards.get('referee_strictness', 'MOYEN')
+
+        # ========== Confiance ==========
+        max_prob = max(home_prob, draw_prob, away_prob)
+        if max_prob >= 0.55:
+            confidence = CONFIDENCE_HIGH
+        elif max_prob >= 0.42:
+            confidence = CONFIDENCE_MEDIUM
+        else:
+            confidence = CONFIDENCE_LOW
+
+        # ========== Raisonnement ==========
+        reasoning = []
+        home_stats = enriched.home_stats
+        away_stats = enriched.away_stats
+
+        if home_stats.form:
+            reasoning.append(f"Forme {home_team}: {home_stats.form}")
+        if away_stats.form:
+            reasoning.append(f"Forme {away_team}: {away_stats.form}")
+        if home_stats.league_position > 0:
+            reasoning.append(f"Classement: {home_team} {home_stats.league_position}e vs {away_team} {away_stats.league_position}e")
+        if enriched.h2h_matches > 0:
+            reasoning.append(f"H2H: {enriched.h2h_home_wins}V-{enriched.h2h_draws}N-{enriched.h2h_away_wins}D")
+        if home_stats.injuries:
+            reasoning.append(f"Blessures {home_team}: {', '.join(home_stats.injuries[:2])}")
+        if away_stats.injuries:
+            reasoning.append(f"Blessures {away_team}: {', '.join(away_stats.injuries[:2])}")
+        if home_stats.motivation != "normal":
+            reasoning.append(f"{home_team}: enjeu {home_stats.motivation}")
+        if referee_name:
+            reasoning.append(f"Arbitre: {referee_name} ({referee_strictness})")
+
+        return EnhancedPrediction(
+            match_name=f"{home_team} vs {away_team}",
+            league=league,
+            date=match_date,
+            # Description
+            match_description=match_description,
+            match_importance=match_importance,
+            # 1X2
+            result_1x2=result_1x2,
+            home_prob=home_prob,
+            draw_prob=draw_prob,
+            away_prob=away_prob,
+            # Buts
+            over_under=over_under,
+            over_25_prob=goals["over_25_prob"],
+            over_15_prob=goals["over_15_prob"],
+            over_35_prob=goals["over_35_prob"],
+            total_expected_goals=goals["total_expected"],
+            # BTTS
+            btts=btts,
+            btts_prob=btts_prob_final,
+            # Score exact
+            team_plus_15=team_plus_15,
+            score_exact=score_exact,
+            score_prob=score_prob,
+            clean_sheet=clean_sheet,
+            clean_sheet_prob=clean_sheet_prob,
+            dc_btts=dc_btts,
+            # Mi-temps
+            ht_result=ht_result,
+            ht_home_prob=ht_home_prob,
+            ht_draw_prob=ht_draw_prob,
+            ht_away_prob=ht_away_prob,
+            ht_over_05=ht_over_05,
+            ht_over_05_prob=ht_over_05_prob,
+            ht_over_15=ht_over_15,
+            ht_over_15_prob=ht_over_15_prob,
+            ht_btts=ht_btts,
+            ht_btts_prob=ht_btts_prob,
+            ht_expected_goals=ht_expected_goals,
+            ht_score_exact=ht_score_exact,
+            # 2ème mi-temps
+            h2_over_05=h2_over_05,
+            h2_over_05_prob=h2_over_05_prob,
+            h2_over_15=h2_over_15,
+            h2_over_15_prob=h2_over_15_prob,
+            h2_expected_goals=h2_expected_goals,
+            # HT/FT
+            ht_ft=ht_ft,
+            ht_ft_prob=ht_ft_prob,
+            ht_ft_alternatives=ht_ft_alternatives,
+            # Corners
+            corners=corners_pred,
+            expected_corners=expected_corners,
+            corners_over_85_prob=corners_over_85_prob,
+            corners_over_95_prob=corners_over_95_prob,
+            corners_over_105_prob=corners_over_105_prob,
+            home_corners_avg=corners.get("home_avg", 5.0),
+            away_corners_avg=corners.get("away_avg", 4.5),
+            corners_recommendation=corners_recommendation,
+            # Cartons
+            expected_yellow_cards=expected_yellow,
+            expected_total_cards=expected_total_cards,
+            cards_over_35_prob=cards_over_35_prob,
+            cards_over_45_prob=cards_over_45_prob,
+            cards_over_55_prob=cards_over_55_prob,
+            red_card_prob=red_card_prob,
+            cards_recommendation=cards_recommendation,
+            referee_name=referee_name,
+            referee_strictness=referee_strictness,
+            # Confiance
             confidence=confidence,
             reasoning=reasoning
         )
