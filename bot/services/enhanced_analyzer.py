@@ -430,17 +430,22 @@ class EnhancedMatchAnalyzer:
                            odds_data: Dict = None,
                            home_fixture_stats: Dict = None,
                            away_fixture_stats: Dict = None) -> Dict:
-        """[PRO] Analyse des buts avec données API Pro"""
+        """[PRO] Analyse des buts avec données API Pro - VERSION CONSERVATIVE"""
 
-        # Buts moyens par match
-        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.4
-        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.1
-        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.2
-        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.3
+        # Buts moyens par match - VALEURS PAR DÉFAUT RÉDUITES
+        # La moyenne en football est ~2.5 buts/match, pas 3.5+
+        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.2
+        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.0
+        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.0
+        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.2
 
-        expected_home = (home_scored + away_conceded) / 2
-        expected_away = (away_scored + home_conceded) / 2
+        # Calcul plus conservateur des buts attendus
+        expected_home = (home_scored * 0.6 + away_conceded * 0.4)  # Pondération attaque > défense adverse
+        expected_away = (away_scored * 0.6 + home_conceded * 0.4)
         total_expected = expected_home + expected_away
+
+        # Cap maximum pour éviter des xG irréalistes
+        total_expected = min(total_expected, 3.5)  # Max 3.5 xG au lieu de 4+
 
         # [PRO] Ajuster avec les prédictions API
         if api_predictions:
@@ -457,9 +462,12 @@ class EnhancedMatchAnalyzer:
                 except (ValueError, AttributeError):
                     pass
 
-        # Ajuster avec H2H
-        if enriched.h2h_avg_goals > 0:
+        # Ajuster avec H2H (seulement si données fiables)
+        if enriched.h2h_avg_goals > 0 and enriched.h2h_matches >= 3:
             total_expected = (total_expected * 0.7) + (enriched.h2h_avg_goals * 0.3)
+
+        # CAP FINAL: Maximum 3.5 xG pour éviter des prédictions irréalistes
+        total_expected = min(total_expected, 3.5)
 
         # [PRO] Probabilités basées sur les cotes réelles
         over_25_prob = self._calculate_over_prob(total_expected, 2.5)
@@ -495,29 +503,58 @@ class EnhancedMatchAnalyzer:
     def _analyze_corners_pro(self, home: TeamStats, away: TeamStats,
                               home_fixture_stats: Dict = None,
                               away_fixture_stats: Dict = None) -> Dict:
-        """[PRO] Analyse des corners avec stats de matchs réels"""
+        """[PRO] Analyse des corners avec stats de matchs réels + détection valeurs par défaut"""
 
-        # Utiliser les stats des derniers matchs si disponibles
+        # Flags pour détecter les données réelles vs par défaut
+        home_is_real = False
+        away_is_real = False
+
+        # Valeurs par défaut
         home_corners = 5.0
-        away_corners = 4.5
+        away_corners = 5.0
 
+        # Priorité 1: Stats des derniers matchs (API)
         if home_fixture_stats and home_fixture_stats.get('avg_corners', 0) > 0:
             home_corners = home_fixture_stats['avg_corners']
-        elif home.avg_corners > 0:
+            home_is_real = True
+        # Priorité 2: Stats d'équipe enrichies
+        elif home.avg_corners > 0 and home.avg_corners != 5.0:
             home_corners = home.avg_corners
+            home_is_real = True
 
         if away_fixture_stats and away_fixture_stats.get('avg_corners', 0) > 0:
             away_corners = away_fixture_stats['avg_corners']
-        elif away.avg_corners > 0:
+            away_is_real = True
+        elif away.avg_corners > 0 and away.avg_corners != 5.0:
             away_corners = away.avg_corners
+            away_is_real = True
 
         total_corners = home_corners + away_corners
 
-        # Calcul des probabilités basé sur la distribution de Poisson simplifiée
-        over_75_prob = 0.70 if total_corners >= 10.0 else (0.60 if total_corners >= 9.0 else (0.50 if total_corners >= 8.0 else 0.40))
-        over_85_prob = 0.60 if total_corners >= 11.0 else (0.50 if total_corners >= 10.0 else (0.40 if total_corners >= 9.0 else 0.30))
-        over_95_prob = 0.50 if total_corners >= 12.0 else (0.40 if total_corners >= 11.0 else (0.30 if total_corners >= 10.0 else 0.22))
-        over_105_prob = 0.40 if total_corners >= 13.0 else (0.30 if total_corners >= 12.0 else 0.20)
+        # Évaluer la fiabilité des données
+        if home_is_real and away_is_real:
+            data_quality = "FIABLE"
+            confidence_multiplier = 1.0
+        elif home_is_real or away_is_real:
+            data_quality = "PARTIEL"
+            confidence_multiplier = 0.8  # Réduire confiance de 20%
+        else:
+            data_quality = "DEFAUT"
+            confidence_multiplier = 0.5  # Réduire confiance de 50%
+            # Avec données par défaut, utiliser une estimation conservatrice
+            total_corners = 9.5  # Moyenne générale du football
+
+        # Calcul des probabilités (ajustées selon la fiabilité)
+        base_over_75 = 0.70 if total_corners >= 10.0 else (0.60 if total_corners >= 9.0 else (0.50 if total_corners >= 8.0 else 0.40))
+        base_over_85 = 0.60 if total_corners >= 11.0 else (0.50 if total_corners >= 10.0 else (0.40 if total_corners >= 9.0 else 0.30))
+        base_over_95 = 0.50 if total_corners >= 12.0 else (0.40 if total_corners >= 11.0 else (0.30 if total_corners >= 10.0 else 0.22))
+        base_over_105 = 0.40 if total_corners >= 13.0 else (0.30 if total_corners >= 12.0 else 0.20)
+
+        # Appliquer le multiplicateur de confiance
+        over_75_prob = base_over_75 * confidence_multiplier
+        over_85_prob = base_over_85 * confidence_multiplier
+        over_95_prob = base_over_95 * confidence_multiplier
+        over_105_prob = base_over_105 * confidence_multiplier
 
         return {
             "home_avg": home_corners,
@@ -526,7 +563,10 @@ class EnhancedMatchAnalyzer:
             "over_75_prob": over_75_prob,
             "over_85_prob": over_85_prob,
             "over_95_prob": over_95_prob,
-            "over_105_prob": over_105_prob
+            "over_105_prob": over_105_prob,
+            "data_quality": data_quality,
+            "home_is_real": home_is_real,
+            "away_is_real": away_is_real
         }
 
     def _analyze_halftime_pro(self, enriched: 'MatchEnrichedData', analysis: Dict,
@@ -643,7 +683,12 @@ class EnhancedMatchAnalyzer:
 
     def _analyze_cards_pro(self, home_cards_stats: Dict = None, away_cards_stats: Dict = None,
                            referee_stats: Dict = None, league_id: int = None) -> Dict:
-        """[PRO] Analyse des cartons avec stats d'équipes et arbitre"""
+        """[PRO] Analyse des cartons avec stats d'équipes et arbitre + détection valeurs par défaut"""
+
+        # Flags pour détecter les données réelles
+        home_is_real = False
+        away_is_real = False
+        referee_is_real = False
 
         # Valeurs par défaut
         home_avg_yellow = 1.5
@@ -651,12 +696,18 @@ class EnhancedMatchAnalyzer:
         home_avg_red = 0.1
         away_avg_red = 0.1
 
-        if home_cards_stats:
+        if home_cards_stats and home_cards_stats.get('avg_yellow_per_match', 0) > 0:
             home_avg_yellow = home_cards_stats.get('avg_yellow_per_match', 1.5)
             home_avg_red = home_cards_stats.get('avg_red_per_match', 0.1)
-        if away_cards_stats:
+            # Vérifier si ce n'est pas une valeur par défaut
+            if home_avg_yellow != 1.5:
+                home_is_real = True
+
+        if away_cards_stats and away_cards_stats.get('avg_yellow_per_match', 0) > 0:
             away_avg_yellow = away_cards_stats.get('avg_yellow_per_match', 1.5)
             away_avg_red = away_cards_stats.get('avg_red_per_match', 0.1)
+            if away_avg_yellow != 1.5:
+                away_is_real = True
 
         total_yellow_expected = home_avg_yellow + away_avg_yellow
         total_red_expected = home_avg_red + away_avg_red
@@ -667,9 +718,10 @@ class EnhancedMatchAnalyzer:
         referee_name = ""
         referee_strictness = "MOYEN"
 
-        if referee_stats:
+        if referee_stats and referee_stats.get('name'):
             referee_name = referee_stats.get('name', '')
             referee_strictness = referee_stats.get('strictness', 'MOYEN')
+            referee_is_real = True
             if referee_strictness == 'STRICT':
                 referee_multiplier = 1.25
             elif referee_strictness == 'FAIBLE':
@@ -679,26 +731,47 @@ class EnhancedMatchAnalyzer:
         total_cards_expected *= referee_multiplier
 
         # Ajuster selon la ligue (certaines ligues sont plus physiques)
-        physical_leagues = [39, 40, 140]  # Premier League, Championship, La Liga
+        physical_leagues = [39, 40, 140, 188]  # Premier League, Championship, La Liga, Ligue 1 Algérie
         if league_id in physical_leagues:
             total_yellow_expected *= 1.1
 
-        # Probabilités
-        cards_over_25_prob = self._calculate_cards_over_prob(total_yellow_expected, 2.5)
-        cards_over_35_prob = self._calculate_cards_over_prob(total_yellow_expected, 3.5)
-        cards_over_45_prob = self._calculate_cards_over_prob(total_yellow_expected, 4.5)
-        cards_over_55_prob = self._calculate_cards_over_prob(total_yellow_expected, 5.5)
+        # Évaluer la fiabilité des données
+        real_count = sum([home_is_real, away_is_real, referee_is_real])
+        if real_count >= 2:
+            data_quality = "FIABLE"
+            confidence_multiplier = 1.0
+        elif real_count == 1:
+            data_quality = "PARTIEL"
+            confidence_multiplier = 0.85
+        else:
+            data_quality = "DEFAUT"
+            confidence_multiplier = 0.6
+            # Avec données par défaut, utiliser moyenne conservatrice
+            total_yellow_expected = 3.5
+
+        # Probabilités (ajustées selon fiabilité)
+        base_over_25 = self._calculate_cards_over_prob(total_yellow_expected, 2.5)
+        base_over_35 = self._calculate_cards_over_prob(total_yellow_expected, 3.5)
+        base_over_45 = self._calculate_cards_over_prob(total_yellow_expected, 4.5)
+        base_over_55 = self._calculate_cards_over_prob(total_yellow_expected, 5.5)
+
+        cards_over_25_prob = base_over_25 * confidence_multiplier
+        cards_over_35_prob = base_over_35 * confidence_multiplier
+        cards_over_45_prob = base_over_45 * confidence_multiplier
+        cards_over_55_prob = base_over_55 * confidence_multiplier
 
         # Probabilité carton rouge
-        red_card_prob = min(0.40, total_red_expected * 2.5)
+        red_card_prob = min(0.40, total_red_expected * 2.5) * confidence_multiplier
 
-        # Recommandation
+        # Recommandation avec indicateur de fiabilité
+        quality_indicator = "✓" if data_quality == "FIABLE" else ("~" if data_quality == "PARTIEL" else "?")
+
         if total_yellow_expected >= 5.0:
-            recommendation = f"Cartons +4.5 ({cards_over_45_prob:.0%})"
+            recommendation = f"Cartons +4.5 ({cards_over_45_prob:.0%}) {quality_indicator}"
         elif total_yellow_expected >= 4.0:
-            recommendation = f"Cartons +3.5 ({cards_over_35_prob:.0%})"
+            recommendation = f"Cartons +3.5 ({cards_over_35_prob:.0%}) {quality_indicator}"
         else:
-            recommendation = f"Cartons +2.5 ({cards_over_25_prob:.0%})"
+            recommendation = f"Cartons +2.5 ({cards_over_25_prob:.0%}) {quality_indicator}"
 
         return {
             "home_avg_yellow": home_avg_yellow,
@@ -712,7 +785,11 @@ class EnhancedMatchAnalyzer:
             "red_card_prob": red_card_prob,
             "recommendation": recommendation,
             "referee_name": referee_name,
-            "referee_strictness": referee_strictness
+            "referee_strictness": referee_strictness,
+            "data_quality": data_quality,
+            "home_is_real": home_is_real,
+            "away_is_real": away_is_real,
+            "referee_is_real": referee_is_real
         }
 
     def _calculate_cards_over_prob(self, expected: float, threshold: float) -> float:
@@ -720,6 +797,50 @@ class EnhancedMatchAnalyzer:
         diff = expected - threshold
         prob = 0.50 + (diff * 0.15)
         return max(0.20, min(0.85, prob))
+
+    def _assess_data_quality(self, enriched: 'MatchEnrichedData') -> str:
+        """
+        Évalue la qualité des données disponibles.
+        Retourne: 'BON', 'MOYEN', ou 'INSUFFISANT'
+        """
+        score = 0
+        max_score = 6
+
+        home = enriched.home_stats
+        away = enriched.away_stats
+
+        # 1. Forme récente (2 points si disponible)
+        if home.form and len(home.form) >= 3:
+            score += 1
+        if away.form and len(away.form) >= 3:
+            score += 1
+
+        # 2. Position au classement (1 point si disponible)
+        if home.league_position > 0 and away.league_position > 0:
+            score += 1
+
+        # 3. H2H (1 point si au moins 3 matchs)
+        if enriched.h2h_matches >= 3:
+            score += 1
+
+        # 4. Stats de buts (1 point si disponibles)
+        if home.avg_goals_scored > 0 and away.avg_goals_scored > 0:
+            score += 1
+
+        # 5. Pas de valeurs par défaut (1 point)
+        # Si les corners sont exactement 5.0/5.0, ce sont probablement des valeurs par défaut
+        if not (home.avg_corners == 5.0 and away.avg_corners == 5.0 and
+                home.avg_corners == away.avg_corners):
+            score += 1
+
+        # Évaluation
+        ratio = score / max_score
+        if ratio >= 0.70:
+            return "BON"
+        elif ratio >= 0.40:
+            return "MOYEN"
+        else:
+            return "INSUFFISANT"
 
     def _generate_match_description(self, home_team: str, away_team: str,
                                      enriched: 'MatchEnrichedData', analysis: Dict) -> Tuple[str, str]:
@@ -848,28 +969,32 @@ class EnhancedMatchAnalyzer:
 
     def _analyze_goals_detailed(self, home: TeamStats, away: TeamStats,
                                 enriched: MatchEnrichedData) -> Dict:
-        """Analyse détaillée des buts"""
+        """Analyse détaillée des buts - VERSION CONSERVATIVE"""
 
-        # Buts moyens par match
-        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.4
-        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.1
-        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.2
-        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.3
+        # Buts moyens par match - VALEURS PAR DÉFAUT RÉDUITES
+        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.2
+        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.0
+        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.0
+        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.2
 
-        # Si pas de données, utiliser le classement
-        if home.league_position > 0:
-            home_scored = 1.8 - (home.league_position - 1) * 0.05
-            home_conceded = 0.8 + (home.league_position - 1) * 0.04
-        if away.league_position > 0:
-            away_scored = 1.5 - (away.league_position - 1) * 0.04
-            away_conceded = 1.0 + (away.league_position - 1) * 0.05
+        # Si pas de données, utiliser le classement (ajustement plus conservateur)
+        if home.avg_goals_scored == 0 and home.league_position > 0:
+            home_scored = 1.5 - (home.league_position - 1) * 0.04
+            home_conceded = 0.9 + (home.league_position - 1) * 0.03
+        if away.avg_goals_scored == 0 and away.league_position > 0:
+            away_scored = 1.3 - (away.league_position - 1) * 0.03
+            away_conceded = 1.0 + (away.league_position - 1) * 0.04
 
-        expected_home = (home_scored + away_conceded) / 2
-        expected_away = (away_scored + home_conceded) / 2
+        # Calcul conservateur
+        expected_home = (home_scored * 0.6 + away_conceded * 0.4)
+        expected_away = (away_scored * 0.6 + home_conceded * 0.4)
         total_expected = expected_home + expected_away
 
+        # Cap maximum
+        total_expected = min(total_expected, 3.5)
+
         # Ajuster avec H2H
-        if enriched.h2h_avg_goals > 0:
+        if enriched.h2h_avg_goals > 0 and enriched.h2h_matches >= 3:
             total_expected = (total_expected * 0.7) + (enriched.h2h_avg_goals * 0.3)
 
         # Probabilités
@@ -891,28 +1016,45 @@ class EnhancedMatchAnalyzer:
         }
 
     def _calculate_over_prob(self, expected: float, threshold: float) -> float:
-        """Calcule la probabilité d'over basée sur les buts attendus"""
+        """Calcule la probabilité d'over basée sur les buts attendus - VERSION CONSERVATIVE"""
         diff = expected - threshold
-        prob = 0.50 + (diff * 0.20)
-        return max(0.25, min(0.85, prob))
+
+        # Formule plus conservative: coefficient réduit
+        # Pour Over 2.5 avec xG de 2.5, la prob devrait être ~50%, pas 60%
+        prob = 0.48 + (diff * 0.18)
+
+        # Limites ajustées: max 80% (pas 85%)
+        return max(0.20, min(0.80, prob))
 
     def _calculate_btts_prob(self, home: TeamStats, away: TeamStats,
                              enriched: MatchEnrichedData) -> float:
-        """Calcule la probabilité BTTS"""
-        # Base sur le H2H
-        base_prob = enriched.h2h_btts_percentage / 100 if enriched.h2h_btts_percentage else 0.50
+        """Calcule la probabilité BTTS - VERSION CONSERVATIVE"""
+        # Base plus conservative si pas de données H2H
+        if enriched.h2h_btts_percentage and enriched.h2h_matches >= 3:
+            base_prob = enriched.h2h_btts_percentage / 100
+        else:
+            # Sans données H2H fiables, partir de 45% (sous le seuil)
+            base_prob = 0.45
 
-        # Ajuster selon les clean sheets
+        # Ajuster selon les clean sheets (plus d'impact)
         if home.clean_sheets > 3:
-            base_prob -= 0.10
+            base_prob -= 0.12
         if away.clean_sheets > 3:
-            base_prob -= 0.10
+            base_prob -= 0.12
         if home.failed_to_score > 3:
-            base_prob -= 0.08
+            base_prob -= 0.10
         if away.failed_to_score > 3:
-            base_prob -= 0.08
+            base_prob -= 0.10
 
-        return max(0.30, min(0.80, base_prob))
+        # Bonus si les deux équipes marquent régulièrement
+        if home.avg_goals_scored >= 1.5 and away.avg_goals_scored >= 1.2:
+            base_prob += 0.10
+
+        # Malus si une équipe défend bien
+        if home.avg_goals_conceded < 0.8 or away.avg_goals_conceded < 0.8:
+            base_prob -= 0.15
+
+        return max(0.25, min(0.75, base_prob))
 
     def _analyze_corners(self, home: TeamStats, away: TeamStats) -> Dict:
         """Analyse des corners basée sur les stats dynamiques"""
@@ -1020,21 +1162,22 @@ class EnhancedMatchAnalyzer:
             score_exact = "1-1"
             score_prob = 0.11
 
-        # BTTS - Cohérent avec le score exact
+        # BTTS - VERSION STRICTE (seuil 65%)
         score_parts = score_exact.split("-")
         home_goals = int(score_parts[0])
         away_goals = int(score_parts[1])
+        btts_prob_raw = goals["btts_prob"]
 
-        # Si le score prédit a les deux équipes qui marquent, BTTS = Oui
-        if home_goals > 0 and away_goals > 0:
+        # BTTS = Oui seulement si probabilité >= 65%
+        if btts_prob_raw >= 0.65:
             btts = "Oui"
-            btts_prob_final = max(goals["btts_prob"], 0.55)
-        elif goals["btts_prob"] >= 0.55:
+            btts_prob_final = btts_prob_raw
+        elif home_goals > 0 and away_goals > 0 and btts_prob_raw >= 0.55:
             btts = "Oui"
-            btts_prob_final = goals["btts_prob"]
+            btts_prob_final = btts_prob_raw
         else:
             btts = "Non"
-            btts_prob_final = goals["btts_prob"]
+            btts_prob_final = btts_prob_raw
 
         # Clean sheet - Cohérent avec BTTS et score
         if btts == "Non" and home_goals > 0 and away_goals == 0:
@@ -1065,11 +1208,15 @@ class EnhancedMatchAnalyzer:
         else:
             ht_ft = "X/X (Nul/Nul)"
 
-        # Confiance
+        # Confiance (SEUILS RELEVÉS)
         max_prob = max(home_prob, draw_prob, away_prob)
-        if max_prob >= 0.55:
+        data_quality = self._assess_data_quality(enriched)
+
+        if data_quality == "INSUFFISANT":
+            confidence = CONFIDENCE_LOW
+        elif max_prob >= 0.70:
             confidence = CONFIDENCE_HIGH
-        elif max_prob >= 0.42:
+        elif max_prob >= 0.55:
             confidence = CONFIDENCE_MEDIUM
         else:
             confidence = CONFIDENCE_LOW
@@ -1088,9 +1235,9 @@ class EnhancedMatchAnalyzer:
         if enriched.h2h_matches > 0:
             reasoning.append(f"H2H: {enriched.h2h_home_wins}V-{enriched.h2h_draws}N-{enriched.h2h_away_wins}D")
         if home_stats.injuries:
-            reasoning.append(f"Blessures {home_team}: {', '.join(home_stats.injuries)}")
+            reasoning.append(f"Blessures {home_team}: {', '.join(home_stats.injuries[:2])}")
         if away_stats.injuries:
-            reasoning.append(f"Blessures {away_team}: {', '.join(away_stats.injuries)}")
+            reasoning.append(f"Blessures {away_team}: {', '.join(away_stats.injuries[:2])}")
         if home_stats.motivation != "normal":
             reasoning.append(f"{home_team}: enjeu {home_stats.motivation}")
 
@@ -1218,16 +1365,20 @@ class EnhancedMatchAnalyzer:
         # ========== Team +1.5 ==========
         team_plus_15 = f"{home_team} +1.5 buts" if home_goals > away_goals else f"{away_team} +1.5 buts"
 
-        # ========== BTTS (utilise home_goals, away_goals déjà calculés) ==========
-        if home_goals > 0 and away_goals > 0:
+        # ========== BTTS (VERSION STRICTE - seuil relevé à 65%) ==========
+        btts_prob_raw = goals["btts_prob"]
+
+        # BTTS = Oui seulement si probabilité >= 65% (au lieu de 55%)
+        if btts_prob_raw >= 0.65:
             btts = "Oui"
-            btts_prob_final = max(goals["btts_prob"], 0.55)
-        elif goals["btts_prob"] >= 0.55:
+            btts_prob_final = btts_prob_raw
+        elif home_goals > 0 and away_goals > 0 and btts_prob_raw >= 0.55:
+            # Si le score prédit a BTTS mais prob entre 55-65%, on garde Oui avec warning
             btts = "Oui"
-            btts_prob_final = goals["btts_prob"]
+            btts_prob_final = btts_prob_raw
         else:
             btts = "Non"
-            btts_prob_final = goals["btts_prob"]
+            btts_prob_final = btts_prob_raw
 
         # ========== Clean Sheet ==========
         if btts == "Non" and home_goals > 0 and away_goals == 0:
@@ -1332,24 +1483,28 @@ class EnhancedMatchAnalyzer:
         }
         ht_ft = ht_ft_map.get(best_ht_ft, best_ht_ft)
 
-        # ========== CORNERS ==========
+        # ========== CORNERS (avec indicateur de fiabilité) ==========
         expected_corners = corners.get("expected", 9.5)
         corners_over_85_prob = corners.get("over_85_prob", 0.50)
         corners_over_95_prob = corners.get("over_95_prob", 0.35)
         corners_over_105_prob = corners.get("over_105_prob", 0.25)
+        corners_data_quality = corners.get("data_quality", "DEFAUT")
+
+        # Indicateur de fiabilité: ✓ = fiable, ~ = partiel, ? = par défaut
+        corners_quality_indicator = "✓" if corners_data_quality == "FIABLE" else ("~" if corners_data_quality == "PARTIEL" else "?")
 
         if expected_corners >= 11.5:
             corners_pred = "+10.5"
-            corners_recommendation = f"Corners +10.5 ({corners_over_105_prob:.0%})"
+            corners_recommendation = f"Corners +10.5 ({corners_over_105_prob:.0%}) {corners_quality_indicator}"
         elif expected_corners >= 10.5:
             corners_pred = "+9.5"
-            corners_recommendation = f"Corners +9.5 ({corners_over_95_prob:.0%})"
+            corners_recommendation = f"Corners +9.5 ({corners_over_95_prob:.0%}) {corners_quality_indicator}"
         elif expected_corners >= 9.5:
             corners_pred = "+8.5"
-            corners_recommendation = f"Corners +8.5 ({corners_over_85_prob:.0%})"
+            corners_recommendation = f"Corners +8.5 ({corners_over_85_prob:.0%}) {corners_quality_indicator}"
         else:
             corners_pred = "+7.5"
-            corners_recommendation = f"Corners +7.5 ({corners.get('over_75_prob', 0.55):.0%})"
+            corners_recommendation = f"Corners +7.5 ({corners.get('over_75_prob', 0.55):.0%}) {corners_quality_indicator}"
 
         # ========== CARTONS ==========
         expected_yellow = cards.get('expected_yellow', 3.0)
@@ -1362,13 +1517,23 @@ class EnhancedMatchAnalyzer:
         referee_name = cards.get('referee_name', '')
         referee_strictness = cards.get('referee_strictness', 'MOYEN')
 
-        # ========== Confiance ==========
+        # ========== Confiance (SEUILS RELEVÉS pour plus de précision) ==========
         max_prob = max(home_prob, draw_prob, away_prob)
-        if max_prob >= 0.55:
+
+        # Vérifier la qualité des données
+        data_quality = self._assess_data_quality(enriched)
+
+        if data_quality == "INSUFFISANT":
+            # Pas assez de données fiables → toujours FAIBLE
+            confidence = CONFIDENCE_LOW
+        elif max_prob >= 0.70:
+            # Très haute confiance (70%+)
             confidence = CONFIDENCE_HIGH
-        elif max_prob >= 0.42:
+        elif max_prob >= 0.55:
+            # Confiance moyenne (55-70%)
             confidence = CONFIDENCE_MEDIUM
         else:
+            # Faible confiance (<55%)
             confidence = CONFIDENCE_LOW
 
         # ========== Raisonnement ==========

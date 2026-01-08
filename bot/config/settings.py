@@ -5,12 +5,12 @@ import os
 from datetime import datetime
 
 # API Football Configuration
-FOOTBALL_API_KEY = "de648a1cb23cfb5ccf9df22231faa1d6"
+FOOTBALL_API_KEY = "111a3d8d8abb91aacf250df4ea6f5116"
 FOOTBALL_API_BASE_URL = "https://v3.football.api-sports.io"
 
 # Telegram Configuration
 TELEGRAM_BOT_TOKEN = "8208049358:AAGIcq-nGcqEqbGHrZ6T-uKsI_EjwZoYLSQ"
-TELEGRAM_CHAT_ID = "7205038378"
+TELEGRAM_CHAT_ID = "-1003472686083"  # Groupe @bel9lil
 
 # Scheduler Configuration
 EXECUTION_HOUR = 21  # 21h heure locale
