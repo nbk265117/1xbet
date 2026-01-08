@@ -107,7 +107,7 @@ class DynamicDataEnricher:
             'injuries': 3600 * 3,     # 3 heures
         }
         self.api_calls_count = 0
-        self.max_api_calls = 500  # Limite par session (Pro plan = 7500/jour)
+        self.max_api_calls = 2000  # Plan Pro = 7500/jour, 300/min - on peut en utiliser plus
 
         # Créer le dossier cache si nécessaire
         os.makedirs(CACHE_DIR, exist_ok=True)
@@ -159,16 +159,16 @@ class DynamicDataEnricher:
                 if data.get('errors'):
                     # Check for rate limit error
                     if 'rateLimit' in str(data.get('errors', {})):
-                        logger.warning("Rate limit hit, waiting 1 second...")
-                        time.sleep(1)
+                        logger.warning("Rate limit hit, waiting 0.3 second (Pro plan)...")
+                        time.sleep(0.3)  # Plan Pro = 300 req/min = 5 req/sec
                         return self._api_request(endpoint, params)  # Retry
                     logger.warning(f"API Error: {data['errors']}")
                     return None
                 return data.get('response', [])
             elif response.status_code == 429:
-                # Rate limit - wait and retry
-                logger.warning("Rate limit 429, waiting 2 seconds...")
-                time.sleep(2)
+                # Rate limit - wait and retry (Plan Pro = 300 req/min)
+                logger.warning("Rate limit 429, waiting 0.5 seconds (Pro plan)...")
+                time.sleep(0.5)
                 return self._api_request(endpoint, params)
             else:
                 logger.warning(f"API HTTP {response.status_code}: {endpoint}")

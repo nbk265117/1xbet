@@ -90,7 +90,7 @@ class PredictionScheduler:
             logger.info("Analyzing matches...")
             predictions = []
 
-            for match in matches[:20]:  # Limiter à 20 matchs
+            for match in matches[:50]:  # Plan Pro = jusqu'à 50 matchs
                 try:
                     pred = self.analyzer.analyze_match_full(
                         home_team=match.home_team.name,
