@@ -1287,53 +1287,52 @@ class EnhancedMatchAnalyzer:
             home_team, away_team, enriched, analysis
         )
 
-        # ========== Score exact (CALCULÉ EN PREMIER pour cohérence) ==========
+        # ========== Score exact (BASÉ SUR LA PROBABILITÉ MAXIMALE pour cohérence) ==========
         total_exp = goals["total_expected"]
 
-        # Déterminer le score exact basé sur les probabilités
-        if home_prob >= 0.55:
-            # Victoire domicile claire
-            if total_exp >= 3.5:
-                score_exact = "3-1"
-            elif total_exp >= 2.8:
-                score_exact = "2-0"
+        # D'abord déterminer le résultat le plus probable (1X2)
+        max_prob = max(home_prob, draw_prob, away_prob)
+
+        if max_prob == home_prob:
+            # Victoire domicile la plus probable
+            if home_prob >= 0.55:
+                # Victoire claire
+                if total_exp >= 3.0:
+                    score_exact = "3-1"
+                else:
+                    score_exact = "2-0"
             else:
-                score_exact = "2-1"
-            score_prob = 0.11
-        elif away_prob >= 0.50:
-            # Victoire extérieur claire
-            if total_exp >= 3.5:
-                score_exact = "1-3"
-            elif total_exp >= 2.8:
-                score_exact = "0-2"
+                # Victoire serrée
+                if total_exp >= 2.5:
+                    score_exact = "2-1"
+                else:
+                    score_exact = "1-0"
+            score_prob = 0.10
+
+        elif max_prob == away_prob:
+            # Victoire extérieur la plus probable
+            if away_prob >= 0.50:
+                # Victoire claire
+                if total_exp >= 3.0:
+                    score_exact = "1-3"
+                else:
+                    score_exact = "0-2"
             else:
-                score_exact = "1-2"
-            score_prob = 0.10
-        elif home_prob > away_prob + 0.10:
-            # Légère faveur domicile
-            score_exact = "2-1" if total_exp >= 2.5 else "1-0"
-            score_prob = 0.10
-        elif away_prob > home_prob + 0.08:
-            # Légère faveur extérieur
-            score_exact = "1-2" if total_exp >= 2.5 else "0-1"
+                # Victoire serrée
+                if total_exp >= 2.5:
+                    score_exact = "1-2"
+                else:
+                    score_exact = "0-1"
             score_prob = 0.09
-        elif draw_prob >= 0.32:
-            # Match nul probable
+
+        else:
+            # Match nul le plus probable
             if total_exp >= 3.0:
                 score_exact = "2-2"
-            elif total_exp >= 2.0:
+            elif total_exp >= 1.8:
                 score_exact = "1-1"
             else:
                 score_exact = "0-0"
-            score_prob = 0.11
-        elif total_exp >= 2.8:
-            score_exact = "2-2"
-            score_prob = 0.08
-        elif total_exp <= 1.8:
-            score_exact = "1-0" if home_prob > away_prob else "0-1"
-            score_prob = 0.10
-        else:
-            score_exact = "1-1"
             score_prob = 0.11
 
         # Extraire les buts du score exact
@@ -1391,8 +1390,12 @@ class EnhancedMatchAnalyzer:
             clean_sheet = "Non recommandé"
             clean_sheet_prob = 0.0
 
-        # ========== Double Chance + BTTS ==========
-        dc_btts = "1X + BTTS Oui" if home_prob > away_prob else "X2 + BTTS Oui"
+        # ========== Double Chance + BTTS (cohérent avec BTTS calculé) ==========
+        if btts == "Oui":
+            dc_btts = "1X + BTTS Oui" if home_prob > away_prob else "X2 + BTTS Oui"
+        else:
+            # Si BTTS = Non, recommander DC seul ou DC + Under
+            dc_btts = "1X" if home_prob > away_prob else "X2"
 
         # ========== MI-TEMPS (1ère période) ==========
         ht_home_prob = halftime.get('ht_home_prob', 0.30)
