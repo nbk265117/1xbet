@@ -17,10 +17,12 @@ ALLOWED_LEAGUES = {
     140: {"name": "La Liga", "country": "Spain", "priority": 1},
     141: {"name": "Segunda División", "country": "Spain", "priority": 2},
     143: {"name": "Copa del Rey", "country": "Spain", "priority": 2},
+    556: {"name": "Super Cup", "country": "Spain", "priority": 1},  # Supercopa de España
 
     # 🇫🇷 France
     61: {"name": "Ligue 1", "country": "France", "priority": 1},
     62: {"name": "Ligue 2", "country": "France", "priority": 2},
+    526: {"name": "Trophée des Champions", "country": "France", "priority": 1},
     66: {"name": "Coupe de France", "country": "France", "priority": 2},
 
     # 🇮🇹 Italie
