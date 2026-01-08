@@ -1179,6 +1179,31 @@ class EnhancedMatchAnalyzer:
             btts = "Non"
             btts_prob_final = btts_prob_raw
 
+        # ========== COHÉRENCE SCORE ↔ BTTS ==========
+        if btts == "Non" and home_goals > 0 and away_goals > 0:
+            # Score prédit montre BTTS mais BTTS = Non → clean sheet
+            if home_goals > away_goals:
+                score_exact = f"{home_goals}-0"
+                away_goals = 0
+            elif away_goals > home_goals:
+                score_exact = f"0-{away_goals}"
+                home_goals = 0
+            else:
+                score_exact = "0-0"
+                home_goals = 0
+                away_goals = 0
+        elif btts == "Oui" and (home_goals == 0 or away_goals == 0):
+            if home_goals > away_goals:
+                away_goals = 1
+                score_exact = f"{home_goals}-1"
+            elif away_goals > home_goals:
+                home_goals = 1
+                score_exact = f"1-{away_goals}"
+            else:
+                score_exact = "1-1"
+                home_goals = 1
+                away_goals = 1
+
         # Clean sheet - Cohérent avec BTTS et score
         if btts == "Non" and home_goals > 0 and away_goals == 0:
             clean_sheet = f"{home_team} gagne à 0"
@@ -1190,11 +1215,11 @@ class EnhancedMatchAnalyzer:
             clean_sheet = "Non recommandé"
             clean_sheet_prob = 0.0
 
-        # Double Chance + BTTS
-        if home_prob > away_prob:
-            dc_btts = "1X + BTTS Oui"
+        # Double Chance + BTTS (cohérent avec BTTS)
+        if btts == "Oui":
+            dc_btts = "1X + BTTS Oui" if home_prob > away_prob else "X2 + BTTS Oui"
         else:
-            dc_btts = "X2 + BTTS Oui"
+            dc_btts = "1X" if home_prob > away_prob else "X2"
 
         # Mi-temps / Fin - Plus varié
         if home_prob >= 0.55:
@@ -1378,6 +1403,60 @@ class EnhancedMatchAnalyzer:
         else:
             btts = "Non"
             btts_prob_final = btts_prob_raw
+
+        # ========== COHÉRENCE SCORE ↔ BTTS ==========
+        # Ajuster le score exact pour être cohérent avec BTTS
+        if btts == "Non" and home_goals > 0 and away_goals > 0:
+            # Score prédit montre BTTS mais BTTS = Non → clean sheet
+            if home_goals > away_goals:
+                # Victoire domicile sans encaisser
+                score_exact = f"{home_goals}-0"
+                away_goals = 0
+            elif away_goals > home_goals:
+                # Victoire extérieur sans encaisser
+                score_exact = f"0-{away_goals}"
+                home_goals = 0
+            else:
+                # Match nul mais BTTS = Non → 0-0
+                score_exact = "0-0"
+                home_goals = 0
+                away_goals = 0
+            total_goals = home_goals + away_goals
+        elif btts == "Oui" and (home_goals == 0 or away_goals == 0):
+            # BTTS = Oui mais score montre clean sheet → ajuster
+            if home_goals > away_goals:
+                # Victoire domicile, ajouter 1 but extérieur
+                away_goals = 1
+                score_exact = f"{home_goals}-1"
+            elif away_goals > home_goals:
+                # Victoire extérieur, ajouter 1 but domicile
+                home_goals = 1
+                score_exact = f"1-{away_goals}"
+            else:
+                # 0-0 mais BTTS Oui → 1-1
+                score_exact = "1-1"
+                home_goals = 1
+                away_goals = 1
+            total_goals = home_goals + away_goals
+
+        # Recalculer Over/Under après ajustement
+        if total_goals >= 3:
+            over_under = "Over 2.5"
+        elif total_goals >= 2:
+            if goals["over_25_prob"] >= 0.60:
+                over_under = "Over 2.5"
+            else:
+                over_under = "Under 2.5"
+        else:
+            over_under = "Under 2.5"
+
+        # Recalculer 1X2 après ajustement
+        if home_goals > away_goals:
+            result_1x2 = f"1 ({home_team})"
+        elif away_goals > home_goals:
+            result_1x2 = f"2 ({away_team})"
+        else:
+            result_1x2 = "X (Nul)"
 
         # ========== Clean Sheet ==========
         if btts == "Non" and home_goals > 0 and away_goals == 0:
