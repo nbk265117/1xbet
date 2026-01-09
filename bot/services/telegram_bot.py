@@ -429,6 +429,161 @@ Le bot de prédictions 1xBet est en ligne!
 
         return self.send_message(message)
 
+    def send_predictions_full(self, predictions: List[Dict], target_date: str = None) -> bool:
+        """
+        Envoie les prédictions en format détaillé + tableau
+        Args:
+            predictions: Liste des prédictions
+            target_date: Date cible format YYYY-MM-DD
+        """
+        import time
+
+        if not predictions:
+            return self.send_message("⚠️ Aucune prédiction disponible.")
+
+        # Date
+        if target_date:
+            from datetime import datetime as dt
+            date_obj = dt.strptime(target_date, "%Y-%m-%d")
+            date_str = date_obj.strftime("%d/%m/%Y")
+        else:
+            date_str = datetime.now().strftime("%d/%m/%Y")
+
+        # Header
+        header = f"""🎯 <b>PRÉDICTIONS DU {date_str}</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚽ {len(predictions)} matchs analysés
+📈 Algorithme Poisson
+"""
+        self.send_message(header)
+        time.sleep(1)
+
+        # Send detailed predictions for each match (with rate limit protection)
+        for i, p in enumerate(predictions):
+            msg = self._format_match_detail(p)
+            self.send_message(msg)
+            # Délai de 3 secondes pour éviter rate limiting Telegram
+            time.sleep(3)
+
+        # Then send the compact table
+        time.sleep(2)
+        self._send_table_only(predictions, date_str)
+
+        return True
+
+    def _format_match_detail(self, pred: Dict) -> str:
+        """Formate un match en détail"""
+        match = pred.get('match', 'Match inconnu')
+        league = pred.get('league', '')
+        date = pred.get('date', '')
+
+        # Goals data
+        goals = pred.get('goals', {})
+        result = pred.get('result_1x2', '')
+        over_under = goals.get('over_under', '')
+        btts = goals.get('btts', 'Non')
+        score_exact = goals.get('score_exact', '')
+
+        # First half
+        first_half = pred.get('first_half', {})
+        ht_result = first_half.get('result', 'X')
+        ht_score = first_half.get('score_exact', '0-0')
+
+        # Corners
+        corners = pred.get('corners', {})
+        corners_rec = corners.get('recommendation', '')
+
+        # Cards
+        cards = pred.get('cards', {})
+        cards_rec = cards.get('recommendation', '')
+
+        msg = f"""⚽️ <b>{match}</b>
+🏆 {league} | ⏰ {date}
+
+📊 <b>MATCH COMPLET</b>
+🎯 1X2: <b>{result}</b>
+⚽️ Buts: {over_under} | BTTS: {btts}
+📌 Score: <b>{score_exact}</b>
+
+⏱️ <b>MI-TEMPS</b>
+🎯 MT: {ht_result} | Score: {ht_score}
+
+🚩 {corners_rec}
+🟨 {cards_rec}
+━━━━━━━━━━━━━━━━━━━━"""
+
+        return msg
+
+    def _send_table_only(self, predictions: List[Dict], date_str: str) -> bool:
+        """Envoie uniquement le tableau récapitulatif"""
+        import time
+
+        header = f"""📊 <b>TABLEAU RÉCAPITULATIF</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<code># ⏱️   Match           Lg  HT 1X2 O/U BT Sc  Cor Crd</code>
+<code>─────────────────────────────────────────────────────</code>"""
+
+        self.send_message(header)
+        time.sleep(1)
+
+        # Split predictions into chunks of 10
+        chunk_size = 10
+        for chunk_start in range(0, len(predictions), chunk_size):
+            chunk = predictions[chunk_start:chunk_start + chunk_size]
+            start_num = chunk_start + 1
+
+            lines = []
+            for idx, p in enumerate(chunk):
+                num = start_num + idx
+                date = p.get('date', '')
+                time_str = date.split(' ')[1][:5] if ' ' in date else '??:??'
+
+                match = p.get('match', '')
+                teams = match.split(' vs ')
+                if len(teams) == 2:
+                    h = teams[0][:7]
+                    a = teams[1][:6]
+                    match_str = f"{h}v{a}"
+                else:
+                    match_str = match[:14]
+
+                league = p.get('league', '')[:3].upper()
+
+                fh = p.get('first_half', {})
+                ht_res = fh.get('result', 'X')
+                ht = '1' if '1' in ht_res[:2] else ('2' if '2' in ht_res[:2] else 'X')
+
+                result = p.get('result_1x2', '')
+                r1x2 = '1' if '1' in result[:2] else ('2' if '2' in result[:2] else 'X')
+
+                goals = p.get('goals', {})
+                ou = goals.get('over_under', '')
+                ou_short = 'O' if 'Over' in ou else 'U'
+
+                btts = 'Y' if goals.get('btts') == 'Oui' else 'N'
+                score = goals.get('score_exact', '-')[:3]
+
+                cor = int(p.get('corners', {}).get('expected', 0))
+                crd = int(p.get('cards', {}).get('expected_yellow', 0))
+
+                lines.append(f"<code>{num:2} {time_str} {match_str:14} {league:3} {ht}  {r1x2}   {ou_short}  {btts}  {score} {cor:2}  {crd}</code>")
+
+            msg = "\n".join(lines)
+            self.send_message(msg)
+            time.sleep(1.5)
+
+        footer = """<code>─────────────────────────────────────────────────────</code>
+<b>Légende:</b>
+HT=Mi-temps | 1X2=Résultat | O/U=Over/Under
+BT=BTTS(Y/N) | Cor=Corners | Crd=Cartons
+
+⚠️ <i>Pariez responsablement</i>
+🤖 <i>Bot @bel9lil</i>"""
+
+        self.send_message(footer)
+        return True
+
     def send_predictions_table(self, predictions: List[Dict], target_date: str = None) -> bool:
         """
         Envoie les prédictions en format tableau complet

@@ -143,15 +143,15 @@ class BettingBot:
                 target = datetime.strptime(self._current_date_str, "%Y-%m-%d")
                 self.tracker.save_predictions(tickets, target)
 
-            # 6. Envoyer les Prédictions en format TABLEAU sur Telegram
+            # 6. Envoyer les Prédictions en format DÉTAILLÉ + TABLEAU sur Telegram
             if send_telegram:
-                logger.info("Sending predictions TABLE to Telegram...")
+                logger.info("Sending predictions (detailed + table) to Telegram...")
                 pro_file = os.path.join(OUTPUT_DIR, f"predictions_complete_{self._current_date_str}.json")
                 if os.path.exists(pro_file):
                     with open(pro_file, 'r', encoding='utf-8') as f:
                         pro_data = json.load(f)
-                    # Envoyer en format tableau complet
-                    self.telegram.send_predictions_table(pro_data.get('predictions', []), target_date=self._current_date_str)
+                    # Envoyer format détaillé pour chaque match + tableau récapitulatif
+                    self.telegram.send_predictions_full(pro_data.get('predictions', []), target_date=self._current_date_str)
 
             # 7. Afficher le résumé
             self._print_summary(tickets, len(enriched_matches))
