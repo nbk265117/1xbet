@@ -1,6 +1,7 @@
 """
 Analyseur amélioré avec données enrichies multi-sources
 Utilise: Flashscore, Sofascore, API-Football, base de données locale
+Configuration adaptative par ligue
 """
 import logging
 import math
@@ -8,6 +9,7 @@ from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from models.match import Match, Prediction, BetType, Team
 from config.settings import CONFIDENCE_HIGH, CONFIDENCE_MEDIUM, CONFIDENCE_LOW
+from config.league_config import get_league_config, DEFAULT_CONFIG, is_high_scoring_league, is_physical_league
 from services.data_enricher import DataEnricher, MatchEnrichedData, TeamStats
 
 logger = logging.getLogger(__name__)
@@ -114,21 +116,56 @@ class EnhancedPrediction:
 
 
 class EnhancedMatchAnalyzer:
-    """Analyseur amélioré avec données multi-sources DYNAMIQUES + Pro API"""
+    """Analyseur amélioré avec données multi-sources DYNAMIQUES + Pro API
+
+    Configuration adaptative par ligue:
+    - Poids des facteurs ajustés par ligue
+    - Valeurs par défaut spécifiques à chaque ligue
+    - Seuils de décision optimisés
+    """
 
     def __init__(self):
         self.enricher = DataEnricher()
-        self.home_advantage = 0.08
-        # Poids pour les différentes sources de données
-        self.weights = {
-            'form': 0.20,
-            'standings': 0.15,
-            'h2h': 0.15,
-            'home_adv': 0.10,
-            'api_predictions': 0.25,  # [PRO] Prédictions officielles
-            'odds_implied': 0.10,     # [PRO] Probabilités implicites des cotes
-            'motivation': 0.05,
-        }
+        # Configuration par défaut (sera surchargée par ligue)
+        self._default_config = DEFAULT_CONFIG
+        self._current_league_id = None
+        self._current_config = DEFAULT_CONFIG
+
+    def _load_league_config(self, league_id: int = None, league_name: str = None):
+        """Charge la configuration spécifique à la ligue"""
+        self._current_config = get_league_config(league_id, league_name)
+        self._current_league_id = league_id
+        logger.debug(f"[CONFIG] Loaded config for league {league_id}: {self._current_config.get('name', 'Default')}")
+
+    @property
+    def weights(self) -> dict:
+        """Retourne les poids actuels (selon la ligue)"""
+        return self._current_config.get("weights", self._default_config["weights"])
+
+    @property
+    def home_advantage(self) -> float:
+        """Retourne l'avantage domicile (selon la ligue)"""
+        return self._current_config.get("home_advantage", 0.08)
+
+    @property
+    def defaults(self) -> dict:
+        """Retourne les valeurs par défaut (selon la ligue)"""
+        return self._current_config.get("defaults", self._default_config["defaults"])
+
+    @property
+    def thresholds(self) -> dict:
+        """Retourne les seuils de décision (selon la ligue)"""
+        return self._current_config.get("thresholds", self._default_config["thresholds"])
+
+    @property
+    def avg_goals_per_match(self) -> float:
+        """Retourne la moyenne de buts par match de la ligue"""
+        return self._current_config.get("avg_goals_per_match", 2.5)
+
+    @property
+    def league_style(self) -> str:
+        """Retourne le style de jeu de la ligue"""
+        return self._current_config.get("style", "balanced")
 
     def _poisson_prob(self, lam: float, k: int) -> float:
         """Calcule la probabilité Poisson P(X=k) pour lambda donné"""
@@ -185,7 +222,9 @@ class EnhancedMatchAnalyzer:
             away_team_id: ID de l'équipe à l'extérieur (API-Football)
             fixture_id: ID du match (API-Football) pour les prédictions/cotes PRO
         """
-        logger.info(f"[PRO] Enhanced analysis: {home_team} vs {away_team}")
+        # Charger la configuration spécifique à la ligue
+        self._load_league_config(league_id, league)
+        logger.info(f"[PRO] Enhanced analysis: {home_team} vs {away_team} (League config: {self._current_config.get('name', 'Default')})")
 
         # Enrichir les données DYNAMIQUEMENT avec les IDs
         enriched = self.enricher.enrich_match(
@@ -469,22 +508,37 @@ class EnhancedMatchAnalyzer:
                            odds_data: Dict = None,
                            home_fixture_stats: Dict = None,
                            away_fixture_stats: Dict = None) -> Dict:
-        """[PRO] Analyse des buts avec données API Pro - VERSION CONSERVATIVE"""
+        """[PRO] Analyse des buts avec données API Pro - VERSION ADAPTIVE PAR LIGUE"""
 
-        # Buts moyens par match - VALEURS PAR DÉFAUT RÉDUITES
-        # La moyenne en football est ~2.5 buts/match, pas 3.5+
-        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.2
-        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.0
-        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.0
-        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.2
+        # Buts moyens par match - VALEURS PAR DÉFAUT ADAPTÉES À LA LIGUE
+        league_defaults = self.defaults
+        default_scored = league_defaults.get("goals_scored", 1.2)
+        default_conceded = league_defaults.get("goals_conceded", 1.1)
 
-        # Calcul plus conservateur des buts attendus
-        expected_home = (home_scored * 0.6 + away_conceded * 0.4)  # Pondération attaque > défense adverse
-        expected_away = (away_scored * 0.6 + home_conceded * 0.4)
+        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else default_scored
+        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else default_conceded
+        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else default_scored * 0.9  # Légèrement moins à l'extérieur
+        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else default_conceded * 1.1
+
+        # Calcul des buts attendus avec pondération selon style de ligue
+        if self.league_style == "attacking":
+            # Ligues offensives: plus de poids sur l'attaque
+            expected_home = (home_scored * 0.65 + away_conceded * 0.35)
+            expected_away = (away_scored * 0.65 + home_conceded * 0.35)
+        elif self.league_style == "defensive":
+            # Ligues défensives: plus de poids sur la défense
+            expected_home = (home_scored * 0.55 + away_conceded * 0.45)
+            expected_away = (away_scored * 0.55 + home_conceded * 0.45)
+        else:
+            # Style équilibré
+            expected_home = (home_scored * 0.6 + away_conceded * 0.4)
+            expected_away = (away_scored * 0.6 + home_conceded * 0.4)
+
         total_expected = expected_home + expected_away
 
-        # Cap maximum pour éviter des xG irréalistes
-        total_expected = min(total_expected, 3.5)  # Max 3.5 xG au lieu de 4+
+        # Cap maximum adapté à la ligue
+        max_xg = self.avg_goals_per_match + 1.0  # Ex: Bundesliga 3.1 → max 4.1
+        total_expected = min(total_expected, max_xg)
 
         # [PRO] Ajuster avec les prédictions API
         if api_predictions:
@@ -505,8 +559,8 @@ class EnhancedMatchAnalyzer:
         if enriched.h2h_avg_goals > 0 and enriched.h2h_matches >= 3:
             total_expected = (total_expected * 0.7) + (enriched.h2h_avg_goals * 0.3)
 
-        # CAP FINAL: Maximum 3.5 xG pour éviter des prédictions irréalistes
-        total_expected = min(total_expected, 3.5)
+        # CAP FINAL adapté à la ligue
+        total_expected = min(total_expected, max_xg)
 
         # [PRO] Probabilités basées sur les cotes réelles
         over_25_prob = self._calculate_over_prob(total_expected, 2.5)
@@ -548,23 +602,24 @@ class EnhancedMatchAnalyzer:
         home_is_real = False
         away_is_real = False
 
-        # Valeurs par défaut
-        home_corners = 5.0
-        away_corners = 5.0
+        # Valeurs par défaut ADAPTÉES À LA LIGUE
+        default_corners = self.defaults.get("corners", 5.0)
+        home_corners = default_corners
+        away_corners = default_corners * 0.95  # Légèrement moins pour l'extérieur
 
         # Priorité 1: Stats des derniers matchs (API)
         if home_fixture_stats and home_fixture_stats.get('avg_corners', 0) > 0:
             home_corners = home_fixture_stats['avg_corners']
             home_is_real = True
-        # Priorité 2: Stats d'équipe enrichies
-        elif home.avg_corners > 0 and home.avg_corners != 5.0:
+        # Priorité 2: Stats d'équipe enrichies (vérifier que ce n'est pas une valeur par défaut)
+        elif home.avg_corners > 0 and abs(home.avg_corners - default_corners) > 0.1:
             home_corners = home.avg_corners
             home_is_real = True
 
         if away_fixture_stats and away_fixture_stats.get('avg_corners', 0) > 0:
             away_corners = away_fixture_stats['avg_corners']
             away_is_real = True
-        elif away.avg_corners > 0 and away.avg_corners != 5.0:
+        elif away.avg_corners > 0 and abs(away.avg_corners - default_corners) > 0.1:
             away_corners = away.avg_corners
             away_is_real = True
 
@@ -580,8 +635,8 @@ class EnhancedMatchAnalyzer:
         else:
             data_quality = "DEFAUT"
             confidence_multiplier = 0.5  # Réduire confiance de 50%
-            # Avec données par défaut, utiliser une estimation conservatrice
-            total_corners = 9.5  # Moyenne générale du football
+            # Avec données par défaut, utiliser l'estimation de la ligue
+            total_corners = default_corners * 2 - 0.5  # Approximation basée sur la config ligue
 
         # Calcul des probabilités (ajustées selon la fiabilité)
         base_over_75 = 0.70 if total_corners >= 10.0 else (0.60 if total_corners >= 9.0 else (0.50 if total_corners >= 8.0 else 0.40))
@@ -729,23 +784,26 @@ class EnhancedMatchAnalyzer:
         away_is_real = False
         referee_is_real = False
 
-        # Valeurs par défaut
-        home_avg_yellow = 1.5
-        away_avg_yellow = 1.5
-        home_avg_red = 0.1
-        away_avg_red = 0.1
+        # Valeurs par défaut ADAPTÉES À LA LIGUE
+        default_yellow = self.defaults.get("yellow_cards", 1.5)
+        default_red = self.defaults.get("red_cards", 0.08)
+
+        home_avg_yellow = default_yellow
+        away_avg_yellow = default_yellow
+        home_avg_red = default_red
+        away_avg_red = default_red
 
         if home_cards_stats and home_cards_stats.get('avg_yellow_per_match', 0) > 0:
-            home_avg_yellow = home_cards_stats.get('avg_yellow_per_match', 1.5)
-            home_avg_red = home_cards_stats.get('avg_red_per_match', 0.1)
+            home_avg_yellow = home_cards_stats.get('avg_yellow_per_match', default_yellow)
+            home_avg_red = home_cards_stats.get('avg_red_per_match', default_red)
             # Vérifier si ce n'est pas une valeur par défaut
-            if home_avg_yellow != 1.5:
+            if abs(home_avg_yellow - default_yellow) > 0.1:
                 home_is_real = True
 
         if away_cards_stats and away_cards_stats.get('avg_yellow_per_match', 0) > 0:
-            away_avg_yellow = away_cards_stats.get('avg_yellow_per_match', 1.5)
-            away_avg_red = away_cards_stats.get('avg_red_per_match', 0.1)
-            if away_avg_yellow != 1.5:
+            away_avg_yellow = away_cards_stats.get('avg_yellow_per_match', default_yellow)
+            away_avg_red = away_cards_stats.get('avg_red_per_match', default_red)
+            if abs(away_avg_yellow - default_yellow) > 0.1:
                 away_is_real = True
 
         total_yellow_expected = home_avg_yellow + away_avg_yellow
@@ -770,9 +828,9 @@ class EnhancedMatchAnalyzer:
         total_cards_expected *= referee_multiplier
 
         # Ajuster selon la ligue (certaines ligues sont plus physiques)
-        physical_leagues = [39, 40, 140, 188]  # Premier League, Championship, La Liga, Ligue 1 Algérie
-        if league_id in physical_leagues:
+        if is_physical_league(league_id or self._current_league_id or 0):
             total_yellow_expected *= 1.1
+            logger.debug(f"[CARDS] Physical league bonus applied")
 
         # Évaluer la fiabilité des données
         real_count = sum([home_is_real, away_is_real, referee_is_real])
@@ -785,8 +843,8 @@ class EnhancedMatchAnalyzer:
         else:
             data_quality = "DEFAUT"
             confidence_multiplier = 0.6
-            # Avec données par défaut, utiliser moyenne conservatrice
-            total_yellow_expected = 3.5
+            # Avec données par défaut, utiliser la moyenne de la ligue
+            total_yellow_expected = default_yellow * 2
 
         # Probabilités (ajustées selon fiabilité)
         base_over_25 = self._calculate_cards_over_prob(total_yellow_expected, 2.5)
@@ -1008,29 +1066,42 @@ class EnhancedMatchAnalyzer:
 
     def _analyze_goals_detailed(self, home: TeamStats, away: TeamStats,
                                 enriched: MatchEnrichedData) -> Dict:
-        """Analyse détaillée des buts - VERSION CONSERVATIVE"""
+        """Analyse détaillée des buts - VERSION ADAPTIVE PAR LIGUE"""
 
-        # Buts moyens par match - VALEURS PAR DÉFAUT RÉDUITES
-        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else 1.2
-        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else 1.0
-        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else 1.0
-        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else 1.2
+        # Buts moyens par match - VALEURS PAR DÉFAUT ADAPTÉES À LA LIGUE
+        league_defaults = self.defaults
+        default_scored = league_defaults.get("goals_scored", 1.2)
+        default_conceded = league_defaults.get("goals_conceded", 1.1)
 
-        # Si pas de données, utiliser le classement (ajustement plus conservateur)
+        home_scored = home.avg_goals_scored if home.avg_goals_scored > 0 else default_scored
+        home_conceded = home.avg_goals_conceded if home.avg_goals_conceded > 0 else default_conceded
+        away_scored = away.avg_goals_scored if away.avg_goals_scored > 0 else default_scored * 0.9
+        away_conceded = away.avg_goals_conceded if away.avg_goals_conceded > 0 else default_conceded * 1.1
+
+        # Si pas de données, utiliser le classement
         if home.avg_goals_scored == 0 and home.league_position > 0:
-            home_scored = 1.5 - (home.league_position - 1) * 0.04
-            home_conceded = 0.9 + (home.league_position - 1) * 0.03
+            home_scored = default_scored + 0.3 - (home.league_position - 1) * 0.04
+            home_conceded = default_conceded - 0.2 + (home.league_position - 1) * 0.03
         if away.avg_goals_scored == 0 and away.league_position > 0:
-            away_scored = 1.3 - (away.league_position - 1) * 0.03
-            away_conceded = 1.0 + (away.league_position - 1) * 0.04
+            away_scored = default_scored + 0.1 - (away.league_position - 1) * 0.03
+            away_conceded = default_conceded + (away.league_position - 1) * 0.04
 
-        # Calcul conservateur
-        expected_home = (home_scored * 0.6 + away_conceded * 0.4)
-        expected_away = (away_scored * 0.6 + home_conceded * 0.4)
+        # Calcul selon le style de ligue
+        if self.league_style == "attacking":
+            expected_home = (home_scored * 0.65 + away_conceded * 0.35)
+            expected_away = (away_scored * 0.65 + home_conceded * 0.35)
+        elif self.league_style == "defensive":
+            expected_home = (home_scored * 0.55 + away_conceded * 0.45)
+            expected_away = (away_scored * 0.55 + home_conceded * 0.45)
+        else:
+            expected_home = (home_scored * 0.6 + away_conceded * 0.4)
+            expected_away = (away_scored * 0.6 + home_conceded * 0.4)
+
         total_expected = expected_home + expected_away
 
-        # Cap maximum
-        total_expected = min(total_expected, 3.5)
+        # Cap maximum adapté à la ligue
+        max_xg = self.avg_goals_per_match + 1.0
+        total_expected = min(total_expected, max_xg)
 
         # Ajuster avec H2H
         if enriched.h2h_avg_goals > 0 and enriched.h2h_matches >= 3:
@@ -1200,10 +1271,13 @@ class EnhancedMatchAnalyzer:
         else:
             result_1x2 = f"1 ({home_team})" if home_prob > away_prob else f"2 ({away_team})"
 
-        # Over/Under - Format clair
-        if goals["over_25_prob"] >= 0.55:
+        # Over/Under - Format clair avec seuils adaptatifs
+        over_threshold = self.thresholds.get("over_25", 0.55)
+        under_threshold = self.thresholds.get("under_25", 0.40)
+
+        if goals["over_25_prob"] >= over_threshold:
             over_under = "Over 2.5"
-        elif goals["over_25_prob"] <= 0.40:
+        elif goals["over_25_prob"] <= under_threshold:
             over_under = "Under 2.5"
         elif goals["over_15_prob"] >= 0.75:
             over_under = "Over 1.5"
@@ -1280,15 +1354,17 @@ class EnhancedMatchAnalyzer:
         else:
             ht_ft = "X/X (Nul/Nul)"
 
-        # Confiance (SEUILS RELEVÉS)
+        # Confiance avec seuils adaptatifs par ligue
         max_prob = max(home_prob, draw_prob, away_prob)
         data_quality = self._assess_data_quality(enriched)
+        conf_high = self.thresholds.get("confidence_high", 0.70)
+        conf_medium = self.thresholds.get("confidence_medium", 0.55)
 
         if data_quality == "INSUFFISANT":
             confidence = CONFIDENCE_LOW
-        elif max_prob >= 0.70:
+        elif max_prob >= conf_high:
             confidence = CONFIDENCE_HIGH
-        elif max_prob >= 0.55:
+        elif max_prob >= conf_medium:
             confidence = CONFIDENCE_MEDIUM
         else:
             confidence = CONFIDENCE_LOW
@@ -1567,8 +1643,10 @@ class EnhancedMatchAnalyzer:
         referee_name = cards.get('referee_name', '')
         referee_strictness = cards.get('referee_strictness', 'MOYEN')
 
-        # ========== Confiance (SEUILS RELEVÉS pour plus de précision) ==========
+        # ========== Confiance avec seuils adaptatifs par ligue ==========
         max_prob = max(home_prob, draw_prob, away_prob)
+        conf_high = self.thresholds.get("confidence_high", 0.70)
+        conf_medium = self.thresholds.get("confidence_medium", 0.55)
 
         # Vérifier la qualité des données
         data_quality = self._assess_data_quality(enriched)
@@ -1576,14 +1654,14 @@ class EnhancedMatchAnalyzer:
         if data_quality == "INSUFFISANT":
             # Pas assez de données fiables → toujours FAIBLE
             confidence = CONFIDENCE_LOW
-        elif max_prob >= 0.70:
-            # Très haute confiance (70%+)
+        elif max_prob >= conf_high:
+            # Très haute confiance
             confidence = CONFIDENCE_HIGH
-        elif max_prob >= 0.55:
-            # Confiance moyenne (55-70%)
+        elif max_prob >= conf_medium:
+            # Confiance moyenne
             confidence = CONFIDENCE_MEDIUM
         else:
-            # Faible confiance (<55%)
+            # Faible confiance
             confidence = CONFIDENCE_LOW
 
         # ========== Raisonnement ==========
