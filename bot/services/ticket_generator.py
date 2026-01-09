@@ -33,8 +33,8 @@ class TicketGenerator:
         "balanced": {
             "name": "Ticket Mixte",
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN, BetType.BTTS_YES,
-                              BetType.DOUBLE_CHANCE_1X, BetType.DOUBLE_CHANCE_X2],
+            "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN, BetType.OVER_1_5,
+                              BetType.DOUBLE_CHANCE_1X, BetType.DOUBLE_CHANCE_X2],  # BTTS Oui remplacé par Over 1.5
             "max_matches": 5,
             "risk": "MOYEN",
             "max_same_type": 1  # Forcer la diversité - 1 seul pari par type
@@ -42,7 +42,7 @@ class TicketGenerator:
         "goals": {
             "name": "Ticket Buts",
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.OVER_2_5, BetType.BTTS_YES, BetType.OVER_1_5],
+            "preferred_bets": [BetType.OVER_2_5, BetType.OVER_1_5, BetType.BTTS_NO],  # BTTS Oui retiré
             "max_matches": 5,
             "risk": "MOYEN",
             "max_same_type": 2
@@ -56,12 +56,12 @@ class TicketGenerator:
             "max_same_type": 3
         },
         "btts": {
-            "name": "Ticket BTTS",
+            "name": "Ticket Over/Under",  # Renommé car BTTS Oui n'est plus fiable
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.BTTS_YES, BetType.BTTS_NO],
+            "preferred_bets": [BetType.OVER_2_5, BetType.OVER_1_5, BetType.BTTS_NO],  # Favoriser Over au lieu de BTTS Oui
             "max_matches": 5,
             "risk": "MOYEN",
-            "max_same_type": 5
+            "max_same_type": 3
         },
         "combo": {
             "name": "Ticket Combo",

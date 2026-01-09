@@ -3,6 +3,7 @@ Analyseur amélioré avec données enrichies multi-sources
 Utilise: Flashscore, Sofascore, API-Football, base de données locale
 """
 import logging
+import math
 from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from models.match import Match, Prediction, BetType, Team
@@ -128,6 +129,44 @@ class EnhancedMatchAnalyzer:
             'odds_implied': 0.10,     # [PRO] Probabilités implicites des cotes
             'motivation': 0.05,
         }
+
+    def _poisson_prob(self, lam: float, k: int) -> float:
+        """Calcule la probabilité Poisson P(X=k) pour lambda donné"""
+        if lam <= 0:
+            return 1.0 if k == 0 else 0.0
+        return (lam ** k) * math.exp(-lam) / math.factorial(k)
+
+    def _predict_score_poisson(self, exp_home: float, exp_away: float, max_goals: int = 6) -> Tuple[str, float]:
+        """
+        Prédit le score exact en utilisant la distribution Poisson
+
+        Args:
+            exp_home: Buts attendus équipe domicile
+            exp_away: Buts attendus équipe extérieur
+            max_goals: Maximum de buts à considérer par équipe
+
+        Returns:
+            (score_exact, probabilité)
+        """
+        best_score = "1-1"
+        best_prob = 0.0
+
+        # Calculer la probabilité de chaque score possible
+        scores_probs = []
+        for h in range(max_goals + 1):
+            for a in range(max_goals + 1):
+                prob = self._poisson_prob(exp_home, h) * self._poisson_prob(exp_away, a)
+                scores_probs.append((f"{h}-{a}", prob, h, a))
+
+        # Trier par probabilité décroissante
+        scores_probs.sort(key=lambda x: -x[1])
+
+        # Le score le plus probable
+        if scores_probs:
+            best_score = scores_probs[0][0]
+            best_prob = scores_probs[0][1]
+
+        return best_score, best_prob
 
     def analyze_match_full(self, home_team: str, away_team: str,
                            league: str, match_date: str = "",
@@ -1028,33 +1067,101 @@ class EnhancedMatchAnalyzer:
 
     def _calculate_btts_prob(self, home: TeamStats, away: TeamStats,
                              enriched: MatchEnrichedData) -> float:
-        """Calcule la probabilité BTTS - VERSION CONSERVATIVE"""
-        # Base plus conservative si pas de données H2H
-        if enriched.h2h_btts_percentage and enriched.h2h_matches >= 3:
+        """Calcule la probabilité BTTS - VERSION ULTRA CONSERVATIVE (basée sur analyse 09/01/2026)
+
+        CONSTAT: Sur 5 matchs avec BTTS Oui prédit, 4 ont échoué (80% d'échec!)
+        Les clean sheets sont TRÈS fréquentes, surtout dans les ligues non-européennes.
+        """
+
+        # ========== DÉTECTION MATCH DÉSÉQUILIBRÉ ==========
+        position_diff = 0
+        if home.league_position > 0 and away.league_position > 0:
+            position_diff = abs(home.league_position - away.league_position)
+
+        is_heavily_unbalanced = False
+        is_moderately_unbalanced = False
+
+        # Top 5 vs 10+ = très déséquilibré (élargi de top 3 à top 5)
+        if (home.league_position <= 5 and away.league_position >= 10) or \
+           (away.league_position <= 5 and home.league_position >= 10):
+            is_heavily_unbalanced = True
+            logger.info(f"[BTTS] Match TRÈS déséquilibré: pos {home.league_position} vs {away.league_position}")
+
+        # Différence de classement > 5 positions = modérément déséquilibré
+        if position_diff >= 5:
+            is_moderately_unbalanced = True
+
+        # Différence > 7 = très déséquilibré
+        if position_diff >= 7:
+            is_heavily_unbalanced = True
+
+        # ========== BASE PROB ULTRA CONSERVATIVE ==========
+        # CHANGEMENT MAJEUR: Partir de 35% au lieu de 45%
+        # Car la réalité montre que BTTS est moins fréquent qu'on ne le pense
+        if enriched.h2h_btts_percentage and enriched.h2h_matches >= 5:
+            # Exiger plus de matchs H2H (5 au lieu de 3)
             base_prob = enriched.h2h_btts_percentage / 100
+            # Mais plafonner à 55% même avec un bon historique
+            base_prob = min(0.55, base_prob)
         else:
-            # Sans données H2H fiables, partir de 45% (sous le seuil)
-            base_prob = 0.45
+            # Sans données H2H fiables, partir de 35% (très conservateur)
+            base_prob = 0.35
 
-        # Ajuster selon les clean sheets (plus d'impact)
-        if home.clean_sheets > 3:
+        # ========== MALUS POUR MATCH DÉSÉQUILIBRÉ ==========
+        if is_heavily_unbalanced:
+            base_prob -= 0.25  # Augmenté de 20% à 25%
+            logger.info(f"[BTTS] Malus -25% pour match très déséquilibré → {base_prob:.2f}")
+        elif is_moderately_unbalanced:
             base_prob -= 0.12
-        if away.clean_sheets > 3:
-            base_prob -= 0.12
-        if home.failed_to_score > 3:
-            base_prob -= 0.10
-        if away.failed_to_score > 3:
-            base_prob -= 0.10
+            logger.info(f"[BTTS] Malus -12% pour match modérément déséquilibré")
 
-        # Bonus si les deux équipes marquent régulièrement
-        if home.avg_goals_scored >= 1.5 and away.avg_goals_scored >= 1.2:
-            base_prob += 0.10
+        # ========== AJUSTEMENTS CLEAN SHEETS (RENFORCÉS) ==========
+        # Une équipe avec beaucoup de clean sheets = danger pour BTTS
+        if home.clean_sheets >= 4:
+            base_prob -= 0.18  # Augmenté
+        elif home.clean_sheets >= 2:
+            base_prob -= 0.08
 
-        # Malus si une équipe défend bien
-        if home.avg_goals_conceded < 0.8 or away.avg_goals_conceded < 0.8:
+        if away.clean_sheets >= 4:
+            base_prob -= 0.18
+        elif away.clean_sheets >= 2:
+            base_prob -= 0.08
+
+        # Équipe qui ne marque pas souvent
+        if home.failed_to_score >= 4:
             base_prob -= 0.15
+        elif home.failed_to_score >= 2:
+            base_prob -= 0.08
 
-        return max(0.25, min(0.75, base_prob))
+        if away.failed_to_score >= 4:
+            base_prob -= 0.15
+        elif away.failed_to_score >= 2:
+            base_prob -= 0.08
+
+        # ========== BONUS BTTS (RÉDUITS) ==========
+        # Bonus seulement si les DEUX équipes marquent régulièrement
+        if home.avg_goals_scored >= 1.8 and away.avg_goals_scored >= 1.5:
+            base_prob += 0.08  # Réduit de 10% à 8%
+        elif home.avg_goals_scored >= 1.5 and away.avg_goals_scored >= 1.2:
+            base_prob += 0.05
+
+        # ========== MALUS DÉFENSE SOLIDE (RENFORCÉ) ==========
+        if home.avg_goals_conceded < 0.7 or away.avg_goals_conceded < 0.7:
+            base_prob -= 0.20  # Augmenté de 15% à 20%
+        elif home.avg_goals_conceded < 1.0 or away.avg_goals_conceded < 1.0:
+            base_prob -= 0.10
+
+        # ========== MALUS ÉQUIPE DOMINANTE VS FAIBLE ==========
+        if (home.league_position <= 2 and away.league_position >= 12) or \
+           (away.league_position <= 2 and home.league_position >= 12):
+            base_prob -= 0.15  # Augmenté de 10% à 15%
+            logger.info(f"[BTTS] Malus -15% (équipe dominante vs très faible)")
+
+        # ========== MALUS LIGUES AVEC BEAUCOUP DE CLEAN SHEETS ==========
+        # Saudi Pro League, Ligue 1 Algérie: beaucoup de victoires à zéro
+        # Ce sera géré par les stats d'équipe
+
+        return max(0.15, min(0.60, base_prob))  # Max réduit de 70% à 60%
 
     def _analyze_corners(self, home: TeamStats, away: TeamStats) -> Dict:
         """Analyse des corners basée sur les stats dynamiques"""
@@ -1117,98 +1224,42 @@ class EnhancedMatchAnalyzer:
         else:
             corners_pred = "+7.5"
 
-        # Score exact - Amélioration pour éviter trop de 1-1
+        # Score exact - Distribution Poisson pour scores réalistes et variés
         exp_home = goals["expected_home"]
         exp_away = goals["expected_away"]
         total_exp = goals["total_expected"]
 
-        # Déterminer le score basé sur les probabilités et buts attendus
-        if home_prob >= 0.55:
-            # Victoire domicile nette
-            if total_exp >= 3.0:
-                score_exact = "3-1"
-            elif total_exp >= 2.5:
-                score_exact = "2-0"
-            else:
-                score_exact = "2-1"
-            score_prob = 0.11
-        elif away_prob >= 0.50:
-            # Victoire extérieur
-            if total_exp >= 3.0:
-                score_exact = "1-3"
-            elif total_exp >= 2.5:
-                score_exact = "0-2"
-            else:
-                score_exact = "1-2"
-            score_prob = 0.10
-        elif home_prob > away_prob + 0.08:
-            # Légère victoire domicile
-            score_exact = "2-1"
-            score_prob = 0.10
-        elif away_prob > home_prob + 0.05:
-            # Légère victoire extérieur
-            score_exact = "1-2"
-            score_prob = 0.09
-        elif total_exp >= 2.8:
-            # Match ouvert = nul avec buts
-            score_exact = "2-2"
-            score_prob = 0.08
-        elif total_exp <= 2.0:
-            # Match fermé
-            score_exact = "1-0" if home_prob > away_prob else "0-1"
-            score_prob = 0.10
-        else:
-            # Nul équilibré
-            score_exact = "1-1"
-            score_prob = 0.11
+        # Utiliser Poisson pour prédire le score le plus probable
+        score_exact, score_prob = self._predict_score_poisson(exp_home, exp_away)
+        logger.debug(f"[POISSON] Score prédit: {score_exact} (prob: {score_prob:.1%}) - xG: {exp_home:.2f}-{exp_away:.2f}")
 
-        # BTTS - VERSION STRICTE (seuil 65%)
+        # BTTS - VERSION ULTRA STRICTE (seuil 70%) - Basé sur analyse 09/01/2026
+        # Constat: 80% d'échec sur BTTS Oui → On ne recommande que si très confiant
         score_parts = score_exact.split("-")
         home_goals = int(score_parts[0])
         away_goals = int(score_parts[1])
         btts_prob_raw = goals["btts_prob"]
 
-        # BTTS = Oui seulement si probabilité >= 65%
-        if btts_prob_raw >= 0.65:
+        # BTTS = Oui SEULEMENT si probabilité >= 70% (très rare)
+        if btts_prob_raw >= 0.70:
             btts = "Oui"
             btts_prob_final = btts_prob_raw
-        elif home_goals > 0 and away_goals > 0 and btts_prob_raw >= 0.55:
-            btts = "Oui"
-            btts_prob_final = btts_prob_raw
+            logger.info(f"[BTTS] Recommandation Oui car prob={btts_prob_raw:.2f} >= 70%")
         else:
+            # Par défaut: BTTS Non (plus sûr)
             btts = "Non"
             btts_prob_final = btts_prob_raw
+            if btts_prob_raw >= 0.50:
+                logger.info(f"[BTTS] Recommandation Non malgré prob={btts_prob_raw:.2f} (seuil 70% non atteint)")
 
-        # ========== COHÉRENCE SCORE ↔ BTTS ==========
-        if btts == "Non" and home_goals > 0 and away_goals > 0:
-            # Score prédit montre BTTS mais BTTS = Non → clean sheet
-            if home_goals > away_goals:
-                score_exact = f"{home_goals}-0"
-                away_goals = 0
-            elif away_goals > home_goals:
-                score_exact = f"0-{away_goals}"
-                home_goals = 0
-            else:
-                score_exact = "0-0"
-                home_goals = 0
-                away_goals = 0
-        elif btts == "Oui" and (home_goals == 0 or away_goals == 0):
-            if home_goals > away_goals:
-                away_goals = 1
-                score_exact = f"{home_goals}-1"
-            elif away_goals > home_goals:
-                home_goals = 1
-                score_exact = f"1-{away_goals}"
-            else:
-                score_exact = "1-1"
-                home_goals = 1
-                away_goals = 1
+        # ========== BTTS est une recommandation de pari, pas un modificateur de score ==========
+        # On garde le score prédit tel quel, BTTS indique juste la probabilité
 
-        # Clean sheet - Cohérent avec BTTS et score
-        if btts == "Non" and home_goals > 0 and away_goals == 0:
+        # Clean sheet - Basé sur le score prédit uniquement
+        if home_goals > 0 and away_goals == 0:
             clean_sheet = f"{home_team} gagne à 0"
             clean_sheet_prob = home_prob * 0.6
-        elif btts == "Non" and away_goals > 0 and home_goals == 0:
+        elif away_goals > 0 and home_goals == 0:
             clean_sheet = f"{away_team} gagne à 0"
             clean_sheet_prob = away_prob * 0.5
         else:
@@ -1312,53 +1363,14 @@ class EnhancedMatchAnalyzer:
             home_team, away_team, enriched, analysis
         )
 
-        # ========== Score exact (BASÉ SUR LA PROBABILITÉ MAXIMALE pour cohérence) ==========
+        # ========== Score exact - Distribution Poisson pour scores réalistes ==========
+        exp_home = goals["expected_home"]
+        exp_away = goals["expected_away"]
         total_exp = goals["total_expected"]
 
-        # D'abord déterminer le résultat le plus probable (1X2)
-        max_prob = max(home_prob, draw_prob, away_prob)
-
-        if max_prob == home_prob:
-            # Victoire domicile la plus probable
-            if home_prob >= 0.55:
-                # Victoire claire
-                if total_exp >= 3.0:
-                    score_exact = "3-1"
-                else:
-                    score_exact = "2-0"
-            else:
-                # Victoire serrée
-                if total_exp >= 2.5:
-                    score_exact = "2-1"
-                else:
-                    score_exact = "1-0"
-            score_prob = 0.10
-
-        elif max_prob == away_prob:
-            # Victoire extérieur la plus probable
-            if away_prob >= 0.50:
-                # Victoire claire
-                if total_exp >= 3.0:
-                    score_exact = "1-3"
-                else:
-                    score_exact = "0-2"
-            else:
-                # Victoire serrée
-                if total_exp >= 2.5:
-                    score_exact = "1-2"
-                else:
-                    score_exact = "0-1"
-            score_prob = 0.09
-
-        else:
-            # Match nul le plus probable
-            if total_exp >= 3.0:
-                score_exact = "2-2"
-            elif total_exp >= 1.8:
-                score_exact = "1-1"
-            else:
-                score_exact = "0-0"
-            score_prob = 0.11
+        # Utiliser Poisson pour prédire le score le plus probable
+        score_exact, score_prob = self._predict_score_poisson(exp_home, exp_away)
+        logger.debug(f"[POISSON PRO] Score: {score_exact} (prob: {score_prob:.1%}) - xG: {exp_home:.2f}-{exp_away:.2f}")
 
         # Extraire les buts du score exact
         score_parts = score_exact.split("-")
@@ -1404,65 +1416,15 @@ class EnhancedMatchAnalyzer:
             btts = "Non"
             btts_prob_final = btts_prob_raw
 
-        # ========== COHÉRENCE SCORE ↔ BTTS ==========
-        # Ajuster le score exact pour être cohérent avec BTTS
-        if btts == "Non" and home_goals > 0 and away_goals > 0:
-            # Score prédit montre BTTS mais BTTS = Non → clean sheet
-            if home_goals > away_goals:
-                # Victoire domicile sans encaisser
-                score_exact = f"{home_goals}-0"
-                away_goals = 0
-            elif away_goals > home_goals:
-                # Victoire extérieur sans encaisser
-                score_exact = f"0-{away_goals}"
-                home_goals = 0
-            else:
-                # Match nul mais BTTS = Non → 0-0
-                score_exact = "0-0"
-                home_goals = 0
-                away_goals = 0
-            total_goals = home_goals + away_goals
-        elif btts == "Oui" and (home_goals == 0 or away_goals == 0):
-            # BTTS = Oui mais score montre clean sheet → ajuster
-            if home_goals > away_goals:
-                # Victoire domicile, ajouter 1 but extérieur
-                away_goals = 1
-                score_exact = f"{home_goals}-1"
-            elif away_goals > home_goals:
-                # Victoire extérieur, ajouter 1 but domicile
-                home_goals = 1
-                score_exact = f"1-{away_goals}"
-            else:
-                # 0-0 mais BTTS Oui → 1-1
-                score_exact = "1-1"
-                home_goals = 1
-                away_goals = 1
-            total_goals = home_goals + away_goals
+        # ========== BTTS est une recommandation de pari, pas un modificateur de score ==========
+        # On garde le score prédit tel quel - BTTS indique juste la probabilité
+        # Over/Under et 1X2 déjà calculés correctement plus haut
 
-        # Recalculer Over/Under après ajustement
-        if total_goals >= 3:
-            over_under = "Over 2.5"
-        elif total_goals >= 2:
-            if goals["over_25_prob"] >= 0.60:
-                over_under = "Over 2.5"
-            else:
-                over_under = "Under 2.5"
-        else:
-            over_under = "Under 2.5"
-
-        # Recalculer 1X2 après ajustement
-        if home_goals > away_goals:
-            result_1x2 = f"1 ({home_team})"
-        elif away_goals > home_goals:
-            result_1x2 = f"2 ({away_team})"
-        else:
-            result_1x2 = "X (Nul)"
-
-        # ========== Clean Sheet ==========
-        if btts == "Non" and home_goals > 0 and away_goals == 0:
+        # ========== Clean Sheet - Basé sur le score prédit ==========
+        if home_goals > 0 and away_goals == 0:
             clean_sheet = f"{home_team} gagne à 0"
             clean_sheet_prob = home_prob * 0.6
-        elif btts == "Non" and away_goals > 0 and home_goals == 0:
+        elif away_goals > 0 and home_goals == 0:
             clean_sheet = f"{away_team} gagne à 0"
             clean_sheet_prob = away_prob * 0.5
         else:

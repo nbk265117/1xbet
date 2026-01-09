@@ -10,7 +10,7 @@ FOOTBALL_API_BASE_URL = "https://v3.football.api-sports.io"
 
 # Telegram Configuration
 TELEGRAM_BOT_TOKEN = "8208049358:AAGIcq-nGcqEqbGHrZ6T-uKsI_EjwZoYLSQ"
-TELEGRAM_CHAT_ID = "-1003472686083"  # Groupe @bel9lil
+TELEGRAM_CHAT_ID = "@bel9lil"  # Canal Telegram @bel9lil
 
 # Scheduler Configuration
 EXECUTION_HOUR = 21  # 21h heure locale

@@ -72,20 +72,26 @@ class TelegramNotifier:
 
         return True
 
-    def _format_intro(self, tickets: List[Ticket]) -> str:
+    def _format_intro(self, tickets: List[Ticket], target_date: str = None) -> str:
         """Formate le message d'introduction"""
-        tomorrow = datetime.now().strftime("%d/%m/%Y")
+        if target_date:
+            from datetime import datetime as dt
+            date_obj = dt.strptime(target_date, "%Y-%m-%d")
+            date_str = date_obj.strftime("%d/%m/%Y")
+        else:
+            date_str = datetime.now().strftime("%d/%m/%Y")
+
         total_selections = sum(len(t) for t in tickets)
 
         return f"""
 🎯 <b>PRÉDICTIONS DU JOUR</b> 🎯
 ━━━━━━━━━━━━━━━━━━━━
 
-📅 <b>Date:</b> {tomorrow}
+📅 <b>Date:</b> {date_str}
 🎟️ <b>Tickets:</b> {len(tickets)}
 ⚽ <b>Sélections:</b> {total_selections}
 
-<i>Voici les tickets optimisés pour demain...</i>
+<i>Voici les tickets optimisés...</i>
 """
 
     def _format_ticket(self, ticket: Ticket) -> str:
@@ -268,15 +274,25 @@ Le bot de prédictions 1xBet est en ligne!
 
         return self.send_message("\n".join(lines))
 
-    def send_pro_predictions(self, predictions: List[Dict]) -> bool:
+    def send_pro_predictions(self, predictions: List[Dict], target_date: str = None) -> bool:
         """
         [PRO] Envoie les prédictions détaillées avec mi-temps, cartons, corners
+        Args:
+            predictions: Liste des prédictions
+            target_date: Date cible format YYYY-MM-DD (optionnel)
         """
         if not predictions:
             return self.send_message("⚠️ Aucune prédiction Pro disponible.")
 
-        # Message d'introduction
-        date_str = datetime.now().strftime("%d/%m/%Y")
+        # Message d'introduction avec la bonne date
+        if target_date:
+            # Convertir YYYY-MM-DD en DD/MM/YYYY
+            from datetime import datetime as dt
+            date_obj = dt.strptime(target_date, "%Y-%m-%d")
+            date_str = date_obj.strftime("%d/%m/%Y")
+        else:
+            date_str = datetime.now().strftime("%d/%m/%Y")
+
         intro = f"""
 🎯 <b>PRÉDICTIONS PRO DU JOUR</b> 🎯
 ━━━━━━━━━━━━━━━━━━━━
@@ -287,10 +303,18 @@ Le bot de prédictions 1xBet est en ligne!
 """
         self.send_message(intro)
 
-        # Envoyer chaque match (max 10 pour éviter spam)
-        for pred in predictions[:10]:
+        # Envoyer les matchs (max 15 pour éviter spam, avec délai)
+        import time
+        for i, pred in enumerate(predictions[:15]):
             msg = self._format_pro_prediction(pred)
             self.send_message(msg)
+            # Délai pour éviter le rate limiting Telegram
+            if i < len(predictions) - 1:
+                time.sleep(1.5)
+
+        # Message de fin si plus de 15 matchs
+        if len(predictions) > 15:
+            self.send_message(f"📌 <i>+{len(predictions) - 15} autres matchs analysés. Voir fichier complet.</i>")
 
         return True
 
@@ -404,3 +428,107 @@ Le bot de prédictions 1xBet est en ligne!
 """
 
         return self.send_message(message)
+
+    def send_predictions_table(self, predictions: List[Dict], target_date: str = None) -> bool:
+        """
+        Envoie les prédictions en format tableau complet
+        Args:
+            predictions: Liste des prédictions
+            target_date: Date cible format YYYY-MM-DD
+        """
+        import time
+
+        if not predictions:
+            return self.send_message("⚠️ Aucune prédiction disponible.")
+
+        # Date
+        if target_date:
+            from datetime import datetime as dt
+            date_obj = dt.strptime(target_date, "%Y-%m-%d")
+            date_str = date_obj.strftime("%d/%m/%Y")
+        else:
+            date_str = datetime.now().strftime("%d/%m/%Y")
+
+        # Header message
+        header = f"""📊 <b>PRÉDICTIONS DU {date_str}</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚽ {len(predictions)} matchs | 📈 Poisson
+
+<code># ⏱️   Match           Lg  HT 1X2 O/U BT Sc  Cor Crd</code>
+<code>─────────────────────────────────────────────────────</code>"""
+
+        self.send_message(header)
+        time.sleep(1)
+
+        # Split predictions into chunks of 10 for readability
+        chunk_size = 10
+        for chunk_start in range(0, len(predictions), chunk_size):
+            chunk = predictions[chunk_start:chunk_start + chunk_size]
+            start_num = chunk_start + 1
+
+            lines = []
+            for idx, p in enumerate(chunk):
+                num = start_num + idx
+
+                # Time
+                date = p.get('date', '')
+                time_str = date.split(' ')[1][:5] if ' ' in date else '??:??'
+
+                # Match (abbreviated)
+                match = p.get('match', '')
+                teams = match.split(' vs ')
+                if len(teams) == 2:
+                    h = teams[0][:7]
+                    a = teams[1][:6]
+                    match_str = f"{h}v{a}"
+                else:
+                    match_str = match[:14]
+
+                # League (abbreviated)
+                league = p.get('league', '')[:3].upper()
+
+                # Half-time
+                fh = p.get('first_half', {})
+                ht_res = fh.get('result', 'X')
+                ht = '1' if '1' in ht_res[:2] else ('2' if '2' in ht_res[:2] else 'X')
+
+                # 1X2
+                result = p.get('result_1x2', '')
+                r1x2 = '1' if '1' in result[:2] else ('2' if '2' in result[:2] else 'X')
+
+                # Goals data
+                goals = p.get('goals', {})
+
+                # Over/Under
+                ou = goals.get('over_under', '')
+                ou_short = 'O' if 'Over' in ou else 'U'
+
+                # BTTS
+                btts = 'Y' if goals.get('btts') == 'Oui' else 'N'
+
+                # Score
+                score = goals.get('score_exact', '-')[:3]
+
+                # Corners
+                cor = int(p.get('corners', {}).get('expected', 0))
+
+                # Cards
+                crd = int(p.get('cards', {}).get('expected_yellow', 0))
+
+                lines.append(f"<code>{num:2} {time_str} {match_str:14} {league:3} {ht}  {r1x2}   {ou_short}  {btts}  {score} {cor:2}  {crd}</code>")
+
+            msg = "\n".join(lines)
+            self.send_message(msg)
+            time.sleep(1.5)
+
+        # Footer with legend
+        footer = """<code>─────────────────────────────────────────────────────</code>
+<b>Légende:</b>
+HT=Mi-temps | 1X2=Résultat | O/U=Over/Under
+BT=BTTS(Y/N) | Cor=Corners | Crd=Cartons
+
+⚠️ <i>Pariez responsablement</i>
+🤖 <i>Bot Predictions @bel9lil</i>"""
+
+        self.send_message(footer)
+        return True

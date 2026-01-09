@@ -231,16 +231,34 @@ class MatchAnalyzer:
         else:
             over_2_5_prob = 0.38
 
-        # Probabilité BTTS - basée sur la force relative
+        # Probabilité BTTS - basée sur la force relative + DÉTECTION MATCHS DÉSÉQUILIBRÉS
         strength_diff = abs(home_strength - away_strength)
+
+        # ========== DÉTECTION MATCH TRÈS DÉSÉQUILIBRÉ ==========
+        # Si une équipe est TRÈS forte (85+) et l'autre faible (<65), BTTS risqué
+        is_heavily_unbalanced = False
+        if (home_strength >= 85 and away_strength <= 65) or \
+           (away_strength >= 85 and home_strength <= 65):
+            is_heavily_unbalanced = True
+            logger.info(f"[BTTS] Match TRÈS déséquilibré: force {home_strength} vs {away_strength}")
+
         if strength_diff < 10:
             # Match équilibré, BTTS plus probable
             btts_prob = 0.55
         elif strength_diff < 20:
             btts_prob = 0.50
-        else:
+        elif strength_diff < 30:
             # Grande différence, une équipe peut ne pas marquer
             btts_prob = 0.40
+        else:
+            # TRÈS grande différence (>30), BTTS très risqué
+            btts_prob = 0.30
+            logger.info(f"[BTTS] Différence de force > 30 → btts_prob = 0.30")
+
+        # Malus supplémentaire pour les matchs très déséquilibrés
+        if is_heavily_unbalanced:
+            btts_prob -= 0.15
+            logger.info(f"[BTTS] Malus -15% pour match très déséquilibré")
 
         # Ajuster avec les données si disponibles
         if home_scored_avg > 0:
@@ -249,7 +267,11 @@ class MatchAnalyzer:
             away_scores = away_scored_avg >= 1.0
             away_concedes = away_conceded_avg >= 0.8
             btts_factors = sum([home_scores, home_concedes, away_scores, away_concedes])
-            btts_prob = 0.35 + (btts_factors * 0.12)
+            # Ne pas trop booster le BTTS pour les matchs déséquilibrés
+            if is_heavily_unbalanced:
+                btts_prob = min(btts_prob, 0.35 + (btts_factors * 0.08))
+            else:
+                btts_prob = 0.35 + (btts_factors * 0.12)
 
         return {
             "expected_home_goals": expected_home_goals,
@@ -428,13 +450,35 @@ class MatchAnalyzer:
         return predictions
 
     def _generate_btts_predictions(self, match: Match, analysis: Dict) -> List[Prediction]:
-        """Génère les prédictions BTTS"""
+        """Génère les prédictions BTTS - VERSION ULTRA STRICTE (basée sur analyse 09/01/2026)
+
+        CONSTAT: Sur 5 matchs avec BTTS Oui prédit le 09/01, 4 ont échoué (80% d'échec!)
+        → BTTS Oui ne doit être recommandé que dans des cas TRÈS rares.
+        """
         predictions = []
         btts_prob = analysis["btts_prob"]
 
-        if btts_prob >= 0.55:
-            confidence = CONFIDENCE_HIGH if btts_prob >= 0.65 else CONFIDENCE_MEDIUM
-            reasoning = f"Les deux équipes ont tendance à marquer et à encaisser"
+        # ========== DÉTECTION MATCH DÉSÉQUILIBRÉ ==========
+        home_strength = analysis.get("home_strength", 60)
+        away_strength = analysis.get("away_strength", 60)
+        strength_diff = abs(home_strength - away_strength)
+
+        is_heavily_unbalanced = strength_diff >= 20 or \
+            (home_strength >= 80 and away_strength <= 65) or \
+            (away_strength >= 80 and home_strength <= 65)
+
+        # ========== BTTS OUI - SEUIL ULTRA ÉLEVÉ ==========
+        # Seuil de base à 70% (au lieu de 60%)
+        btts_threshold = 0.70
+
+        # Pour les matchs déséquilibrés, on NE recommande JAMAIS BTTS Oui
+        if is_heavily_unbalanced:
+            btts_threshold = 0.90  # Quasi impossible
+            logger.info(f"[BTTS] Match déséquilibré, BTTS Oui désactivé")
+
+        if btts_prob >= btts_threshold and not is_heavily_unbalanced:
+            confidence = CONFIDENCE_HIGH if btts_prob >= 0.75 else CONFIDENCE_MEDIUM
+            reasoning = f"Les deux équipes marquent régulièrement (prob {btts_prob:.0%})"
             predictions.append(Prediction(
                 match=match,
                 bet_type=BetType.BTTS_YES,
@@ -444,15 +488,30 @@ class MatchAnalyzer:
                 btts_probability=btts_prob
             ))
 
-        # BTTS Non
+        # ========== BTTS NON - FAVORISÉ ==========
         btts_no_prob = 1 - btts_prob
-        if btts_no_prob >= 0.50:
+
+        # BTTS Non est maintenant plus facile à recommander
+        if btts_no_prob >= 0.40:  # Seuil abaissé
+            if is_heavily_unbalanced:
+                confidence = CONFIDENCE_HIGH
+                reasoning = f"Match déséquilibré: clean sheet très probable"
+            elif btts_no_prob >= 0.60:
+                confidence = CONFIDENCE_HIGH
+                reasoning = f"Clean sheet probable (prob {btts_no_prob:.0%})"
+            elif btts_no_prob >= 0.50:
+                confidence = CONFIDENCE_MEDIUM
+                reasoning = f"Une équipe devrait garder sa cage inviolée"
+            else:
+                confidence = CONFIDENCE_MEDIUM
+                reasoning = f"Clean sheet possible"
+
             predictions.append(Prediction(
                 match=match,
                 bet_type=BetType.BTTS_NO,
-                confidence=CONFIDENCE_MEDIUM if btts_no_prob >= 0.55 else CONFIDENCE_LOW,
+                confidence=confidence,
                 odds_estimate=round(1 / btts_no_prob, 2),
-                reasoning=f"Une équipe devrait garder sa cage inviolée",
+                reasoning=reasoning,
                 btts_probability=btts_prob
             ))
 
