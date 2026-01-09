@@ -1233,27 +1233,23 @@ class EnhancedMatchAnalyzer:
         score_exact, score_prob = self._predict_score_poisson(exp_home, exp_away)
         logger.debug(f"[POISSON] Score prédit: {score_exact} (prob: {score_prob:.1%}) - xG: {exp_home:.2f}-{exp_away:.2f}")
 
-        # BTTS - VERSION ULTRA STRICTE (seuil 70%) - Basé sur analyse 09/01/2026
-        # Constat: 80% d'échec sur BTTS Oui → On ne recommande que si très confiant
+        # BTTS - DÉRIVÉ DU SCORE PRÉDIT pour cohérence
         score_parts = score_exact.split("-")
         home_goals = int(score_parts[0])
         away_goals = int(score_parts[1])
         btts_prob_raw = goals["btts_prob"]
 
-        # BTTS = Oui SEULEMENT si probabilité >= 70% (très rare)
-        if btts_prob_raw >= 0.70:
+        # BTTS doit être cohérent avec le score prédit
+        if home_goals > 0 and away_goals > 0:
+            # Score prédit = les deux équipes marquent → BTTS = Oui
             btts = "Oui"
             btts_prob_final = btts_prob_raw
-            logger.info(f"[BTTS] Recommandation Oui car prob={btts_prob_raw:.2f} >= 70%")
+            logger.debug(f"[BTTS] Oui (cohérent avec score {score_exact})")
         else:
-            # Par défaut: BTTS Non (plus sûr)
+            # Score prédit = clean sheet → BTTS = Non
             btts = "Non"
             btts_prob_final = btts_prob_raw
-            if btts_prob_raw >= 0.50:
-                logger.info(f"[BTTS] Recommandation Non malgré prob={btts_prob_raw:.2f} (seuil 70% non atteint)")
-
-        # ========== BTTS est une recommandation de pari, pas un modificateur de score ==========
-        # On garde le score prédit tel quel, BTTS indique juste la probabilité
+            logger.debug(f"[BTTS] Non (cohérent avec score {score_exact})")
 
         # Clean sheet - Basé sur le score prédit uniquement
         if home_goals > 0 and away_goals == 0:
@@ -1401,24 +1397,18 @@ class EnhancedMatchAnalyzer:
         # ========== Team +1.5 ==========
         team_plus_15 = f"{home_team} +1.5 buts" if home_goals > away_goals else f"{away_team} +1.5 buts"
 
-        # ========== BTTS (VERSION STRICTE - seuil relevé à 65%) ==========
+        # ========== BTTS - DÉRIVÉ DU SCORE PRÉDIT pour cohérence ==========
         btts_prob_raw = goals["btts_prob"]
 
-        # BTTS = Oui seulement si probabilité >= 65% (au lieu de 55%)
-        if btts_prob_raw >= 0.65:
-            btts = "Oui"
-            btts_prob_final = btts_prob_raw
-        elif home_goals > 0 and away_goals > 0 and btts_prob_raw >= 0.55:
-            # Si le score prédit a BTTS mais prob entre 55-65%, on garde Oui avec warning
+        # BTTS doit être cohérent avec le score prédit
+        if home_goals > 0 and away_goals > 0:
+            # Score prédit = les deux équipes marquent → BTTS = Oui
             btts = "Oui"
             btts_prob_final = btts_prob_raw
         else:
+            # Score prédit = clean sheet → BTTS = Non
             btts = "Non"
             btts_prob_final = btts_prob_raw
-
-        # ========== BTTS est une recommandation de pari, pas un modificateur de score ==========
-        # On garde le score prédit tel quel - BTTS indique juste la probabilité
-        # Over/Under et 1X2 déjà calculés correctement plus haut
 
         # ========== Clean Sheet - Basé sur le score prédit ==========
         if home_goals > 0 and away_goals == 0:
