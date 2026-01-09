@@ -1446,20 +1446,36 @@ class EnhancedMatchAnalyzer:
 
         ht_expected_goals = halftime.get('ht_expected_goals', total_exp * 0.42)
 
-        # ========== Score exact MT (cohérent avec ht_result) ==========
-        # Calculer le score MT basé sur les probabilités MT
-        if ht_draw_prob >= max(ht_home_prob, ht_away_prob):
-            # Nul à la MT
-            if ht_expected_goals >= 1.2:
-                ht_score_exact = "1-1"
+        # ========== Score exact MT - DÉRIVÉ DU SCORE FINAL ==========
+        # Le score MT doit être cohérent avec le score final prédit
+        if home_goals > away_goals:
+            # Victoire domicile - le domicile mène souvent à la MT
+            if home_goals >= 3:
+                ht_score_exact = "2-0" if away_goals == 0 else "1-0"
+            elif home_goals == 2 and away_goals == 0:
+                ht_score_exact = "1-0"
+            elif home_goals == 2 and away_goals == 1:
+                ht_score_exact = "1-0"  # Mène 1-0, puis 2-1 en FT
             else:
-                ht_score_exact = "0-0"
-        elif ht_home_prob > ht_away_prob:
-            # Domicile mène à la MT
-            ht_score_exact = "1-0"
+                ht_score_exact = "1-0"
+        elif away_goals > home_goals:
+            # Victoire extérieur - l'extérieur mène souvent à la MT
+            if away_goals >= 3:
+                ht_score_exact = "0-2" if home_goals == 0 else "0-1"
+            elif away_goals == 2 and home_goals == 0:
+                ht_score_exact = "0-1"
+            elif away_goals == 2 and home_goals == 1:
+                ht_score_exact = "0-1"  # Mène 0-1, puis 1-2 en FT
+            else:
+                ht_score_exact = "0-1"
         else:
-            # Extérieur mène à la MT
-            ht_score_exact = "0-1"
+            # Match nul - souvent 0-0 à la MT
+            if home_goals == 0:
+                ht_score_exact = "0-0"
+            elif home_goals == 1:
+                ht_score_exact = "0-0"  # 0-0 MT, puis 1-1 FT
+            else:
+                ht_score_exact = "1-1"  # 1-1 MT, puis 2-2 FT
 
         # Extraire buts MT
         ht_parts = ht_score_exact.split("-")
