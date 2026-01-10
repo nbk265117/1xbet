@@ -1,0 +1,2492 @@
+{
+  "date": "2026-01-10",
+  "generated_at": "2026-01-10T00:16:52.805388",
+  "total_matches": 30,
+  "predictions": [
+    {
+      "match": "Oviedo vs Real Betis",
+      "league": "La Liga",
+      "date": "2026-01-10 13:00",
+      "match_description": "écart au classement: Real Betis (6e) vs Oviedo (20e). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 27.9,
+        "draw": 31.8,
+        "away": 40.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.87,
+        "over_15_prob": 72.7,
+        "over_25_prob": 49.9,
+        "over_35_prob": 36.7,
+        "btts": "Oui",
+        "btts_prob": 31.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 21.3,
+          "draw": 45.4,
+          "away": 33.3
+        },
+        "expected_goals": 1.21,
+        "over_05": "Oui",
+        "over_05_prob": 60.7,
+        "over_15": "Oui",
+        "over_15_prob": 42.7,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.66,
+        "over_05": "Oui",
+        "over_05_prob": 69.0,
+        "over_15": "Oui",
+        "over_15_prob": 51.0
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.6,
+        "home_avg": 4.8,
+        "away_avg": 5.8,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.3,
+        "expected_total": 4.5,
+        "over_35_prob": 61.9,
+        "over_45_prob": 46.9,
+        "over_55_prob": 31.9,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Oviedo: DDLDL",
+        "Forme Real Betis: LWDLW",
+        "Classement: Oviedo 20e vs Real Betis 6e",
+        "H2H: 2V-1N-2D",
+        "Blessures Oviedo: David Costas (Red card Suspended), Alvaro Lemos (injured)",
+        "Blessures Real Betis: Diego Javier Llorente Rios (Injured Doubtful), Marc Roca (Injured Doubtful)",
+        "Oviedo: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Como vs Bologna",
+      "league": "Serie A",
+      "date": "2026-01-10 14:00",
+      "match_description": "Bologna en crise (LLDLD). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 44.7,
+        "draw": 31.9,
+        "away": 23.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.83,
+        "over_15_prob": 71.9,
+        "over_25_prob": 49.5,
+        "over_35_prob": 35.9,
+        "btts": "Oui",
+        "btts_prob": 32.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 35.5,
+          "draw": 45.6,
+          "away": 18.9
+        },
+        "expected_goals": 1.19,
+        "over_05": "Oui",
+        "over_05_prob": 60.4,
+        "over_15": "Oui",
+        "over_15_prob": 42.4,
+        "btts": "Non",
+        "btts_prob": 11.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.64,
+        "over_05": "Oui",
+        "over_05_prob": 68.5,
+        "over_15": "Oui",
+        "over_15_prob": 50.5
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.2,
+        "home_avg": 4.2,
+        "away_avg": 3.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 3.9,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Como: WWWLL",
+        "Forme Bologna: LLDLD",
+        "Classement: Como 6e vs Bologna 8e",
+        "H2H: 0V-1N-2D",
+        "Blessures Como: Assane Diao (Twisted knee), Assane Diao (Twisted knee)",
+        "Blessures Bologna: Ciro Immobile (Injured Doubtful), Juan Miranda (Red card Suspended)",
+        "Como: enjeu europa"
+      ]
+    },
+    {
+      "match": "Udinese vs Pisa",
+      "league": "Serie A",
+      "date": "2026-01-10 14:00",
+      "match_description": "Pisa en crise (LDLDL). écart au classement: Udinese (10e) vs Pisa (20e). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 50.0,
+        "draw": 31.8,
+        "away": 18.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.39,
+        "over_15_prob": 80.0,
+        "over_25_prob": 52.7,
+        "over_35_prob": 46.1,
+        "btts": "Oui",
+        "btts_prob": 30.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 38.2,
+          "draw": 45.9,
+          "away": 15.9
+        },
+        "expected_goals": 1.42,
+        "over_05": "Oui",
+        "over_05_prob": 64.6,
+        "over_15": "Oui",
+        "over_15_prob": 46.6,
+        "btts": "Non",
+        "btts_prob": 10.6,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.4,
+        "over_15": "Oui",
+        "over_15_prob": 56.4
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 25.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.0,
+        "home_avg": 3.6,
+        "away_avg": 3.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.6,
+        "expected_total": 3.8,
+        "over_35_prob": 51.5,
+        "over_45_prob": 36.5,
+        "over_55_prob": 21.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (66%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Udinese: WLDLW",
+        "Forme Pisa: LDLDL",
+        "Classement: Udinese 10e vs Pisa 20e",
+        "H2H: 1V-0N-0D",
+        "Blessures Udinese: Jurgen Ekkelenkamp (Muscle Injury), M. Okoye (Suspension)",
+        "Blessures Pisa: Henrik Meister (Unknown Injury), Mateus Lusuardi (injured)"
+      ]
+    },
+    {
+      "match": "NEOM vs Al-Fateh",
+      "league": "Pro League",
+      "date": "2026-01-10 14:00",
+      "match_description": "Match équilibré entre NEOM et Al-Fateh",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 39.8,
+        "draw": 28.1,
+        "away": 32.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.88,
+        "over_15_prob": 72.8,
+        "over_25_prob": 56.5,
+        "over_35_prob": 36.8,
+        "btts": "Oui",
+        "btts_prob": 49.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 34.2,
+          "draw": 41.0,
+          "away": 24.7
+        },
+        "expected_goals": 1.21,
+        "over_05": "Oui",
+        "over_05_prob": 60.8,
+        "over_15": "Oui",
+        "over_15_prob": 42.8,
+        "btts": "Non",
+        "btts_prob": 17.1,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.67,
+        "over_05": "Oui",
+        "over_05_prob": 69.0,
+        "over_15": "Oui",
+        "over_15_prob": 51.0
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 19.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.6,
+        "home_avg": 3.6,
+        "away_avg": 5.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.9,
+        "expected_total": 5.1,
+        "over_35_prob": 71.0,
+        "over_45_prob": 56.0,
+        "over_55_prob": 41.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (71%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme NEOM: WLWDL",
+        "Forme Al-Fateh: WWWLL",
+        "Classement: NEOM 8e vs Al-Fateh 10e",
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "SC Freiburg vs Hamburger SV",
+      "league": "Bundesliga",
+      "date": "2026-01-10 14:30",
+      "match_description": "H2H favorable à SC Freiburg (4V-5N-1D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (SC Freiburg)",
+      "probabilities": {
+        "home": 45.9,
+        "draw": 31.8,
+        "away": 22.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.43,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.3,
+        "over_35_prob": 46.7,
+        "btts": "Oui",
+        "btts_prob": 34.2,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (SC Freiburg MT)",
+        "probabilities": {
+          "home": 37.7,
+          "draw": 44.2,
+          "away": 18.0
+        },
+        "expected_goals": 1.44,
+        "over_05": "Oui",
+        "over_05_prob": 64.9,
+        "over_15": "Oui",
+        "over_15_prob": 46.9,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.99,
+        "over_05": "Oui",
+        "over_05_prob": 74.8,
+        "over_15": "Oui",
+        "over_15_prob": 56.8
+      },
+      "ht_ft": {
+        "prediction": "1/1 (SC Freiburg/SC Freiburg)",
+        "probability": 24.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.8,
+        "home_avg": 5.8,
+        "away_avg": 4.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.8,
+        "over_35_prob": 48.5,
+        "over_45_prob": 33.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme SC Freiburg: WDLWL",
+        "Forme Hamburger SV: DLWWL",
+        "Classement: SC Freiburg 9e vs Hamburger SV 13e",
+        "H2H: 4V-5N-1D",
+        "Blessures SC Freiburg: Daniel Kofi Kyereh (fitness), Max Rosenfelder (Hamstring Injury)",
+        "Blessures Hamburger SV: Yussuf Yurary Poulsen (Strain), Jean-Luc Dompe (Ankle Injury)"
+      ]
+    },
+    {
+      "match": "1. FC Heidenheim vs 1. FC Köln",
+      "league": "Bundesliga",
+      "date": "2026-01-10 14:30",
+      "match_description": "1. FC Köln en crise (LLDDL)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (1. FC Köln)",
+      "probabilities": {
+        "home": 38.9,
+        "draw": 28.8,
+        "away": 32.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.21,
+        "over_15_prob": 78.7,
+        "over_25_prob": 56.7,
+        "over_35_prob": 42.7,
+        "btts": "Oui",
+        "btts_prob": 36.3,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (1. FC Köln MT)",
+        "probabilities": {
+          "home": 29.4,
+          "draw": 42.3,
+          "away": 28.3
+        },
+        "expected_goals": 1.35,
+        "over_05": "Oui",
+        "over_05_prob": 63.2,
+        "over_15": "Oui",
+        "over_15_prob": 45.2,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.86,
+        "over_05": "Oui",
+        "over_05_prob": 72.5,
+        "over_15": "Oui",
+        "over_15_prob": 54.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (1. FC Köln/1. FC Köln)",
+        "probability": 18.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.4,
+        "home_avg": 5.6,
+        "away_avg": 2.8,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.9,
+        "expected_total": 3.0,
+        "over_35_prob": 41.0,
+        "over_45_prob": 26.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (56%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme 1. FC Heidenheim: LLWWL",
+        "Forme 1. FC Köln: LLDDL",
+        "Classement: 1. FC Heidenheim 17e vs 1. FC Köln 11e",
+        "H2H: 1V-2N-1D",
+        "Blessures 1. FC Heidenheim: Benedikt Gimber (Inguinal Hernia), Marvin Pieringer (Ankle Injury)",
+        "Blessures 1. FC Köln: Julian Pauli (Ankle Injury), Jacob Christensen (Injured Doubtful)",
+        "1. FC Heidenheim: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "FC St. Pauli vs RB Leipzig",
+      "league": "Bundesliga",
+      "date": "2026-01-10 14:30",
+      "match_description": "écart au classement: RB Leipzig (4e) vs FC St. Pauli (16e). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (RB Leipzig)",
+      "probabilities": {
+        "home": 28.8,
+        "draw": 31.5,
+        "away": 39.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.32,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.7,
+        "over_35_prob": 44.8,
+        "btts": "Oui",
+        "btts_prob": 35.4,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (RB Leipzig MT)",
+        "probabilities": {
+          "home": 22.2,
+          "draw": 43.7,
+          "away": 34.1
+        },
+        "expected_goals": 1.4,
+        "over_05": "Oui",
+        "over_05_prob": 64.1,
+        "over_15": "Oui",
+        "over_15_prob": 46.1,
+        "btts": "Non",
+        "btts_prob": 12.4,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.93,
+        "over_05": "Oui",
+        "over_05_prob": 73.7,
+        "over_15": "Oui",
+        "over_15_prob": 55.7
+      },
+      "ht_ft": {
+        "prediction": "2/2 (RB Leipzig/RB Leipzig)",
+        "probability": 21.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.8,
+        "home_avg": 4.6,
+        "away_avg": 6.2,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.3,
+        "expected_total": 3.4,
+        "over_35_prob": 39.9,
+        "over_45_prob": 27.2,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (53%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme FC St. Pauli: DWDLL",
+        "Forme RB Leipzig: LLWDW",
+        "Classement: FC St. Pauli 16e vs RB Leipzig 4e",
+        "H2H: 3V-1N-3D",
+        "Blessures FC St. Pauli: Karol Mets (Patellar tendon problems), Jackson Irvine (Foot surgery)",
+        "Blessures RB Leipzig: Tidiam Gomis (Inner ligament injury), Lukas Klostermann (Injured Doubtful)",
+        "FC St. Pauli: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Union Berlin vs FSV Mainz 05",
+      "league": "Bundesliga",
+      "date": "2026-01-10 14:30",
+      "match_description": "écart au classement: Union Berlin (8e) vs FSV Mainz 05 (18e). H2H favorable à Union Berlin (6V-3N-1D). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 47.7,
+        "draw": 32.0,
+        "away": 20.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.02,
+        "over_15_prob": 75.4,
+        "over_25_prob": 50.1,
+        "over_35_prob": 39.4,
+        "btts": "Oui",
+        "btts_prob": 31.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 35.7,
+          "draw": 46.2,
+          "away": 18.2
+        },
+        "expected_goals": 1.27,
+        "over_05": "Oui",
+        "over_05_prob": 61.8,
+        "over_15": "Oui",
+        "over_15_prob": 43.8,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.75,
+        "over_05": "Oui",
+        "over_05_prob": 70.5,
+        "over_15": "Oui",
+        "over_15_prob": 52.5
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 23.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.8,
+        "home_avg": 5.6,
+        "away_avg": 5.2,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.4,
+        "expected_total": 5.6,
+        "over_35_prob": 78.5,
+        "over_45_prob": 63.5,
+        "over_55_prob": 48.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Union Berlin: WWLLW",
+        "Forme FSV Mainz 05: DDLLD",
+        "Classement: Union Berlin 8e vs FSV Mainz 05 18e",
+        "H2H: 6V-3N-1D",
+        "Blessures Union Berlin: Robert Skov (fitness), Aljoscha Kemlein (fitness)",
+        "Blessures FSV Mainz 05: Lee Jae Sung (Cheekbone Fracture), Maxim Dal (Ruptured cruciate ligament)"
+      ]
+    },
+    {
+      "match": "Werder Bremen vs 1899 Hoffenheim",
+      "league": "Bundesliga",
+      "date": "2026-01-10 14:30",
+      "match_description": "Werder Bremen en difficulté (DLLDL). H2H favorable à 1899 Hoffenheim (7V-1N-2D). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (1899 Hoffenheim)",
+      "probabilities": {
+        "home": 24.6,
+        "draw": 33.0,
+        "away": 42.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.3,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 38.8,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (1899 Hoffenheim MT)",
+        "probabilities": {
+          "home": 24.1,
+          "draw": 43.9,
+          "away": 31.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 13.6,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (1899 Hoffenheim/1899 Hoffenheim)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 5.0,
+        "away_avg": 4.2,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.1,
+        "expected_total": 5.3,
+        "over_35_prob": 74.0,
+        "over_45_prob": 59.0,
+        "over_55_prob": 44.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Werder Bremen: DLLDL",
+        "Forme 1899 Hoffenheim: DWLWD",
+        "Classement: Werder Bremen 10e vs 1899 Hoffenheim 5e",
+        "H2H: 2V-1N-7D",
+        "Blessures Werder Bremen: Mitchell Weiser (Ruptured cruciate ligament), Jens Stage (Foot injury)",
+        "Blessures 1899 Hoffenheim: Ozan Kabak (Ruptured cruciate ligament), Adam Hlozek (Navicular Bone Fracture)"
+      ]
+    },
+    {
+      "match": "Al Riyadh vs Al-Fayha",
+      "league": "Pro League",
+      "date": "2026-01-10 15:00",
+      "match_description": "Al Riyadh en difficulté (LLLLD). Al-Fayha en crise (LLDLW). H2H favorable à Al-Fayha (3V-2N-0D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 28.1,
+        "draw": 31.9,
+        "away": 40.0
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.91,
+        "over_15_prob": 73.3,
+        "over_25_prob": 49.5,
+        "over_35_prob": 37.3,
+        "btts": "Oui",
+        "btts_prob": 36.3,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 23.1,
+          "draw": 45.7,
+          "away": 31.2
+        },
+        "expected_goals": 1.22,
+        "over_05": "Oui",
+        "over_05_prob": 61.0,
+        "over_15": "Oui",
+        "over_15_prob": 43.0,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.69,
+        "over_05": "Oui",
+        "over_05_prob": 69.3,
+        "over_15": "Oui",
+        "over_15_prob": 51.3
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.6,
+        "home_avg": 4.2,
+        "away_avg": 4.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.9,
+        "expected_total": 3.1,
+        "over_35_prob": 34.8,
+        "over_45_prob": 22.1,
+        "over_55_prob": 17.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (48%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Riyadh: LLLLD",
+        "Forme Al-Fayha: LLDLW",
+        "Classement: Al Riyadh 16e vs Al-Fayha 13e",
+        "H2H: 0V-2N-3D",
+        "Blessures Al-Fayha: S. Ganvoula (Injury)",
+        "Al Riyadh: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Villarreal vs Alaves",
+      "league": "La Liga",
+      "date": "2026-01-10 15:15",
+      "match_description": "Villarreal en excellente forme (WLWWW). écart au classement: Villarreal (3e) vs Alaves (13e). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Villarreal)",
+      "probabilities": {
+        "home": 50.1,
+        "draw": 31.2,
+        "away": 18.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.45,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.5,
+        "over_35_prob": 47.1,
+        "btts": "Oui",
+        "btts_prob": 30.8,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Villarreal MT)",
+        "probabilities": {
+          "home": 43.2,
+          "draw": 42.7,
+          "away": 14.1
+        },
+        "expected_goals": 1.45,
+        "over_05": "Oui",
+        "over_05_prob": 65.1,
+        "over_15": "Oui",
+        "over_15_prob": 47.1,
+        "btts": "Non",
+        "btts_prob": 10.8,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.0,
+        "over_05": "Oui",
+        "over_05_prob": 75.0,
+        "over_15": "Oui",
+        "over_15_prob": 57.0
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Villarreal/Villarreal)",
+        "probability": 29.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.4,
+        "home_avg": 3.4,
+        "away_avg": 4.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.9,
+        "expected_total": 5.8,
+        "over_35_prob": 85.0,
+        "over_45_prob": 71.6,
+        "over_55_prob": 56.6,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (72%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Villarreal: WLWWW",
+        "Forme Alaves: DLLWL",
+        "Classement: Villarreal 3e vs Alaves 13e",
+        "H2H: 5V-2N-3D",
+        "Blessures Villarreal: Ayoze Perez (Injured Doubtful), Willy Kambwala (Hamstring Injury)",
+        "Blessures Alaves: Hugo Novoa (Ankle problems), Hugo Novoa (Ankle problems)",
+        "Villarreal: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "AZ Alkmaar vs FC Volendam",
+      "league": "Eredivisie",
+      "date": "2026-01-10 15:30",
+      "match_description": "AZ Alkmaar en difficulté (LDLLL). FC Volendam en crise (LLLLD). écart au classement: AZ Alkmaar (6e) vs FC Volendam (16e). H2H favorable à AZ Alkmaar (3V-2N-0D). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (AZ Alkmaar)",
+      "probabilities": {
+        "home": 51.1,
+        "draw": 30.1,
+        "away": 18.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 69.5,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 34.8,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (AZ Alkmaar MT)",
+        "probabilities": {
+          "home": 50.6,
+          "draw": 36.9,
+          "away": 12.4
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 12.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (AZ Alkmaar/AZ Alkmaar)",
+        "probability": 35.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 6.2,
+        "away_avg": 3.4,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.1,
+        "expected_total": 3.3,
+        "over_35_prob": 44.0,
+        "over_45_prob": 29.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme AZ Alkmaar: LDLLL",
+        "Forme FC Volendam: LLLLD",
+        "Classement: AZ Alkmaar 6e vs FC Volendam 16e",
+        "H2H: 3V-2N-0D",
+        "Blessures AZ Alkmaar: Seiya Maikuma (Knee injury), T. Parrott (Injury)",
+        "Blessures FC Volendam: G. Yah (Wound), A. Descotte (Ankle Injury)",
+        "AZ Alkmaar: enjeu europa"
+      ]
+    },
+    {
+      "match": "Algeria vs Nigeria",
+      "league": "Africa Cup of Nations",
+      "date": "2026-01-10 16:00",
+      "match_description": "match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Nigeria)",
+      "probabilities": {
+        "home": 42.2,
+        "draw": 32.4,
+        "away": 25.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 52.5,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 31.8,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Nigeria MT)",
+        "probabilities": {
+          "home": 29.0,
+          "draw": 47.1,
+          "away": 23.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.1,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Nigeria/Nigeria)",
+        "probability": 23.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.5,
+        "home_avg": 6.0,
+        "away_avg": 4.5,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.2,
+        "expected_total": 3.2,
+        "over_35_prob": 46.2,
+        "over_45_prob": 31.2,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (61%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Algeria: WWW",
+        "Forme Nigeria: WWW",
+        "Classement: Algeria 1e vs Nigeria 1e",
+        "H2H: 2V-1N-1D",
+        "Algeria: enjeu title"
+      ]
+    },
+    {
+      "match": "AS Roma vs Sassuolo",
+      "league": "Serie A",
+      "date": "2026-01-10 17:00",
+      "match_description": "Match équilibré entre AS Roma et Sassuolo. Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 48.5,
+        "draw": 31.3,
+        "away": 20.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.97,
+        "over_15_prob": 74.5,
+        "over_25_prob": 52.0,
+        "over_35_prob": 38.5,
+        "btts": "Oui",
+        "btts_prob": 30.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 41.4,
+          "draw": 43.9,
+          "away": 14.7
+        },
+        "expected_goals": 1.25,
+        "over_05": "Oui",
+        "over_05_prob": 61.5,
+        "over_15": "Oui",
+        "over_15_prob": 43.5,
+        "btts": "Non",
+        "btts_prob": 10.6,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.72,
+        "over_05": "Oui",
+        "over_05_prob": 70.0,
+        "over_15": "Oui",
+        "over_15_prob": 52.0
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 27.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 4.6,
+        "away_avg": 3.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.2,
+        "expected_total": 4.3,
+        "over_35_prob": 60.5,
+        "over_45_prob": 45.5,
+        "over_55_prob": 30.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +3.5 (60%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme AS Roma: WLWLW",
+        "Forme Sassuolo: LDDLD",
+        "Classement: AS Roma 5e vs Sassuolo 11e",
+        "H2H: 4V-4N-2D",
+        "Blessures AS Roma: Lorenzo Pellegrini (injured), L. Bailey (Thigh problems)",
+        "Blessures Sassuolo: Laurs Skjellerup (Unknown Injury), K. Thorstvedt (Heel pain)",
+        "AS Roma: enjeu europa"
+      ]
+    },
+    {
+      "match": "Bayer Leverkusen vs VfB Stuttgart",
+      "league": "Bundesliga",
+      "date": "2026-01-10 17:30",
+      "match_description": "H2H favorable à Bayer Leverkusen (6V-4N-0D). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Bayer Leverkusen)",
+      "probabilities": {
+        "home": 47.1,
+        "draw": 31.3,
+        "away": 21.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.8,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 39.8,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Bayer Leverkusen MT)",
+        "probabilities": {
+          "home": 37.8,
+          "draw": 41.5,
+          "away": 20.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 13.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Bayer Leverkusen/Bayer Leverkusen)",
+        "probability": 25.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.0,
+        "home_avg": 6.8,
+        "away_avg": 5.2,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 3.9,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Bayer Leverkusen: WWLLW",
+        "Forme VfB Stuttgart: DWLLD",
+        "Classement: Bayer Leverkusen 3e vs VfB Stuttgart 6e",
+        "H2H: 6V-4N-0D",
+        "Blessures Bayer Leverkusen: Martin Terrier (Achilles tendon rupture), Malik Tillman (Calf Injury)",
+        "Blessures VfB Stuttgart: Alexander Nubel (Injury), Dan Axel Zagadou (Injury)",
+        "Bayer Leverkusen: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Girona vs Osasuna",
+      "league": "La Liga",
+      "date": "2026-01-10 17:30",
+      "match_description": "Match équilibré entre Girona et Osasuna",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 42.5,
+        "draw": 31.9,
+        "away": 25.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.98,
+        "over_15_prob": 74.7,
+        "over_25_prob": 50.9,
+        "over_35_prob": 38.7,
+        "btts": "Oui",
+        "btts_prob": 33.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 32.3,
+          "draw": 45.8,
+          "away": 21.9
+        },
+        "expected_goals": 1.25,
+        "over_05": "Oui",
+        "over_05_prob": 61.6,
+        "over_15": "Oui",
+        "over_15_prob": 43.6,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.73,
+        "over_05": "Oui",
+        "over_05_prob": 70.1,
+        "over_15": "Oui",
+        "over_15_prob": 52.1
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.6,
+        "home_avg": 3.2,
+        "away_avg": 4.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.5,
+        "expected_total": 5.1,
+        "over_35_prob": 80.0,
+        "over_45_prob": 65.0,
+        "over_55_prob": 50.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +4.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Girona: WLWLD",
+        "Forme Osasuna: DWLWD",
+        "Classement: Girona 17e vs Osasuna 12e",
+        "H2H: 4V-2N-2D",
+        "Blessures Girona: Donny van de Beek (Injury), Abel Ruiz (injured)",
+        "Blessures Osasuna: Iker Benito (Injury), Iker Benito (Injured Doubtful)",
+        "Girona: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Al Okhdood vs Al-Ahli Jeddah",
+      "league": "Pro League",
+      "date": "2026-01-10 17:30",
+      "match_description": "Al Okhdood en difficulté (LLLDL). Al-Ahli Jeddah en pleine confiance (WWLWW). écart au classement: Al-Ahli Jeddah (6e) vs Al Okhdood (17e). H2H favorable à Al Okhdood (4V-1N-1D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Al-Ahli Jeddah)",
+      "probabilities": {
+        "home": 29.0,
+        "draw": 31.5,
+        "away": 39.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.07,
+        "over_15_prob": 76.3,
+        "over_25_prob": 58.3,
+        "over_35_prob": 40.3,
+        "btts": "Oui",
+        "btts_prob": 15.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Al-Ahli Jeddah MT)",
+        "probabilities": {
+          "home": 23.3,
+          "draw": 47.1,
+          "away": 29.6
+        },
+        "expected_goals": 1.29,
+        "over_05": "Oui",
+        "over_05_prob": 62.2,
+        "over_15": "Oui",
+        "over_15_prob": 44.2,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.78,
+        "over_05": "Oui",
+        "over_05_prob": 71.1,
+        "over_15": "Oui",
+        "over_15_prob": 53.1
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Al-Ahli Jeddah/Al-Ahli Jeddah)",
+        "probability": 22.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 4.4,
+        "away_avg": 3.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.9,
+        "expected_total": 5.6,
+        "over_35_prob": 71.0,
+        "over_45_prob": 56.0,
+        "over_55_prob": 41.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (71%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Okhdood: LLLDL",
+        "Forme Al-Ahli Jeddah: WWLWW",
+        "Classement: Al Okhdood 17e vs Al-Ahli Jeddah 6e",
+        "H2H: 4V-1N-1D",
+        "Al Okhdood: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Twente vs PEC Zwolle",
+      "league": "Eredivisie",
+      "date": "2026-01-10 17:45",
+      "match_description": "H2H favorable à Twente (5V-3N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Twente)",
+      "probabilities": {
+        "home": 49.9,
+        "draw": 30.5,
+        "away": 19.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.37,
+        "over_15_prob": 80.0,
+        "over_25_prob": 65.5,
+        "over_35_prob": 45.7,
+        "btts": "Oui",
+        "btts_prob": 34.2,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Twente MT)",
+        "probabilities": {
+          "home": 47.7,
+          "draw": 38.8,
+          "away": 13.5
+        },
+        "expected_goals": 1.42,
+        "over_05": "Oui",
+        "over_05_prob": 64.5,
+        "over_15": "Oui",
+        "over_15_prob": 46.5,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.96,
+        "over_05": "Oui",
+        "over_05_prob": 74.2,
+        "over_15": "Oui",
+        "over_15_prob": 56.2
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Twente/Twente)",
+        "probability": 32.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.8,
+        "home_avg": 5.8,
+        "away_avg": 2.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 4.3,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Twente: DWDWD",
+        "Forme PEC Zwolle: LWLWD",
+        "Classement: Twente 7e vs PEC Zwolle 14e",
+        "H2H: 5V-3N-2D",
+        "Blessures Twente: Lars Unnerstall (Minor Knock), Lars Unnerstall (Minor Knock)",
+        "Blessures PEC Zwolle: Odysseus Velanas (Ankle Injury), Jasper Schendelaar (Knee injury)",
+        "Twente: enjeu conference"
+      ]
+    },
+    {
+      "match": "PSV Eindhoven vs Excelsior",
+      "league": "Eredivisie",
+      "date": "2026-01-10 19:00",
+      "match_description": "PSV Eindhoven en excellente forme (WWWWW). écart au classement: PSV Eindhoven (1e) vs Excelsior (12e). H2H favorable à PSV Eindhoven (10V-0N-0D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (PSV Eindhoven)",
+      "probabilities": {
+        "home": 55.4,
+        "draw": 31.4,
+        "away": 13.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 71.1,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 34.8,
+        "score_exact": "3-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (PSV Eindhoven MT)",
+        "probabilities": {
+          "home": 53.9,
+          "draw": 36.4,
+          "away": 9.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 12.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (PSV Eindhoven/PSV Eindhoven)",
+        "probability": 39.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.4,
+        "home_avg": 7.0,
+        "away_avg": 3.4,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.2,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme PSV Eindhoven: WWWWW",
+        "Forme Excelsior: WLWWL",
+        "Classement: PSV Eindhoven 1e vs Excelsior 12e",
+        "H2H: 10V-0N-0D",
+        "Blessures PSV Eindhoven: Joey Veerman (Thigh problems), Ricardo Pepi (Knee injury)",
+        "Blessures Excelsior: Stijn van Gassel (Groin Injury), Lewis Schouten (Hamstring Injury)",
+        "PSV Eindhoven: enjeu title"
+      ]
+    },
+    {
+      "match": "Egypt vs Ivory Coast",
+      "league": "Africa Cup of Nations",
+      "date": "2026-01-10 19:00",
+      "match_description": "match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Egypt)",
+      "probabilities": {
+        "home": 44.7,
+        "draw": 32.6,
+        "away": 22.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 50.4,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 28.7,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Egypt MT)",
+        "probabilities": {
+          "home": 29.9,
+          "draw": 48.1,
+          "away": 21.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 10.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Egypt/Egypt)",
+        "probability": 23.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 11.9,
+        "home_avg": 4.7,
+        "away_avg": 7.2,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +10.5 (20%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 4.1,
+        "over_35_prob": 53.8,
+        "over_45_prob": 38.8,
+        "over_55_prob": 23.8,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (69%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Egypt: DWW",
+        "Forme Ivory Coast: WDW",
+        "Classement: Egypt 1e vs Ivory Coast 1e",
+        "H2H: 1V-0N-0D",
+        "Egypt: enjeu title"
+      ]
+    },
+    {
+      "match": "Atalanta vs Torino",
+      "league": "Serie A",
+      "date": "2026-01-10 19:45",
+      "match_description": "Atalanta en excellente forme (WWLWW). H2H favorable à Atalanta (5V-3N-2D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 48.2,
+        "draw": 31.4,
+        "away": 20.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 59.3,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 32.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 40.9,
+          "draw": 43.2,
+          "away": 15.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 27.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.4,
+        "home_avg": 6.4,
+        "away_avg": 5.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.0,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Atalanta: WWLWW",
+        "Forme Torino: LWLWW",
+        "Classement: Atalanta 7e vs Torino 12e",
+        "H2H: 5V-3N-2D",
+        "Blessures Atalanta: Ademola Lookman (ineligible), G. Scamacca (Jumpers knee)",
+        "Blessures Torino: Aaron Ciammaglichella (Bruised Knee), A. Ismajli (Thigh problems)",
+        "Atalanta: enjeu conference"
+      ]
+    },
+    {
+      "match": "Groningen vs NAC Breda",
+      "league": "Eredivisie",
+      "date": "2026-01-10 20:00",
+      "match_description": "NAC Breda en crise (LDLLL). écart au classement: Groningen (5e) vs NAC Breda (18e). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 49.5,
+        "draw": 31.4,
+        "away": 19.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.34,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.8,
+        "over_35_prob": 45.0,
+        "btts": "Oui",
+        "btts_prob": 34.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 40.3,
+          "draw": 43.4,
+          "away": 16.3
+        },
+        "expected_goals": 1.4,
+        "over_05": "Oui",
+        "over_05_prob": 64.2,
+        "over_15": "Oui",
+        "over_15_prob": 46.2,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.93,
+        "over_05": "Oui",
+        "over_05_prob": 73.8,
+        "over_15": "Oui",
+        "over_15_prob": 55.8
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 27.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 17.8,
+        "home_avg": 9.8,
+        "away_avg": 8.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.1,
+        "expected_total": 3.4,
+        "over_35_prob": 44.0,
+        "over_45_prob": 29.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Groningen: DWWLD",
+        "Forme NAC Breda: LDLLL",
+        "Classement: Groningen 5e vs NAC Breda 18e",
+        "H2H: 4V-4N-2D",
+        "Blessures Groningen: Etienne Vaessen (Red card Suspended), Etienne Vaessen (Red card Suspended)",
+        "Blessures NAC Breda: Fredrik Oldrup Jensen (Toe Injury), Leo Greiml (Shoulder injury)",
+        "Groningen: enjeu europa"
+      ]
+    },
+    {
+      "match": "Valencia vs Elche",
+      "league": "La Liga",
+      "date": "2026-01-10 20:00",
+      "match_description": "Valencia en difficulté (LDLDD). H2H favorable à Valencia (7V-1N-2D). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 42.9,
+        "draw": 32.0,
+        "away": 25.0
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 53.8,
+        "over_35_prob": 44.4,
+        "btts": "Oui",
+        "btts_prob": 33.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 33.2,
+          "draw": 45.9,
+          "away": 20.9
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.4,
+        "over_15": "Oui",
+        "over_15_prob": 55.4
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 6.0,
+        "away_avg": 3.6,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.4,
+        "expected_total": 4.1,
+        "over_35_prob": 63.5,
+        "over_45_prob": 48.5,
+        "over_55_prob": 33.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +3.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Valencia: LDLDD",
+        "Forme Elche: LWLWL",
+        "Classement: Valencia 18e vs Elche 9e",
+        "H2H: 7V-1N-2D",
+        "Blessures Valencia: Alberto Mari (injured), Alberto Mari (injured)",
+        "Blessures Elche: Adam Boayar (Wound), Adam Boayar (Wound)",
+        "Valencia: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Cheltenham vs Leicester",
+      "league": "FA Cup",
+      "date": "2026-01-10 12:15",
+      "match_description": "Match équilibré entre Cheltenham et Leicester",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Cheltenham)",
+      "probabilities": {
+        "home": 36.8,
+        "draw": 27.9,
+        "away": 35.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.2,
+        "over_15_prob": 78.6,
+        "over_25_prob": 56.6,
+        "over_35_prob": 42.6,
+        "btts": "Non",
+        "btts_prob": 41.0,
+        "score_exact": "2-0",
+        "clean_sheet": "Cheltenham gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Cheltenham MT)",
+        "probabilities": {
+          "home": 23.5,
+          "draw": 40.8,
+          "away": 35.6
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.2,
+        "over_15": "Oui",
+        "over_15_prob": 45.2,
+        "btts": "Non",
+        "btts_prob": 14.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.86,
+        "over_05": "Oui",
+        "over_05_prob": 72.4,
+        "over_15": "Oui",
+        "over_15_prob": 54.4
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Cheltenham/Cheltenham)",
+        "probability": 18.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Cheltenham: J. Thomas (Wound), J. Thomas (Wound)",
+        "Blessures Leicester: Ricardo Domingos Barbosa Perei (injured), James Justin (injured)"
+      ]
+    },
+    {
+      "match": "Everton vs Sunderland",
+      "league": "FA Cup",
+      "date": "2026-01-10 12:15",
+      "match_description": "Match équilibré entre Everton et Sunderland",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Everton)",
+      "probabilities": {
+        "home": 45.3,
+        "draw": 33.5,
+        "away": 21.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.35,
+        "over_15_prob": 63.3,
+        "over_25_prob": 44.2,
+        "over_35_prob": 27.3,
+        "btts": "Non",
+        "btts_prob": 31.5,
+        "score_exact": "1-0",
+        "clean_sheet": "Everton gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Everton MT)",
+        "probabilities": {
+          "home": 34.1,
+          "draw": 47.4,
+          "away": 18.6
+        },
+        "expected_goals": 0.99,
+        "over_05": "Oui",
+        "over_05_prob": 56.8,
+        "over_15": "Non",
+        "over_15_prob": 38.8,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.36,
+        "over_05": "Oui",
+        "over_05_prob": 63.5,
+        "over_15": "Oui",
+        "over_15_prob": 45.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Everton/Everton)",
+        "probability": 23.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.2,
+        "over_35_prob": 30.0,
+        "over_45_prob": 21.0,
+        "over_55_prob": 12.0,
+        "red_card_prob": 24.0,
+        "recommendation": "Cartons +2.5 (39%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 5V-2N-3D",
+        "Blessures Everton: Harrison Armstrong (Injury), Vitaliy Mykolenko (Groin Injury)",
+        "Blessures Sunderland: Fuka Arthur Masuaku (Suspension), Wilson Isidor (injured)"
+      ]
+    },
+    {
+      "match": "Macclesfield vs Crystal Palace",
+      "league": "FA Cup",
+      "date": "2026-01-10 12:15",
+      "match_description": "Match équilibré entre Macclesfield et Crystal Palace",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Macclesfield)",
+      "probabilities": {
+        "home": 35.9,
+        "draw": 26.7,
+        "away": 37.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.99,
+        "over_15_prob": 74.8,
+        "over_25_prob": 61.2,
+        "over_35_prob": 38.8,
+        "btts": "Non",
+        "btts_prob": 35.0,
+        "score_exact": "2-0",
+        "clean_sheet": "Macclesfield gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "1 (Macclesfield MT)",
+        "probabilities": {
+          "home": 19.7,
+          "draw": 36.6,
+          "away": 43.7
+        },
+        "expected_goals": 1.26,
+        "over_05": "Oui",
+        "over_05_prob": 61.6,
+        "over_15": "Oui",
+        "over_15_prob": 43.6,
+        "btts": "Non",
+        "btts_prob": 12.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.73,
+        "over_05": "Oui",
+        "over_05_prob": 70.2,
+        "over_15": "Oui",
+        "over_15_prob": 52.2
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Macclesfield/Macclesfield)",
+        "probability": 23.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.8,
+        "expected_total": 1.9,
+        "over_35_prob": 21.2,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (34%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Crystal Palace: Cheick Oumar Doucoure (Injury), Chadi Riad (Injury)"
+      ]
+    },
+    {
+      "match": "Wolves vs Shrewsbury",
+      "league": "FA Cup",
+      "date": "2026-01-10 12:15",
+      "match_description": "Match équilibré entre Wolves et Shrewsbury",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 50.2,
+        "draw": 31.8,
+        "away": 18.0
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.86,
+        "over_15_prob": 72.6,
+        "over_25_prob": 60.1,
+        "over_35_prob": 36.6,
+        "btts": "Oui",
+        "btts_prob": 31.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 49.1,
+          "draw": 39.4,
+          "away": 11.5
+        },
+        "expected_goals": 1.2,
+        "over_05": "Oui",
+        "over_05_prob": 60.7,
+        "over_15": "Oui",
+        "over_15_prob": 42.7,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.66,
+        "over_05": "Oui",
+        "over_05_prob": 68.9,
+        "over_15": "Oui",
+        "over_15_prob": 50.9
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 33.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.0,
+        "home_avg": 5.0,
+        "away_avg": 2.0,
+        "over_85_prob": 24.0,
+        "over_95_prob": 17.6,
+        "over_105_prob": 16.0,
+        "recommendation": "Corners +7.5 (32%) ~"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.6,
+        "over_35_prob": 42.5,
+        "over_45_prob": 29.8,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (55%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-2N-0D",
+        "Blessures Wolves: Yerson Mosquera (Ruptured cruciate ligament), L. Chiwome (Jumpers knee)",
+        "Blessures Shrewsbury: G. Lloyd (Wound), G. Lloyd (Wound)"
+      ]
+    },
+    {
+      "match": "Mirandes vs Almeria",
+      "league": "Segunda División",
+      "date": "2026-01-10 13:00",
+      "match_description": "Mirandes en difficulté (LLLDW). écart au classement: Almeria (3e) vs Mirandes (22e). H2H favorable à Almeria (6V-3N-1D). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Almeria)",
+      "probabilities": {
+        "home": 25.1,
+        "draw": 31.8,
+        "away": 43.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.18,
+        "over_15_prob": 78.3,
+        "over_25_prob": 54.5,
+        "over_35_prob": 42.3,
+        "btts": "Oui",
+        "btts_prob": 34.3,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Almeria MT)",
+        "probabilities": {
+          "home": 21.6,
+          "draw": 44.7,
+          "away": 33.7
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.1,
+        "over_15": "Oui",
+        "over_15_prob": 45.1,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.85,
+        "over_05": "Oui",
+        "over_05_prob": 72.2,
+        "over_15": "Oui",
+        "over_15_prob": 54.2
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Almeria/Almeria)",
+        "probability": 21.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.8,
+        "home_avg": 4.4,
+        "away_avg": 5.4,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 6.2,
+        "expected_total": 6.5,
+        "over_35_prob": 85.0,
+        "over_45_prob": 75.5,
+        "over_55_prob": 60.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (75%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Mirandes: LLLDW",
+        "Forme Almeria: WLLWD",
+        "Classement: Mirandes 22e vs Almeria 3e",
+        "H2H: 1V-3N-6D",
+        "Blessures Mirandes: Marino Illescas (Wound), Marino Illescas (Wound)",
+        "Blessures Almeria: Iddrisu Baba (Cruciate Ligament Surgery), Iddrisu Baba (Cruciate Ligament Surgery)",
+        "Mirandes: enjeu relegation"
+      ]
+    },
+    {
+      "match": "ES Tunis vs US Ben Guerdane",
+      "league": "Ligue 1",
+      "date": "2026-01-10 13:00",
+      "match_description": "ES Tunis en excellente forme (DWWWD). US Ben Guerdane en pleine confiance (WWWDD). H2H favorable à ES Tunis (6V-4N-0D). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (ES Tunis)",
+      "probabilities": {
+        "home": 50.6,
+        "draw": 30.1,
+        "away": 19.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.49,
+        "over_15_prob": 65.9,
+        "over_25_prob": 47.6,
+        "over_35_prob": 29.9,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0",
+        "clean_sheet": "ES Tunis gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (ES Tunis MT)",
+        "probabilities": {
+          "home": 48.4,
+          "draw": 41.7,
+          "away": 9.9
+        },
+        "expected_goals": 1.05,
+        "over_05": "Oui",
+        "over_05_prob": 57.9,
+        "over_15": "Non",
+        "over_15_prob": 39.9,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.45,
+        "over_05": "Oui",
+        "over_05_prob": 65.0,
+        "over_15": "Oui",
+        "over_15_prob": 47.0
+      },
+      "ht_ft": {
+        "prediction": "1/1 (ES Tunis/ES Tunis)",
+        "probability": 33.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 4.8,
+        "expected_total": 5.0,
+        "over_35_prob": 69.5,
+        "over_45_prob": 54.5,
+        "over_55_prob": 39.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme ES Tunis: DWWWD",
+        "Forme US Ben Guerdane: WWWDD",
+        "Classement: ES Tunis 1e vs US Ben Guerdane 10e",
+        "H2H: 6V-4N-0D",
+        "ES Tunis: enjeu title"
+      ]
+    },
+    {
+      "match": "Sudtirol vs Spezia",
+      "league": "Serie B",
+      "date": "2026-01-10 14:00",
+      "match_description": "Match équilibré entre Sudtirol et Spezia",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 29.4,
+        "draw": 32.4,
+        "away": 38.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.06,
+        "over_15_prob": 76.1,
+        "over_25_prob": 48.5,
+        "over_35_prob": 40.1,
+        "btts": "Oui",
+        "btts_prob": 30.8,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 26.5,
+          "draw": 47.0,
+          "away": 26.4
+        },
+        "expected_goals": 1.29,
+        "over_05": "Oui",
+        "over_05_prob": 62.1,
+        "over_15": "Oui",
+        "over_15_prob": 44.1,
+        "btts": "Non",
+        "btts_prob": 10.8,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.78,
+        "over_05": "Oui",
+        "over_05_prob": 71.0,
+        "over_15": "Oui",
+        "over_15_prob": 53.0
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 23.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.6,
+        "home_avg": 4.4,
+        "away_avg": 6.2,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.7,
+        "expected_total": 5.2,
+        "over_35_prob": 68.0,
+        "over_45_prob": 53.0,
+        "over_55_prob": 38.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Sudtirol: LDDDL",
+        "Forme Spezia: WLLWW",
+        "Classement: Sudtirol 17e vs Spezia 15e",
+        "H2H: 0V-2N-2D",
+        "Sudtirol: enjeu relegation_danger"
+      ]
+    }
+  ]
+}

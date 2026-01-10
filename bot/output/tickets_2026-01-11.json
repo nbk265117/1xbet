@@ -1,0 +1,204 @@
+{
+  "date": "2026-01-10T23:30:23.729204",
+  "total_tickets": 4,
+  "tickets": [
+    {
+      "id": 1,
+      "name": "Ticket Sécurisé",
+      "confidence": "MOYEN",
+      "risk": "FAIBLE",
+      "total_odds": 4.01,
+      "selections": [
+        {
+          "match": "Heerenveen vs Feyenoord",
+          "league": "Eredivisie",
+          "date": "2026-01-11T11:15:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.41,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Fiorentina vs AC Milan",
+          "league": "Serie A",
+          "date": "2026-01-11T14:00:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.44,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Borussia Mönchengladbach vs FC Augsburg",
+          "league": "Bundesliga",
+          "date": "2026-01-11T14:30:00+00:00",
+          "bet": "1X",
+          "confidence": "MOYEN",
+          "odds": 1.42,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        },
+        {
+          "match": "Lecce vs Parma",
+          "league": "Serie A",
+          "date": "2026-01-11T11:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Rayo Vallecano vs Mallorca",
+          "league": "La Liga",
+          "date": "2026-01-11T13:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ticket Mixte",
+      "confidence": "MOYEN",
+      "risk": "MOYEN",
+      "total_odds": 2.36,
+      "selections": [
+        {
+          "match": "Heerenveen vs Feyenoord",
+          "league": "Eredivisie",
+          "date": "2026-01-11T11:15:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.41,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Borussia Mönchengladbach vs FC Augsburg",
+          "league": "Bundesliga",
+          "date": "2026-01-11T14:30:00+00:00",
+          "bet": "1X",
+          "confidence": "MOYEN",
+          "odds": 1.42,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        },
+        {
+          "match": "Lecce vs Parma",
+          "league": "Serie A",
+          "date": "2026-01-11T11:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ticket Over/Under",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 6.94,
+      "selections": [
+        {
+          "match": "Heerenveen vs Feyenoord",
+          "league": "Eredivisie",
+          "date": "2026-01-11T11:15:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 11.9 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Lecce vs Parma",
+          "league": "Serie A",
+          "date": "2026-01-11T11:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 6.2 buts attendus. H2H: 3.0 buts/match"
+        },
+        {
+          "match": "Rayo Vallecano vs Mallorca",
+          "league": "La Liga",
+          "date": "2026-01-11T13:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 8.3 buts attendus. H2H: 1.9 buts/match"
+        },
+        {
+          "match": "Bayern München vs VfL Wolfsburg",
+          "league": "Bundesliga",
+          "date": "2026-01-11T16:30:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.54,
+          "reasoning": "Match déséquilibré: clean sheet très probable"
+        },
+        {
+          "match": "Portsmouth vs Arsenal",
+          "league": "FA Cup",
+          "date": "2026-01-11T14:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.54,
+          "reasoning": "Match déséquilibré: clean sheet très probable"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ticket Buts",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 5.72,
+      "selections": [
+        {
+          "match": "Heerenveen vs Feyenoord",
+          "league": "Eredivisie",
+          "date": "2026-01-11T11:15:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 11.9 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Lecce vs Parma",
+          "league": "Serie A",
+          "date": "2026-01-11T11:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 6.2 buts attendus. H2H: 3.0 buts/match"
+        },
+        {
+          "match": "Bayern München vs VfL Wolfsburg",
+          "league": "Bundesliga",
+          "date": "2026-01-11T16:30:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.54,
+          "reasoning": "Match déséquilibré: clean sheet très probable"
+        },
+        {
+          "match": "Portsmouth vs Arsenal",
+          "league": "FA Cup",
+          "date": "2026-01-11T14:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.54,
+          "reasoning": "Match déséquilibré: clean sheet très probable"
+        },
+        {
+          "match": "Rayo Vallecano vs Mallorca",
+          "league": "La Liga",
+          "date": "2026-01-11T13:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    }
+  ]
+}

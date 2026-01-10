@@ -1,0 +1,240 @@
+{
+  "date": "2026-01-07T03:26:57.266654",
+  "total_tickets": 4,
+  "tickets": [
+    {
+      "id": 1,
+      "name": "Ticket Sécurisé",
+      "confidence": "ÉLEVÉ",
+      "risk": "FAIBLE",
+      "total_odds": 3.78,
+      "selections": [
+        {
+          "match": "Napoli vs Verona",
+          "league": "Serie A",
+          "date": "2026-01-07T17:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.28,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Bournemouth vs Tottenham",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.28,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Brentford vs Sunderland",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.28,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Manchester City vs Brighton",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.28,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Torino vs Udinese",
+          "league": "Serie A",
+          "date": "2026-01-07T19:45:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.41,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ticket Équilibré",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 3.81,
+      "selections": [
+        {
+          "match": "Bologna vs Atalanta",
+          "league": "Serie A",
+          "date": "2026-01-07T17:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Bournemouth vs Tottenham",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Brentford vs Sunderland",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Crystal Palace vs Aston Villa",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Everton vs Wolves",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Fulham vs Chelsea",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ticket Buts",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 4.88,
+      "selections": [
+        {
+          "match": "Brentford vs Sunderland",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.28,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Crystal Palace vs Aston Villa",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Lazio vs Fiorentina",
+          "league": "Serie A",
+          "date": "2026-01-07T19:45:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Parma vs Inter",
+          "league": "Serie A",
+          "date": "2026-01-07T19:45:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Burnley vs Manchester United",
+          "league": "Premier League",
+          "date": "2026-01-07T20:15:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Newcastle vs Leeds",
+          "league": "Premier League",
+          "date": "2026-01-07T20:15:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Al Ahli Doha vs Al Shamal",
+          "league": "Stars League",
+          "date": "2026-01-07T14:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ticket Favoris",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 2.5,
+      "selections": [
+        {
+          "match": "Bournemouth vs Tottenham",
+          "league": "Premier League",
+          "date": "2026-01-07T19:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.28,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "Burnley vs Manchester United",
+          "league": "Premier League",
+          "date": "2026-01-07T20:15:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Al Ahli Doha vs Al Shamal",
+          "league": "Stars League",
+          "date": "2026-01-07T14:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        },
+        {
+          "match": "Al Wakrah vs Al-Arabi SC",
+          "league": "Stars League",
+          "date": "2026-01-07T16:30:00+00:00",
+          "bet": "BTTS Oui",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.25,
+          "reasoning": "Les deux équipes ont tendance à marquer et à encaisser"
+        }
+      ]
+    }
+  ]
+}

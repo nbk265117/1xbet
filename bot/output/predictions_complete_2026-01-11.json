@@ -1,0 +1,2480 @@
+{
+  "date": "2026-01-11",
+  "generated_at": "2026-01-10T23:30:23.716636",
+  "total_matches": 30,
+  "predictions": [
+    {
+      "match": "Heerenveen vs Feyenoord",
+      "league": "Eredivisie",
+      "date": "2026-01-11 11:15",
+      "match_description": "H2H favorable à Feyenoord (7V-1N-2D). match à buts attendu (4.1 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Feyenoord)",
+      "probabilities": {
+        "home": 30.1,
+        "draw": 31.2,
+        "away": 38.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.12,
+        "over_15_prob": 80.0,
+        "over_25_prob": 69.1,
+        "over_35_prob": 59.2,
+        "btts": "Oui",
+        "btts_prob": 39.8,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Feyenoord MT)",
+        "probabilities": {
+          "home": 25.8,
+          "draw": 42.0,
+          "away": 32.3
+        },
+        "expected_goals": 1.73,
+        "over_05": "Oui",
+        "over_05_prob": 70.2,
+        "over_15": "Oui",
+        "over_15_prob": 52.2,
+        "btts": "Non",
+        "btts_prob": 13.9,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.39,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 64.0
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Feyenoord/Feyenoord)",
+        "probability": 20.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 15.4,
+        "home_avg": 7.6,
+        "away_avg": 7.8,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.7,
+        "expected_total": 2.8,
+        "over_35_prob": 38.0,
+        "over_45_prob": 23.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (53%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Heerenveen: WWLLW",
+        "Forme Feyenoord: DLWWL",
+        "Classement: Heerenveen 9e vs Feyenoord 2e",
+        "H2H: 2V-1N-7D",
+        "Blessures Heerenveen: Oliver Braude (Red card Suspended), Levi Smans (Knee injury)",
+        "Blessures Feyenoord: Gernot Trauner (Achilles tendon problems), Jakub Moder (Minor Knock)"
+      ]
+    },
+    {
+      "match": "Lecce vs Parma",
+      "league": "Serie A",
+      "date": "2026-01-11 11:30",
+      "match_description": "Match équilibré entre Lecce et Parma",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 32.6,
+        "draw": 31.5,
+        "away": 35.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.64,
+        "over_15_prob": 68.6,
+        "over_25_prob": 43.5,
+        "over_35_prob": 32.6,
+        "btts": "Oui",
+        "btts_prob": 29.6,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 26.2,
+          "draw": 47.6,
+          "away": 26.2
+        },
+        "expected_goals": 1.11,
+        "over_05": "Oui",
+        "over_05_prob": 59.0,
+        "over_15": "Oui",
+        "over_15_prob": 41.0,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.53,
+        "over_05": "Oui",
+        "over_05_prob": 66.6,
+        "over_15": "Oui",
+        "over_15_prob": 48.6
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.2,
+        "home_avg": 4.8,
+        "away_avg": 3.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.3,
+        "expected_total": 4.1,
+        "over_35_prob": 61.9,
+        "over_45_prob": 46.9,
+        "over_55_prob": 31.9,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Lecce: LDLWL",
+        "Forme Parma: LDWLW",
+        "Classement: Lecce 16e vs Parma 15e",
+        "H2H: 4V-2N-4D",
+        "Blessures Lecce: Lameck Banda (Red card Suspended), F. Marchwiński (Jumpers knee)",
+        "Blessures Parma: J. Ondrejka (Leg Injury), J. Ondrejka (Leg Injury)",
+        "Lecce: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Rayo Vallecano vs Mallorca",
+      "league": "La Liga",
+      "date": "2026-01-11 13:00",
+      "match_description": "H2H favorable à Mallorca (6V-2N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 33.7,
+        "draw": 31.1,
+        "away": 35.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.51,
+        "over_15_prob": 66.1,
+        "over_25_prob": 43.0,
+        "over_35_prob": 30.1,
+        "btts": "Oui",
+        "btts_prob": 29.6,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 31.2,
+          "draw": 46.3,
+          "away": 22.4
+        },
+        "expected_goals": 1.05,
+        "over_05": "Oui",
+        "over_05_prob": 57.9,
+        "over_15": "Non",
+        "over_15_prob": 39.9,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.45,
+        "over_05": "Oui",
+        "over_05_prob": 65.2,
+        "over_15": "Oui",
+        "over_15_prob": 47.2
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.4,
+        "home_avg": 5.6,
+        "away_avg": 2.8,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.3,
+        "expected_total": 5.0,
+        "over_35_prob": 76.7,
+        "over_45_prob": 61.7,
+        "over_55_prob": 46.7,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Rayo Vallecano: DLDLD",
+        "Forme Mallorca: LDWDD",
+        "Classement: Rayo Vallecano 15e vs Mallorca 17e",
+        "H2H: 2V-2N-6D",
+        "Blessures Rayo Vallecano: Oscar Valentín (Injured Doubtful), A. Mumin (Jumpers knee)",
+        "Blessures Mallorca: Samuel Almeida Costa (Injured Doubtful), Ivan Cuellar Sacristan (Injured Doubtful)",
+        "Rayo Vallecano: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "GO Ahead Eagles vs Fortuna Sittard",
+      "league": "Eredivisie",
+      "date": "2026-01-11 13:30",
+      "match_description": "Match équilibré entre GO Ahead Eagles et Fortuna Sittard",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (GO Ahead Eagles)",
+      "probabilities": {
+        "home": 43.1,
+        "draw": 31.2,
+        "away": 25.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.47,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.4,
+        "over_35_prob": 47.4,
+        "btts": "Oui",
+        "btts_prob": 36.3,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (GO Ahead Eagles MT)",
+        "probabilities": {
+          "home": 34.6,
+          "draw": 43.1,
+          "away": 22.3
+        },
+        "expected_goals": 1.46,
+        "over_05": "Oui",
+        "over_05_prob": 65.2,
+        "over_15": "Oui",
+        "over_15_prob": 47.2,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.01,
+        "over_05": "Oui",
+        "over_05_prob": 75.2,
+        "over_15": "Oui",
+        "over_15_prob": 57.2
+      },
+      "ht_ft": {
+        "prediction": "1/1 (GO Ahead Eagles/GO Ahead Eagles)",
+        "probability": 21.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.0,
+        "home_avg": 3.6,
+        "away_avg": 7.4,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.4,
+        "expected_total": 4.6,
+        "over_35_prob": 63.5,
+        "over_45_prob": 48.5,
+        "over_55_prob": 33.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme GO Ahead Eagles: DLDDL",
+        "Forme Fortuna Sittard: WLLDD",
+        "Classement: GO Ahead Eagles 14e vs Fortuna Sittard 11e",
+        "H2H: 5V-2N-3D",
+        "Blessures GO Ahead Eagles: Pim Saathof (Ruptured cruciate ligament), Soren Tengstedt (Unknown Injury)",
+        "Blessures Fortuna Sittard: Daley Sinkgraven (Knee injury), Umaro Embalo (Red card Suspended)"
+      ]
+    },
+    {
+      "match": "Telstar vs Ajax",
+      "league": "Eredivisie",
+      "date": "2026-01-11 13:30",
+      "match_description": "Ajax en pleine confiance (DWWWL). écart au classement: Ajax (3e) vs Telstar (15e). H2H favorable à Ajax (3V-0N-0D). match à buts attendu (4.1 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Ajax)",
+      "probabilities": {
+        "home": 26.0,
+        "draw": 30.9,
+        "away": 43.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.05,
+        "over_15_prob": 80.0,
+        "over_25_prob": 68.0,
+        "over_35_prob": 58.0,
+        "btts": "Oui",
+        "btts_prob": 37.9,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Ajax MT)",
+        "probabilities": {
+          "home": 22.0,
+          "draw": 41.7,
+          "away": 36.3
+        },
+        "expected_goals": 1.7,
+        "over_05": "Oui",
+        "over_05_prob": 69.6,
+        "over_15": "Oui",
+        "over_15_prob": 51.6,
+        "btts": "Non",
+        "btts_prob": 13.3,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.35,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 63.3
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Ajax/Ajax)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.8,
+        "home_avg": 3.6,
+        "away_avg": 5.2,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.7,
+        "over_35_prob": 50.0,
+        "over_45_prob": 35.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Telstar: WDDLD",
+        "Forme Ajax: DWWWL",
+        "Classement: Telstar 15e vs Ajax 3e",
+        "H2H: 0V-0N-3D",
+        "Blessures Telstar: N. Nwankwo (Inactive), D. Bakker (Inactive)",
+        "Blessures Ajax: Brian Brobbey (Ankle Injury), Josip Sutalo (Ankle Injury)",
+        "Telstar: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Fiorentina vs AC Milan",
+      "league": "Serie A",
+      "date": "2026-01-11 14:00",
+      "match_description": "AC Milan en pleine confiance (DWWDW). écart au classement: AC Milan (2e) vs Fiorentina (19e). H2H favorable à AC Milan (6V-1N-3D). match à buts attendu (3.6 buts prévus). Enjeu: course au titre, lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (AC Milan)",
+      "probabilities": {
+        "home": 26.8,
+        "draw": 31.0,
+        "away": 42.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.6,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.6,
+        "over_35_prob": 49.8,
+        "btts": "Oui",
+        "btts_prob": 33.5,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (AC Milan MT)",
+        "probabilities": {
+          "home": 21.6,
+          "draw": 44.6,
+          "away": 33.8
+        },
+        "expected_goals": 1.51,
+        "over_05": "Oui",
+        "over_05_prob": 66.2,
+        "over_15": "Oui",
+        "over_15_prob": 48.2,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.09,
+        "over_05": "Oui",
+        "over_05_prob": 76.6,
+        "over_15": "Oui",
+        "over_15_prob": 58.6
+      },
+      "ht_ft": {
+        "prediction": "2/2 (AC Milan/AC Milan)",
+        "probability": 21.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.4,
+        "home_avg": 5.0,
+        "away_avg": 7.4,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.0,
+        "expected_total": 4.5,
+        "over_35_prob": 71.8,
+        "over_45_prob": 56.8,
+        "over_55_prob": 41.8,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +3.5 (72%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Fiorentina: DWLWL",
+        "Forme AC Milan: DWWDW",
+        "Classement: Fiorentina 19e vs AC Milan 2e",
+        "H2H: 3V-1N-6D",
+        "Blessures Fiorentina: Rolando Mandragora (Unknown Injury), Moise Keane (Red card Suspended)",
+        "Blessures AC Milan: L. Torriani (Finger Injury), L. Torriani (Finger Injury)",
+        "Fiorentina: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Borussia Mönchengladbach vs FC Augsburg",
+      "league": "Bundesliga",
+      "date": "2026-01-11 14:30",
+      "match_description": "H2H favorable à FC Augsburg (6V-2N-2D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 33.9,
+        "draw": 31.2,
+        "away": 34.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 59.3,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 34.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 32.9,
+          "draw": 43.4,
+          "away": 23.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.6,
+        "over_15": "Oui",
+        "over_15_prob": 57.6
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 20.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.8,
+        "home_avg": 5.2,
+        "away_avg": 4.6,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.6,
+        "expected_total": 3.8,
+        "over_35_prob": 51.5,
+        "over_45_prob": 36.5,
+        "over_55_prob": 21.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (66%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Borussia Mönchengladbach: LLWDW",
+        "Forme FC Augsburg: DLWLW",
+        "Classement: Borussia Mönchengladbach 12e vs FC Augsburg 15e",
+        "H2H: 2V-2N-6D",
+        "Blessures Borussia Mönchengladbach: Tim Kleindienst (Meniscus injur), Shuto Machino (Calf Problems)",
+        "Blessures FC Augsburg: Elias Saad (Muscle Injury), Elvis Rexhbecaj (Knee Problems)"
+      ]
+    },
+    {
+      "match": "Levante vs Espanyol",
+      "league": "La Liga",
+      "date": "2026-01-11 15:15",
+      "match_description": "Espanyol en pleine confiance (LWWWW). écart au classement: Espanyol (5e) vs Levante (19e). H2H favorable à Espanyol (5V-4N-1D). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Espanyol)",
+      "probabilities": {
+        "home": 27.4,
+        "draw": 31.1,
+        "away": 41.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.07,
+        "over_15_prob": 76.2,
+        "over_25_prob": 51.7,
+        "over_35_prob": 40.2,
+        "btts": "Oui",
+        "btts_prob": 33.5,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Espanyol MT)",
+        "probabilities": {
+          "home": 23.4,
+          "draw": 45.5,
+          "away": 31.1
+        },
+        "expected_goals": 1.29,
+        "over_05": "Oui",
+        "over_05_prob": 62.2,
+        "over_15": "Oui",
+        "over_15_prob": 44.2,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.78,
+        "over_05": "Oui",
+        "over_05_prob": 71.0,
+        "over_15": "Oui",
+        "over_15_prob": 53.0
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Espanyol/Espanyol)",
+        "probability": 21.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.4,
+        "home_avg": 3.0,
+        "away_avg": 4.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.2,
+        "expected_total": 4.9,
+        "over_35_prob": 75.1,
+        "over_45_prob": 60.1,
+        "over_55_prob": 45.1,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (60%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Levante: WDLLL",
+        "Forme Espanyol: LWWWW",
+        "Classement: Levante 19e vs Espanyol 5e",
+        "H2H: 1V-4N-5D",
+        "Blessures Levante: Alfonso Pastor Vacas (injured), Carlos Alvarez (Injured Doubtful)",
+        "Blessures Espanyol: P. Milla (Red Card), P. Milla (Red Card)",
+        "Levante: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Nacional vs Santa Clara",
+      "league": "Primeira Liga",
+      "date": "2026-01-11 15:30",
+      "match_description": "H2H favorable à Santa Clara (6V-2N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Nacional)",
+      "probabilities": {
+        "home": 40.6,
+        "draw": 31.8,
+        "away": 27.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.76,
+        "over_15_prob": 70.6,
+        "over_25_prob": 45.1,
+        "over_35_prob": 34.6,
+        "btts": "Non",
+        "btts_prob": 30.2,
+        "score_exact": "1-0",
+        "clean_sheet": "Nacional gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Nacional MT)",
+        "probabilities": {
+          "home": 29.4,
+          "draw": 47.4,
+          "away": 23.2
+        },
+        "expected_goals": 1.16,
+        "over_05": "Oui",
+        "over_05_prob": 59.8,
+        "over_15": "Oui",
+        "over_15_prob": 41.8,
+        "btts": "Non",
+        "btts_prob": 10.6,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.6,
+        "over_05": "Oui",
+        "over_05_prob": 67.8,
+        "over_15": "Oui",
+        "over_15_prob": 49.8
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Nacional/Nacional)",
+        "probability": 22.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 5.8,
+        "home_avg": 2.4,
+        "away_avg": 3.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 6.7,
+        "expected_total": 6.5,
+        "over_35_prob": 85.0,
+        "over_45_prob": 83.1,
+        "over_55_prob": 68.2,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (83%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Nacional: LDWLL",
+        "Forme Santa Clara: LDLWD",
+        "Classement: Nacional 14e vs Santa Clara 13e",
+        "H2H: 2V-2N-6D",
+        "Blessures Nacional: Lucas Eduardo Santos Joao (injured), Leonardo Rodrigues dos Santos (injured)",
+        "Blessures Santa Clara: Pedro Pacheco (Knee injury), Pedro Pacheco (Knee injury)"
+      ]
+    },
+    {
+      "match": "Sparta Rotterdam vs Heracles",
+      "league": "Eredivisie",
+      "date": "2026-01-11 15:45",
+      "match_description": "Match équilibré entre Sparta Rotterdam et Heracles",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Sparta Rotterdam)",
+      "probabilities": {
+        "home": 37.3,
+        "draw": 31.2,
+        "away": 31.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.39,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.0,
+        "over_35_prob": 46.0,
+        "btts": "Oui",
+        "btts_prob": 37.9,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Sparta Rotterdam MT)",
+        "probabilities": {
+          "home": 35.3,
+          "draw": 42.1,
+          "away": 22.6
+        },
+        "expected_goals": 1.42,
+        "over_05": "Oui",
+        "over_05_prob": 64.6,
+        "over_15": "Oui",
+        "over_15_prob": 46.6,
+        "btts": "Non",
+        "btts_prob": 13.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.96,
+        "over_05": "Oui",
+        "over_05_prob": 74.4,
+        "over_15": "Oui",
+        "over_15_prob": 56.4
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Sparta Rotterdam/Sparta Rotterdam)",
+        "probability": 20.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.4,
+        "away_avg": 4.6,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.2,
+        "expected_total": 4.4,
+        "over_35_prob": 60.5,
+        "over_45_prob": 45.5,
+        "over_55_prob": 30.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (60%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Sparta Rotterdam: WLWLD",
+        "Forme Heracles: LLDDW",
+        "Classement: Sparta Rotterdam 10e vs Heracles 16e",
+        "H2H: 4V-4N-2D",
+        "Blessures Sparta Rotterdam: Jonathan Alexander De Guzman (Unknown Injury), Tobias Lauritsen (hand injury)",
+        "Blessures Heracles: Sava-Arangel Cestic (Ankle fracture), Mario Engels (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "Bayern München vs VfL Wolfsburg",
+      "league": "Bundesliga",
+      "date": "2026-01-11 16:30",
+      "match_description": "Bayern München en excellente forme (WDWWW). écart au classement: Bayern München (1e) vs VfL Wolfsburg (14e). H2H favorable à Bayern München (9V-1N-0D). match à buts attendu (4.1 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Bayern München)",
+      "probabilities": {
+        "home": 56.3,
+        "draw": 30.4,
+        "away": 13.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.1,
+        "over_15_prob": 80.0,
+        "over_25_prob": 77.9,
+        "over_35_prob": 58.8,
+        "btts": "Oui",
+        "btts_prob": 33.5,
+        "score_exact": "4-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Bayern München MT)",
+        "probabilities": {
+          "home": 56.3,
+          "draw": 34.9,
+          "away": 8.8
+        },
+        "expected_goals": 1.72,
+        "over_05": "Oui",
+        "over_05_prob": 70.0,
+        "over_15": "Oui",
+        "over_15_prob": 52.0,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.38,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 63.8
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Bayern München/Bayern München)",
+        "probability": 42.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.0,
+        "home_avg": 6.0,
+        "away_avg": 3.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.6,
+        "expected_total": 3.8,
+        "over_35_prob": 30.9,
+        "over_45_prob": 21.9,
+        "over_55_prob": 12.9,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (40%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Bayern München: WDWWW",
+        "Forme VfL Wolfsburg: LWWDL",
+        "Classement: Bayern München 1e vs VfL Wolfsburg 14e",
+        "H2H: 9V-1N-0D",
+        "Blessures Bayern München: Hiroki Ito (Injury), Kingsley Coman (Injury)",
+        "Blessures VfL Wolfsburg: Rogerio (Muscular problems), Kevin Paredes (Foot surgery)",
+        "Bayern München: enjeu title"
+      ]
+    },
+    {
+      "match": "Verona vs Lazio",
+      "league": "Serie A",
+      "date": "2026-01-11 17:00",
+      "match_description": "H2H favorable à Lazio (6V-3N-1D). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 29.4,
+        "draw": 31.5,
+        "away": 39.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.9,
+        "over_15_prob": 73.2,
+        "over_25_prob": 46.6,
+        "over_35_prob": 37.2,
+        "btts": "Oui",
+        "btts_prob": 30.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 23.3,
+          "draw": 47.2,
+          "away": 29.5
+        },
+        "expected_goals": 1.22,
+        "over_05": "Oui",
+        "over_05_prob": 60.9,
+        "over_15": "Oui",
+        "over_15_prob": 42.9,
+        "btts": "Non",
+        "btts_prob": 10.6,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.68,
+        "over_05": "Oui",
+        "over_05_prob": 69.3,
+        "over_15": "Oui",
+        "over_15_prob": 51.3
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 3.4,
+        "away_avg": 4.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.9,
+        "expected_total": 5.9,
+        "over_35_prob": 85.0,
+        "over_45_prob": 71.6,
+        "over_55_prob": 56.6,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (72%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Verona: DLLWW",
+        "Forme Lazio: DLDDW",
+        "Classement: Verona 18e vs Lazio 10e",
+        "H2H: 1V-3N-6D",
+        "Blessures Verona: T. Suslov (Jumpers knee), T. Suslov (Jumpers knee)",
+        "Blessures Lazio: Alessio Romagnoli (unfit), A. Marušić (Muscle bruise)",
+        "Verona: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Moreirense vs Tondela",
+      "league": "Primeira Liga",
+      "date": "2026-01-11 18:00",
+      "match_description": "écart au classement: Moreirense (7e) vs Tondela (17e)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Moreirense)",
+      "probabilities": {
+        "home": 46.0,
+        "draw": 31.5,
+        "away": 22.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.23,
+        "over_15_prob": 79.1,
+        "over_25_prob": 52.0,
+        "over_35_prob": 43.1,
+        "btts": "Oui",
+        "btts_prob": 31.5,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Moreirense MT)",
+        "probabilities": {
+          "home": 36.0,
+          "draw": 45.4,
+          "away": 18.6
+        },
+        "expected_goals": 1.36,
+        "over_05": "Oui",
+        "over_05_prob": 63.4,
+        "over_15": "Oui",
+        "over_15_prob": 45.4,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.87,
+        "over_05": "Oui",
+        "over_05_prob": 72.7,
+        "over_15": "Oui",
+        "over_15_prob": 54.7
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Moreirense/Moreirense)",
+        "probability": 22.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 5.0,
+        "away_avg": 4.6,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 6.8,
+        "expected_total": 6.6,
+        "over_35_prob": 85.0,
+        "over_45_prob": 84.8,
+        "over_55_prob": 69.8,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (85%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Moreirense: WDLDD",
+        "Forme Tondela: WLLLW",
+        "Classement: Moreirense 7e vs Tondela 17e",
+        "H2H: 3V-3N-4D",
+        "Blessures Moreirense: Guilherme Liberato (injured), Rodri Alonso (Injured Doubtful)",
+        "Blessures Tondela: Sphephelo Sithole (Tibia and Fibula Fracture), Cicero Clebson Alves Santana (Injured Doubtful)",
+        "Moreirense: enjeu conference"
+      ]
+    },
+    {
+      "match": "Barcelona vs Real Madrid",
+      "league": "Super Cup",
+      "date": "2026-01-11 19:00",
+      "match_description": "match à buts attendu (3.8 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Barcelona)",
+      "probabilities": {
+        "home": 44.6,
+        "draw": 31.5,
+        "away": 23.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.8,
+        "over_15_prob": 80.0,
+        "over_25_prob": 70.8,
+        "over_35_prob": 53.4,
+        "btts": "Oui",
+        "btts_prob": 57.0,
+        "score_exact": "4-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Barcelona MT)",
+        "probabilities": {
+          "home": 36.8,
+          "draw": 40.9,
+          "away": 22.3
+        },
+        "expected_goals": 1.6,
+        "over_05": "Oui",
+        "over_05_prob": 67.7,
+        "over_15": "Oui",
+        "over_15_prob": 49.7,
+        "btts": "Non",
+        "btts_prob": 19.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.2,
+        "over_05": "Oui",
+        "over_05_prob": 78.7,
+        "over_15": "Oui",
+        "over_15_prob": 60.7
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Barcelona/Barcelona)",
+        "probability": 23.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 6.0,
+        "home_avg": 5.0,
+        "away_avg": 1.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.8,
+        "expected_total": 2.9,
+        "over_35_prob": 33.6,
+        "over_45_prob": 20.8,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (46%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 6V-0N-4D",
+        "Blessures Barcelona: Robert Lewandowski (Injured Doubtful), Daniel Rodriguez (injured)",
+        "Blessures Real Madrid: Antonio Rudiger (Suspension), Endrick (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "Inter vs Napoli",
+      "league": "Serie A",
+      "date": "2026-01-11 19:45",
+      "match_description": "Inter en excellente forme (WWWWW). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Inter)",
+      "probabilities": {
+        "home": 47.1,
+        "draw": 30.8,
+        "away": 22.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.36,
+        "over_15_prob": 80.0,
+        "over_25_prob": 54.3,
+        "over_35_prob": 45.5,
+        "btts": "Oui",
+        "btts_prob": 31.5,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Inter MT)",
+        "probabilities": {
+          "home": 39.1,
+          "draw": 44.2,
+          "away": 16.7
+        },
+        "expected_goals": 1.41,
+        "over_05": "Oui",
+        "over_05_prob": 64.4,
+        "over_15": "Oui",
+        "over_15_prob": 46.4,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.95,
+        "over_05": "Oui",
+        "over_05_prob": 74.1,
+        "over_15": "Oui",
+        "over_15_prob": 56.1
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Inter/Inter)",
+        "probability": 25.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.8,
+        "home_avg": 6.0,
+        "away_avg": 6.8,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.7,
+        "expected_total": 3.5,
+        "over_35_prob": 53.6,
+        "over_45_prob": 38.6,
+        "over_55_prob": 23.6,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (69%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Inter: WWWWW",
+        "Forme Napoli: DWWLW",
+        "Classement: Inter 1e vs Napoli 4e",
+        "H2H: 4V-4N-2D",
+        "Blessures Inter: Hakan Calhanoglu (Red card Suspended), Federico Dimarco (injured)",
+        "Blessures Napoli: Amir Rrahmani (Wound), R. Lukaku (Thigh problems)",
+        "Inter: enjeu title"
+      ]
+    },
+    {
+      "match": "Roda vs VVV Venlo",
+      "league": "Eerste Divisie",
+      "date": "2026-01-11 11:15",
+      "match_description": "match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Roda)",
+      "probabilities": {
+        "home": 34.5,
+        "draw": 31.5,
+        "away": 34.0
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.53,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.8,
+        "over_35_prob": 48.6,
+        "btts": "Oui",
+        "btts_prob": 37.9,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Roda MT)",
+        "probabilities": {
+          "home": 33.0,
+          "draw": 42.7,
+          "away": 24.2
+        },
+        "expected_goals": 1.48,
+        "over_05": "Oui",
+        "over_05_prob": 65.7,
+        "over_15": "Oui",
+        "over_15_prob": 47.7,
+        "btts": "Non",
+        "btts_prob": 13.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.05,
+        "over_05": "Oui",
+        "over_05_prob": 75.9,
+        "over_15": "Oui",
+        "over_15_prob": 57.9
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Roda/Roda)",
+        "probability": 20.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.4,
+        "home_avg": 4.8,
+        "away_avg": 3.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.6,
+        "over_35_prob": 48.5,
+        "over_45_prob": 33.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Roda: WWLDL",
+        "Forme VVV Venlo: WWWLL",
+        "Classement: Roda 4e vs VVV Venlo 8e",
+        "H2H: 3V-5N-2D",
+        "Blessures VVV Venlo: Thomas Reinders (Wound), D. Zandbergen (Wound)",
+        "Roda: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Derby vs Leeds",
+      "league": "FA Cup",
+      "date": "2026-01-11 12:00",
+      "match_description": "H2H favorable à Leeds (6V-2N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Leeds)",
+      "probabilities": {
+        "home": 24.3,
+        "draw": 33.1,
+        "away": 42.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.5,
+        "over_15_prob": 66.1,
+        "over_25_prob": 47.7,
+        "over_35_prob": 30.1,
+        "btts": "Non",
+        "btts_prob": 41.5,
+        "score_exact": "0-1",
+        "clean_sheet": "Leeds gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Leeds MT)",
+        "probabilities": {
+          "home": 18.9,
+          "draw": 45.7,
+          "away": 35.4
+        },
+        "expected_goals": 1.05,
+        "over_05": "Oui",
+        "over_05_prob": 57.9,
+        "over_15": "Non",
+        "over_15_prob": 39.9,
+        "btts": "Non",
+        "btts_prob": 14.5,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.45,
+        "over_05": "Oui",
+        "over_05_prob": 65.1,
+        "over_15": "Oui",
+        "over_15_prob": 47.1
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Leeds/Leeds)",
+        "probability": 22.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-2N-6D",
+        "Blessures Derby: Matthew Clarke (Injured Doubtful), Lars-Jorgen Salvesen (Ruptured cruciate ligament)",
+        "Blessures Leeds: Jaka Bijol (Red card Suspended), Sebastiaan Bornauw (Injury)"
+      ]
+    },
+    {
+      "match": "Leganes vs Valladolid",
+      "league": "Segunda División",
+      "date": "2026-01-11 13:00",
+      "match_description": "Match équilibré entre Leganes et Valladolid",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 42.1,
+        "draw": 31.6,
+        "away": 26.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.72,
+        "over_15_prob": 70.0,
+        "over_25_prob": 46.5,
+        "over_35_prob": 34.0,
+        "btts": "Oui",
+        "btts_prob": 31.8,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.9,
+          "draw": 46.5,
+          "away": 22.5
+        },
+        "expected_goals": 1.14,
+        "over_05": "Oui",
+        "over_05_prob": 59.6,
+        "over_15": "Oui",
+        "over_15_prob": 41.6,
+        "btts": "Non",
+        "btts_prob": 11.1,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.58,
+        "over_05": "Oui",
+        "over_05_prob": 67.4,
+        "over_15": "Oui",
+        "over_15_prob": 49.4
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.6,
+        "home_avg": 5.0,
+        "away_avg": 5.6,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 7.5,
+        "expected_total": 7.4,
+        "over_35_prob": 85.0,
+        "over_45_prob": 85.0,
+        "over_55_prob": 79.7,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (85%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Leganes: WLDDL",
+        "Forme Valladolid: DLLWD",
+        "Classement: Leganes 17e vs Valladolid 12e",
+        "H2H: 3V-4N-3D",
+        "Blessures Leganes: S. Figueredo (Wound), S. Figueredo (Wound)",
+        "Blessures Valladolid: Marcos André (Contusion), Marcos André (Contusion)",
+        "Leganes: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "De Graafschap vs Den Bosch",
+      "league": "Eerste Divisie",
+      "date": "2026-01-11 13:30",
+      "match_description": "De Graafschap en excellente forme (WLWWW). match à buts attendu (4.0 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (De Graafschap)",
+      "probabilities": {
+        "home": 47.6,
+        "draw": 30.6,
+        "away": 21.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.0,
+        "over_15_prob": 80.0,
+        "over_25_prob": 74.0,
+        "over_35_prob": 57.0,
+        "btts": "Oui",
+        "btts_prob": 47.5,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (De Graafschap MT)",
+        "probabilities": {
+          "home": 40.3,
+          "draw": 39.9,
+          "away": 19.8
+        },
+        "expected_goals": 1.68,
+        "over_05": "Oui",
+        "over_05_prob": 69.2,
+        "over_15": "Oui",
+        "over_15_prob": 51.2,
+        "btts": "Non",
+        "btts_prob": 16.6,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.32,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 62.8
+      },
+      "ht_ft": {
+        "prediction": "1/1 (De Graafschap/De Graafschap)",
+        "probability": 26.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.0,
+        "home_avg": 6.4,
+        "away_avg": 4.6,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.4,
+        "over_35_prob": 48.5,
+        "over_45_prob": 33.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme De Graafschap: WLWWW",
+        "Forme Den Bosch: WLLWL",
+        "Classement: De Graafschap 3e vs Den Bosch 7e",
+        "H2H: 5V-2N-3D",
+        "De Graafschap: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Mantova vs Palermo",
+      "league": "Serie B",
+      "date": "2026-01-11 14:00",
+      "match_description": "Mantova en difficulté (DLLLL). Palermo en pleine confiance (WDWWW). écart au classement: Palermo (4e) vs Mantova (19e). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Palermo)",
+      "probabilities": {
+        "home": 25.6,
+        "draw": 31.3,
+        "away": 43.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.39,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.6,
+        "over_35_prob": 45.9,
+        "btts": "Oui",
+        "btts_prob": 34.8,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Palermo MT)",
+        "probabilities": {
+          "home": 21.9,
+          "draw": 44.2,
+          "away": 33.9
+        },
+        "expected_goals": 1.42,
+        "over_05": "Oui",
+        "over_05_prob": 64.6,
+        "over_15": "Oui",
+        "over_15_prob": 46.6,
+        "btts": "Non",
+        "btts_prob": 12.2,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.96,
+        "over_05": "Oui",
+        "over_05_prob": 74.3,
+        "over_15": "Oui",
+        "over_15_prob": 56.3
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Palermo/Palermo)",
+        "probability": 21.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.8,
+        "home_avg": 4.8,
+        "away_avg": 4.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.2,
+        "expected_total": 5.0,
+        "over_35_prob": 75.1,
+        "over_45_prob": 60.1,
+        "over_55_prob": 45.1,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (60%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Mantova: DLLLL",
+        "Forme Palermo: WDWWW",
+        "Classement: Mantova 19e vs Palermo 4e",
+        "H2H: 0V-2N-0D",
+        "Blessures Palermo: A. Gomis (hand injury), A. Gomis (hand injury)",
+        "Mantova: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Portsmouth vs Arsenal",
+      "league": "FA Cup",
+      "date": "2026-01-11 14:00",
+      "match_description": "Match équilibré entre Portsmouth et Arsenal",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Arsenal)",
+      "probabilities": {
+        "home": 20.9,
+        "draw": 30.5,
+        "away": 48.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.29,
+        "over_15_prob": 62.3,
+        "over_25_prob": 53.1,
+        "over_35_prob": 26.3,
+        "btts": "Non",
+        "btts_prob": 29.6,
+        "score_exact": "0-1",
+        "clean_sheet": "Arsenal gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Arsenal MT)",
+        "probabilities": {
+          "home": 12.7,
+          "draw": 39.3,
+          "away": 48.0
+        },
+        "expected_goals": 0.96,
+        "over_05": "Oui",
+        "over_05_prob": 56.3,
+        "over_15": "Non",
+        "over_15_prob": 38.3,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.33,
+        "over_05": "Oui",
+        "over_05_prob": 62.9,
+        "over_15": "Non",
+        "over_15_prob": 44.9
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Arsenal/Arsenal)",
+        "probability": 32.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 0V-0N-1D",
+        "Blessures Portsmouth: Colby Bishop (Injured Doubtful), Conor Shaughnessy (Hamstring Injury)",
+        "Blessures Arsenal: Leandro Trossard (Injured Doubtful), Riccardo Calafiori (Bruise on the knee)"
+      ]
+    },
+    {
+      "match": "Hull City vs Blackburn",
+      "league": "FA Cup",
+      "date": "2026-01-11 14:30",
+      "match_description": "Match équilibré entre Hull City et Blackburn",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Hull City)",
+      "probabilities": {
+        "home": 43.0,
+        "draw": 31.8,
+        "away": 25.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.23,
+        "over_15_prob": 61.2,
+        "over_25_prob": 47.9,
+        "over_35_prob": 25.2,
+        "btts": "Non",
+        "btts_prob": 36.3,
+        "score_exact": "1-0",
+        "clean_sheet": "Hull City gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Hull City MT)",
+        "probabilities": {
+          "home": 33.8,
+          "draw": 44.0,
+          "away": 22.2
+        },
+        "expected_goals": 0.94,
+        "over_05": "Oui",
+        "over_05_prob": 55.9,
+        "over_15": "Non",
+        "over_15_prob": 37.9,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.3,
+        "over_05": "Oui",
+        "over_05_prob": 62.3,
+        "over_15": "Non",
+        "over_15_prob": 44.3
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Hull City/Hull City)",
+        "probability": 21.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 4V-1N-5D",
+        "Blessures Hull City: Liam Millar (injured), Eliot Matazo (injured)",
+        "Blessures Blackburn: Aynsley Pears (unfit), Hayden Carter (Knee Surgery)"
+      ]
+    },
+    {
+      "match": "Norwich vs Walsall",
+      "league": "FA Cup",
+      "date": "2026-01-11 14:30",
+      "match_description": "Match équilibré entre Norwich et Walsall",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Walsall)",
+      "probabilities": {
+        "home": 43.2,
+        "draw": 27.5,
+        "away": 29.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.95,
+        "over_15_prob": 74.1,
+        "over_25_prob": 54.4,
+        "over_35_prob": 38.1,
+        "btts": "Oui",
+        "btts_prob": 37.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Walsall MT)",
+        "probabilities": {
+          "home": 39.8,
+          "draw": 40.5,
+          "away": 19.6
+        },
+        "expected_goals": 1.24,
+        "over_05": "Oui",
+        "over_05_prob": 61.3,
+        "over_15": "Oui",
+        "over_15_prob": 43.3,
+        "btts": "Non",
+        "btts_prob": 12.9,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.71,
+        "over_05": "Oui",
+        "over_05_prob": 69.8,
+        "over_15": "Oui",
+        "over_15_prob": 51.8
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Walsall/Walsall)",
+        "probability": 24.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 5.0,
+        "away_avg": 3.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.6,
+        "over_35_prob": 42.5,
+        "over_45_prob": 29.8,
+        "over_55_prob": 17.0,
+        "red_card_prob": 12.8,
+        "recommendation": "Cartons +2.5 (55%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Norwich: Kenny Mclean (injured), Liam Gibbs (Hamstring Injury)",
+        "Blessures Walsall: Harry Williams (Achilles heel problems), Harry Williams (Achilles heel problems)"
+      ]
+    },
+    {
+      "match": "Sheffield Utd vs Mansfield Town",
+      "league": "FA Cup",
+      "date": "2026-01-11 14:30",
+      "match_description": "Match équilibré entre Sheffield Utd et Mansfield Town",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Mansfield Town)",
+      "probabilities": {
+        "home": 51.5,
+        "draw": 31.7,
+        "away": 16.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 61.4,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 32.5,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Mansfield Town MT)",
+        "probabilities": {
+          "home": 45.8,
+          "draw": 41.3,
+          "away": 12.8
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 11.4,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Mansfield Town/Mansfield Town)",
+        "probability": 31.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 12.8,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-0N-0D",
+        "Blessures Sheffield Utd: Oliver Arblaster (injured), Thomas Davies (injured)",
+        "Blessures Mansfield Town: R. Oates (Groin Injury), R. Oates (Groin Injury)"
+      ]
+    },
+    {
+      "match": "Swansea vs West Brom",
+      "league": "FA Cup",
+      "date": "2026-01-11 14:30",
+      "match_description": "H2H favorable à Swansea (6V-1N-3D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 38.8,
+        "draw": 28.8,
+        "away": 32.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.5,
+        "over_15_prob": 66.1,
+        "over_25_prob": 46.6,
+        "over_35_prob": 30.1,
+        "btts": "Oui",
+        "btts_prob": 43.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.1,
+          "draw": 44.0,
+          "away": 26.0
+        },
+        "expected_goals": 1.05,
+        "over_05": "Oui",
+        "over_05_prob": 57.9,
+        "over_15": "Non",
+        "over_15_prob": 39.9,
+        "btts": "Non",
+        "btts_prob": 15.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.45,
+        "over_05": "Oui",
+        "over_05_prob": 65.1,
+        "over_15": "Oui",
+        "over_15_prob": 47.1
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 19.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 6V-1N-3D",
+        "Blessures Swansea: Ricardo Santos (Unknown Injury), Benjamin Cabango (Unknown Injury)",
+        "Blessures West Brom: Josh Maja (Calf Injury), Daryl Dike (injured)"
+      ]
+    },
+    {
+      "match": "West Ham vs QPR",
+      "league": "FA Cup",
+      "date": "2026-01-11 14:30",
+      "match_description": "Match équilibré entre West Ham et QPR",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (West Ham)",
+      "probabilities": {
+        "home": 48.8,
+        "draw": 32.0,
+        "away": 19.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.13,
+        "over_15_prob": 59.3,
+        "over_25_prob": 47.0,
+        "over_35_prob": 23.3,
+        "btts": "Non",
+        "btts_prob": 33.5,
+        "score_exact": "1-0",
+        "clean_sheet": "West Ham gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (West Ham MT)",
+        "probabilities": {
+          "home": 41.4,
+          "draw": 43.1,
+          "away": 15.5
+        },
+        "expected_goals": 0.89,
+        "over_05": "Oui",
+        "over_05_prob": 55.1,
+        "over_15": "Non",
+        "over_15_prob": 37.1,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.24,
+        "over_05": "Oui",
+        "over_05_prob": 61.2,
+        "over_15": "Non",
+        "over_15_prob": 43.2
+      },
+      "ht_ft": {
+        "prediction": "1/1 (West Ham/West Ham)",
+        "probability": 27.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-2N-0D",
+        "Blessures West Ham: Callum Wilson (Injured Doubtful), Crysencio Summerville (Thigh problems)",
+        "Blessures QPR: Steve Cook (Injured Doubtful), Jimmy Dunne (Injured Doubtful)"
+      ]
+    },
+    {
+      "match": "Malaga vs AD Ceuta FC",
+      "league": "Segunda División",
+      "date": "2026-01-11 15:15",
+      "match_description": "Malaga en excellente forme (WWWDD). AD Ceuta FC en pleine confiance (WWDDW)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Malaga)",
+      "probabilities": {
+        "home": 39.2,
+        "draw": 28.7,
+        "away": 32.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.2,
+        "over_15_prob": 78.6,
+        "over_25_prob": 53.0,
+        "over_35_prob": 42.6,
+        "btts": "Oui",
+        "btts_prob": 32.5,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Malaga MT)",
+        "probabilities": {
+          "home": 32.1,
+          "draw": 44.0,
+          "away": 23.8
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.2,
+        "over_15": "Oui",
+        "over_15_prob": 45.2,
+        "btts": "Non",
+        "btts_prob": 11.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.86,
+        "over_05": "Oui",
+        "over_05_prob": 72.4,
+        "over_15": "Oui",
+        "over_15_prob": 54.4
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Malaga/Malaga)",
+        "probability": 19.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.0,
+        "home_avg": 4.2,
+        "away_avg": 4.8,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.8,
+        "expected_total": 5.5,
+        "over_35_prob": 85.0,
+        "over_45_prob": 70.0,
+        "over_55_prob": 55.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Malaga: WWWDD",
+        "Forme AD Ceuta FC: WWDDW",
+        "Classement: Malaga 10e vs AD Ceuta FC 8e",
+        "H2H: 0V-1N-1D",
+        "Blessures Malaga: Álex Pastor (Wound), Álex Pastor (Wound)",
+        "Blessures AD Ceuta FC: Y. Bodiger (Bruised Rib), Y. Bodiger (Bruised Rib)"
+      ]
+    },
+    {
+      "match": "Granada CF vs Castellón",
+      "league": "Segunda División",
+      "date": "2026-01-11 15:15",
+      "match_description": "Castellón en pleine confiance (WLWWW). écart au classement: Castellón (5e) vs Granada CF (20e). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Castellón)",
+      "probabilities": {
+        "home": 37.0,
+        "draw": 28.7,
+        "away": 34.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.2,
+        "over_15_prob": 78.6,
+        "over_25_prob": 56.0,
+        "over_35_prob": 42.6,
+        "btts": "Oui",
+        "btts_prob": 36.3,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Castellón MT)",
+        "probabilities": {
+          "home": 28.4,
+          "draw": 42.5,
+          "away": 29.1
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.2,
+        "over_15": "Oui",
+        "over_15_prob": 45.2,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.86,
+        "over_05": "Oui",
+        "over_05_prob": 72.4,
+        "over_15": "Oui",
+        "over_15_prob": 54.4
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Castellón/Castellón)",
+        "probability": 18.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.6,
+        "home_avg": 4.6,
+        "away_avg": 6.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 6.8,
+        "expected_total": 6.5,
+        "over_35_prob": 85.0,
+        "over_45_prob": 84.8,
+        "over_55_prob": 69.8,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (85%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Granada CF: LDLDW",
+        "Forme Castellón: WLWWW",
+        "Classement: Granada CF 20e vs Castellón 5e",
+        "H2H: 2V-0N-0D",
+        "Blessures Granada CF: B. Diallo (Wound), B. Diallo (Wound)",
+        "Blessures Castellón: Romain Matthys (Hip injury), Douglas Aurélio (Jumpers knee)",
+        "Granada CF: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Padova vs Modena",
+      "league": "Serie B",
+      "date": "2026-01-11 16:15",
+      "match_description": "Modena en crise (LLWLL)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 31.9,
+        "draw": 31.6,
+        "away": 36.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.31,
+        "over_15_prob": 62.6,
+        "over_25_prob": 43.7,
+        "over_35_prob": 26.6,
+        "btts": "Oui",
+        "btts_prob": 31.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 22.5,
+          "draw": 46.1,
+          "away": 31.4
+        },
+        "expected_goals": 0.97,
+        "over_05": "Oui",
+        "over_05_prob": 56.5,
+        "over_15": "Non",
+        "over_15_prob": 38.5,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.1,
+        "over_15": "Oui",
+        "over_15_prob": 45.1
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.4,
+        "home_avg": 4.4,
+        "away_avg": 7.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.8,
+        "expected_total": 5.3,
+        "over_35_prob": 84.9,
+        "over_45_prob": 70.0,
+        "over_55_prob": 54.9,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +4.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Padova: LDWDW",
+        "Forme Modena: LLWLL",
+        "Classement: Padova 12e vs Modena 7e",
+        "H2H: 3V-2N-3D",
+        "Blessures Padova: Alexander Seghetti (Unknown Injury), Jonathan Silva (Metatarsal fracture)",
+        "Blessures Modena: Fabio Ponsi (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "Manchester United vs Brighton",
+      "league": "FA Cup",
+      "date": "2026-01-11 16:30",
+      "match_description": "Match équilibré entre Manchester United et Brighton",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 34.3,
+        "draw": 31.0,
+        "away": 34.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.47,
+        "over_15_prob": 65.5,
+        "over_25_prob": 54.8,
+        "over_35_prob": 29.5,
+        "btts": "Oui",
+        "btts_prob": 46.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 33.8,
+          "draw": 41.6,
+          "away": 24.5
+        },
+        "expected_goals": 1.04,
+        "over_05": "Oui",
+        "over_05_prob": 57.7,
+        "over_15": "Non",
+        "over_15_prob": 39.7,
+        "btts": "Non",
+        "btts_prob": 16.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.44,
+        "over_05": "Oui",
+        "over_05_prob": 64.8,
+        "over_15": "Oui",
+        "over_15_prob": 46.8
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 20.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 4V-0N-6D",
+        "Blessures Manchester United: Andre Onana (Hamstring Injury), Noussair Mazraoui (injured)",
+        "Blessures Brighton: Solomon March (injured), Igor Julio dos Santos de Paulo (Injury)"
+      ]
+    }
+  ]
+}

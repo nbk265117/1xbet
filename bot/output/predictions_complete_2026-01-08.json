@@ -1,0 +1,1157 @@
+{
+  "date": "2026-01-08",
+  "generated_at": "2026-01-08T15:14:38.561558",
+  "total_matches": 14,
+  "predictions": [
+    {
+      "match": "Al-Hilal Saudi FC vs Al-Hazm",
+      "league": "Pro League",
+      "date": "2026-01-08 14:55",
+      "match_description": "Al-Hilal Saudi FC en excellente forme (WWWWW). écart au classement: Al-Hilal Saudi FC (1e) vs Al-Hazm (11e). H2H favorable à Al-Hilal Saudi FC (6V-2N-1D). match à buts attendu (4.1 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Al-Hilal Saudi FC)",
+      "probabilities": {
+        "home": 52.8,
+        "draw": 30.1,
+        "away": 17.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.14,
+        "over_15_prob": 85.0,
+        "over_25_prob": 78.0,
+        "over_35_prob": 62.8,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Al-Hilal Saudi FC MT)",
+        "probabilities": {
+          "home": 52.5,
+          "draw": 36.4,
+          "away": 11.2
+        },
+        "expected_goals": 1.74,
+        "over_05": "Oui",
+        "over_05_prob": 74.8,
+        "over_15": "Oui",
+        "over_15_prob": 54.8,
+        "btts": "Non",
+        "btts_prob": 17.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.4,
+        "over_05": "Oui",
+        "over_05_prob": 85.0,
+        "over_15": "Oui",
+        "over_15_prob": 68.0
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Hilal Saudi FC/Al-Hilal Saudi FC)",
+        "probability": 37.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 13.2,
+        "home_avg": 8.8,
+        "away_avg": 4.4,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 4.4,
+        "expected_total": 4.6,
+        "over_35_prob": 63.5,
+        "over_45_prob": 48.5,
+        "over_55_prob": 33.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (64%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Hilal Saudi FC: WWWWW",
+        "Forme Al-Hazm: LWDWL",
+        "Classement: Al-Hilal Saudi FC 1e vs Al-Hazm 11e",
+        "H2H: 6V-2N-1D",
+        "Blessures Al-Hilal Saudi FC: Suhayb Al Zaid (Injury)",
+        "Al-Hilal Saudi FC: enjeu title"
+      ]
+    },
+    {
+      "match": "Cremonese vs Cagliari",
+      "league": "Serie A",
+      "date": "2026-01-08 17:30",
+      "match_description": "Cremonese en difficulté (LLDLW)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Cagliari)",
+      "probabilities": {
+        "home": 28.3,
+        "draw": 32.2,
+        "away": 39.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.41,
+        "over_15_prob": 68.1,
+        "over_25_prob": 42.3,
+        "over_35_prob": 28.1,
+        "btts": "Non",
+        "btts_prob": 37.7,
+        "score_exact": "0-1",
+        "clean_sheet": "Cagliari gagne à 0",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 25.4,
+          "draw": 47.6,
+          "away": 27.0
+        },
+        "expected_goals": 1.01,
+        "over_05": "Oui",
+        "over_05_prob": 60.2,
+        "over_15": "Oui",
+        "over_15_prob": 40.2,
+        "btts": "Non",
+        "btts_prob": 13.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.4,
+        "over_05": "Oui",
+        "over_05_prob": 67.9,
+        "over_15": "Oui",
+        "over_15_prob": 47.9
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Cagliari)",
+        "probability": 23.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 6.6,
+        "home_avg": 3.0,
+        "away_avg": 3.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 4.3,
+        "expected_total": 4.4,
+        "over_35_prob": 62.0,
+        "over_45_prob": 47.0,
+        "over_55_prob": 32.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +3.5 (62%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Cremonese: LLDLW",
+        "Forme Cagliari: LWDLW",
+        "Classement: Cremonese 13e vs Cagliari 14e",
+        "H2H: 0V-0N-2D",
+        "Blessures Cremonese: Franco Vazquez (Red card Suspended), Mattia Valoti (Red card Suspended)",
+        "Blessures Cagliari: Leonardo Pavoletti (Knee injury), Z. Luvumbo (Thigh Injury)"
+      ]
+    },
+    {
+      "match": "Al-Nassr vs Al-Qadisiyah FC",
+      "league": "Pro League",
+      "date": "2026-01-08 17:30",
+      "match_description": "Al-Qadisiyah FC en pleine confiance (WWDLW). match à buts attendu (4.3 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Al-Nassr)",
+      "probabilities": {
+        "home": 42.2,
+        "draw": 28.1,
+        "away": 29.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.31,
+        "over_15_prob": 85.0,
+        "over_25_prob": 75.6,
+        "over_35_prob": 66.2,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Al-Nassr MT)",
+        "probabilities": {
+          "home": 40.2,
+          "draw": 38.5,
+          "away": 21.3
+        },
+        "expected_goals": 1.81,
+        "over_05": "Oui",
+        "over_05_prob": 76.2,
+        "over_15": "Oui",
+        "over_15_prob": 56.2,
+        "btts": "Non",
+        "btts_prob": 17.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.5,
+        "over_05": "Oui",
+        "over_05_prob": 85.0,
+        "over_15": "Oui",
+        "over_15_prob": 70.0
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Nassr/Al-Nassr)",
+        "probability": 24.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 17.0,
+        "home_avg": 7.0,
+        "away_avg": 10.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.5,
+        "over_35_prob": 48.5,
+        "over_45_prob": 33.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (64%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Nassr: LDWWW",
+        "Forme Al-Qadisiyah FC: WWDLW",
+        "Classement: Al-Nassr 2e vs Al-Qadisiyah FC 5e",
+        "H2H: 5V-0N-5D",
+        "Al-Nassr: enjeu title"
+      ]
+    },
+    {
+      "match": "Al Najma vs Al-Ettifaq",
+      "league": "Pro League",
+      "date": "2026-01-08 17:30",
+      "match_description": "Al Najma en difficulté (DLLDL). Al-Ettifaq en pleine confiance (WDWWD). écart au classement: Al-Ettifaq (8e) vs Al Najma (18e). match à buts attendu (3.7 buts prévus). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "2 (Al-Ettifaq)",
+      "probabilities": {
+        "home": 23.3,
+        "draw": 33.1,
+        "away": 43.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.73,
+        "over_15_prob": 85.0,
+        "over_25_prob": 61.7,
+        "over_35_prob": 54.6,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 19.4,
+          "draw": 45.3,
+          "away": 35.3
+        },
+        "expected_goals": 1.57,
+        "over_05": "Oui",
+        "over_05_prob": 71.3,
+        "over_15": "Oui",
+        "over_15_prob": 51.3,
+        "btts": "Non",
+        "btts_prob": 16.1,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.16,
+        "over_05": "Oui",
+        "over_05_prob": 83.3,
+        "over_15": "Oui",
+        "over_15_prob": 63.3
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Al-Ettifaq)",
+        "probability": 22.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.2,
+        "home_avg": 3.2,
+        "away_avg": 4.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.8,
+        "over_35_prob": 48.5,
+        "over_45_prob": 33.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (64%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Najma: DLLDL",
+        "Forme Al-Ettifaq: WDWWD",
+        "Classement: Al Najma 18e vs Al-Ettifaq 8e",
+        "H2H: 2V-1N-2D",
+        "Al Najma: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Paris Saint Germain vs Marseille",
+      "league": "Trophée des Champions",
+      "date": "2026-01-08 18:00",
+      "match_description": "H2H favorable à Paris Saint Germain (7V-1N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Paris Saint Germain)",
+      "probabilities": {
+        "home": 48.3,
+        "draw": 32.5,
+        "away": 19.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.47,
+        "over_15_prob": 69.4,
+        "over_25_prob": 55.7,
+        "over_35_prob": 29.4,
+        "btts": "Non",
+        "btts_prob": 42.9,
+        "score_exact": "1-0",
+        "clean_sheet": "Paris Saint Germain gagne à 0",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Paris Saint Germain MT)",
+        "probabilities": {
+          "home": 42.5,
+          "draw": 42.0,
+          "away": 15.6
+        },
+        "expected_goals": 1.04,
+        "over_05": "Oui",
+        "over_05_prob": 60.7,
+        "over_15": "Oui",
+        "over_15_prob": 40.7,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 68.7,
+        "over_15": "Oui",
+        "over_15_prob": 48.7
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Paris Saint Germain/Paris Saint Germain)",
+        "probability": 28.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.2,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (57%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 7V-1N-2D",
+        "Blessures Paris Saint Germain: Nordi Mukiele (Injury), Joao Neves (Suspension)",
+        "Blessures Marseille: Facundo Medina (Red card Suspended), Adrien Rabiot (other)"
+      ]
+    },
+    {
+      "match": "Atletico Madrid vs Real Madrid",
+      "league": "Super Cup",
+      "date": "2026-01-08 19:00",
+      "match_description": "Match équilibré entre Atletico Madrid et Real Madrid",
+      "match_importance": "NORMAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Atletico Madrid)",
+      "probabilities": {
+        "home": 43.3,
+        "draw": 33.2,
+        "away": 23.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.86,
+        "over_15_prob": 77.2,
+        "over_25_prob": 56.0,
+        "over_35_prob": 37.2,
+        "btts": "Oui",
+        "btts_prob": 69.5,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.5,
+          "draw": 44.2,
+          "away": 25.3
+        },
+        "expected_goals": 1.2,
+        "over_05": "Oui",
+        "over_05_prob": 64.0,
+        "over_15": "Oui",
+        "over_15_prob": 44.0,
+        "btts": "Non",
+        "btts_prob": 24.3,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.66,
+        "over_05": "Oui",
+        "over_05_prob": 73.2,
+        "over_15": "Oui",
+        "over_15_prob": 53.2
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Atletico Madrid)",
+        "probability": 22.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.2,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (57%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 3V-4N-3D",
+        "Blessures Atletico Madrid: J. Giménez (Thigh problems), J. Giménez (Thigh problems)",
+        "Blessures Real Madrid: Antonio Rudiger (Suspension), Endrick (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "AC Milan vs Genoa",
+      "league": "Serie A",
+      "date": "2026-01-08 19:45",
+      "match_description": "AC Milan en excellente forme (WWDWW). Genoa en crise (DLLLW). écart au classement: AC Milan (2e) vs Genoa (17e). H2H favorable à AC Milan (6V-3N-1D). match à buts attendu (3.6 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (AC Milan)",
+      "probabilities": {
+        "home": 54.3,
+        "draw": 32.7,
+        "away": 13.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.6,
+        "over_15_prob": 85.0,
+        "over_25_prob": 58.6,
+        "over_35_prob": 52.0,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 44.7,
+          "draw": 44.7,
+          "away": 10.6
+        },
+        "expected_goals": 1.51,
+        "over_05": "Oui",
+        "over_05_prob": 70.2,
+        "over_15": "Oui",
+        "over_15_prob": 50.2,
+        "btts": "Non",
+        "btts_prob": 14.5,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.09,
+        "over_05": "Oui",
+        "over_05_prob": 81.8,
+        "over_15": "Oui",
+        "over_15_prob": 61.8
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/AC Milan)",
+        "probability": 31.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.6,
+        "home_avg": 5.2,
+        "away_avg": 2.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 3.1,
+        "expected_total": 3.3,
+        "over_35_prob": 44.0,
+        "over_45_prob": 29.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (59%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme AC Milan: WWDWW",
+        "Forme Genoa: DLLLW",
+        "Classement: AC Milan 2e vs Genoa 17e",
+        "H2H: 6V-3N-1D",
+        "Blessures AC Milan: L. Torriani (Finger Injury), L. Torriani (Finger Injury)",
+        "Blessures Genoa: Caleb Ekuban (Unknown Injury), Sebastian Otoa (Muscle Injury)",
+        "AC Milan: enjeu title"
+      ]
+    },
+    {
+      "match": "Arsenal vs Liverpool",
+      "league": "Premier League",
+      "date": "2026-01-08 20:00",
+      "match_description": "Arsenal en excellente forme (WWWWW). Liverpool en pleine confiance (DDWWW). match à buts attendu (3.8 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Arsenal)",
+      "probabilities": {
+        "home": 45.8,
+        "draw": 31.2,
+        "away": 23.0
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.81,
+        "over_15_prob": 85.0,
+        "over_25_prob": 64.4,
+        "over_35_prob": 56.1,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 40.1,
+          "draw": 43.1,
+          "away": 16.9
+        },
+        "expected_goals": 1.6,
+        "over_05": "Oui",
+        "over_05_prob": 72.0,
+        "over_15": "Oui",
+        "over_15_prob": 52.0,
+        "btts": "Non",
+        "btts_prob": 17.5,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.21,
+        "over_05": "Oui",
+        "over_05_prob": 84.2,
+        "over_15": "Oui",
+        "over_15_prob": 64.2
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Arsenal)",
+        "probability": 25.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.2,
+        "home_avg": 5.2,
+        "away_avg": 6.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.2,
+        "over_35_prob": 50.3,
+        "over_45_prob": 35.3,
+        "over_55_prob": 20.3,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (65%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Arsenal: WWWWW",
+        "Forme Liverpool: DDWWW",
+        "Classement: Arsenal 1e vs Liverpool 4e",
+        "H2H: 2V-4N-4D",
+        "Blessures Arsenal: Leandro Trossard (Injured Doubtful), Riccardo Calafiori (Bruise on the knee)",
+        "Blessures Liverpool: Joseph Gomez (Injury), Conor Bradley (Injury)",
+        "Arsenal: enjeu title"
+      ]
+    },
+    {
+      "match": "El Bayadh vs Mostaganem",
+      "league": "Ligue 1",
+      "date": "2026-01-08 13:00",
+      "match_description": "El Bayadh en difficulté (LLLLL). Mostaganem en crise (LLDLL). match potentiellement fermé (2.0 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 33.2,
+        "draw": 32.0,
+        "away": 34.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 1.96,
+        "over_15_prob": 59.2,
+        "over_25_prob": 36.5,
+        "over_35_prob": 25.0,
+        "btts": "Non",
+        "btts_prob": 36.6,
+        "score_exact": "0-0",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 31.3,
+          "draw": 47.5,
+          "away": 21.1
+        },
+        "expected_goals": 0.82,
+        "over_05": "Oui",
+        "over_05_prob": 56.5,
+        "over_15": "Non",
+        "over_15_prob": 36.5,
+        "btts": "Non",
+        "btts_prob": 12.8,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.14,
+        "over_05": "Oui",
+        "over_05_prob": 62.7,
+        "over_15": "Non",
+        "over_15_prob": 42.7
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 23.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 3.6,
+        "expected_total": 3.7,
+        "over_35_prob": 51.5,
+        "over_45_prob": 36.5,
+        "over_55_prob": 21.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (66%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme El Bayadh: LLLLL",
+        "Forme Mostaganem: LLDLL",
+        "Classement: El Bayadh 16e vs Mostaganem 15e",
+        "H2H: 0V-2N-0D",
+        "Blessures El Bayadh: I. Yaiche (Jumpers knee), I. Yaiche (Jumpers knee)",
+        "El Bayadh: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Ben Aknoun vs Oued Akbou",
+      "league": "Ligue 1",
+      "date": "2026-01-08 13:00",
+      "match_description": "Match équilibré entre Ben Aknoun et Oued Akbou. Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 31.2,
+        "draw": 32.5,
+        "away": 36.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.58,
+        "over_15_prob": 71.6,
+        "over_25_prob": 41.4,
+        "over_35_prob": 31.6,
+        "btts": "Oui",
+        "btts_prob": 55.6,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 28.1,
+          "draw": 48.9,
+          "away": 23.0
+        },
+        "expected_goals": 1.08,
+        "over_05": "Oui",
+        "over_05_prob": 61.7,
+        "over_15": "Oui",
+        "over_15_prob": 41.7,
+        "btts": "Non",
+        "btts_prob": 19.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.5,
+        "over_05": "Oui",
+        "over_05_prob": 69.9,
+        "over_15": "Oui",
+        "over_15_prob": 49.9
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 24.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 5.7,
+        "expected_total": 5.9,
+        "over_35_prob": 83.0,
+        "over_45_prob": 68.0,
+        "over_55_prob": 53.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (68%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Ben Aknoun: LWLDW",
+        "Forme Oued Akbou: DLWDW",
+        "Classement: Ben Aknoun 9e vs Oued Akbou 5e",
+        "H2H: 0V-1N-0D"
+      ]
+    },
+    {
+      "match": "Al Shahaniya vs Al-Duhail SC",
+      "league": "Stars League",
+      "date": "2026-01-08 14:30",
+      "match_description": "Al Shahaniya en difficulté (WLLLL). H2H favorable à Al-Duhail SC (5V-3N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "MOYEN",
+      "result_1x2": "2 (Al-Duhail SC)",
+      "probabilities": {
+        "home": 27.0,
+        "draw": 30.8,
+        "away": 42.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.17,
+        "over_15_prob": 83.5,
+        "over_25_prob": 61.7,
+        "over_35_prob": 43.5,
+        "btts": "Oui",
+        "btts_prob": 56.7,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 18.3,
+          "draw": 41.0,
+          "away": 40.7
+        },
+        "expected_goals": 1.33,
+        "over_05": "Oui",
+        "over_05_prob": 66.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 19.9,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.84,
+        "over_05": "Oui",
+        "over_05_prob": 76.8,
+        "over_15": "Oui",
+        "over_15_prob": 56.8
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Al-Duhail SC)",
+        "probability": 24.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.7,
+        "home_avg": 1.7,
+        "away_avg": 8.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%)"
+      },
+      "cards": {
+        "expected_yellow": 4.3,
+        "expected_total": 4.7,
+        "over_35_prob": 62.0,
+        "over_45_prob": 47.0,
+        "over_55_prob": 32.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (62%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Shahaniya: WLLLL",
+        "Forme Al-Duhail SC: WLDLW",
+        "Classement: Al Shahaniya 12e vs Al-Duhail SC 8e",
+        "H2H: 2V-3N-5D",
+        "Blessures Al Shahaniya: F. Antonucci (Operation)",
+        "Blessures Al-Duhail SC: Ismaeel Mohammad (Hamstring Injury), Ismaeel Mohammad (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "Qatar SC vs Al Sadd",
+      "league": "Stars League",
+      "date": "2026-01-08 16:30",
+      "match_description": "Qatar SC en difficulté (LLLLW). Al Sadd en pleine confiance (WWWWL). H2H favorable à Al Sadd (7V-0N-3D). match à buts attendu (3.9 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "2 (Al Sadd)",
+      "probabilities": {
+        "home": 24.8,
+        "draw": 31.0,
+        "away": 44.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.92,
+        "over_15_prob": 85.0,
+        "over_25_prob": 72.4,
+        "over_35_prob": 58.5,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Al Sadd MT)",
+        "probabilities": {
+          "home": 18.9,
+          "draw": 40.3,
+          "away": 40.9
+        },
+        "expected_goals": 1.65,
+        "over_05": "Oui",
+        "over_05_prob": 73.0,
+        "over_15": "Oui",
+        "over_15_prob": 53.0,
+        "btts": "Non",
+        "btts_prob": 15.6,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.28,
+        "over_05": "Oui",
+        "over_05_prob": 85.0,
+        "over_15": "Oui",
+        "over_15_prob": 65.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Al Sadd/Al Sadd)",
+        "probability": 25.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 4.0,
+        "away_avg": 6.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 5.3,
+        "expected_total": 5.8,
+        "over_35_prob": 77.0,
+        "over_45_prob": 62.0,
+        "over_55_prob": 47.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (62%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Qatar SC: LLLLW",
+        "Forme Al Sadd: WWWWL",
+        "Classement: Qatar SC 6e vs Al Sadd 4e",
+        "H2H: 3V-0N-7D",
+        "Qatar SC: enjeu europa"
+      ]
+    },
+    {
+      "match": "ES Setif vs Paradou AC",
+      "league": "Ligue 1",
+      "date": "2026-01-08 16:45",
+      "match_description": "Paradou AC en pleine confiance (WLWWW)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 31.5,
+        "draw": 32.3,
+        "away": 36.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.77,
+        "over_15_prob": 75.4,
+        "over_25_prob": 44.6,
+        "over_35_prob": 35.4,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.6,
+          "draw": 47.7,
+          "away": 21.7
+        },
+        "expected_goals": 1.16,
+        "over_05": "Oui",
+        "over_05_prob": 63.3,
+        "over_15": "Oui",
+        "over_15_prob": 43.3,
+        "btts": "Non",
+        "btts_prob": 11.8,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.61,
+        "over_05": "Oui",
+        "over_05_prob": 72.1,
+        "over_15": "Oui",
+        "over_15_prob": 52.1
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 23.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 4.8,
+        "expected_total": 5.1,
+        "over_35_prob": 69.5,
+        "over_45_prob": 54.5,
+        "over_55_prob": 39.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (70%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme ES Setif: LLWDD",
+        "Forme Paradou AC: WLWWW",
+        "Classement: ES Setif 13e vs Paradou AC 12e",
+        "H2H: 4V-2N-4D"
+      ]
+    },
+    {
+      "match": "USM Alger vs MC Oran",
+      "league": "Ligue 1",
+      "date": "2026-01-08 19:00",
+      "match_description": "Match équilibré entre USM Alger et MC Oran. Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (USM Alger)",
+      "probabilities": {
+        "home": 42.7,
+        "draw": 29.0,
+        "away": 28.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.52,
+        "over_15_prob": 70.4,
+        "over_25_prob": 44.0,
+        "over_35_prob": 30.4,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 36.8,
+          "draw": 45.0,
+          "away": 18.2
+        },
+        "expected_goals": 1.06,
+        "over_05": "Oui",
+        "over_05_prob": 61.2,
+        "over_15": "Oui",
+        "over_15_prob": 41.2,
+        "btts": "Non",
+        "btts_prob": 11.8,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.46,
+        "over_05": "Oui",
+        "over_05_prob": 69.2,
+        "over_15": "Oui",
+        "over_15_prob": 49.2
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/USM Alger)",
+        "probability": 22.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%)"
+      },
+      "cards": {
+        "expected_yellow": 5.3,
+        "expected_total": 5.4,
+        "over_35_prob": 77.0,
+        "over_45_prob": 62.0,
+        "over_55_prob": 47.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +4.5 (62%)",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme USM Alger: DWDWD",
+        "Forme MC Oran: DLDWW",
+        "Classement: USM Alger 3e vs MC Oran 6e",
+        "H2H: 3V-3N-4D",
+        "USM Alger: enjeu champions_league"
+      ]
+    }
+  ]
+}

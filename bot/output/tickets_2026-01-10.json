@@ -1,0 +1,231 @@
+{
+  "date": "2026-01-10T00:16:52.814611",
+  "total_tickets": 5,
+  "tickets": [
+    {
+      "id": 1,
+      "name": "Ticket Sécurisé",
+      "confidence": "MOYEN",
+      "risk": "FAIBLE",
+      "total_odds": 4.51,
+      "selections": [
+        {
+          "match": "PSV Eindhoven vs Excelsior",
+          "league": "Eredivisie",
+          "date": "2026-01-10T19:00:00+00:00",
+          "bet": "1X",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.22,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        },
+        {
+          "match": "Oviedo vs Real Betis",
+          "league": "La Liga",
+          "date": "2026-01-10T13:00:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.51,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "FC St. Pauli vs RB Leipzig",
+          "league": "Bundesliga",
+          "date": "2026-01-10T14:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.45,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Algeria vs Nigeria",
+          "league": "Africa Cup of Nations",
+          "date": "2026-01-10T16:00:00+00:00",
+          "bet": "1X",
+          "confidence": "MOYEN",
+          "odds": 1.43,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        },
+        {
+          "match": "Como vs Bologna",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ticket Mixte",
+      "confidence": "MOYEN",
+      "risk": "MOYEN",
+      "total_odds": 2.17,
+      "selections": [
+        {
+          "match": "PSV Eindhoven vs Excelsior",
+          "league": "Eredivisie",
+          "date": "2026-01-10T19:00:00+00:00",
+          "bet": "1X",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.22,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        },
+        {
+          "match": "Oviedo vs Real Betis",
+          "league": "La Liga",
+          "date": "2026-01-10T13:00:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.51,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Como vs Bologna",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ticket Over/Under",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 4.07,
+      "selections": [
+        {
+          "match": "Oviedo vs Real Betis",
+          "league": "La Liga",
+          "date": "2026-01-10T13:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 14.2 buts attendus. H2H: 0.0 buts/match"
+        },
+        {
+          "match": "Como vs Bologna",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 7.9 buts attendus. H2H: 1.8 buts/match"
+        },
+        {
+          "match": "Udinese vs Pisa",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 6.3 buts attendus. H2H: 0.5 buts/match"
+        },
+        {
+          "match": "NEOM vs Al-Fateh",
+          "league": "Pro League",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "SC Freiburg vs Hamburger SV",
+          "league": "Bundesliga",
+          "date": "2026-01-10T14:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ticket Buts",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 2.85,
+      "selections": [
+        {
+          "match": "Oviedo vs Real Betis",
+          "league": "La Liga",
+          "date": "2026-01-10T13:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 14.2 buts attendus. H2H: 0.0 buts/match"
+        },
+        {
+          "match": "Como vs Bologna",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Moyenne de 7.9 buts attendus. H2H: 1.8 buts/match"
+        },
+        {
+          "match": "Udinese vs Pisa",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        },
+        {
+          "match": "NEOM vs Al-Fateh",
+          "league": "Pro League",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.18,
+          "reasoning": "Au moins 2 buts très probable dans ce match"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ticket Combo",
+      "confidence": "MOYEN",
+      "risk": "ÉLEVÉ",
+      "total_odds": 6.63,
+      "selections": [
+        {
+          "match": "Oviedo vs Real Betis",
+          "league": "La Liga",
+          "date": "2026-01-10T13:00:00+00:00",
+          "bet": "BTTS + Over 2.5",
+          "confidence": "MOYEN",
+          "odds": 1.79,
+          "reasoning": "Match ouvert avec buts des deux côtés"
+        },
+        {
+          "match": "Como vs Bologna",
+          "league": "Serie A",
+          "date": "2026-01-10T14:00:00+00:00",
+          "bet": "BTTS + Over 2.5",
+          "confidence": "MOYEN",
+          "odds": 1.79,
+          "reasoning": "Match ouvert avec buts des deux côtés"
+        },
+        {
+          "match": "PSV Eindhoven vs Excelsior",
+          "league": "Eredivisie",
+          "date": "2026-01-10T19:00:00+00:00",
+          "bet": "1 + Over 1.5",
+          "confidence": "MOYEN",
+          "odds": 2.07,
+          "reasoning": "Victoire domicile avec au moins 2 buts dans le match"
+        }
+      ]
+    }
+  ]
+}

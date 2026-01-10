@@ -1,0 +1,1904 @@
+{
+  "date": "2026-01-09",
+  "generated_at": "2026-01-09T22:33:18.544891",
+  "total_matches": 23,
+  "predictions": [
+    {
+      "match": "Al Khaleej Saihat vs Damac",
+      "league": "Pro League",
+      "date": "2026-01-09 13:10",
+      "match_description": "Match équilibré entre Al Khaleej Saihat et Damac",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Al Khaleej Saihat)",
+      "probabilities": {
+        "home": 46.8,
+        "draw": 31.2,
+        "away": 21.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.41,
+        "over_15_prob": 80.0,
+        "over_25_prob": 59.8,
+        "over_35_prob": 46.4,
+        "btts": "Non",
+        "btts_prob": 45.0,
+        "score_exact": "2-0",
+        "clean_sheet": "Al Khaleej Saihat gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 39.9,
+          "draw": 42.6,
+          "away": 17.5
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.8,
+        "over_15": "Oui",
+        "over_15_prob": 46.8,
+        "btts": "Non",
+        "btts_prob": 15.8,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.98,
+        "over_05": "Oui",
+        "over_05_prob": 74.6,
+        "over_15": "Oui",
+        "over_15_prob": 56.6
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Al Khaleej Saihat)",
+        "probability": 25.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 4.8,
+        "away_avg": 4.4,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.4,
+        "expected_total": 5.2,
+        "over_35_prob": 63.5,
+        "over_45_prob": 48.5,
+        "over_55_prob": 33.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (64%) ✓",
+        "referee": "Abdulsamad Bakri, Saudi Arabia",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Khaleej Saihat: WDLLL",
+        "Forme Damac: LLWDD",
+        "Classement: Al Khaleej Saihat 9e vs Damac 14e",
+        "H2H: 5V-2N-3D",
+        "Arbitre: Abdulsamad Bakri, Saudi Arabia (MOYEN)"
+      ]
+    },
+    {
+      "match": "Al Taawon vs Al Shabab",
+      "league": "Pro League",
+      "date": "2026-01-09 15:05",
+      "match_description": "Al Shabab en crise (LLLLD). écart au classement: Al Taawon (3e) vs Al Shabab (15e). H2H favorable à Al Taawon (5V-3N-2D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Al Taawon)",
+      "probabilities": {
+        "home": 50.4,
+        "draw": 33.4,
+        "away": 16.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.09,
+        "over_15_prob": 76.7,
+        "over_25_prob": 52.4,
+        "over_35_prob": 40.7,
+        "btts": "Non",
+        "btts_prob": 35.0,
+        "score_exact": "2-0",
+        "clean_sheet": "Al Taawon gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 36.9,
+          "draw": 45.9,
+          "away": 17.2
+        },
+        "expected_goals": 1.3,
+        "over_05": "Oui",
+        "over_05_prob": 62.4,
+        "over_15": "Oui",
+        "over_15_prob": 44.4,
+        "btts": "Non",
+        "btts_prob": 12.2,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.79,
+        "over_05": "Oui",
+        "over_05_prob": 71.3,
+        "over_15": "Oui",
+        "over_15_prob": 53.3
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Al Taawon)",
+        "probability": 25.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.2,
+        "away_avg": 4.8,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.2,
+        "expected_total": 4.7,
+        "over_35_prob": 60.5,
+        "over_45_prob": 45.5,
+        "over_55_prob": 30.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (60%) ✓",
+        "referee": "Majed Mohammed Al-Shamrani, Saudi Arabia",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Taawon: WLWWD",
+        "Forme Al Shabab: LLLLD",
+        "Classement: Al Taawon 3e vs Al Shabab 15e",
+        "H2H: 5V-3N-2D",
+        "Al Taawon: enjeu champions_league",
+        "Arbitre: Majed Mohammed Al-Shamrani, Saudi Arabia (MOYEN)"
+      ]
+    },
+    {
+      "match": "Mali vs Senegal",
+      "league": "Africa Cup of Nations",
+      "date": "2026-01-09 16:00",
+      "match_description": "Match équilibré entre Mali et Senegal. Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Senegal)",
+      "probabilities": {
+        "home": 23.2,
+        "draw": 33.3,
+        "away": 43.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.85,
+        "over_15_prob": 72.3,
+        "over_25_prob": 44.5,
+        "over_35_prob": 36.3,
+        "btts": "Non",
+        "btts_prob": 27.7,
+        "score_exact": "0-2",
+        "clean_sheet": "Senegal gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 15.4,
+          "draw": 47.9,
+          "away": 36.8
+        },
+        "expected_goals": 1.2,
+        "over_05": "Oui",
+        "over_05_prob": 60.5,
+        "over_15": "Oui",
+        "over_15_prob": 42.5,
+        "btts": "Non",
+        "btts_prob": 9.7,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.65,
+        "over_05": "Oui",
+        "over_05_prob": 68.7,
+        "over_15": "Oui",
+        "over_15_prob": 50.7
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Senegal)",
+        "probability": 23.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 3.2,
+        "away_avg": 6.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.2,
+        "expected_total": 6.0,
+        "over_35_prob": 76.2,
+        "over_45_prob": 61.3,
+        "over_55_prob": 46.2,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (61%) ✓",
+        "referee": "Abongile Tom, South Africa",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Mali: DDD",
+        "Forme Senegal: WDW",
+        "Classement: Mali 2e vs Senegal 1e",
+        "H2H: 0V-1N-2D",
+        "Mali: enjeu title",
+        "Arbitre: Abongile Tom, South Africa (MOYEN)"
+      ]
+    },
+    {
+      "match": "Al Kholood vs Al-Ittihad FC",
+      "league": "Pro League",
+      "date": "2026-01-09 17:30",
+      "match_description": "Al Kholood en difficulté (LWLLL). Al-Ittihad FC en pleine confiance (WWWWW). H2H favorable à Al-Ittihad FC (4V-0N-0D). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Al-Ittihad FC)",
+      "probabilities": {
+        "home": 22.1,
+        "draw": 30.7,
+        "away": 47.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.2,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 45.8,
+        "score_exact": "0-2",
+        "clean_sheet": "Al-Ittihad FC gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Al-Ittihad FC MT)",
+        "probabilities": {
+          "home": 15.9,
+          "draw": 40.4,
+          "away": 43.8
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 16.0,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Al-Ittihad FC/Al-Ittihad FC)",
+        "probability": 28.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 13.0,
+        "home_avg": 5.0,
+        "away_avg": 8.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.9,
+        "over_35_prob": 35.0,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (50%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Kholood: LWLLL",
+        "Forme Al-Ittihad FC: WWWWW",
+        "Classement: Al Kholood 12e vs Al-Ittihad FC 5e",
+        "H2H: 0V-0N-4D"
+      ]
+    },
+    {
+      "match": "NEC Nijmegen vs Utrecht",
+      "league": "Eredivisie",
+      "date": "2026-01-09 19:00",
+      "match_description": "NEC Nijmegen en excellente forme (DDWWW). H2H favorable à Utrecht (5V-3N-2D). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (NEC Nijmegen)",
+      "probabilities": {
+        "home": 45.3,
+        "draw": 31.5,
+        "away": 23.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.2,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 47.3,
+        "score_exact": "2-0",
+        "clean_sheet": "NEC Nijmegen gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 36.6,
+          "draw": 41.9,
+          "away": 21.5
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 16.5,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/NEC Nijmegen)",
+        "probability": 23.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.6,
+        "home_avg": 5.8,
+        "away_avg": 4.8,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 4.0,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme NEC Nijmegen: DDWWW",
+        "Forme Utrecht: LDDDD",
+        "Classement: NEC Nijmegen 4e vs Utrecht 8e",
+        "H2H: 2V-3N-5D",
+        "Blessures NEC Nijmegen: Bryan Linssen (Unknown Injury), Jasper Cillessen",
+        "Blessures Utrecht: Mike Eerdhuijzen (Injured Doubtful), Davy van den Berg (Foot injury)",
+        "NEC Nijmegen: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Cameroon vs Morocco",
+      "league": "Africa Cup of Nations",
+      "date": "2026-01-09 19:00",
+      "match_description": "Match équilibré entre Cameroon et Morocco. Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Morocco)",
+      "probabilities": {
+        "home": 28.1,
+        "draw": 31.4,
+        "away": 40.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.12,
+        "over_15_prob": 77.1,
+        "over_25_prob": 52.6,
+        "over_35_prob": 41.1,
+        "btts": "Non",
+        "btts_prob": 41.2,
+        "score_exact": "0-2",
+        "clean_sheet": "Morocco gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 17.5,
+          "draw": 44.1,
+          "away": 38.4
+        },
+        "expected_goals": 1.31,
+        "over_05": "Oui",
+        "over_05_prob": 62.6,
+        "over_15": "Oui",
+        "over_15_prob": 44.6,
+        "btts": "Non",
+        "btts_prob": 14.4,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.81,
+        "over_05": "Oui",
+        "over_05_prob": 71.5,
+        "over_15": "Oui",
+        "over_15_prob": 53.5
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Morocco)",
+        "probability": 21.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.8,
+        "home_avg": 5.4,
+        "away_avg": 5.4,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 3.8,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "Beida Dahane, Mauritania",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Cameroon: WDW",
+        "Forme Morocco: WDW",
+        "Classement: Cameroon 2e vs Morocco 1e",
+        "H2H: 1V-0N-2D",
+        "Cameroon: enjeu title",
+        "Arbitre: Beida Dahane, Mauritania (MOYEN)"
+      ]
+    },
+    {
+      "match": "Eintracht Frankfurt vs Borussia Dortmund",
+      "league": "Bundesliga",
+      "date": "2026-01-09 19:30",
+      "match_description": "Borussia Dortmund en pleine confiance (WDWWD). H2H favorable à Borussia Dortmund (7V-2N-1D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Borussia Dortmund)",
+      "probabilities": {
+        "home": 27.2,
+        "draw": 31.5,
+        "away": 41.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.3,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 64.4,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 23.2,
+          "draw": 42.8,
+          "away": 33.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 22.6,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Borussia Dortmund)",
+        "probability": 20.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.8,
+        "home_avg": 4.6,
+        "away_avg": 4.2,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.6,
+        "expected_total": 2.6,
+        "over_35_prob": 35.9,
+        "over_45_prob": 20.9,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (51%) ✓",
+        "referee": "Daniel Schlager, Germany",
+        "referee_strictness": "FAIBLE"
+      },
+      "reasoning": [
+        "Forme Eintracht Frankfurt: DWLDW",
+        "Forme Borussia Dortmund: WDWWD",
+        "Classement: Eintracht Frankfurt 7e vs Borussia Dortmund 2e",
+        "H2H: 1V-2N-7D",
+        "Blessures Eintracht Frankfurt: Nathaniel Brown (Hamstring Injury), Ellyes Skhiri (Knee Problems)",
+        "Blessures Borussia Dortmund: Emre Can (Adductor problems), Niklas Sule (Muscle Injury)",
+        "Eintracht Frankfurt: enjeu conference",
+        "Arbitre: Daniel Schlager, Germany (FAIBLE)"
+      ]
+    },
+    {
+      "match": "Getafe vs Real Sociedad",
+      "league": "La Liga",
+      "date": "2026-01-09 20:00",
+      "match_description": "Getafe en difficulté (DLLLW). Real Sociedad en crise (DDLLL)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Real Sociedad)",
+      "probabilities": {
+        "home": 31.2,
+        "draw": 32.4,
+        "away": 36.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.49,
+        "over_15_prob": 65.8,
+        "over_25_prob": 38.8,
+        "over_35_prob": 29.8,
+        "btts": "Non",
+        "btts_prob": 29.6,
+        "score_exact": "0-1",
+        "clean_sheet": "Real Sociedad gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 23.1,
+          "draw": 49.2,
+          "away": 27.7
+        },
+        "expected_goals": 1.04,
+        "over_05": "Oui",
+        "over_05_prob": 57.8,
+        "over_15": "Non",
+        "over_15_prob": 39.8,
+        "btts": "Non",
+        "btts_prob": 10.3,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.44,
+        "over_05": "Oui",
+        "over_05_prob": 65.0,
+        "over_15": "Oui",
+        "over_15_prob": 47.0
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Real Sociedad)",
+        "probability": 24.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.0,
+        "home_avg": 3.8,
+        "away_avg": 7.2,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 7.0,
+        "expected_total": 6.7,
+        "over_35_prob": 85.0,
+        "over_45_prob": 85.0,
+        "over_55_prob": 72.7,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (85%) ✓",
+        "referee": "Francisco Hernandez Maeso, Spain",
+        "referee_strictness": "STRICT"
+      },
+      "reasoning": [
+        "Forme Getafe: DLLLW",
+        "Forme Real Sociedad: DDLLL",
+        "Classement: Getafe 10e vs Real Sociedad 15e",
+        "H2H: 2V-4N-4D",
+        "Blessures Getafe: Domingos Duarte (Red card Suspended), Abdel Abqar (Injury)",
+        "Blessures Real Sociedad: Jon Gorrotxategi (Injured Doubtful), Jon Gorrotxategi (Injured Doubtful)",
+        "Arbitre: Francisco Hernandez Maeso, Spain (STRICT)"
+      ]
+    },
+    {
+      "match": "CS Constantine vs JS Saoura",
+      "league": "Ligue 1",
+      "date": "2026-01-09 15:00",
+      "match_description": "Match équilibré entre CS Constantine et JS Saoura",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (CS Constantine)",
+      "probabilities": {
+        "home": 46.4,
+        "draw": 32.1,
+        "away": 21.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.81,
+        "over_15_prob": 71.7,
+        "over_25_prob": 43.7,
+        "over_35_prob": 35.7,
+        "btts": "Non",
+        "btts_prob": 26.9,
+        "score_exact": "2-0",
+        "clean_sheet": "CS Constantine gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 37.3,
+          "draw": 47.3,
+          "away": 15.5
+        },
+        "expected_goals": 1.18,
+        "over_05": "Oui",
+        "over_05_prob": 60.3,
+        "over_15": "Oui",
+        "over_15_prob": 42.3,
+        "btts": "Non",
+        "btts_prob": 9.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.63,
+        "over_05": "Oui",
+        "over_05_prob": 68.4,
+        "over_15": "Oui",
+        "over_15_prob": 50.4
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/CS Constantine)",
+        "probability": 23.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 4.4,
+        "expected_total": 4.6,
+        "over_35_prob": 63.5,
+        "over_45_prob": 48.5,
+        "over_55_prob": 33.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme CS Constantine: WLDWW",
+        "Forme JS Saoura: LWWLL",
+        "Classement: CS Constantine 7e vs JS Saoura 8e",
+        "H2H: 5V-2N-3D",
+        "CS Constantine: enjeu conference"
+      ]
+    },
+    {
+      "match": "MB Rouisset vs Khenchela",
+      "league": "Ligue 1",
+      "date": "2026-01-09 15:00",
+      "match_description": "Match équilibré entre MB Rouisset et Khenchela",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Khenchela)",
+      "probabilities": {
+        "home": 32.0,
+        "draw": 32.3,
+        "away": 35.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.38,
+        "over_15_prob": 63.8,
+        "over_25_prob": 39.8,
+        "over_35_prob": 27.8,
+        "btts": "Non",
+        "btts_prob": 29.6,
+        "score_exact": "0-1",
+        "clean_sheet": "Khenchela gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 28.3,
+          "draw": 48.5,
+          "away": 23.2
+        },
+        "expected_goals": 1.0,
+        "over_05": "Oui",
+        "over_05_prob": 57.0,
+        "over_15": "Non",
+        "over_15_prob": 39.0,
+        "btts": "Non",
+        "btts_prob": 10.3,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.38,
+        "over_05": "Oui",
+        "over_05_prob": 63.8,
+        "over_15": "Oui",
+        "over_15_prob": 45.8
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Khenchela)",
+        "probability": 23.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 4.4,
+        "expected_total": 4.7,
+        "over_35_prob": 63.5,
+        "over_45_prob": 48.5,
+        "over_55_prob": 33.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme MB Rouisset: WDLLW",
+        "Forme Khenchela: LDWWW",
+        "Classement: MB Rouisset 11e vs Khenchela 9e",
+        "H2H: 1V-0N-1D"
+      ]
+    },
+    {
+      "match": "ASO Chlef vs MC Alger",
+      "league": "Ligue 1",
+      "date": "2026-01-09 15:00",
+      "match_description": "MC Alger en pleine confiance (DWDWW). écart au classement: MC Alger (1e) vs ASO Chlef (14e). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (MC Alger)",
+      "probabilities": {
+        "home": 25.4,
+        "draw": 32.3,
+        "away": 42.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.22,
+        "over_15_prob": 61.0,
+        "over_25_prob": 35.3,
+        "over_35_prob": 25.0,
+        "btts": "Non",
+        "btts_prob": 26.9,
+        "score_exact": "0-1",
+        "clean_sheet": "MC Alger gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 18.4,
+          "draw": 49.3,
+          "away": 32.3
+        },
+        "expected_goals": 0.93,
+        "over_05": "Oui",
+        "over_05_prob": 55.8,
+        "over_15": "Non",
+        "over_15_prob": 37.8,
+        "btts": "Non",
+        "btts_prob": 9.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.29,
+        "over_05": "Oui",
+        "over_05_prob": 62.2,
+        "over_15": "Non",
+        "over_15_prob": 44.2
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/MC Alger)",
+        "probability": 23.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 4.2,
+        "expected_total": 4.4,
+        "over_35_prob": 60.5,
+        "over_45_prob": 45.5,
+        "over_55_prob": 30.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (60%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme ASO Chlef: DLWLL",
+        "Forme MC Alger: DWDWW",
+        "Classement: ASO Chlef 14e vs MC Alger 1e",
+        "H2H: 1V-6N-3D"
+      ]
+    },
+    {
+      "match": "CR Belouizdad vs JS Kabylie",
+      "league": "Ligue 1",
+      "date": "2026-01-09 17:00",
+      "match_description": "H2H favorable à CR Belouizdad (5V-3N-2D). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (CR Belouizdad)",
+      "probabilities": {
+        "home": 45.4,
+        "draw": 32.2,
+        "away": 22.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.91,
+        "over_15_prob": 73.3,
+        "over_25_prob": 44.5,
+        "over_35_prob": 37.3,
+        "btts": "Non",
+        "btts_prob": 28.7,
+        "score_exact": "2-0",
+        "clean_sheet": "CR Belouizdad gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 35.1,
+          "draw": 48.4,
+          "away": 16.5
+        },
+        "expected_goals": 1.22,
+        "over_05": "Oui",
+        "over_05_prob": 61.0,
+        "over_15": "Oui",
+        "over_15_prob": 43.0,
+        "btts": "Non",
+        "btts_prob": 10.1,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.69,
+        "over_05": "Oui",
+        "over_05_prob": 69.4,
+        "over_15": "Oui",
+        "over_15_prob": 51.4
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/CR Belouizdad)",
+        "probability": 23.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 5.3,
+        "expected_total": 5.5,
+        "over_35_prob": 77.0,
+        "over_45_prob": 62.0,
+        "over_55_prob": 47.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme CR Belouizdad: LWDWW",
+        "Forme JS Kabylie: WDDWL",
+        "Classement: CR Belouizdad 2e vs JS Kabylie 6e",
+        "H2H: 5V-3N-2D",
+        "Blessures CR Belouizdad: A. Benguit (Contusion), A. Benguit (Contusion)",
+        "Blessures JS Kabylie: M. Madani (Contusion), M. Madani (Contusion)",
+        "CR Belouizdad: enjeu title"
+      ]
+    },
+    {
+      "match": "Dordrecht vs Helmond Sport",
+      "league": "Eerste Divisie",
+      "date": "2026-01-09 19:00",
+      "match_description": "Dordrecht en difficulté (LLLLW). H2H favorable à Dordrecht (5V-4N-1D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Dordrecht)",
+      "probabilities": {
+        "home": 44.0,
+        "draw": 31.4,
+        "away": 24.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.16,
+        "over_15_prob": 77.9,
+        "over_25_prob": 59.0,
+        "over_35_prob": 41.9,
+        "btts": "Non",
+        "btts_prob": 40.4,
+        "score_exact": "2-0",
+        "clean_sheet": "Dordrecht gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 35.5,
+          "draw": 43.0,
+          "away": 21.6
+        },
+        "expected_goals": 1.33,
+        "over_05": "Oui",
+        "over_05_prob": 62.9,
+        "over_15": "Oui",
+        "over_15_prob": 44.9,
+        "btts": "Non",
+        "btts_prob": 14.2,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.83,
+        "over_05": "Oui",
+        "over_05_prob": 72.0,
+        "over_15": "Oui",
+        "over_15_prob": 54.0
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Dordrecht)",
+        "probability": 21.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.0,
+        "home_avg": 4.4,
+        "away_avg": 6.6,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.1,
+        "expected_total": 4.1,
+        "over_35_prob": 59.0,
+        "over_45_prob": 44.0,
+        "over_55_prob": 29.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +3.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Dordrecht: LLLLW",
+        "Forme Helmond Sport: DLLDW",
+        "Classement: Dordrecht 14e vs Helmond Sport 15e",
+        "H2H: 5V-4N-1D",
+        "Blessures Dordrecht: D. van Vianen (Jumpers knee), D. van Vianen (Jumpers knee)"
+      ]
+    },
+    {
+      "match": "Emmen vs Cambuur",
+      "league": "Eerste Divisie",
+      "date": "2026-01-09 19:00",
+      "match_description": "Cambuur en pleine confiance (WWWDW). H2H favorable à Emmen (4V-5N-1D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Emmen)",
+      "probabilities": {
+        "home": 36.1,
+        "draw": 28.5,
+        "away": 35.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 63.5,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 45.2,
+        "score_exact": "2-0",
+        "clean_sheet": "Emmen gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 28.2,
+          "draw": 40.8,
+          "away": 30.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 15.8,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Emmen)",
+        "probability": 18.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 3.6,
+        "away_avg": 6.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.4,
+        "expected_total": 2.4,
+        "over_35_prob": 28.5,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (41%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Emmen: LWLWD",
+        "Forme Cambuur: WWWDW",
+        "Classement: Emmen 11e vs Cambuur 2e",
+        "H2H: 4V-5N-1D",
+        "Blessures Emmen: J. Kade (Jumpers knee), J. Kade (Jumpers knee)",
+        "Blessures Cambuur: J. Amofa (Wound), O. Sjöstrand (Wound)"
+      ]
+    },
+    {
+      "match": "MVV vs Almere City FC",
+      "league": "Eerste Divisie",
+      "date": "2026-01-09 19:00",
+      "match_description": "Almere City FC en pleine confiance (WWWWW). écart au classement: Almere City FC (6e) vs MVV (16e). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Almere City FC)",
+      "probabilities": {
+        "home": 26.6,
+        "draw": 31.3,
+        "away": 42.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.9,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 41.2,
+        "score_exact": "0-2",
+        "clean_sheet": "Almere City FC gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 21.3,
+          "draw": 41.9,
+          "away": 36.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 14.4,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/Almere City FC)",
+        "probability": 21.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 2.4,
+        "away_avg": 7.2,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.3,
+        "expected_total": 2.4,
+        "over_35_prob": 27.2,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (40%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme MVV: LWWDL",
+        "Forme Almere City FC: WWWWW",
+        "Classement: MVV 16e vs Almere City FC 6e",
+        "H2H: 3V-3N-4D",
+        "Blessures MVV: T. Poitoux (Achilles tendon problems), T. Poitoux (Achilles tendon problems)",
+        "MVV: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Vitesse vs FC Eindhoven",
+      "league": "Eerste Divisie",
+      "date": "2026-01-09 19:00",
+      "match_description": "FC Eindhoven en pleine confiance (WWWLW). match à buts attendu (3.5 buts prévus). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Vitesse)",
+      "probabilities": {
+        "home": 41.6,
+        "draw": 31.6,
+        "away": 26.8
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 58.7,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 40.8,
+        "score_exact": "2-0",
+        "clean_sheet": "Vitesse gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 35.2,
+          "draw": 44.2,
+          "away": 20.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 14.3,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Vitesse)",
+        "probability": 21.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 13.0,
+        "home_avg": 5.6,
+        "away_avg": 7.4,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.0,
+        "expected_total": 4.0,
+        "over_35_prob": 57.5,
+        "over_45_prob": 42.5,
+        "over_55_prob": 27.5,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +3.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Vitesse: LWDLL",
+        "Forme FC Eindhoven: WWWLW",
+        "Classement: Vitesse 19e vs FC Eindhoven 12e",
+        "H2H: 1V-3N-0D",
+        "Vitesse: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Willem II vs ADO Den Haag",
+      "league": "Eerste Divisie",
+      "date": "2026-01-09 19:00",
+      "match_description": "ADO Den Haag en pleine confiance (LWWWW). H2H favorable à Willem II (4V-5N-1D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (ADO Den Haag)",
+      "probabilities": {
+        "home": 28.8,
+        "draw": 31.3,
+        "away": 39.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.5,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 42.5,
+        "score_exact": "0-2",
+        "clean_sheet": "ADO Den Haag gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 22.2,
+          "draw": 42.7,
+          "away": 35.1
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 14.9,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/2 (Nul/ADO Den Haag)",
+        "probability": 20.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 15.6,
+        "home_avg": 6.8,
+        "away_avg": 8.8,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.1,
+        "expected_total": 3.1,
+        "over_35_prob": 44.0,
+        "over_45_prob": 29.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Willem II: DLWLW",
+        "Forme ADO Den Haag: LWWWW",
+        "Classement: Willem II 9e vs ADO Den Haag 1e",
+        "H2H: 4V-5N-1D",
+        "Blessures Willem II: A. Culum (Shoulder injury), A. Culum (Shoulder injury)",
+        "Blessures ADO Den Haag: N. Thomas (Wound)"
+      ]
+    },
+    {
+      "match": "Cadiz vs Sporting Gijon",
+      "league": "Segunda División",
+      "date": "2026-01-09 19:30",
+      "match_description": "Match équilibré entre Cadiz et Sporting Gijon",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Cadiz)",
+      "probabilities": {
+        "home": 43.2,
+        "draw": 32.2,
+        "away": 24.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.61,
+        "over_15_prob": 68.0,
+        "over_25_prob": 44.5,
+        "over_35_prob": 32.0,
+        "btts": "Non",
+        "btts_prob": 33.2,
+        "score_exact": "2-0",
+        "clean_sheet": "Cadiz gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.4,
+          "draw": 47.1,
+          "away": 22.4
+        },
+        "expected_goals": 1.1,
+        "over_05": "Oui",
+        "over_05_prob": 58.8,
+        "over_15": "Oui",
+        "over_15_prob": 40.8,
+        "btts": "Non",
+        "btts_prob": 11.6,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.52,
+        "over_05": "Oui",
+        "over_05_prob": 66.3,
+        "over_15": "Oui",
+        "over_15_prob": 48.3
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Cadiz)",
+        "probability": 22.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.6,
+        "home_avg": 4.8,
+        "away_avg": 7.8,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 6.2,
+        "expected_total": 6.3,
+        "over_35_prob": 85.0,
+        "over_45_prob": 75.5,
+        "over_55_prob": 60.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +4.5 (76%) ✓",
+        "referee": "Rafael Sanchez Lopez, Spain",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Cadiz: DWWLW",
+        "Forme Sporting Gijon: LWWWD",
+        "Classement: Cadiz 7e vs Sporting Gijon 8e",
+        "H2H: 5V-2N-3D",
+        "Blessures Cadiz: José de la Rosa (Wound), Fali (Jumpers knee)",
+        "Blessures Sporting Gijon: Jesús Bernal (Wound), Jesús Bernal (Wound)",
+        "Cadiz: enjeu conference",
+        "Arbitre: Rafael Sanchez Lopez, Spain (MOYEN)"
+      ]
+    },
+    {
+      "match": "Milton Keynes Dons vs Oxford United",
+      "league": "FA Cup",
+      "date": "2026-01-09 19:30",
+      "match_description": "Match équilibré entre Milton Keynes Dons et Oxford United",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Milton Keynes Dons)",
+      "probabilities": {
+        "home": 38.9,
+        "draw": 28.3,
+        "away": 32.8
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.04,
+        "over_15_prob": 75.6,
+        "over_25_prob": 53.8,
+        "over_35_prob": 39.6,
+        "btts": "Non",
+        "btts_prob": 49.8,
+        "score_exact": "2-0",
+        "clean_sheet": "Milton Keynes Dons gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.2,
+          "draw": 42.8,
+          "away": 27.0
+        },
+        "expected_goals": 1.28,
+        "over_05": "Oui",
+        "over_05_prob": 62.0,
+        "over_15": "Oui",
+        "over_15_prob": 44.0,
+        "btts": "Non",
+        "btts_prob": 17.4,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.76,
+        "over_05": "Oui",
+        "over_05_prob": 70.7,
+        "over_15": "Oui",
+        "over_15_prob": 52.7
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Milton Keynes Dons)",
+        "probability": 18.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 4.0,
+        "expected_total": 4.1,
+        "over_35_prob": 57.5,
+        "over_45_prob": 42.5,
+        "over_55_prob": 27.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +3.5 (57%) ✓",
+        "referee": "Paul Howard, England",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 3V-4N-3D",
+        "Blessures Milton Keynes Dons: S. Hogan (Wound), S. Hogan (Wound)",
+        "Blessures Oxford United: Przemyslaw Placheta (unfit), Ole ter Haar Romeny (Broken foot)",
+        "Arbitre: Paul Howard, England (MOYEN)"
+      ]
+    },
+    {
+      "match": "Port Vale vs Fleetwood Town",
+      "league": "FA Cup",
+      "date": "2026-01-09 19:30",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Port Vale)",
+      "probabilities": {
+        "home": 41.4,
+        "draw": 28.6,
+        "away": 29.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 58.0,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 59.2,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 36.1,
+          "draw": 42.3,
+          "away": 21.6
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 20.7,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Port Vale)",
+        "probability": 21.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 13.0,
+        "home_avg": 8.0,
+        "away_avg": 5.0,
+        "over_85_prob": 48.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 32.0,
+        "recommendation": "Corners +10.5 (32%) ~"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.0,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (57%) ✓",
+        "referee": "Benjamin Speedie, England",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 4V-3N-3D",
+        "Blessures Port Vale: Mo Faal (Hamstring Injury), Mo Faal (Hamstring Injury)",
+        "Blessures Fleetwood Town: David Harrington (Unknown Injury), Ched Evans (Knee injury)",
+        "Arbitre: Benjamin Speedie, England (MOYEN)"
+      ]
+    },
+    {
+      "match": "Preston vs Wigan",
+      "league": "FA Cup",
+      "date": "2026-01-09 19:30",
+      "match_description": "H2H favorable à Preston (5V-2N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Preston)",
+      "probabilities": {
+        "home": 46.7,
+        "draw": 33.1,
+        "away": 20.2
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.95,
+        "over_15_prob": 74.2,
+        "over_25_prob": 49.7,
+        "over_35_prob": 38.2,
+        "btts": "Non",
+        "btts_prob": 33.3,
+        "score_exact": "2-0",
+        "clean_sheet": "Preston gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 36.9,
+          "draw": 46.4,
+          "away": 16.7
+        },
+        "expected_goals": 1.24,
+        "over_05": "Oui",
+        "over_05_prob": 61.3,
+        "over_15": "Oui",
+        "over_15_prob": 43.3,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 1.71,
+        "over_05": "Oui",
+        "over_05_prob": 69.8,
+        "over_15": "Oui",
+        "over_15_prob": 51.8
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Preston)",
+        "probability": 23.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 5.0,
+        "home_avg": 3.0,
+        "away_avg": 2.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.0,
+        "expected_total": 2.0,
+        "over_35_prob": 27.5,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (42%) ✓",
+        "referee": "Oliver Langford, England",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 5V-2N-2D",
+        "Blessures Preston: William Keane (injured), Brad Potts (injured)",
+        "Blessures Wigan: Ryan Trevitt (Hamstring Injury), Ryan Trevitt (Hamstring Injury)",
+        "Arbitre: Oliver Langford, England (MOYEN)"
+      ]
+    },
+    {
+      "match": "Wrexham vs Nottingham Forest",
+      "league": "FA Cup",
+      "date": "2026-01-09 19:30",
+      "match_description": "Match équilibré entre Wrexham et Nottingham Forest",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Wrexham)",
+      "probabilities": {
+        "home": 37.4,
+        "draw": 27.9,
+        "away": 34.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.2,
+        "over_15_prob": 60.6,
+        "over_25_prob": 47.6,
+        "over_35_prob": 24.6,
+        "btts": "Non",
+        "btts_prob": 41.7,
+        "score_exact": "1-0",
+        "clean_sheet": "Wrexham gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 25.1,
+          "draw": 41.5,
+          "away": 33.4
+        },
+        "expected_goals": 0.92,
+        "over_05": "Oui",
+        "over_05_prob": 55.6,
+        "over_15": "Non",
+        "over_15_prob": 37.6,
+        "btts": "Non",
+        "btts_prob": 14.6,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.28,
+        "over_05": "Oui",
+        "over_05_prob": 62.0,
+        "over_15": "Non",
+        "over_15_prob": 44.0
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Wrexham)",
+        "probability": 18.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.2,
+        "over_35_prob": 36.1,
+        "over_45_prob": 23.4,
+        "over_55_prob": 17.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (49%) ~",
+        "referee": "Paul Tierney, England",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 0V-1N-0D",
+        "Blessures Wrexham: Kieffer Moore (Ankle Injury), Josh Windass (Injured Doubtful)",
+        "Blessures Nottingham Forest: Taiwo Awoniyi, N. Domínguez (Knee injury)",
+        "Arbitre: Paul Tierney, England (MOYEN)"
+      ]
+    },
+    {
+      "match": "Geylang International vs Balestier Khalsa",
+      "league": "Premier League",
+      "date": "2026-01-09 11:30",
+      "match_description": "Geylang International en excellente forme (WWWLD). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Geylang International)",
+      "probabilities": {
+        "home": 40.8,
+        "draw": 28.5,
+        "away": 30.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 66.0,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 70.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 33.2,
+          "draw": 43.4,
+          "away": 23.4
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 24.5,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/1 (Nul/Geylang International)",
+        "probability": 19.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.6,
+        "expected_total": 3.8,
+        "over_35_prob": 51.5,
+        "over_45_prob": 36.5,
+        "over_55_prob": 21.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (66%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Geylang International: WWWLD",
+        "Forme Balestier Khalsa: WDWLD",
+        "Classement: Geylang International 2e vs Balestier Khalsa 4e",
+        "H2H: 3V-4N-3D",
+        "Geylang International: enjeu title"
+      ]
+    }
+  ]
+}
