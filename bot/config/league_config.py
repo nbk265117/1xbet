@@ -42,12 +42,12 @@ DEFAULT_CONFIG = {
         "form": 0.20,
         "standings": 0.15,
         "h2h": 0.15,
-        "home_adv": 0.10,
-        "api_predictions": 0.25,
+        "home_adv": 0.12,  # Augmenté pour mieux valoriser le domicile
+        "api_predictions": 0.23,
         "odds_implied": 0.10,
         "motivation": 0.05,
     },
-    "home_advantage": 0.08,
+    "home_advantage": 0.10,  # Augmenté de 0.08 à 0.10
     "defaults": {
         "goals_scored": 1.2,
         "goals_conceded": 1.1,
@@ -58,9 +58,10 @@ DEFAULT_CONFIG = {
     "thresholds": {
         "over_25": 0.55,      # Prob minimale pour recommander Over 2.5
         "under_25": 0.40,     # Prob maximale pour recommander Under 2.5
-        "btts_yes": 0.50,     # Prob minimale pour BTTS Oui
+        "btts_yes": 0.58,     # Augmenté de 0.50 à 0.58 (plus strict)
         "confidence_high": 0.70,
         "confidence_medium": 0.55,
+        "draw_threshold": 0.08,  # Nouveau: écart min pour prédire victoire vs nul
     },
     "avg_goals_per_match": 2.5,
     "style": "balanced",  # balanced, attacking, defensive, physical
@@ -76,12 +77,12 @@ LEAGUE_CONFIGS = {
             "form": 0.18,
             "standings": 0.12,
             "h2h": 0.12,
-            "home_adv": 0.08,  # Avantage domicile réduit en PL
-            "api_predictions": 0.30,  # Plus fiables en PL
+            "home_adv": 0.10,  # Augmenté
+            "api_predictions": 0.28,
             "odds_implied": 0.15,
             "motivation": 0.05,
         },
-        "home_advantage": 0.06,  # Plus faible en PL
+        "home_advantage": 0.08,  # Augmenté de 0.06
         "defaults": {
             "goals_scored": 1.4,
             "goals_conceded": 1.2,
@@ -90,11 +91,12 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.06,
         },
         "thresholds": {
-            "over_25": 0.52,  # Plus de buts en PL
+            "over_25": 0.52,
             "under_25": 0.38,
-            "btts_yes": 0.48,
+            "btts_yes": 0.55,  # Augmenté de 0.48
             "confidence_high": 0.68,
             "confidence_medium": 0.53,
+            "draw_threshold": 0.10,  # Plus difficile de prédire nul en PL
         },
         "avg_goals_per_match": 2.8,
         "style": "attacking",
@@ -104,27 +106,28 @@ LEAGUE_CONFIGS = {
         "name": "La Liga",
         "weights": {
             "form": 0.18,
-            "standings": 0.18,  # Classement important en Liga
+            "standings": 0.18,
             "h2h": 0.15,
-            "home_adv": 0.12,  # Fort avantage domicile
-            "api_predictions": 0.22,
+            "home_adv": 0.14,  # Augmenté - fort avantage domicile en Liga
+            "api_predictions": 0.20,
             "odds_implied": 0.10,
             "motivation": 0.05,
         },
-        "home_advantage": 0.10,
+        "home_advantage": 0.12,  # Augmenté de 0.10
         "defaults": {
             "goals_scored": 1.2,
             "goals_conceded": 1.0,
             "corners": 4.8,
-            "yellow_cards": 2.0,  # Plus de cartons en Liga
+            "yellow_cards": 2.0,
             "red_cards": 0.10,
         },
         "thresholds": {
             "over_25": 0.55,
             "under_25": 0.42,
-            "btts_yes": 0.48,
+            "btts_yes": 0.55,  # Augmenté de 0.48
             "confidence_high": 0.70,
             "confidence_medium": 0.55,
+            "draw_threshold": 0.07,  # Nuls plus fréquents en Liga
         },
         "avg_goals_per_match": 2.5,
         "style": "balanced",
@@ -133,30 +136,31 @@ LEAGUE_CONFIGS = {
     78: {  # Bundesliga
         "name": "Bundesliga",
         "weights": {
-            "form": 0.22,  # Forme très importante
+            "form": 0.20,
             "standings": 0.12,
             "h2h": 0.12,
-            "home_adv": 0.12,  # Fort avantage domicile (fans)
-            "api_predictions": 0.25,
+            "home_adv": 0.15,  # Augmenté - très fort avantage domicile
+            "api_predictions": 0.24,
             "odds_implied": 0.12,
             "motivation": 0.05,
         },
-        "home_advantage": 0.12,  # Très fort en Bundesliga
+        "home_advantage": 0.14,  # Augmenté de 0.12
         "defaults": {
-            "goals_scored": 1.6,  # Plus de buts en Bundesliga
+            "goals_scored": 1.6,
             "goals_conceded": 1.4,
             "corners": 5.2,
             "yellow_cards": 1.8,
             "red_cards": 0.07,
         },
         "thresholds": {
-            "over_25": 0.50,  # Beaucoup de buts
+            "over_25": 0.50,
             "under_25": 0.35,
-            "btts_yes": 0.52,  # BTTS fréquent
+            "btts_yes": 0.58,  # Augmenté de 0.52
             "confidence_high": 0.68,
             "confidence_medium": 0.52,
+            "draw_threshold": 0.10,  # Moins de nuls en Bundesliga
         },
-        "avg_goals_per_match": 3.1,  # Ligue avec le plus de buts
+        "avg_goals_per_match": 3.1,
         "style": "attacking",
     },
 
@@ -164,27 +168,28 @@ LEAGUE_CONFIGS = {
         "name": "Serie A",
         "weights": {
             "form": 0.18,
-            "standings": 0.20,  # Classement très important
-            "h2h": 0.18,  # H2H important en Italie
-            "home_adv": 0.10,
+            "standings": 0.18,
+            "h2h": 0.16,
+            "home_adv": 0.14,  # Augmenté - fort avantage domicile en Italie
             "api_predictions": 0.20,
             "odds_implied": 0.10,
             "motivation": 0.04,
         },
-        "home_advantage": 0.09,
+        "home_advantage": 0.12,  # Augmenté de 0.09
         "defaults": {
             "goals_scored": 1.3,
             "goals_conceded": 1.1,
             "corners": 5.0,
-            "yellow_cards": 2.2,  # Beaucoup de cartons
+            "yellow_cards": 2.2,
             "red_cards": 0.09,
         },
         "thresholds": {
             "over_25": 0.55,
             "under_25": 0.42,
-            "btts_yes": 0.45,  # Moins de BTTS (défenses solides)
+            "btts_yes": 0.52,  # Augmenté de 0.45
             "confidence_high": 0.70,
             "confidence_medium": 0.55,
+            "draw_threshold": 0.06,  # Nuls plus fréquents en Serie A
         },
         "avg_goals_per_match": 2.6,
         "style": "defensive",
@@ -196,12 +201,12 @@ LEAGUE_CONFIGS = {
             "form": 0.20,
             "standings": 0.15,
             "h2h": 0.12,
-            "home_adv": 0.10,
-            "api_predictions": 0.25,
+            "home_adv": 0.12,  # Augmenté
+            "api_predictions": 0.24,
             "odds_implied": 0.12,
-            "motivation": 0.06,
+            "motivation": 0.05,
         },
-        "home_advantage": 0.08,
+        "home_advantage": 0.10,  # Augmenté de 0.08
         "defaults": {
             "goals_scored": 1.3,
             "goals_conceded": 1.2,
@@ -212,9 +217,10 @@ LEAGUE_CONFIGS = {
         "thresholds": {
             "over_25": 0.55,
             "under_25": 0.42,
-            "btts_yes": 0.48,
+            "btts_yes": 0.55,  # Augmenté de 0.48
             "confidence_high": 0.70,
             "confidence_medium": 0.55,
+            "draw_threshold": 0.08,
         },
         "avg_goals_per_match": 2.7,
         "style": "balanced",
@@ -225,30 +231,31 @@ LEAGUE_CONFIGS = {
     88: {  # Eredivisie
         "name": "Eredivisie",
         "weights": {
-            "form": 0.22,
+            "form": 0.20,
             "standings": 0.15,
             "h2h": 0.10,
-            "home_adv": 0.10,
-            "api_predictions": 0.25,
+            "home_adv": 0.14,  # Augmenté - fort avantage domicile
+            "api_predictions": 0.24,
             "odds_implied": 0.12,
-            "motivation": 0.06,
+            "motivation": 0.05,
         },
-        "home_advantage": 0.09,
+        "home_advantage": 0.12,  # Augmenté de 0.09
         "defaults": {
-            "goals_scored": 1.6,  # Ligue très offensive
+            "goals_scored": 1.6,
             "goals_conceded": 1.5,
             "corners": 5.3,
             "yellow_cards": 1.6,
             "red_cards": 0.06,
         },
         "thresholds": {
-            "over_25": 0.48,  # Beaucoup de buts
+            "over_25": 0.48,
             "under_25": 0.32,
-            "btts_yes": 0.55,  # BTTS très fréquent
+            "btts_yes": 0.60,  # Augmenté de 0.55 - plus strict
             "confidence_high": 0.68,
             "confidence_medium": 0.52,
+            "draw_threshold": 0.12,  # Moins de nuls en Eredivisie
         },
-        "avg_goals_per_match": 3.2,  # Une des ligues avec le plus de buts
+        "avg_goals_per_match": 3.2,
         "style": "attacking",
     },
 
@@ -409,15 +416,15 @@ LEAGUE_CONFIGS = {
     45: {  # FA Cup
         "name": "FA Cup",
         "weights": {
-            "form": 0.20,
-            "standings": 0.08,  # Classement moins pertinent
+            "form": 0.18,
+            "standings": 0.05,  # Classement peu pertinent en coupe
             "h2h": 0.10,
-            "home_adv": 0.15,  # Avantage domicile important en coupe
-            "api_predictions": 0.25,
-            "odds_implied": 0.15,
+            "home_adv": 0.08,  # Réduit - équipes de divisions différentes
+            "api_predictions": 0.30,  # Plus important car matchs imprévisibles
+            "odds_implied": 0.22,  # Cotes plus fiables
             "motivation": 0.07,
         },
-        "home_advantage": 0.12,  # Plus fort en coupe
+        "home_advantage": 0.06,  # Réduit - surprises fréquentes
         "defaults": {
             "goals_scored": 1.2,
             "goals_conceded": 1.1,
@@ -428,9 +435,10 @@ LEAGUE_CONFIGS = {
         "thresholds": {
             "over_25": 0.55,
             "under_25": 0.42,
-            "btts_yes": 0.45,  # Plus de clean sheets en coupe
-            "confidence_high": 0.65,  # Moins prévisible
+            "btts_yes": 0.50,  # Augmenté de 0.45
+            "confidence_high": 0.65,
             "confidence_medium": 0.50,
+            "draw_threshold": 0.05,  # Moins de nuls en coupe
         },
         "avg_goals_per_match": 2.4,
         "style": "balanced",
@@ -441,15 +449,15 @@ LEAGUE_CONFIGS = {
     307: {  # Saudi Pro League
         "name": "Pro League",
         "weights": {
-            "form": 0.25,
+            "form": 0.22,
             "standings": 0.15,
-            "h2h": 0.10,
-            "home_adv": 0.15,  # Fort avantage domicile
-            "api_predictions": 0.20,
-            "odds_implied": 0.10,
+            "h2h": 0.12,
+            "home_adv": 0.12,
+            "api_predictions": 0.22,
+            "odds_implied": 0.12,
             "motivation": 0.05,
         },
-        "home_advantage": 0.12,
+        "home_advantage": 0.10,
         "defaults": {
             "goals_scored": 1.2,
             "goals_conceded": 1.0,
@@ -458,11 +466,12 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.07,
         },
         "thresholds": {
-            "over_25": 0.58,  # Moins de buts
+            "over_25": 0.58,
             "under_25": 0.45,
-            "btts_yes": 0.40,  # Beaucoup de clean sheets
+            "btts_yes": 0.55,  # Augmenté de 0.40 - était trop bas
             "confidence_high": 0.65,
             "confidence_medium": 0.50,
+            "draw_threshold": 0.08,
         },
         "avg_goals_per_match": 2.3,
         "style": "defensive",

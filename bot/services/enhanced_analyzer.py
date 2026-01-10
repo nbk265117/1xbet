@@ -173,14 +173,17 @@ class EnhancedMatchAnalyzer:
             return 1.0 if k == 0 else 0.0
         return (lam ** k) * math.exp(-lam) / math.factorial(k)
 
-    def _predict_score_poisson(self, exp_home: float, exp_away: float, max_goals: int = 6) -> Tuple[str, float]:
+    def _predict_score_poisson(self, exp_home: float, exp_away: float, max_goals: int = 6,
+                                  home_prob: float = 0.40, away_prob: float = 0.30) -> Tuple[str, float]:
         """
-        Prédit le score exact en utilisant la distribution Poisson
+        Prédit le score exact en utilisant la distribution Poisson améliorée
 
         Args:
             exp_home: Buts attendus équipe domicile
             exp_away: Buts attendus équipe extérieur
             max_goals: Maximum de buts à considérer par équipe
+            home_prob: Probabilité victoire domicile (pour ajuster le biais)
+            away_prob: Probabilité victoire extérieur (pour ajuster le biais)
 
         Returns:
             (score_exact, probabilité)
@@ -188,11 +191,35 @@ class EnhancedMatchAnalyzer:
         best_score = "1-1"
         best_prob = 0.0
 
+        # Ajuster les xG en fonction de la force relative des équipes
+        # Si une équipe est clairement favorite, augmenter légèrement son xG
+        prob_diff = home_prob - away_prob
+        if prob_diff > 0.15:  # Home est clairement favori
+            exp_home *= 1.10
+            exp_away *= 0.95
+        elif prob_diff < -0.15:  # Away est clairement favori
+            exp_home *= 0.95
+            exp_away *= 1.10
+
         # Calculer la probabilité de chaque score possible
         scores_probs = []
         for h in range(max_goals + 1):
             for a in range(max_goals + 1):
                 prob = self._poisson_prob(exp_home, h) * self._poisson_prob(exp_away, a)
+
+                # Pénaliser légèrement les scores nuls si une équipe est favorite
+                if h == a:
+                    if abs(prob_diff) > 0.10:
+                        prob *= 0.85  # Réduire prob des nuls si écart de force
+                    else:
+                        prob *= 0.95  # Légère réduction même pour matchs équilibrés
+
+                # Bonus pour scores réalistes de favoris
+                if prob_diff > 0.12 and h > a:  # Home favori et victoire home
+                    prob *= 1.08
+                elif prob_diff < -0.12 and a > h:  # Away favori et victoire away
+                    prob *= 1.08
+
                 scores_probs.append((f"{h}-{a}", prob, h, a))
 
         # Trier par probabilité décroissante
@@ -1261,12 +1288,27 @@ class EnhancedMatchAnalyzer:
         goals = analysis["goals"]
         corners = analysis["corners"]
 
-        # 1X2
+        # 1X2 - Logique améliorée avec seuil dynamique pour les nuls
+        draw_threshold = self.thresholds.get("draw_threshold", 0.08)
+
+        # Calculer l'écart entre les probabilités
+        prob_gap = abs(home_prob - away_prob)
+
+        # Victoire claire si prob >= 50% ou écart significatif
         if home_prob >= 0.50:
             result_1x2 = f"1 ({home_team})"
-        elif away_prob >= 0.45:
+        elif away_prob >= 0.48:
             result_1x2 = f"2 ({away_team})"
-        elif draw_prob >= 0.30:
+        # Nul seulement si: draw_prob élevé ET écart faible entre home/away
+        elif draw_prob >= 0.32 and prob_gap < draw_threshold:
+            result_1x2 = "X (Nul)"
+        # Sinon, prédire le favori
+        elif home_prob > away_prob + 0.03:  # Home favori avec marge
+            result_1x2 = f"1 ({home_team})"
+        elif away_prob > home_prob + 0.03:  # Away favori avec marge
+            result_1x2 = f"2 ({away_team})"
+        # Match très équilibré -> nul
+        elif prob_gap < 0.05 and draw_prob >= 0.28:
             result_1x2 = "X (Nul)"
         else:
             result_1x2 = f"1 ({home_team})" if home_prob > away_prob else f"2 ({away_team})"
@@ -1303,8 +1345,11 @@ class EnhancedMatchAnalyzer:
         exp_away = goals["expected_away"]
         total_exp = goals["total_expected"]
 
-        # Utiliser Poisson pour prédire le score le plus probable
-        score_exact, score_prob = self._predict_score_poisson(exp_home, exp_away)
+        # Utiliser Poisson amélioré pour prédire le score (avec biais pour favoris)
+        score_exact, score_prob = self._predict_score_poisson(
+            exp_home, exp_away,
+            home_prob=home_prob, away_prob=away_prob
+        )
         logger.debug(f"[POISSON] Score prédit: {score_exact} (prob: {score_prob:.1%}) - xG: {exp_home:.2f}-{exp_away:.2f}")
 
         # BTTS - DÉRIVÉ DU SCORE PRÉDIT pour cohérence
@@ -1440,8 +1485,11 @@ class EnhancedMatchAnalyzer:
         exp_away = goals["expected_away"]
         total_exp = goals["total_expected"]
 
-        # Utiliser Poisson pour prédire le score le plus probable
-        score_exact, score_prob = self._predict_score_poisson(exp_home, exp_away)
+        # Utiliser Poisson amélioré pour prédire le score (avec biais pour favoris)
+        score_exact, score_prob = self._predict_score_poisson(
+            exp_home, exp_away,
+            home_prob=home_prob, away_prob=away_prob
+        )
         logger.debug(f"[POISSON PRO] Score: {score_exact} (prob: {score_prob:.1%}) - xG: {exp_home:.2f}-{exp_away:.2f}")
 
         # Extraire les buts du score exact
