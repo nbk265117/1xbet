@@ -42,12 +42,12 @@ DEFAULT_CONFIG = {
         "form": 0.20,
         "standings": 0.15,
         "h2h": 0.15,
-        "home_adv": 0.12,  # Augmenté pour mieux valoriser le domicile
+        "home_adv": 0.12,
         "api_predictions": 0.23,
         "odds_implied": 0.10,
         "motivation": 0.05,
     },
-    "home_advantage": 0.10,  # Augmenté de 0.08 à 0.10
+    "home_advantage": 0.10,
     "defaults": {
         "goals_scored": 1.2,
         "goals_conceded": 1.1,
@@ -56,15 +56,18 @@ DEFAULT_CONFIG = {
         "red_cards": 0.08,
     },
     "thresholds": {
-        "over_25": 0.55,      # Prob minimale pour recommander Over 2.5
-        "under_25": 0.40,     # Prob maximale pour recommander Under 2.5
-        "btts_yes": 0.58,     # Augmenté de 0.50 à 0.58 (plus strict)
+        "over_25": 0.58,      # Augmenté de 0.55 à 0.58
+        "under_25": 0.42,     # Ajusté
+        "btts_yes": 0.62,     # AUGMENTÉ de 0.58 à 0.62 (plus strict)
+        "btts_no": 0.45,      # NOUVEAU: seuil pour recommander BTTS Non
         "confidence_high": 0.70,
         "confidence_medium": 0.55,
-        "draw_threshold": 0.08,  # Nouveau: écart min pour prédire victoire vs nul
+        "min_1x2_confidence": 0.45,  # NOUVEAU: prob min pour prédire 1X2
+        "draw_threshold": 0.08,
+        "clean_sheet_threshold": 0.30,  # NOUVEAU: si >30% clean sheets → BTTS Non
     },
     "avg_goals_per_match": 2.5,
-    "style": "balanced",  # balanced, attacking, defensive, physical
+    "style": "balanced",
 }
 
 # Configuration spécifique par ligue
@@ -108,12 +111,12 @@ LEAGUE_CONFIGS = {
             "form": 0.18,
             "standings": 0.18,
             "h2h": 0.15,
-            "home_adv": 0.14,  # Augmenté - fort avantage domicile en Liga
+            "home_adv": 0.14,
             "api_predictions": 0.20,
             "odds_implied": 0.10,
             "motivation": 0.05,
         },
-        "home_advantage": 0.12,  # Augmenté de 0.10
+        "home_advantage": 0.12,
         "defaults": {
             "goals_scored": 1.2,
             "goals_conceded": 1.0,
@@ -122,12 +125,15 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.10,
         },
         "thresholds": {
-            "over_25": 0.55,
-            "under_25": 0.42,
-            "btts_yes": 0.55,  # Augmenté de 0.48
+            "over_25": 0.58,       # AUGMENTÉ de 0.55
+            "under_25": 0.44,      # Ajusté
+            "btts_yes": 0.60,      # AUGMENTÉ de 0.55
+            "btts_no": 0.44,       # NOUVEAU
             "confidence_high": 0.70,
             "confidence_medium": 0.55,
-            "draw_threshold": 0.07,  # Nuls plus fréquents en Liga
+            "min_1x2_confidence": 0.45,  # NOUVEAU
+            "draw_threshold": 0.07,
+            "clean_sheet_threshold": 0.32,  # NOUVEAU
         },
         "avg_goals_per_match": 2.5,
         "style": "balanced",
@@ -170,12 +176,12 @@ LEAGUE_CONFIGS = {
             "form": 0.18,
             "standings": 0.18,
             "h2h": 0.16,
-            "home_adv": 0.14,  # Augmenté - fort avantage domicile en Italie
+            "home_adv": 0.14,
             "api_predictions": 0.20,
             "odds_implied": 0.10,
             "motivation": 0.04,
         },
-        "home_advantage": 0.12,  # Augmenté de 0.09
+        "home_advantage": 0.12,
         "defaults": {
             "goals_scored": 1.3,
             "goals_conceded": 1.1,
@@ -184,12 +190,15 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.09,
         },
         "thresholds": {
-            "over_25": 0.55,
-            "under_25": 0.42,
-            "btts_yes": 0.52,  # Augmenté de 0.45
+            "over_25": 0.60,       # AUGMENTÉ de 0.55 - Serie A défensive
+            "under_25": 0.45,      # Ajusté
+            "btts_yes": 0.62,      # AUGMENTÉ de 0.52 - beaucoup de clean sheets
+            "btts_no": 0.42,       # NOUVEAU
             "confidence_high": 0.70,
             "confidence_medium": 0.55,
-            "draw_threshold": 0.06,  # Nuls plus fréquents en Serie A
+            "min_1x2_confidence": 0.45,  # NOUVEAU
+            "draw_threshold": 0.06,
+            "clean_sheet_threshold": 0.35,  # Plus élevé car ligue défensive
         },
         "avg_goals_per_match": 2.6,
         "style": "defensive",
@@ -234,12 +243,12 @@ LEAGUE_CONFIGS = {
             "form": 0.20,
             "standings": 0.15,
             "h2h": 0.10,
-            "home_adv": 0.14,  # Augmenté - fort avantage domicile
+            "home_adv": 0.14,
             "api_predictions": 0.24,
             "odds_implied": 0.12,
             "motivation": 0.05,
         },
-        "home_advantage": 0.12,  # Augmenté de 0.09
+        "home_advantage": 0.12,
         "defaults": {
             "goals_scored": 1.6,
             "goals_conceded": 1.5,
@@ -248,12 +257,15 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.06,
         },
         "thresholds": {
-            "over_25": 0.48,
-            "under_25": 0.32,
-            "btts_yes": 0.60,  # Augmenté de 0.55 - plus strict
+            "over_25": 0.50,       # Ligue offensive - seuil bas OK
+            "under_25": 0.35,
+            "btts_yes": 0.62,      # AUGMENTÉ de 0.60 - Sparta 2-0 Heracles!
+            "btts_no": 0.42,       # NOUVEAU
             "confidence_high": 0.68,
             "confidence_medium": 0.52,
-            "draw_threshold": 0.12,  # Moins de nuls en Eredivisie
+            "min_1x2_confidence": 0.45,  # NOUVEAU
+            "draw_threshold": 0.12,
+            "clean_sheet_threshold": 0.30,  # NOUVEAU
         },
         "avg_goals_per_match": 3.2,
         "style": "attacking",
@@ -341,11 +353,14 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.08,
         },
         "thresholds": {
-            "over_25": 0.55,
-            "under_25": 0.42,
-            "btts_yes": 0.45,
+            "over_25": 0.60,       # AUGMENTÉ de 0.55 - peu de buts
+            "under_25": 0.45,      # Ajusté
+            "btts_yes": 0.58,      # AUGMENTÉ de 0.45
+            "btts_no": 0.45,       # NOUVEAU
             "confidence_high": 0.68,
             "confidence_medium": 0.53,
+            "min_1x2_confidence": 0.45,  # NOUVEAU
+            "clean_sheet_threshold": 0.35,  # NOUVEAU
         },
         "avg_goals_per_match": 2.4,
         "style": "defensive",
@@ -371,11 +386,14 @@ LEAGUE_CONFIGS = {
             "red_cards": 0.09,
         },
         "thresholds": {
-            "over_25": 0.58,  # Moins de buts
-            "under_25": 0.45,
-            "btts_yes": 0.42,
+            "over_25": 0.65,       # AUGMENTÉ de 0.58 - très peu de buts
+            "under_25": 0.48,      # Ajusté
+            "btts_yes": 0.58,      # AUGMENTÉ de 0.42
+            "btts_no": 0.48,       # NOUVEAU - favoriser BTTS Non
             "confidence_high": 0.68,
             "confidence_medium": 0.53,
+            "min_1x2_confidence": 0.45,  # NOUVEAU
+            "clean_sheet_threshold": 0.38,  # NOUVEAU - très défensif
         },
         "avg_goals_per_match": 2.2,
         "style": "defensive",

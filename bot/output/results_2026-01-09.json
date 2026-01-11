@@ -1,0 +1,1592 @@
+{
+  "1501704": {
+    "fixture_id": "1501704",
+    "home": "Votuporanguense U20",
+    "away": "Gr\u00eamio U20",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1484525": {
+    "fixture_id": "1484525",
+    "home": "Sydney FC W",
+    "away": "Adelaide United W",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1403706": {
+    "fixture_id": "1403706",
+    "home": "Persita",
+    "away": "Pusamania Borneo",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1469622": {
+    "fixture_id": "1469622",
+    "home": "Brisbane Roar",
+    "away": "Auckland",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1502306": {
+    "fixture_id": "1502306",
+    "home": "Hannover 96",
+    "away": "MSV Duisburg",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1502307": {
+    "fixture_id": "1502307",
+    "home": "FC Lugano",
+    "away": "Plzen",
+    "home_score": 2,
+    "away_score": 4,
+    "result_1x2": "2",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1503493": {
+    "fixture_id": "1503493",
+    "home": "Spartak Trnava",
+    "away": "Mal\u017eenice",
+    "home_score": 6,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 7,
+    "btts": true
+  },
+  "1456781": {
+    "fixture_id": "1456781",
+    "home": "Hapoel Ramat HaSharon",
+    "away": "Beitar Yavne",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1503775": {
+    "fixture_id": "1503775",
+    "home": "CFR 1907 Cluj",
+    "away": "Gent",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1456775": {
+    "fixture_id": "1456775",
+    "home": "FC Jerusalem",
+    "away": "Hapoel Azor",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1456780": {
+    "fixture_id": "1456780",
+    "home": "Shimshon Tel Aviv",
+    "away": "Maccabi Ashdod",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1503495": {
+    "fixture_id": "1503495",
+    "home": "Valenciennes",
+    "away": "Francs Borains",
+    "home_score": 3,
+    "away_score": 3,
+    "result_1x2": "X",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1503778": {
+    "fixture_id": "1503778",
+    "home": "Genk",
+    "away": "Diosgyori VTK",
+    "home_score": 3,
+    "away_score": 4,
+    "result_1x2": "2",
+    "total_goals": 7,
+    "btts": true
+  },
+  "1456776": {
+    "fixture_id": "1456776",
+    "home": "Maccabi Kiryat Gat",
+    "away": "Nordia Jerusalem",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1456779": {
+    "fixture_id": "1456779",
+    "home": "Tzeirey Tira",
+    "away": "Hapoel Marmorek",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1456538": {
+    "fixture_id": "1456538",
+    "home": "Tzeirey Tamra",
+    "away": "Hapoel Ironi Karmiel",
+    "home_score": 3,
+    "away_score": 3,
+    "result_1x2": "X",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1484526": {
+    "fixture_id": "1484526",
+    "home": "Perth Glory FC W",
+    "away": "Western Sydney Wanderers W",
+    "home_score": 3,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1500242": {
+    "fixture_id": "1500242",
+    "home": "Dynamik",
+    "away": "Green Farmers FC",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1502309": {
+    "fixture_id": "1502309",
+    "home": "Motor Lublin",
+    "away": "Stal Stalowa Wola",
+    "home_score": 5,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1502310": {
+    "fixture_id": "1502310",
+    "home": "1. FC Magdeburg",
+    "away": "SSV Ulm 1846",
+    "home_score": 4,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1502889": {
+    "fixture_id": "1502889",
+    "home": "Arminia Bielefeld",
+    "away": "Hansa Rostock",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502892": {
+    "fixture_id": "1502892",
+    "home": "Legia Warszawa",
+    "away": "Pogo\u0144 Grod. Mazowiecki",
+    "home_score": 3,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1502894": {
+    "fixture_id": "1502894",
+    "home": "Radomiak Radom",
+    "away": "Znicz Pruszk\u00f3w",
+    "home_score": 3,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1503496": {
+    "fixture_id": "1503496",
+    "home": "Ba\u015fak\u015fehir",
+    "away": "KVC Westerlo",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1503497": {
+    "fixture_id": "1503497",
+    "home": "Puskas Academy",
+    "away": "Lommel United",
+    "home_score": 1,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1503498": {
+    "fixture_id": "1503498",
+    "home": "FC Sion",
+    "away": "Zulte Waregem",
+    "home_score": 3,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1398514": {
+    "fixture_id": "1398514",
+    "home": "Van BB",
+    "away": "Boluspor",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1456539": {
+    "fixture_id": "1456539",
+    "home": "Ironi Baka El Garbiya",
+    "away": "Araba",
+    "home_score": 5,
+    "away_score": 4,
+    "result_1x2": "1",
+    "total_goals": 9,
+    "btts": true
+  },
+  "1503024": {
+    "fixture_id": "1503024",
+    "home": "Khan Shaykhun SC",
+    "away": "Al Taliya",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1501705": {
+    "fixture_id": "1501705",
+    "home": "Inter Limeira U20",
+    "away": "CSA U20",
+    "home_score": 3,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1389714": {
+    "fixture_id": "1389714",
+    "home": "Maccabi Netanya",
+    "away": "Hapoel Katamon",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1403707": {
+    "fixture_id": "1403707",
+    "home": "PSM Makassar",
+    "away": "Bali United",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1470673": {
+    "fixture_id": "1470673",
+    "home": "KCB",
+    "away": "Police",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1482250": {
+    "fixture_id": "1482250",
+    "home": "Awassa Kenema",
+    "away": "Kedus Giorgis",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1482255": {
+    "fixture_id": "1482255",
+    "home": "Dire Dawa Kenema",
+    "away": "Mebrat Hayl",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1490985": {
+    "fixture_id": "1490985",
+    "home": "Police Tero",
+    "away": "Nakhon Si Thammarat",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1491192": {
+    "fixture_id": "1491192",
+    "home": "Uthai Thani",
+    "away": "Buriram United",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502158": {
+    "fixture_id": "1502158",
+    "home": "Talanta",
+    "away": "MCF",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1502477": {
+    "fixture_id": "1502477",
+    "home": "Duhok",
+    "away": "Al Minaa Basra",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502478": {
+    "fixture_id": "1502478",
+    "home": "Naft Maysan",
+    "away": "Al Zawra'a",
+    "home_score": 2,
+    "away_score": 2,
+    "result_1x2": "X",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1502479": {
+    "fixture_id": "1502479",
+    "home": "Zakho",
+    "away": "Baghdad",
+    "home_score": 2,
+    "away_score": 2,
+    "result_1x2": "X",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1502888": {
+    "fixture_id": "1502888",
+    "home": "Sonderjyske",
+    "away": "FC Midtjylland",
+    "home_score": 3,
+    "away_score": 6,
+    "result_1x2": "2",
+    "total_goals": 9,
+    "btts": true
+  },
+  "1502893": {
+    "fixture_id": "1502893",
+    "home": "Paks",
+    "away": "Sumqay\u0131t",
+    "home_score": 5,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1503500": {
+    "fixture_id": "1503500",
+    "home": "FC Winterthur",
+    "away": "TSV 1860 M\u00fcnchen",
+    "home_score": 1,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1503777": {
+    "fixture_id": "1503777",
+    "home": "Fortuna K\u00f6ln",
+    "away": "Paderborn II",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1503805": {
+    "fixture_id": "1503805",
+    "home": "Polonia Warszawa",
+    "away": "Zawisza Bydgoszcz",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1404190": {
+    "fixture_id": "1404190",
+    "home": "Sabah FA",
+    "away": "Kuala Lumpur FA",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1440876": {
+    "fixture_id": "1440876",
+    "home": "Dayrout",
+    "away": "El Dakhleya",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1440877": {
+    "fixture_id": "1440877",
+    "home": "Baladiyyat Al Mehalla",
+    "away": "Aswan Sc",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1445368": {
+    "fixture_id": "1445368",
+    "home": "Proxy",
+    "away": "Maleyet Kafr El Zayiat",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502308": {
+    "fixture_id": "1502308",
+    "home": "Hannover 96",
+    "away": "Waldhof Mannheim",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502891": {
+    "fixture_id": "1502891",
+    "home": "Arges Pitesti",
+    "away": "Gazi\u015fehir Gaziantep",
+    "home_score": 1,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1389905": {
+    "fixture_id": "1389905",
+    "home": "Hapoel Ra'anana",
+    "away": "Hapoel Rishon LeZion",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1389906": {
+    "fixture_id": "1389906",
+    "home": "Maccabi Kabilio Jaffa",
+    "away": "Kafr Qasim",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1389908": {
+    "fixture_id": "1389908",
+    "home": "Hapoel Nazareth Illit",
+    "away": "Maccabi Herzliya",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1389909": {
+    "fixture_id": "1389909",
+    "home": "Bnei Yehuda",
+    "away": "Hapoel Kfar Saba",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1389912": {
+    "fixture_id": "1389912",
+    "home": "Ironi Modi'in",
+    "away": "Kiryat Yam SC",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1404191": {
+    "fixture_id": "1404191",
+    "home": "Negeri Sembilan",
+    "away": "Johor Darul Takzim FC",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1434029": {
+    "fixture_id": "1434029",
+    "home": "Colchester United U21",
+    "away": "Millwall U21",
+    "home_score": 0,
+    "away_score": 6,
+    "result_1x2": "2",
+    "total_goals": 6,
+    "btts": false
+  },
+  "1468453": {
+    "fixture_id": "1468453",
+    "home": "Muhanga",
+    "away": "Gicumbi",
+    "home_score": 2,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1468455": {
+    "fixture_id": "1468455",
+    "home": "AS Kigali",
+    "away": "Rutsiro",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1470676": {
+    "fixture_id": "1470676",
+    "home": "Sofapaka",
+    "away": "Bidco United",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1503501": {
+    "fixture_id": "1503501",
+    "home": "VfL Osnabr\u00fcck",
+    "away": "Rot-weiss Oberhausen",
+    "home_score": 5,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 7,
+    "btts": true
+  },
+  "1503780": {
+    "fixture_id": "1503780",
+    "home": "Drogheda United",
+    "away": "Bohemians",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1503781": {
+    "fixture_id": "1503781",
+    "home": "FC Ingolstadt 04",
+    "away": "Ried",
+    "home_score": 4,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1436035": {
+    "fixture_id": "1436035",
+    "home": "Al Khaleej Saihat",
+    "away": "Damac",
+    "home_score": 4,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1503019": {
+    "fixture_id": "1503019",
+    "home": "Hay Al Wadi",
+    "away": "Haidob En Nahud",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1467048": {
+    "fixture_id": "1467048",
+    "home": "Khalidiya",
+    "away": "Al Najma",
+    "home_score": 3,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": false
+  },
+  "1502890": {
+    "fixture_id": "1502890",
+    "home": "FC Basel 1893",
+    "away": "SV Elversberg",
+    "home_score": 5,
+    "away_score": 6,
+    "result_1x2": "2",
+    "total_goals": 11,
+    "btts": true
+  },
+  "1501598": {
+    "fixture_id": "1501598",
+    "home": "Kyrgyz Republic U23",
+    "away": "Vietnam U23",
+    "home_score": 1,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1501788": {
+    "fixture_id": "1501788",
+    "home": "Am\u00e9rica-SP U20",
+    "away": "Bahia U20",
+    "home_score": 0,
+    "away_score": 4,
+    "result_1x2": "2",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1502895": {
+    "fixture_id": "1502895",
+    "home": "Be\u015fikta\u015f",
+    "away": "FCSB",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1503503": {
+    "fixture_id": "1503503",
+    "home": "Fatih Karag\u00fcmr\u00fck",
+    "away": "Petrolul Ploiesti",
+    "home_score": 1,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1503782": {
+    "fixture_id": "1503782",
+    "home": "Deportivo Pasto",
+    "away": "Bogota FC",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1503783": {
+    "fixture_id": "1503783",
+    "home": "Sligo Rovers",
+    "away": "Derry City",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502480": {
+    "fixture_id": "1502480",
+    "home": "Naft",
+    "away": "Diyala",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1502481": {
+    "fixture_id": "1502481",
+    "home": "Al Quwa Al Jawiya",
+    "away": "Al-Karma",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502896": {
+    "fixture_id": "1502896",
+    "home": "Kas\u0131mpa\u015fa",
+    "away": "KVC Westerlo",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1422795": {
+    "fixture_id": "1422795",
+    "home": "CS Constantine",
+    "away": "JS Saoura",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1422796": {
+    "fixture_id": "1422796",
+    "home": "MB Rouisset",
+    "away": "Khenchela",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1422798": {
+    "fixture_id": "1422798",
+    "home": "ASO Chlef",
+    "away": "MC Alger",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1434430": {
+    "fixture_id": "1434430",
+    "home": "Norwich City U21",
+    "away": "Liverpool U21",
+    "home_score": 2,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1478873": {
+    "fixture_id": "1478873",
+    "home": "Rospak",
+    "away": "Nsuopun Fidelity",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1482322": {
+    "fixture_id": "1482322",
+    "home": "Mekelle Kenema",
+    "away": "Sheger Ketema",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1498106": {
+    "fixture_id": "1498106",
+    "home": "Atlas U21",
+    "away": "Puebla U21",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1503502": {
+    "fixture_id": "1503502",
+    "home": "Puskas Academy",
+    "away": "Genk",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1503779": {
+    "fixture_id": "1503779",
+    "home": "Ba\u015fak\u015fehir",
+    "away": "NK Osijek",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1436036": {
+    "fixture_id": "1436036",
+    "home": "Al Taawon",
+    "away": "Al Shabab",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1468630": {
+    "fixture_id": "1468630",
+    "home": "Eleven Wonders",
+    "away": "Basake Holy Stars",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1502897": {
+    "fixture_id": "1502897",
+    "home": "Hertha BSC",
+    "away": "Standard Liege",
+    "home_score": 2,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1467044": {
+    "fixture_id": "1467044",
+    "home": "Bahrain SC",
+    "away": "Al Riffa",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1498107": {
+    "fixture_id": "1498107",
+    "home": "Mazatlan FC U21",
+    "away": "Juarez U21",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1501706": {
+    "fixture_id": "1501706",
+    "home": "Volta Redonda U20",
+    "away": "Atl\u00e9tico Alagoinhas U20",
+    "home_score": 2,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1501707": {
+    "fixture_id": "1501707",
+    "home": "Am\u00e9rica RN U20",
+    "away": "Sobradinho U20",
+    "home_score": 3,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1501708": {
+    "fixture_id": "1501708",
+    "home": "Botafogo SP U20",
+    "away": "Tuna Luso PA U20",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1501709": {
+    "fixture_id": "1501709",
+    "home": "Capivariano U20",
+    "away": "Rio Branco ES U20",
+    "home_score": 3,
+    "away_score": 3,
+    "result_1x2": "X",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1501710": {
+    "fixture_id": "1501710",
+    "home": "S\u00e3o Bento U20",
+    "away": "Cascavel U20",
+    "home_score": 1,
+    "away_score": 6,
+    "result_1x2": "2",
+    "total_goals": 7,
+    "btts": true
+  },
+  "1502450": {
+    "fixture_id": "1502450",
+    "home": "Mali",
+    "away": "Senegal",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502855": {
+    "fixture_id": "1502855",
+    "home": "Brikama United",
+    "away": "Medina United",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502856": {
+    "fixture_id": "1502856",
+    "home": "Dutch Lions",
+    "away": "Fortune",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1502857": {
+    "fixture_id": "1502857",
+    "home": "Hart Acedemy",
+    "away": "Greater Tomorrow",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1502858": {
+    "fixture_id": "1502858",
+    "home": "Hawks",
+    "away": "Real de Banjul",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502859": {
+    "fixture_id": "1502859",
+    "home": "Samger",
+    "away": "Team Rhino",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1501599": {
+    "fixture_id": "1501599",
+    "home": "Jordan U23",
+    "away": "Saudi Arabia U23",
+    "home_score": 3,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1398506": {
+    "fixture_id": "1398506",
+    "home": "Amed",
+    "away": "Yeni \u00c7orumspor",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1415701": {
+    "fixture_id": "1415701",
+    "home": "AEL",
+    "away": "Omonia Nicosia",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1422799": {
+    "fixture_id": "1422799",
+    "home": "CR Belouizdad",
+    "away": "JS Kabylie",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1436030": {
+    "fixture_id": "1436030",
+    "home": "Al Kholood",
+    "away": "Al-Ittihad FC",
+    "home_score": 0,
+    "away_score": 4,
+    "result_1x2": "2",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1431317": {
+    "fixture_id": "1431317",
+    "home": "Sevilla Atletico",
+    "away": "Villarreal II",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1501711": {
+    "fixture_id": "1501711",
+    "home": "Santa F\u00e9 SP U20",
+    "away": "Chapecoense U20",
+    "home_score": 0,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": false
+  },
+  "1501712": {
+    "fixture_id": "1501712",
+    "home": "Tanabi SP U20",
+    "away": "Goi\u00e1s U20",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1501713": {
+    "fixture_id": "1501713",
+    "home": "Bandeirante U20",
+    "away": "Santa Cruz U20",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1501714": {
+    "fixture_id": "1501714",
+    "home": "Flamengo SP U20",
+    "away": "Vit\u00f3ria U20",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1501715": {
+    "fixture_id": "1501715",
+    "home": "Juventus U20",
+    "away": "Retr\u00f4 U20",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1434429": {
+    "fixture_id": "1434429",
+    "home": "Ipswich Town U21",
+    "away": "Fulham U21",
+    "home_score": 1,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1434433": {
+    "fixture_id": "1434433",
+    "home": "Everton U21",
+    "away": "Leicester City U21",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1434435": {
+    "fixture_id": "1434435",
+    "home": "Newcastle United U21",
+    "away": "Middlesbrough U21",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1434439": {
+    "fixture_id": "1434439",
+    "home": "Manchester City U21",
+    "away": "Burnley U21",
+    "home_score": 8,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 9,
+    "btts": true
+  },
+  "1501789": {
+    "fixture_id": "1501789",
+    "home": "Trindade U20",
+    "away": "Luverdense U20",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1502467": {
+    "fixture_id": "1502467",
+    "home": "Cameroon",
+    "away": "Morocco",
+    "home_score": 0,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1388446": {
+    "fixture_id": "1388446",
+    "home": "Eintracht Frankfurt",
+    "away": "Borussia Dortmund",
+    "home_score": 3,
+    "away_score": 3,
+    "result_1x2": "X",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1391988": {
+    "fixture_id": "1391988",
+    "home": "Cadiz",
+    "away": "Sporting Gijon",
+    "home_score": 3,
+    "away_score": 2,
+    "result_1x2": "1",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1395628": {
+    "fixture_id": "1395628",
+    "home": "Newport City",
+    "away": "Caerau (Ely)",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1395629": {
+    "fixture_id": "1395629",
+    "home": "Pontypridd Town",
+    "away": "Ammanford AFC",
+    "home_score": 0,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": false
+  },
+  "1395630": {
+    "fixture_id": "1395630",
+    "home": "Trefelin",
+    "away": "Trethomas Bluebirds",
+    "home_score": 3,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1439561": {
+    "fixture_id": "1439561",
+    "home": "Ascoli",
+    "away": "Ternana",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1439946": {
+    "fixture_id": "1439946",
+    "home": "Audace Cerignola",
+    "away": "Potenza",
+    "home_score": 4,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1490807": {
+    "fixture_id": "1490807",
+    "home": "Milton Keynes Dons",
+    "away": "Oxford United",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1490811": {
+    "fixture_id": "1490811",
+    "home": "Port Vale",
+    "away": "Fleetwood Town",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1490812": {
+    "fixture_id": "1490812",
+    "home": "Preston",
+    "away": "Wigan",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1490821": {
+    "fixture_id": "1490821",
+    "home": "Wrexham",
+    "away": "Nottingham Forest",
+    "home_score": 3,
+    "away_score": 3,
+    "result_1x2": "X",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1503785": {
+    "fixture_id": "1503785",
+    "home": "Galway United",
+    "away": "Treaty United",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1382973": {
+    "fixture_id": "1382973",
+    "home": "Ross County",
+    "away": "Partick",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1424677": {
+    "fixture_id": "1424677",
+    "home": "Hashtag United",
+    "away": "Dartford",
+    "home_score": 2,
+    "away_score": 2,
+    "result_1x2": "X",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1424678": {
+    "fixture_id": "1424678",
+    "home": "Cray Wanderers",
+    "away": "Aveley",
+    "home_score": 0,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": false
+  },
+  "1490883": {
+    "fixture_id": "1490883",
+    "home": "Coleraine FC",
+    "away": "Crusaders FC",
+    "home_score": 4,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1501716": {
+    "fixture_id": "1501716",
+    "home": "Ol\u00edmpico SE U20",
+    "away": "Caraj\u00e1s U20",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1391001": {
+    "fixture_id": "1391001",
+    "home": "Getafe",
+    "away": "Real Sociedad",
+    "home_score": 1,
+    "away_score": 2,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1434688": {
+    "fixture_id": "1434688",
+    "home": "Europa",
+    "away": "St Joseph S Fc",
+    "home_score": 0,
+    "away_score": 1,
+    "result_1x2": "2",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1431697": {
+    "fixture_id": "1431697",
+    "home": "Tenerife",
+    "away": "CF Talavera",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1501717": {
+    "fixture_id": "1501717",
+    "home": "Velo Clube U20",
+    "away": "Guanabara City U20",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1501790": {
+    "fixture_id": "1501790",
+    "home": "Noroeste U20",
+    "away": "Atl\u00e9tico Piauiense U20",
+    "home_score": 0,
+    "away_score": 5,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": false
+  },
+  "1505696": {
+    "fixture_id": "1505696",
+    "home": "Team Saudi Arabia",
+    "away": "Team Indonesia",
+    "home_score": 3,
+    "away_score": 3,
+    "result_1x2": "X",
+    "total_goals": 6,
+    "btts": true
+  },
+  "1501718": {
+    "fixture_id": "1501718",
+    "home": "XV de Ja\u00fa U20",
+    "away": "Corinthians U20",
+    "home_score": 2,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1500454": {
+    "fixture_id": "1500454",
+    "home": "Retr\u00f4",
+    "away": "Acad\u00eamica Vit\u00f3ria",
+    "home_score": 4,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1501719": {
+    "fixture_id": "1501719",
+    "home": "Oeste U20",
+    "away": "Maric\u00e1 U20",
+    "home_score": 1,
+    "away_score": 1,
+    "result_1x2": "X",
+    "total_goals": 2,
+    "btts": true
+  },
+  "1501805": {
+    "fixture_id": "1501805",
+    "home": "Guarani U20",
+    "away": "Naviraiense U20",
+    "home_score": 4,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 4,
+    "btts": false
+  },
+  "1445511": {
+    "fixture_id": "1445511",
+    "home": "Tecos",
+    "away": "Reboceros La Piedad",
+    "home_score": 4,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1456973": {
+    "fixture_id": "1456973",
+    "home": "Atletico Hidalgo",
+    "away": "Gavilanes FC Matamoros",
+    "home_score": 1,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 1,
+    "btts": false
+  },
+  "1483655": {
+    "fixture_id": "1483655",
+    "home": "Club Sando",
+    "away": "Phoenix",
+    "home_score": 6,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 6,
+    "btts": false
+  },
+  "1501720": {
+    "fixture_id": "1501720",
+    "home": "Gremio Prudente U20",
+    "away": "Cear\u00e1 U20",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1503504": {
+    "fixture_id": "1503504",
+    "home": "Santa Fe",
+    "away": "Deportivo Tachira FC",
+    "home_score": 2,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 5,
+    "btts": true
+  },
+  "1505697": {
+    "fixture_id": "1505697",
+    "home": "Team USA",
+    "away": "Team Germany",
+    "home_score": 6,
+    "away_score": 10,
+    "result_1x2": "2",
+    "total_goals": 16,
+    "btts": true
+  },
+  "1501721": {
+    "fixture_id": "1501721",
+    "home": "Barra SC U20",
+    "away": "Esporte de Patos U20",
+    "home_score": 2,
+    "away_score": 1,
+    "result_1x2": "1",
+    "total_goals": 3,
+    "btts": true
+  },
+  "1501791": {
+    "fixture_id": "1501791",
+    "home": "I9 FC U20",
+    "away": "Vasco da Gama U20",
+    "home_score": 1,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 4,
+    "btts": true
+  },
+  "1502495": {
+    "fixture_id": "1502495",
+    "home": "Oeste",
+    "away": "Ferrovi\u00e1ria",
+    "home_score": 0,
+    "away_score": 0,
+    "result_1x2": "X",
+    "total_goals": 0,
+    "btts": false
+  },
+  "1501722": {
+    "fixture_id": "1501722",
+    "home": "Comercial U20",
+    "away": "Am\u00e9rica Mineiro U20",
+    "home_score": 0,
+    "away_score": 3,
+    "result_1x2": "2",
+    "total_goals": 3,
+    "btts": false
+  },
+  "1500455": {
+    "fixture_id": "1500455",
+    "home": "Nautico Recife",
+    "away": "Maguary PE",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  },
+  "1498108": {
+    "fixture_id": "1498108",
+    "home": "Club Tijuana U21",
+    "away": "Club America U21",
+    "home_score": 2,
+    "away_score": 0,
+    "result_1x2": "1",
+    "total_goals": 2,
+    "btts": false
+  }
+}

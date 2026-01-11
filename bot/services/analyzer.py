@@ -1,10 +1,12 @@
 """
 Moteur d'analyse et de prédiction des matchs
+Version 2.0 - Améliorations basées sur l'analyse du 11/01/2026
 """
 import logging
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 from models.match import Match, Prediction, BetType, Team
 from config.settings import CONFIDENCE_HIGH, CONFIDENCE_MEDIUM, CONFIDENCE_LOW
+from config.league_config import get_league_config
 
 logger = logging.getLogger(__name__)
 
@@ -117,15 +119,66 @@ class MatchAnalyzer:
 
     def _analyze_form(self, match: Match) -> float:
         """
-        Analyse la forme récente des équipes
+        Analyse la forme récente des équipes - VERSION 2.0
         Retourne un score entre -1 (extérieur domine) et 1 (domicile domine)
+
+        Amélioration: Prend en compte la forme SPÉCIFIQUE dom/ext
         """
+        # Forme générale
         home_form_score = self._form_to_score(match.home_team.form)
         away_form_score = self._form_to_score(match.away_team.form)
 
+        # ===== NOUVEAU: Forme spécifique domicile/extérieur =====
+        home_specific_score = self._analyze_home_away_specific_form(match.home_team, is_home=True)
+        away_specific_score = self._analyze_home_away_specific_form(match.away_team, is_home=False)
+
+        # Combiner forme générale (60%) et forme spécifique (40%)
+        home_combined = (home_form_score * 0.6) + (home_specific_score * 0.4)
+        away_combined = (away_form_score * 0.6) + (away_specific_score * 0.4)
+
         # Différentiel de forme
-        diff = home_form_score - away_form_score
+        diff = home_combined - away_combined
         return max(-1, min(1, diff / 10))
+
+    def _analyze_home_away_specific_form(self, team: Team, is_home: bool) -> float:
+        """
+        Analyse la forme spécifique à domicile ou à l'extérieur
+
+        Args:
+            team: L'équipe à analyser
+            is_home: True si l'équipe joue à domicile
+
+        Returns:
+            Score de forme spécifique (0-15)
+        """
+        if is_home:
+            # Performance à domicile
+            wins = team.home_wins if team.home_wins else 0
+            draws = team.home_draws if team.home_draws else 0
+            losses = team.home_losses if team.home_losses else 0
+        else:
+            # Performance à l'extérieur
+            wins = team.away_wins if team.away_wins else 0
+            draws = team.away_draws if team.away_draws else 0
+            losses = team.away_losses if team.away_losses else 0
+
+        total = wins + draws + losses
+        if total == 0:
+            return 7.5  # Score neutre
+
+        # Calculer le score basé sur les résultats
+        score = (wins * 3 + draws * 1) / total * 5
+
+        # Bonus/malus selon le ratio victoires
+        win_ratio = wins / total if total > 0 else 0
+        if win_ratio >= 0.6:
+            score += 3  # Très forte performance
+        elif win_ratio >= 0.4:
+            score += 1
+        elif win_ratio < 0.2:
+            score -= 2  # Très faible performance
+
+        return max(0, min(15, score))
 
     def _form_to_score(self, form: str) -> float:
         """Convertit une chaîne de forme (ex: WWDLW) en score numérique"""
@@ -187,7 +240,11 @@ class MatchAnalyzer:
         return max(-1, min(1, combined))
 
     def _analyze_goals(self, match: Match, home_strength: int = 60, away_strength: int = 60) -> Dict:
-        """Analyse les tendances de buts"""
+        """Analyse les tendances de buts - VERSION 2.0 avec filtres améliorés"""
+
+        # Récupérer la config de la ligue
+        league_config = get_league_config(match.league_id)
+
         # Moyennes des 5 derniers matchs
         home_scored_avg = match.home_team.goals_scored_last_5 / 5 if match.home_team.goals_scored_last_5 else 0
         home_conceded_avg = match.home_team.goals_conceded_last_5 / 5 if match.home_team.goals_conceded_last_5 else 0
@@ -196,19 +253,20 @@ class MatchAnalyzer:
 
         # Si pas de données, estimer basé sur la force et la ligue
         if home_scored_avg == 0 and away_scored_avg == 0:
-            # Estimer les buts basé sur la force des équipes
-            home_scored_avg = 1.2 + (home_strength - 60) / 50  # 1.0 - 1.9
-            away_scored_avg = 1.0 + (away_strength - 60) / 50  # 0.8 - 1.7
-            home_conceded_avg = 1.2 - (home_strength - 60) / 100
-            away_conceded_avg = 1.2 - (away_strength - 60) / 100
+            league_avg = league_config.get("avg_goals_per_match", 2.5) / 2
+            home_scored_avg = league_avg + (home_strength - 60) / 80
+            away_scored_avg = league_avg * 0.85 + (away_strength - 60) / 80
+            home_conceded_avg = league_avg - (home_strength - 60) / 100
+            away_conceded_avg = league_avg - (away_strength - 60) / 100
 
-            # Ajuster selon la ligue
-            if match.league_id in self.OFFENSIVE_LEAGUES:
-                home_scored_avg += 0.3
-                away_scored_avg += 0.3
-            elif match.league_id in self.DEFENSIVE_LEAGUES:
-                home_scored_avg -= 0.2
-                away_scored_avg -= 0.2
+            # Ajuster selon le style de la ligue
+            style = league_config.get("style", "balanced")
+            if style == "attacking":
+                home_scored_avg += 0.2
+                away_scored_avg += 0.2
+            elif style == "defensive":
+                home_scored_avg -= 0.15
+                away_scored_avg -= 0.15
 
         # Estimation du nombre de buts attendu
         expected_home_goals = (home_scored_avg + away_conceded_avg) / 2
@@ -217,70 +275,121 @@ class MatchAnalyzer:
 
         # H2H average
         if match.h2h_avg_goals > 0:
-            total_expected = (total_expected + match.h2h_avg_goals) / 2
+            total_expected = (total_expected * 0.6) + (match.h2h_avg_goals * 0.4)
 
-        # Probabilité Over 2.5
-        if total_expected >= 3.0:
-            over_2_5_prob = 0.70
+        # ========== PROBABILITÉ OVER 2.5 - AJUSTÉE PAR LIGUE ==========
+        league_avg_goals = league_config.get("avg_goals_per_match", 2.5)
+
+        if total_expected >= 3.2:
+            over_2_5_prob = 0.72
+        elif total_expected >= 2.8:
+            over_2_5_prob = 0.62
         elif total_expected >= 2.5:
-            over_2_5_prob = 0.58
+            over_2_5_prob = 0.52
         elif total_expected >= 2.2:
-            over_2_5_prob = 0.50
-        elif total_expected >= 2.0:
             over_2_5_prob = 0.45
         else:
             over_2_5_prob = 0.38
 
-        # Probabilité BTTS - basée sur la force relative + DÉTECTION MATCHS DÉSÉQUILIBRÉS
-        strength_diff = abs(home_strength - away_strength)
+        # Ajuster selon la moyenne de la ligue
+        if league_avg_goals < 2.4:  # Ligue défensive
+            over_2_5_prob -= 0.08
+        elif league_avg_goals > 2.9:  # Ligue offensive
+            over_2_5_prob += 0.05
 
-        # ========== DÉTECTION MATCH TRÈS DÉSÉQUILIBRÉ ==========
-        # Si une équipe est TRÈS forte (85+) et l'autre faible (<65), BTTS risqué
+        # ========== PROBABILITÉ BTTS - VERSION 2.0 ==========
+        strength_diff = abs(home_strength - away_strength)
+        position_diff = abs(match.home_team.league_position - match.away_team.league_position) if match.home_team.league_position > 0 and match.away_team.league_position > 0 else 0
+
+        # ===== NOUVEAU: Détection des équipes à clean sheet =====
+        home_clean_sheet_rate = self._estimate_clean_sheet_rate(match.home_team, home_strength)
+        away_clean_sheet_rate = self._estimate_clean_sheet_rate(match.away_team, away_strength)
+
+        clean_sheet_threshold = league_config.get("thresholds", {}).get("clean_sheet_threshold", 0.30)
+        high_clean_sheet_risk = home_clean_sheet_rate > clean_sheet_threshold or away_clean_sheet_rate > clean_sheet_threshold
+
+        # ===== Détection match déséquilibré =====
         is_heavily_unbalanced = False
         if (home_strength >= 85 and away_strength <= 65) or \
-           (away_strength >= 85 and home_strength <= 65):
+           (away_strength >= 85 and home_strength <= 65) or \
+           position_diff >= 12:
             is_heavily_unbalanced = True
-            logger.info(f"[BTTS] Match TRÈS déséquilibré: force {home_strength} vs {away_strength}")
+            logger.info(f"[BTTS] Match déséquilibré: force {home_strength} vs {away_strength}, diff position: {position_diff}")
 
-        if strength_diff < 10:
-            # Match équilibré, BTTS plus probable
-            btts_prob = 0.55
-        elif strength_diff < 20:
-            btts_prob = 0.50
-        elif strength_diff < 30:
-            # Grande différence, une équipe peut ne pas marquer
-            btts_prob = 0.40
+        # Calcul de base BTTS
+        if strength_diff < 8:
+            btts_prob = 0.58
+        elif strength_diff < 15:
+            btts_prob = 0.52
+        elif strength_diff < 25:
+            btts_prob = 0.42
         else:
-            # TRÈS grande différence (>30), BTTS très risqué
-            btts_prob = 0.30
-            logger.info(f"[BTTS] Différence de force > 30 → btts_prob = 0.30")
+            btts_prob = 0.32
 
-        # Malus supplémentaire pour les matchs très déséquilibrés
+        # ===== NOUVEAU: Malus pour clean sheet risk =====
+        if high_clean_sheet_risk:
+            btts_prob -= 0.12
+            logger.info(f"[BTTS] Malus clean sheet: home={home_clean_sheet_rate:.0%}, away={away_clean_sheet_rate:.0%}")
+
+        # Malus pour match déséquilibré
         if is_heavily_unbalanced:
             btts_prob -= 0.15
-            logger.info(f"[BTTS] Malus -15% pour match très déséquilibré")
+            logger.info(f"[BTTS] Malus match déséquilibré")
+
+        # ===== NOUVEAU: Vérifier si une équipe marque peu =====
+        if home_scored_avg < 0.8 or away_scored_avg < 0.6:
+            btts_prob -= 0.10
+            logger.info(f"[BTTS] Malus équipe peu offensive: home={home_scored_avg:.1f}, away={away_scored_avg:.1f}")
 
         # Ajuster avec les données si disponibles
         if home_scored_avg > 0:
-            home_scores = home_scored_avg >= 1.0
-            home_concedes = home_conceded_avg >= 0.8
+            home_scores = home_scored_avg >= 1.2
+            home_concedes = home_conceded_avg >= 1.0
             away_scores = away_scored_avg >= 1.0
-            away_concedes = away_conceded_avg >= 0.8
+            away_concedes = away_conceded_avg >= 1.0
             btts_factors = sum([home_scores, home_concedes, away_scores, away_concedes])
-            # Ne pas trop booster le BTTS pour les matchs déséquilibrés
-            if is_heavily_unbalanced:
-                btts_prob = min(btts_prob, 0.35 + (btts_factors * 0.08))
+
+            if is_heavily_unbalanced or high_clean_sheet_risk:
+                btts_prob = min(btts_prob, 0.32 + (btts_factors * 0.06))
             else:
-                btts_prob = 0.35 + (btts_factors * 0.12)
+                btts_prob = max(btts_prob, 0.35 + (btts_factors * 0.10))
 
         return {
             "expected_home_goals": expected_home_goals,
             "expected_away_goals": expected_away_goals,
             "total_expected_goals": total_expected,
-            "over_2_5_prob": min(0.85, max(0.35, over_2_5_prob)),
-            "btts_prob": min(0.80, max(0.35, btts_prob)),
-            "high_corners_prob": 0.50 + (home_strength + away_strength - 120) / 200
+            "over_2_5_prob": min(0.80, max(0.32, over_2_5_prob)),
+            "btts_prob": min(0.75, max(0.25, btts_prob)),
+            "high_corners_prob": 0.50 + (home_strength + away_strength - 120) / 200,
+            "home_clean_sheet_rate": home_clean_sheet_rate,
+            "away_clean_sheet_rate": away_clean_sheet_rate,
+            "is_heavily_unbalanced": is_heavily_unbalanced,
+            "high_clean_sheet_risk": high_clean_sheet_risk
         }
+
+    def _estimate_clean_sheet_rate(self, team: Team, strength: int) -> float:
+        """Estime le taux de clean sheet d'une équipe"""
+        # Si on a des données de buts encaissés
+        if team.goals_conceded_last_5 is not None and team.goals_conceded_last_5 >= 0:
+            avg_conceded = team.goals_conceded_last_5 / 5
+            if avg_conceded < 0.6:
+                return 0.45  # Très défensif
+            elif avg_conceded < 0.9:
+                return 0.35
+            elif avg_conceded < 1.2:
+                return 0.25
+            else:
+                return 0.15
+
+        # Estimation basée sur la force
+        if strength >= 85:
+            return 0.38
+        elif strength >= 75:
+            return 0.28
+        elif strength >= 65:
+            return 0.22
+        else:
+            return 0.18
 
     def _analyze_motivation(self, match: Match) -> float:
         """Analyse la motivation des équipes (enjeux du match)"""
@@ -353,16 +462,34 @@ class MatchAnalyzer:
         return predictions
 
     def _generate_1x2_predictions(self, match: Match, analysis: Dict) -> List[Prediction]:
-        """Génère les prédictions 1X2"""
+        """Génère les prédictions 1X2 - VERSION 2.0 avec filtre de confiance
+
+        Amélioration: Ne prédit que si la probabilité max dépasse un seuil minimum (45%)
+        pour éviter les prédictions incertaines.
+        """
         predictions = []
 
         home_prob = analysis["home_win_prob"]
         draw_prob = analysis["draw_prob"]
         away_prob = analysis["away_win_prob"]
 
-        # Victoire domicile
-        if home_prob >= 0.55:
-            confidence = CONFIDENCE_HIGH if home_prob >= 0.65 else CONFIDENCE_MEDIUM
+        # Récupérer la config de la ligue
+        league_config = get_league_config(match.league_id)
+        thresholds = league_config.get("thresholds", {})
+        min_confidence = thresholds.get("min_1x2_confidence", 0.45)
+        draw_threshold = thresholds.get("draw_threshold", 0.08)
+
+        # ========== FILTRE DE CONFIANCE ==========
+        max_prob = max(home_prob, draw_prob, away_prob)
+        if max_prob < min_confidence:
+            logger.info(f"[1X2] Match trop incertain: max_prob={max_prob:.0%} < {min_confidence:.0%}")
+            # Ne pas faire de prédiction 1X2 si trop incertain
+            return predictions
+
+        # ========== VICTOIRE DOMICILE ==========
+        # Vérifier que home_prob est significativement supérieur aux autres
+        if home_prob >= 0.52 and (home_prob - draw_prob) >= draw_threshold:
+            confidence = CONFIDENCE_HIGH if home_prob >= 0.62 else CONFIDENCE_MEDIUM
             reasoning = self._build_reasoning(match, "home", analysis)
             predictions.append(Prediction(
                 match=match,
@@ -375,9 +502,10 @@ class MatchAnalyzer:
                 away_win_probability=away_prob
             ))
 
-        # Victoire extérieur
-        if away_prob >= 0.50:
-            confidence = CONFIDENCE_HIGH if away_prob >= 0.60 else CONFIDENCE_MEDIUM
+        # ========== VICTOIRE EXTÉRIEUR ==========
+        # Seuil plus strict pour victoire extérieur (plus difficile)
+        if away_prob >= 0.48 and (away_prob - draw_prob) >= draw_threshold:
+            confidence = CONFIDENCE_HIGH if away_prob >= 0.58 else CONFIDENCE_MEDIUM
             reasoning = self._build_reasoning(match, "away", analysis)
             predictions.append(Prediction(
                 match=match,
@@ -390,14 +518,18 @@ class MatchAnalyzer:
                 away_win_probability=away_prob
             ))
 
-        # Nul (moins fréquent mais possible)
-        if draw_prob >= 0.32:
+        # ========== NUL ==========
+        # Prédire nul seulement si c'est vraiment le résultat le plus probable
+        # ou si home/away sont très proches
+        home_away_diff = abs(home_prob - away_prob)
+        if draw_prob >= 0.32 and home_away_diff < 0.10:
+            confidence = CONFIDENCE_MEDIUM if draw_prob >= 0.36 else CONFIDENCE_LOW
             predictions.append(Prediction(
                 match=match,
                 bet_type=BetType.DRAW,
-                confidence=CONFIDENCE_MEDIUM if draw_prob >= 0.38 else CONFIDENCE_LOW,
+                confidence=confidence,
                 odds_estimate=round(1 / draw_prob, 2),
-                reasoning=f"Match équilibré, les deux équipes ont des forces similaires",
+                reasoning=f"Match très équilibré (dom {home_prob:.0%} vs ext {away_prob:.0%})",
                 home_win_probability=home_prob,
                 draw_probability=draw_prob,
                 away_win_probability=away_prob
@@ -406,78 +538,109 @@ class MatchAnalyzer:
         return predictions
 
     def _generate_goals_predictions(self, match: Match, analysis: Dict) -> List[Prediction]:
-        """Génère les prédictions Over/Under"""
+        """Génère les prédictions Over/Under - VERSION 2.0 avec seuils par ligue"""
         predictions = []
         goals = analysis["goals_analysis"]
         over_prob = analysis["over_2_5_prob"]
 
-        if over_prob >= 0.55:
+        # Récupérer les seuils de la ligue
+        league_config = get_league_config(match.league_id)
+        thresholds = league_config.get("thresholds", {})
+        over_25_threshold = thresholds.get("over_25", 0.58)
+        under_25_threshold = thresholds.get("under_25", 0.42)
+
+        # ========== OVER 2.5 ==========
+        if over_prob >= over_25_threshold:
             confidence = CONFIDENCE_HIGH if over_prob >= 0.65 else CONFIDENCE_MEDIUM
-            reasoning = f"Moyenne de {goals['total_expected_goals']:.1f} buts attendus. H2H: {match.h2h_avg_goals:.1f} buts/match"
+            h2h_info = f"H2H: {match.h2h_avg_goals:.1f} buts/match" if match.h2h_avg_goals > 0 else ""
+            reasoning = f"Moyenne de {goals['total_expected_goals']:.1f} buts attendus. {h2h_info}"
             predictions.append(Prediction(
                 match=match,
                 bet_type=BetType.OVER_2_5,
                 confidence=confidence,
                 odds_estimate=round(1 / over_prob, 2),
-                reasoning=reasoning,
+                reasoning=reasoning.strip(),
                 over_2_5_probability=over_prob
             ))
 
-        # Over 1.5 (plus sûr)
-        over_1_5_prob = min(0.85, over_prob + 0.20)
-        if over_1_5_prob >= 0.75:
+        # ========== OVER 1.5 (plus sûr) ==========
+        over_1_5_prob = min(0.88, over_prob + 0.22)
+        if over_1_5_prob >= 0.78:
             predictions.append(Prediction(
                 match=match,
                 bet_type=BetType.OVER_1_5,
                 confidence=CONFIDENCE_HIGH,
                 odds_estimate=round(1 / over_1_5_prob, 2),
-                reasoning=f"Au moins 2 buts très probable dans ce match",
+                reasoning=f"Au moins 2 buts très probable ({over_1_5_prob:.0%})",
                 over_2_5_probability=over_prob
             ))
 
-        # Under 2.5
+        # ========== UNDER 2.5 ==========
         under_prob = 1 - over_prob
-        if under_prob >= 0.55:
+
+        # Utiliser le seuil inverse: si over_prob < under_25_threshold, recommander Under
+        if over_prob <= under_25_threshold or under_prob >= 0.58:
+            if under_prob >= 0.62:
+                confidence = CONFIDENCE_HIGH
+            elif under_prob >= 0.55:
+                confidence = CONFIDENCE_MEDIUM
+            else:
+                confidence = CONFIDENCE_LOW
+
+            league_style = league_config.get("style", "balanced")
+            if league_style == "defensive":
+                reasoning = f"Ligue défensive, match fermé attendu ({under_prob:.0%})"
+            else:
+                reasoning = f"Match défensif attendu ({under_prob:.0%})"
+
             predictions.append(Prediction(
                 match=match,
                 bet_type=BetType.UNDER_2_5,
-                confidence=CONFIDENCE_MEDIUM if under_prob >= 0.60 else CONFIDENCE_LOW,
+                confidence=confidence,
                 odds_estimate=round(1 / under_prob, 2),
-                reasoning=f"Match défensif attendu, faible moyenne de buts",
+                reasoning=reasoning,
                 over_2_5_probability=over_prob
             ))
 
         return predictions
 
     def _generate_btts_predictions(self, match: Match, analysis: Dict) -> List[Prediction]:
-        """Génère les prédictions BTTS - VERSION ULTRA STRICTE (basée sur analyse 09/01/2026)
+        """Génère les prédictions BTTS - VERSION 2.0 avec filtres stricts
 
-        CONSTAT: Sur 5 matchs avec BTTS Oui prédit le 09/01, 4 ont échoué (80% d'échec!)
-        → BTTS Oui ne doit être recommandé que dans des cas TRÈS rares.
+        Améliorations basées sur l'analyse du 11/01/2026:
+        - Seuil BTTS Oui augmenté à 0.62 (configurable par ligue)
+        - Filtre clean sheet
+        - Filtre match déséquilibré
         """
         predictions = []
         btts_prob = analysis["btts_prob"]
+        goals_analysis = analysis.get("goals_analysis", {})
 
-        # ========== DÉTECTION MATCH DÉSÉQUILIBRÉ ==========
+        # Récupérer la config de la ligue
+        league_config = get_league_config(match.league_id)
+        thresholds = league_config.get("thresholds", {})
+
+        # ========== RÉCUPÉRER LES INDICATEURS ==========
         home_strength = analysis.get("home_strength", 60)
         away_strength = analysis.get("away_strength", 60)
-        strength_diff = abs(home_strength - away_strength)
+        is_heavily_unbalanced = goals_analysis.get("is_heavily_unbalanced", False)
+        high_clean_sheet_risk = goals_analysis.get("high_clean_sheet_risk", False)
 
-        is_heavily_unbalanced = strength_diff >= 20 or \
-            (home_strength >= 80 and away_strength <= 65) or \
-            (away_strength >= 80 and home_strength <= 65)
+        # ========== BTTS OUI - SEUIL STRICT ==========
+        btts_yes_threshold = thresholds.get("btts_yes", 0.62)
 
-        # ========== BTTS OUI - SEUIL ULTRA ÉLEVÉ ==========
-        # Seuil de base à 70% (au lieu de 60%)
-        btts_threshold = 0.70
+        # Augmenter le seuil si risques identifiés
+        if high_clean_sheet_risk:
+            btts_yes_threshold += 0.08
+            logger.info(f"[BTTS] Seuil augmenté à {btts_yes_threshold:.0%} (clean sheet risk)")
 
-        # Pour les matchs déséquilibrés, on NE recommande JAMAIS BTTS Oui
         if is_heavily_unbalanced:
-            btts_threshold = 0.90  # Quasi impossible
-            logger.info(f"[BTTS] Match déséquilibré, BTTS Oui désactivé")
+            btts_yes_threshold = 0.90  # Quasi impossible
+            logger.info(f"[BTTS] Match déséquilibré → BTTS Oui désactivé")
 
-        if btts_prob >= btts_threshold and not is_heavily_unbalanced:
-            confidence = CONFIDENCE_HIGH if btts_prob >= 0.75 else CONFIDENCE_MEDIUM
+        # Recommander BTTS Oui uniquement si prob très élevée
+        if btts_prob >= btts_yes_threshold and not is_heavily_unbalanced and not high_clean_sheet_risk:
+            confidence = CONFIDENCE_HIGH if btts_prob >= 0.70 else CONFIDENCE_MEDIUM
             reasoning = f"Les deux équipes marquent régulièrement (prob {btts_prob:.0%})"
             predictions.append(Prediction(
                 match=match,
@@ -490,20 +653,26 @@ class MatchAnalyzer:
 
         # ========== BTTS NON - FAVORISÉ ==========
         btts_no_prob = 1 - btts_prob
+        btts_no_threshold = thresholds.get("btts_no", 0.45)
 
-        # BTTS Non est maintenant plus facile à recommander
-        if btts_no_prob >= 0.40:  # Seuil abaissé
+        if btts_no_prob >= btts_no_threshold:
+            # Déterminer la confiance et le reasoning
             if is_heavily_unbalanced:
                 confidence = CONFIDENCE_HIGH
-                reasoning = f"Match déséquilibré: clean sheet très probable"
+                reasoning = f"Match déséquilibré ({home_strength} vs {away_strength}): clean sheet probable"
+            elif high_clean_sheet_risk:
+                confidence = CONFIDENCE_HIGH
+                home_cs = goals_analysis.get("home_clean_sheet_rate", 0)
+                away_cs = goals_analysis.get("away_clean_sheet_rate", 0)
+                reasoning = f"Risque clean sheet élevé (dom: {home_cs:.0%}, ext: {away_cs:.0%})"
             elif btts_no_prob >= 0.60:
                 confidence = CONFIDENCE_HIGH
-                reasoning = f"Clean sheet probable (prob {btts_no_prob:.0%})"
-            elif btts_no_prob >= 0.50:
+                reasoning = f"Clean sheet très probable (prob {btts_no_prob:.0%})"
+            elif btts_no_prob >= 0.52:
                 confidence = CONFIDENCE_MEDIUM
                 reasoning = f"Une équipe devrait garder sa cage inviolée"
             else:
-                confidence = CONFIDENCE_MEDIUM
+                confidence = CONFIDENCE_LOW
                 reasoning = f"Clean sheet possible"
 
             predictions.append(Prediction(
@@ -638,3 +807,90 @@ class MatchAnalyzer:
             odds_estimate=1.30,
             reasoning="Prédiction par défaut - données insuffisantes"
         )
+
+    def validate_prediction_with_odds(self, prediction: Prediction, market_odds: float) -> Dict:
+        """
+        Valide une prédiction en la comparant aux cotes du marché
+
+        Args:
+            prediction: La prédiction à valider
+            market_odds: La cote du marché pour ce pari
+
+        Returns:
+            Dict avec validation, value, et recommandation
+        """
+        if market_odds <= 1.0:
+            return {"valid": False, "reason": "Cote invalide"}
+
+        # Probabilité implicite du marché (sans marge)
+        implied_prob = 1 / market_odds
+
+        # Probabilité prédite
+        predicted_prob = 1 / prediction.odds_estimate if prediction.odds_estimate > 0 else 0
+
+        # Calculer la "value"
+        # Value = (prob_prédite * cote_marché) - 1
+        value = (predicted_prob * market_odds) - 1
+
+        result = {
+            "implied_prob": implied_prob,
+            "predicted_prob": predicted_prob,
+            "market_odds": market_odds,
+            "value": value,
+            "valid": True
+        }
+
+        # ========== RÈGLES DE VALIDATION ==========
+
+        # Règle 1: Si la cote est trop élevée (>3.0) pour BTTS Oui, être prudent
+        if prediction.bet_type == BetType.BTTS_YES and market_odds > 2.10:
+            result["warning"] = "BTTS Oui risqué: cote élevée suggère faible probabilité"
+            result["recommendation"] = "ÉVITER"
+
+        # Règle 2: Si Under 2.5 coté < 1.60, c'est probablement bon
+        elif prediction.bet_type == BetType.OVER_2_5 and market_odds > 2.20:
+            result["warning"] = "Over 2.5 risqué: cote élevée"
+            result["recommendation"] = "PRUDENCE"
+
+        # Règle 3: Value betting - si value > 10%, c'est intéressant
+        elif value > 0.10:
+            result["recommendation"] = "VALUE BET"
+        elif value > 0:
+            result["recommendation"] = "OK"
+        elif value > -0.10:
+            result["recommendation"] = "ACCEPTABLE"
+        else:
+            result["recommendation"] = "ÉVITER"
+            result["warning"] = f"Valeur négative: {value:.1%}"
+
+        return result
+
+    def filter_predictions_by_odds(self, predictions: List[Prediction], odds_data: Dict) -> List[Prediction]:
+        """
+        Filtre les prédictions en fonction des cotes du marché
+
+        Args:
+            predictions: Liste de prédictions
+            odds_data: Dict avec les cotes {bet_type: odds}
+
+        Returns:
+            Liste de prédictions validées
+        """
+        validated = []
+
+        for pred in predictions:
+            bet_key = pred.bet_type.value if hasattr(pred.bet_type, 'value') else str(pred.bet_type)
+
+            if bet_key in odds_data:
+                market_odds = odds_data[bet_key]
+                validation = self.validate_prediction_with_odds(pred, market_odds)
+
+                if validation.get("recommendation") in ["VALUE BET", "OK", "ACCEPTABLE"]:
+                    validated.append(pred)
+                else:
+                    logger.info(f"[ODDS] Prédiction filtrée: {bet_key} - {validation.get('warning', 'value négative')}")
+            else:
+                # Si pas de cote disponible, garder la prédiction
+                validated.append(pred)
+
+        return validated

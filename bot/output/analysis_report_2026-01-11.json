@@ -1,0 +1,803 @@
+{
+  "date": "2026-01-11",
+  "summary": {
+    "total_predictions": 30,
+    "matched": 28,
+    "unmatched": 2
+  },
+  "stats": {
+    "1x2": {
+      "correct": 11,
+      "total": 28,
+      "rate": 39.3
+    },
+    "over_under_2_5": {
+      "correct": 12,
+      "total": 28,
+      "rate": 42.9
+    },
+    "btts": {
+      "correct": 17,
+      "total": 28,
+      "rate": 60.7
+    },
+    "score_exact": {
+      "correct": 1,
+      "total": 28,
+      "rate": 3.6
+    },
+    "double_chance": {
+      "correct": 0,
+      "total": 0,
+      "rate": 0
+    },
+    "ht_ft": {
+      "correct": 0,
+      "total": 28,
+      "rate": 0.0
+    },
+    "over_under_1_5": {
+      "correct": 0,
+      "total": 0,
+      "rate": 0
+    }
+  },
+  "details": [
+    {
+      "match": "Heerenveen vs Feyenoord",
+      "league": "Eredivisie",
+      "score_reel": "2-2",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "2-2",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Lecce vs Parma",
+      "league": "Serie A",
+      "score_reel": "1-2",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "2",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "1-2",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Rayo Vallecano vs Mallorca",
+      "league": "La Liga",
+      "score_reel": "2-1",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "1",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "2-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "GO Ahead Eagles vs Fortuna Sittard",
+      "league": "Eredivisie",
+      "score_reel": "2-2",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "2-1",
+          "real": "2-2",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Telstar vs Ajax",
+      "league": "Eredivisie",
+      "score_reel": "2-3",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "2",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "2-3",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Fiorentina vs AC Milan",
+      "league": "Serie A",
+      "score_reel": "1-1",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Under 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "1-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Borussia Mönchengladbach vs FC Augsburg",
+      "league": "Bundesliga",
+      "score_reel": "4-0",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "1",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "4-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Levante vs Espanyol",
+      "league": "La Liga",
+      "score_reel": "1-1",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Under 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "1-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Nacional vs Santa Clara",
+      "league": "Primeira Liga",
+      "score_reel": "3-3",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Non",
+          "real": "Oui",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-0",
+          "real": "3-3",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Sparta Rotterdam vs Heracles",
+      "league": "Eredivisie",
+      "score_reel": "2-0",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "1",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Under 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "2-1",
+          "real": "2-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Bayern München vs VfL Wolfsburg",
+      "league": "Bundesliga",
+      "score_reel": "8-1",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "1",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "4-1",
+          "real": "8-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Verona vs Lazio",
+      "league": "Serie A",
+      "score_reel": "0-1",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "2",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Under 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "0-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Moreirense vs Tondela",
+      "league": "Primeira Liga",
+      "score_reel": "1-0",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "1",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Under 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "2-1",
+          "real": "1-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Barcelona vs Real Madrid",
+      "league": "Super Cup",
+      "score_reel": "3-2",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "1",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "4-1",
+          "real": "3-2",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Inter vs Napoli",
+      "league": "Serie A",
+      "score_reel": "2-2",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "2-1",
+          "real": "2-2",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Derby vs Leeds",
+      "league": "FA Cup",
+      "score_reel": "1-3",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "2",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Non",
+          "real": "Oui",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "0-1",
+          "real": "1-3",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Leganes vs Valladolid",
+      "league": "Segunda División",
+      "score_reel": "3-0",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "1",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "3-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Mantova vs Palermo",
+      "league": "Serie B",
+      "score_reel": "1-1",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Under 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "1-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Portsmouth vs Arsenal",
+      "league": "FA Cup",
+      "score_reel": "1-4",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "2",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Non",
+          "real": "Oui",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "0-1",
+          "real": "1-4",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Hull City vs Blackburn",
+      "league": "FA Cup",
+      "score_reel": "0-0",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Under 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Non",
+          "real": "Non",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-0",
+          "real": "0-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Norwich vs Walsall",
+      "league": "FA Cup",
+      "score_reel": "5-1",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "1",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "5-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Sheffield Utd vs Mansfield Town",
+      "league": "FA Cup",
+      "score_reel": "3-4",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "2",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "3-4",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Swansea vs West Brom",
+      "league": "FA Cup",
+      "score_reel": "2-2",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "X",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "2-2",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "West Ham vs QPR",
+      "league": "FA Cup",
+      "score_reel": "2-1",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "1",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Non",
+          "real": "Oui",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-0",
+          "real": "2-1",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Malaga vs AD Ceuta FC",
+      "league": "Segunda División",
+      "score_reel": "2-1",
+      "predictions": {
+        "1X2": {
+          "pred": "1",
+          "real": "1",
+          "correct": "✓"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Over 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "2-1",
+          "real": "2-1",
+          "correct": "✓"
+        }
+      }
+    },
+    {
+      "match": "Granada CF vs Castellón",
+      "league": "Segunda División",
+      "score_reel": "0-0",
+      "predictions": {
+        "1X2": {
+          "pred": "2",
+          "real": "X",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Over 2.5",
+          "real": "Under 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-2",
+          "real": "0-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Padova vs Modena",
+      "league": "Serie B",
+      "score_reel": "2-0",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "1",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Under 2.5",
+          "correct": "✓"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Non",
+          "correct": "✗"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "2-0",
+          "correct": "✗"
+        }
+      }
+    },
+    {
+      "match": "Manchester United vs Brighton",
+      "league": "FA Cup",
+      "score_reel": "1-2",
+      "predictions": {
+        "1X2": {
+          "pred": "X",
+          "real": "2",
+          "correct": "✗"
+        },
+        "O/U 2.5": {
+          "pred": "Under 2.5",
+          "real": "Over 2.5",
+          "correct": "✗"
+        },
+        "BTTS": {
+          "pred": "Oui",
+          "real": "Oui",
+          "correct": "✓"
+        },
+        "Score Exact": {
+          "pred": "1-1",
+          "real": "1-2",
+          "correct": "✗"
+        }
+      }
+    }
+  ]
+}
