@@ -1,0 +1,995 @@
+{
+  "date": "2026-01-12",
+  "generated_at": "2026-01-11T23:26:03.511159",
+  "total_matches": 12,
+  "predictions": [
+    {
+      "match": "Al-Hazm vs Al Najma",
+      "league": "Pro League",
+      "date": "2026-01-12 15:10",
+      "match_description": "Al Najma en crise (LDLLD). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 34.4,
+        "draw": 31.1,
+        "away": 34.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.19,
+        "over_15_prob": 78.5,
+        "over_25_prob": 55.9,
+        "over_35_prob": 42.5,
+        "btts": "Oui",
+        "btts_prob": 33.2,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 32.8,
+          "draw": 43.8,
+          "away": 23.4
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.1,
+        "over_15": "Oui",
+        "over_15_prob": 45.1,
+        "btts": "Non",
+        "btts_prob": 11.6,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.85,
+        "over_05": "Oui",
+        "over_05_prob": 72.3,
+        "over_15": "Oui",
+        "over_15_prob": 54.3
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.0,
+        "home_avg": 3.6,
+        "away_avg": 3.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.1,
+        "expected_total": 4.4,
+        "over_35_prob": 59.0,
+        "over_45_prob": 44.0,
+        "over_55_prob": 29.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Hazm: LLWDW",
+        "Forme Al Najma: LDLLD",
+        "Classement: Al-Hazm 12e vs Al Najma 18e",
+        "H2H: 0V-0N-2D"
+      ]
+    },
+    {
+      "match": "Genoa vs Cagliari",
+      "league": "Serie A",
+      "date": "2026-01-12 17:30",
+      "match_description": "Genoa en difficulté (DDLLL). H2H favorable à Genoa (4V-5N-1D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 34.9,
+        "draw": 31.5,
+        "away": 33.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.9,
+        "over_15_prob": 73.3,
+        "over_25_prob": 45.8,
+        "over_35_prob": 37.3,
+        "btts": "Oui",
+        "btts_prob": 29.6,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.7,
+          "draw": 47.1,
+          "away": 22.3
+        },
+        "expected_goals": 1.22,
+        "over_05": "Oui",
+        "over_05_prob": 60.9,
+        "over_15": "Oui",
+        "over_15_prob": 42.9,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.68,
+        "over_05": "Oui",
+        "over_05_prob": 69.3,
+        "over_15": "Oui",
+        "over_15_prob": 51.3
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 5.8,
+        "home_avg": 2.2,
+        "away_avg": 3.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.2,
+        "expected_total": 4.0,
+        "over_35_prob": 51.2,
+        "over_45_prob": 38.4,
+        "over_55_prob": 25.7,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +3.5 (51%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Genoa: DDLLL",
+        "Forme Cagliari: DLWDL",
+        "Classement: Genoa 17e vs Cagliari 15e",
+        "H2H: 4V-5N-1D",
+        "Blessures Genoa: Caleb Ekuban (Unknown Injury), Sebastian Otoa (Muscle Injury)",
+        "Blessures Cagliari: Leonardo Pavoletti (Knee injury), Z. Luvumbo (Thigh Injury)",
+        "Genoa: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Al-Ettifaq vs Al Khaleej Saihat",
+      "league": "Pro League",
+      "date": "2026-01-12 17:30",
+      "match_description": "Al-Ettifaq en excellente forme (WWDWW). H2H favorable à Al-Ettifaq (6V-1N-1D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Al-Ettifaq)",
+      "probabilities": {
+        "home": 47.3,
+        "draw": 30.8,
+        "away": 21.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.4,
+        "over_35_prob": 44.4,
+        "btts": "Oui",
+        "btts_prob": 31.0,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Al-Ettifaq MT)",
+        "probabilities": {
+          "home": 37.7,
+          "draw": 45.9,
+          "away": 16.3
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 10.8,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Ettifaq/Al-Ettifaq)",
+        "probability": 24.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.8,
+        "home_avg": 3.0,
+        "away_avg": 4.8,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.9,
+        "over_35_prob": 50.0,
+        "over_45_prob": 35.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Ettifaq: WWDWW",
+        "Forme Al Khaleej Saihat: WDLLL",
+        "Classement: Al-Ettifaq 7e vs Al Khaleej Saihat 9e",
+        "H2H: 6V-1N-1D",
+        "Al-Ettifaq: enjeu conference"
+      ]
+    },
+    {
+      "match": "Al-Hilal Saudi FC vs Al-Nassr",
+      "league": "Pro League",
+      "date": "2026-01-12 17:30",
+      "match_description": "Al-Hilal Saudi FC en excellente forme (WWWWW). H2H favorable à Al-Hilal Saudi FC (6V-2N-2D). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Al-Hilal Saudi FC)",
+      "probabilities": {
+        "home": 47.1,
+        "draw": 30.5,
+        "away": 22.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 65.6,
+        "over_35_prob": 44.4,
+        "btts": "Oui",
+        "btts_prob": 42.9,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Al-Hilal Saudi FC MT)",
+        "probabilities": {
+          "home": 36.9,
+          "draw": 40.2,
+          "away": 22.9
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Hilal Saudi FC/Al-Hilal Saudi FC)",
+        "probability": 24.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 15.4,
+        "home_avg": 8.2,
+        "away_avg": 7.2,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.8,
+        "over_35_prob": 42.5,
+        "over_45_prob": 29.8,
+        "over_55_prob": 17.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (55%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Hilal Saudi FC: WWWWW",
+        "Forme Al-Nassr: LLDWW",
+        "Classement: Al-Hilal Saudi FC 1e vs Al-Nassr 2e",
+        "H2H: 6V-2N-2D",
+        "Blessures Al-Hilal Saudi FC: Suhayb Al Zaid (Injury)",
+        "Al-Hilal Saudi FC: enjeu title"
+      ]
+    },
+    {
+      "match": "Juventus vs Cremonese",
+      "league": "Serie A",
+      "date": "2026-01-12 19:45",
+      "match_description": "Juventus en excellente forme (WDWWW). Cremonese en crise (DLLDL). H2H favorable à Juventus (3V-0N-0D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Juventus)",
+      "probabilities": {
+        "home": 56.7,
+        "draw": 30.7,
+        "away": 12.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.68,
+        "over_15_prob": 69.2,
+        "over_25_prob": 54.0,
+        "over_35_prob": 33.2,
+        "btts": "Oui",
+        "btts_prob": 28.7,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Juventus MT)",
+        "probabilities": {
+          "home": 50.9,
+          "draw": 40.3,
+          "away": 8.8
+        },
+        "expected_goals": 1.12,
+        "over_05": "Oui",
+        "over_05_prob": 59.2,
+        "over_15": "Oui",
+        "over_15_prob": 41.2,
+        "btts": "Non",
+        "btts_prob": 10.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.55,
+        "over_05": "Oui",
+        "over_05_prob": 66.9,
+        "over_15": "Oui",
+        "over_15_prob": 48.9
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Juventus/Juventus)",
+        "probability": 37.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.2,
+        "home_avg": 5.8,
+        "away_avg": 2.4,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.1,
+        "expected_total": 2.9,
+        "over_35_prob": 43.7,
+        "over_45_prob": 28.7,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Juventus: WDWWW",
+        "Forme Cremonese: DLLDL",
+        "Classement: Juventus 5e vs Cremonese 13e",
+        "H2H: 3V-0N-0D",
+        "Blessures Juventus: Juan David Cabal Murillo (fitness), Fabio Miretti (Hamstring Injury)",
+        "Blessures Cremonese: Franco Vazquez (Red card Suspended), Mattia Valoti (Red card Suspended)",
+        "Juventus: enjeu europa"
+      ]
+    },
+    {
+      "match": "Sevilla vs Celta Vigo",
+      "league": "La Liga",
+      "date": "2026-01-12 20:00",
+      "match_description": "Celta Vigo en pleine confiance (WDWWL)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 30.7,
+        "draw": 31.2,
+        "away": 38.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.28,
+        "over_15_prob": 80.0,
+        "over_25_prob": 53.6,
+        "over_35_prob": 44.0,
+        "btts": "Oui",
+        "btts_prob": 33.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 26.4,
+          "draw": 45.2,
+          "away": 28.4
+        },
+        "expected_goals": 1.38,
+        "over_05": "Oui",
+        "over_05_prob": 63.8,
+        "over_15": "Oui",
+        "over_15_prob": 45.8,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.9,
+        "over_05": "Oui",
+        "over_05_prob": 73.2,
+        "over_15": "Oui",
+        "over_15_prob": 55.2
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 6.8,
+        "home_avg": 4.6,
+        "away_avg": 2.2,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.7,
+        "expected_total": 5.5,
+        "over_35_prob": 83.3,
+        "over_45_prob": 68.3,
+        "over_55_prob": 53.3,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Sevilla: LLWDL",
+        "Forme Celta Vigo: WDWWL",
+        "Classement: Sevilla 14e vs Celta Vigo 7e",
+        "H2H: 4V-4N-2D",
+        "Blessures Sevilla: Chidera Ejuke (Injured Doubtful), Ruben Vargas (Muscle Injury)",
+        "Blessures Celta Vigo: Franco Cervi (Injured Doubtful), Williot Swedberg (Injured Doubtful)"
+      ]
+    },
+    {
+      "match": "Jong AZ vs Jong Ajax",
+      "league": "Eerste Divisie",
+      "date": "2026-01-12 19:00",
+      "match_description": "Jong AZ en difficulté (LLWLL). Jong Ajax en crise (LLLWL). H2H favorable à Jong AZ (6V-2N-2D). match à buts attendu (3.8 buts prévus). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Jong AZ)",
+      "probabilities": {
+        "home": 45.6,
+        "draw": 31.0,
+        "away": 23.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.83,
+        "over_15_prob": 80.0,
+        "over_25_prob": 69.6,
+        "over_35_prob": 54.0,
+        "btts": "Oui",
+        "btts_prob": 39.8,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Jong AZ MT)",
+        "probabilities": {
+          "home": 39.1,
+          "draw": 40.6,
+          "away": 20.2
+        },
+        "expected_goals": 1.61,
+        "over_05": "Oui",
+        "over_05_prob": 68.0,
+        "over_15": "Oui",
+        "over_15_prob": 50.0,
+        "btts": "Non",
+        "btts_prob": 13.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.22,
+        "over_05": "Oui",
+        "over_05_prob": 79.0,
+        "over_15": "Oui",
+        "over_15_prob": 61.0
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Jong AZ/Jong AZ)",
+        "probability": 25.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 5.6,
+        "away_avg": 4.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.2,
+        "expected_total": 4.3,
+        "over_35_prob": 60.5,
+        "over_45_prob": 45.5,
+        "over_55_prob": 30.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +3.5 (60%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Jong AZ: LLWLL",
+        "Forme Jong Ajax: LLLWL",
+        "Classement: Jong AZ 17e vs Jong Ajax 20e",
+        "H2H: 6V-2N-2D",
+        "Blessures Jong Ajax: A. Bouwman (Knock), A. Bouwman (Knock)",
+        "Jong AZ: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Jong PSV U21 vs FC OSS",
+      "league": "Eerste Divisie",
+      "date": "2026-01-12 19:00",
+      "match_description": "FC OSS en crise (LLDLW). écart au classement: Jong PSV U21 (5e) vs FC OSS (18e). match à buts attendu (3.7 buts prévus). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Jong PSV U21)",
+      "probabilities": {
+        "home": 45.6,
+        "draw": 31.3,
+        "away": 23.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.69,
+        "over_15_prob": 80.0,
+        "over_25_prob": 68.3,
+        "over_35_prob": 51.4,
+        "btts": "Oui",
+        "btts_prob": 41.9,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Jong PSV U21 MT)",
+        "probabilities": {
+          "home": 36.0,
+          "draw": 41.1,
+          "away": 22.9
+        },
+        "expected_goals": 1.55,
+        "over_05": "Oui",
+        "over_05_prob": 66.9,
+        "over_15": "Oui",
+        "over_15_prob": 48.9,
+        "btts": "Non",
+        "btts_prob": 14.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.14,
+        "over_05": "Oui",
+        "over_05_prob": 77.5,
+        "over_15": "Oui",
+        "over_15_prob": 59.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Jong PSV U21/Jong PSV U21)",
+        "probability": 23.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 3.6,
+        "away_avg": 5.6,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.7,
+        "expected_total": 3.9,
+        "over_35_prob": 53.0,
+        "over_45_prob": 38.0,
+        "over_55_prob": 23.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Jong PSV U21: WLLWL",
+        "Forme FC OSS: LLDLW",
+        "Classement: Jong PSV U21 5e vs FC OSS 18e",
+        "H2H: 2V-4N-4D",
+        "Blessures Jong PSV U21: W. Kuhn (Jumpers knee), W. Kuhn (Jumpers knee)",
+        "Jong PSV U21: enjeu europa"
+      ]
+    },
+    {
+      "match": "Huesca vs Cordoba",
+      "league": "Segunda División",
+      "date": "2026-01-12 19:30",
+      "match_description": "H2H favorable à Huesca (6V-0N-0D). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 39.3,
+        "draw": 29.2,
+        "away": 31.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 3.2,
+        "over_15_prob": 78.6,
+        "over_25_prob": 51.2,
+        "over_35_prob": 42.6,
+        "btts": "Oui",
+        "btts_prob": 31.8,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 29.2,
+          "draw": 45.3,
+          "away": 25.6
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.2,
+        "over_15": "Oui",
+        "over_15_prob": 45.2,
+        "btts": "Non",
+        "btts_prob": 11.1,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.86,
+        "over_05": "Oui",
+        "over_05_prob": 72.4,
+        "over_15": "Oui",
+        "over_15_prob": 54.4
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 20.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.8,
+        "home_avg": 5.0,
+        "away_avg": 5.8,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.8,
+        "expected_total": 4.6,
+        "over_35_prob": 70.1,
+        "over_45_prob": 55.1,
+        "over_55_prob": 40.1,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Huesca: LDWLD",
+        "Forme Cordoba: WWDDL",
+        "Classement: Huesca 19e vs Cordoba 11e",
+        "H2H: 6V-0N-0D",
+        "Blessures Huesca: Jordi Martín (Jumpers knee), Jordi Martín (Jumpers knee)",
+        "Huesca: enjeu relegation"
+      ]
+    },
+    {
+      "match": "Liverpool vs Barnsley",
+      "league": "FA Cup",
+      "date": "2026-01-12 19:45",
+      "match_description": "Match équilibré entre Liverpool et Barnsley",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "X (Nul)",
+      "probabilities": {
+        "home": 48.5,
+        "draw": 24.8,
+        "away": 26.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.68,
+        "over_15_prob": 69.3,
+        "over_25_prob": 62.9,
+        "over_35_prob": 33.3,
+        "btts": "Oui",
+        "btts_prob": 40.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 53.0,
+          "draw": 32.4,
+          "away": 14.6
+        },
+        "expected_goals": 1.13,
+        "over_05": "Oui",
+        "over_05_prob": 59.3,
+        "over_15": "Oui",
+        "over_15_prob": 41.3,
+        "btts": "Non",
+        "btts_prob": 14.0,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.56,
+        "over_05": "Oui",
+        "over_05_prob": 67.0,
+        "over_15": "Oui",
+        "over_15_prob": 49.0
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 36.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 5.0,
+        "away_avg": 3.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.5,
+        "expected_total": 4.6,
+        "over_35_prob": 55.2,
+        "over_45_prob": 42.5,
+        "over_55_prob": 29.8,
+        "red_card_prob": 12.8,
+        "recommendation": "Cartons +3.5 (55%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Liverpool: Joseph Gomez (Injury), Conor Bradley (Injury)",
+        "Blessures Barnsley: Marc Roberts (Unknown Injury), Joshua Earl (Unknown Injury)"
+      ]
+    },
+    {
+      "match": "Paris Saint Germain vs Paris FC",
+      "league": "Coupe de France",
+      "date": "2026-01-12 20:10",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Paris Saint Germain)",
+      "probabilities": {
+        "home": 50.5,
+        "draw": 29.7,
+        "away": 19.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 68.9,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 36.5,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Paris Saint Germain MT)",
+        "probabilities": {
+          "home": 50.5,
+          "draw": 37.2,
+          "away": 12.3
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 12.8,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Paris Saint Germain/Paris Saint Germain)",
+        "probability": 35.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 14.0,
+        "home_avg": 6.0,
+        "away_avg": 8.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-0N-0D",
+        "Blessures Paris Saint Germain: Nordi Mukiele (Injury), Joao Neves (Suspension)",
+        "Blessures Paris FC: Thibault De Smet (Red card Suspended), Pierre Yves Hamel (Adductor problems)"
+      ]
+    },
+    {
+      "match": "Tanjong Pagar vs Hougang United",
+      "league": "Premier League",
+      "date": "2026-01-12 11:30",
+      "match_description": "Tanjong Pagar en difficulté (LLWLL). Hougang United en crise (LLWLL). match à buts attendu (3.8 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Tanjong Pagar)",
+      "probabilities": {
+        "home": 30.0,
+        "draw": 31.1,
+        "away": 38.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.8,
+        "over_15_prob": 80.0,
+        "over_25_prob": 71.6,
+        "over_35_prob": 53.4,
+        "btts": "Oui",
+        "btts_prob": 53.9,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Tanjong Pagar MT)",
+        "probabilities": {
+          "home": 24.8,
+          "draw": 40.8,
+          "away": 34.5
+        },
+        "expected_goals": 1.6,
+        "over_05": "Oui",
+        "over_05_prob": 67.7,
+        "over_15": "Oui",
+        "over_15_prob": 49.7,
+        "btts": "Non",
+        "btts_prob": 18.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.2,
+        "over_05": "Oui",
+        "over_05_prob": 78.7,
+        "over_15": "Oui",
+        "over_15_prob": 60.7
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Tanjong Pagar/Tanjong Pagar)",
+        "probability": 19.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.0,
+        "expected_total": 5.8,
+        "over_35_prob": 72.5,
+        "over_45_prob": 57.5,
+        "over_55_prob": 42.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +4.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Tanjong Pagar: LLWLL",
+        "Forme Hougang United: LLWLL",
+        "Classement: Tanjong Pagar 7e vs Hougang United 6e",
+        "H2H: 3V-3N-4D",
+        "Tanjong Pagar: enjeu conference"
+      ]
+    }
+  ]
+}

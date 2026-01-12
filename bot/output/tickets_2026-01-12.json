@@ -1,0 +1,159 @@
+{
+  "date": "2026-01-11T23:26:03.514948",
+  "total_tickets": 3,
+  "tickets": [
+    {
+      "id": 1,
+      "name": "Ticket Sécurisé",
+      "confidence": "MOYEN",
+      "risk": "FAIBLE",
+      "total_odds": 2.55,
+      "selections": [
+        {
+          "match": "Al-Hazm vs Al Najma",
+          "league": "Pro League",
+          "date": "2026-01-12T15:10:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.16,
+          "reasoning": "Au moins 2 buts très probable (86%)"
+        },
+        {
+          "match": "Genoa vs Cagliari",
+          "league": "Serie A",
+          "date": "2026-01-12T17:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.14,
+          "reasoning": "Au moins 2 buts très probable (88%)"
+        },
+        {
+          "match": "Juventus vs Cremonese",
+          "league": "Serie A",
+          "date": "2026-01-12T19:45:00+00:00",
+          "bet": "1X",
+          "confidence": "MOYEN",
+          "odds": 1.36,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        },
+        {
+          "match": "Paris Saint Germain vs Paris FC",
+          "league": "Coupe de France",
+          "date": "2026-01-12T20:10:00+00:00",
+          "bet": "1X",
+          "confidence": "MOYEN",
+          "odds": 1.42,
+          "reasoning": "Le domicile ne devrait pas perdre ce match"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ticket Over/Under",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 4.89,
+      "selections": [
+        {
+          "match": "Genoa vs Cagliari",
+          "league": "Serie A",
+          "date": "2026-01-12T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 8.9 buts attendus. H2H: 2.5 buts/match"
+        },
+        {
+          "match": "Juventus vs Cremonese",
+          "league": "Serie A",
+          "date": "2026-01-12T19:45:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 9.4 buts attendus. H2H: 1.5 buts/match"
+        },
+        {
+          "match": "Sevilla vs Celta Vigo",
+          "league": "La Liga",
+          "date": "2026-01-12T20:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 10.4 buts attendus. H2H: 2.6 buts/match"
+        },
+        {
+          "match": "Jong PSV U21 vs FC OSS",
+          "league": "Eerste Divisie",
+          "date": "2026-01-12T19:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.37,
+          "reasoning": "Match déséquilibré (75 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Liverpool vs Barnsley",
+          "league": "FA Cup",
+          "date": "2026-01-12T19:45:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.33,
+          "reasoning": "Match déséquilibré (92 vs 60): clean sheet probable"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ticket Buts",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 4.08,
+      "selections": [
+        {
+          "match": "Genoa vs Cagliari",
+          "league": "Serie A",
+          "date": "2026-01-12T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 8.9 buts attendus. H2H: 2.5 buts/match"
+        },
+        {
+          "match": "Juventus vs Cremonese",
+          "league": "Serie A",
+          "date": "2026-01-12T19:45:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 9.4 buts attendus. H2H: 1.5 buts/match"
+        },
+        {
+          "match": "Jong PSV U21 vs FC OSS",
+          "league": "Eerste Divisie",
+          "date": "2026-01-12T19:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.37,
+          "reasoning": "Match déséquilibré (75 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Liverpool vs Barnsley",
+          "league": "FA Cup",
+          "date": "2026-01-12T19:45:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.33,
+          "reasoning": "Match déséquilibré (92 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Al-Hazm vs Al Najma",
+          "league": "Pro League",
+          "date": "2026-01-12T15:10:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.16,
+          "reasoning": "Au moins 2 buts très probable (86%)"
+        }
+      ]
+    }
+  ]
+}
