@@ -1288,30 +1288,34 @@ class EnhancedMatchAnalyzer:
         goals = analysis["goals"]
         corners = analysis["corners"]
 
-        # 1X2 - Logique améliorée avec seuil dynamique pour les nuls
-        draw_threshold = self.thresholds.get("draw_threshold", 0.08)
+        # 1X2 - Logique AMÉLIORÉE basée sur analyse du 12/01/2026
+        # PROBLÈME IDENTIFIÉ: 43.1% de réussite, trop de X prédits à tort
+        # SOLUTION: Prédire le favori plus souvent, X seulement si vraiment équilibré
 
-        # Calculer l'écart entre les probabilités
         prob_gap = abs(home_prob - away_prob)
+        max_prob = max(home_prob, draw_prob, away_prob)
 
-        # Victoire claire si prob >= 50% ou écart significatif
-        if home_prob >= 0.50:
+        # RÈGLE 1: Si une équipe a >= 48%, elle gagne (pas de X)
+        if home_prob >= 0.48:
             result_1x2 = f"1 ({home_team})"
-        elif away_prob >= 0.48:
+        elif away_prob >= 0.45:
             result_1x2 = f"2 ({away_team})"
-        # Nul seulement si: draw_prob élevé ET écart faible entre home/away
-        elif draw_prob >= 0.32 and prob_gap < draw_threshold:
+        # RÈGLE 2: X seulement si probabilités TRÈS proches ET draw élevé
+        elif draw_prob >= 0.34 and prob_gap < 0.04:
             result_1x2 = "X (Nul)"
-        # Sinon, prédire le favori
-        elif home_prob > away_prob + 0.03:  # Home favori avec marge
+        # RÈGLE 3: Favori avec marge de 8% (au lieu de 3%)
+        elif home_prob > away_prob + 0.08:
             result_1x2 = f"1 ({home_team})"
-        elif away_prob > home_prob + 0.03:  # Away favori avec marge
+        elif away_prob > home_prob + 0.08:
             result_1x2 = f"2 ({away_team})"
-        # Match très équilibré -> nul
-        elif prob_gap < 0.05 and draw_prob >= 0.28:
-            result_1x2 = "X (Nul)"
+        # RÈGLE 4: Si home > away (même faible marge), prédire home (pas X)
+        elif home_prob > away_prob:
+            result_1x2 = f"1 ({home_team})"
+        elif away_prob > home_prob:
+            result_1x2 = f"2 ({away_team})"
+        # RÈGLE 5: Vraiment équilibré -> X
         else:
-            result_1x2 = f"1 ({home_team})" if home_prob > away_prob else f"2 ({away_team})"
+            result_1x2 = "X (Nul)"
 
         # Over/Under - Format clair avec seuils adaptatifs
         over_threshold = self.thresholds.get("over_25", 0.55)
@@ -1352,23 +1356,24 @@ class EnhancedMatchAnalyzer:
         )
         logger.debug(f"[POISSON] Score prédit: {score_exact} (prob: {score_prob:.1%}) - xG: {exp_home:.2f}-{exp_away:.2f}")
 
-        # BTTS - DÉRIVÉ DU SCORE PRÉDIT pour cohérence
+        # BTTS - CALCULÉ INDÉPENDAMMENT (basé sur analyse du 12/01/2026)
+        # PROBLÈME: BTTS dérivé du score exact (5.2% de réussite) = incohérent
+        # SOLUTION: Utiliser la probabilité BTTS brute avec seuil strict
         score_parts = score_exact.split("-")
         home_goals = int(score_parts[0])
         away_goals = int(score_parts[1])
         btts_prob_raw = goals["btts_prob"]
 
-        # BTTS doit être cohérent avec le score prédit
-        if home_goals > 0 and away_goals > 0:
-            # Score prédit = les deux équipes marquent → BTTS = Oui
+        # BTTS avec seuil de 45% (compromis entre précision et rappel)
+        # Analyse: Les faux BTTS Oui avaient une prob moyenne de 41.8%
+        if btts_prob_raw >= 0.45:
             btts = "Oui"
             btts_prob_final = btts_prob_raw
-            logger.debug(f"[BTTS] Oui (cohérent avec score {score_exact})")
+            logger.debug(f"[BTTS] Oui (prob {btts_prob_raw:.1%} >= 50%)")
         else:
-            # Score prédit = clean sheet → BTTS = Non
             btts = "Non"
             btts_prob_final = btts_prob_raw
-            logger.debug(f"[BTTS] Non (cohérent avec score {score_exact})")
+            logger.debug(f"[BTTS] Non (prob {btts_prob_raw:.1%} < 50%)")
 
         # Clean sheet - Basé sur le score prédit uniquement
         if home_goals > 0 and away_goals == 0:
@@ -1399,17 +1404,25 @@ class EnhancedMatchAnalyzer:
         else:
             ht_ft = "X/X (Nul/Nul)"
 
-        # Confiance avec seuils adaptatifs par ligue
+        # Confiance AMÉLIORÉE (basée sur analyse 12/01/2026)
+        # PROBLÈME: 0% de confiance HIGH, 36% de réussite sur MEDIUM
         max_prob = max(home_prob, draw_prob, away_prob)
         data_quality = self._assess_data_quality(enriched)
-        conf_high = self.thresholds.get("confidence_high", 0.70)
-        conf_medium = self.thresholds.get("confidence_medium", 0.55)
+
+        # Nouveaux seuils plus réalistes
+        # HIGH: prob >= 55% ET bonnes données (H2H, forme, etc.)
+        # MEDIUM: prob >= 45% ET données acceptables
+        has_good_h2h = enriched.h2h_matches >= 5
+        has_clear_favorite = max_prob >= 0.50
+        has_form_data = bool(enriched.home_stats.form and enriched.away_stats.form)
 
         if data_quality == "INSUFFISANT":
             confidence = CONFIDENCE_LOW
-        elif max_prob >= conf_high:
+        elif max_prob >= 0.55 and has_good_h2h and has_form_data:
             confidence = CONFIDENCE_HIGH
-        elif max_prob >= conf_medium:
+        elif max_prob >= 0.50 and has_clear_favorite:
+            confidence = CONFIDENCE_MEDIUM
+        elif max_prob >= 0.45 and (has_good_h2h or has_form_data):
             confidence = CONFIDENCE_MEDIUM
         else:
             confidence = CONFIDENCE_LOW
@@ -1498,10 +1511,24 @@ class EnhancedMatchAnalyzer:
         away_goals = int(score_parts[1])
         total_goals = home_goals + away_goals
 
-        # ========== 1X2 Match complet (DÉRIVÉ DU SCORE EXACT) ==========
-        if home_goals > away_goals:
+        # ========== 1X2 Match complet (BASÉ SUR PROBABILITÉS - pas score exact) ==========
+        # AMÉLIORATION 12/01/2026: Le score exact a 5.2% de réussite
+        # Donc on utilise les probabilités directement pour 1X2
+        prob_gap = abs(home_prob - away_prob)
+
+        if home_prob >= 0.48:
             result_1x2 = f"1 ({home_team})"
-        elif away_goals > home_goals:
+        elif away_prob >= 0.45:
+            result_1x2 = f"2 ({away_team})"
+        elif draw_prob >= 0.34 and prob_gap < 0.04:
+            result_1x2 = "X (Nul)"
+        elif home_prob > away_prob + 0.08:
+            result_1x2 = f"1 ({home_team})"
+        elif away_prob > home_prob + 0.08:
+            result_1x2 = f"2 ({away_team})"
+        elif home_prob > away_prob:
+            result_1x2 = f"1 ({home_team})"
+        elif away_prob > home_prob:
             result_1x2 = f"2 ({away_team})"
         else:
             result_1x2 = "X (Nul)"
@@ -1521,16 +1548,15 @@ class EnhancedMatchAnalyzer:
         # ========== Team +1.5 ==========
         team_plus_15 = f"{home_team} +1.5 buts" if home_goals > away_goals else f"{away_team} +1.5 buts"
 
-        # ========== BTTS - DÉRIVÉ DU SCORE PRÉDIT pour cohérence ==========
+        # ========== BTTS - CALCULÉ INDÉPENDAMMENT avec seuil strict ==========
+        # AMÉLIORATION 12/01/2026: BTTS basé sur probabilité brute (pas score)
         btts_prob_raw = goals["btts_prob"]
 
-        # BTTS doit être cohérent avec le score prédit
-        if home_goals > 0 and away_goals > 0:
-            # Score prédit = les deux équipes marquent → BTTS = Oui
+        # BTTS Oui seulement si prob >= 45% (les faux Oui avaient 41.8% en moyenne)
+        if btts_prob_raw >= 0.45:
             btts = "Oui"
             btts_prob_final = btts_prob_raw
         else:
-            # Score prédit = clean sheet → BTTS = Non
             btts = "Non"
             btts_prob_final = btts_prob_raw
 
@@ -1691,25 +1717,24 @@ class EnhancedMatchAnalyzer:
         referee_name = cards.get('referee_name', '')
         referee_strictness = cards.get('referee_strictness', 'MOYEN')
 
-        # ========== Confiance avec seuils adaptatifs par ligue ==========
+        # ========== Confiance AMÉLIORÉE (basée sur analyse 12/01/2026) ==========
         max_prob = max(home_prob, draw_prob, away_prob)
-        conf_high = self.thresholds.get("confidence_high", 0.70)
-        conf_medium = self.thresholds.get("confidence_medium", 0.55)
-
-        # Vérifier la qualité des données
         data_quality = self._assess_data_quality(enriched)
 
+        # Critères de confiance améliorés
+        has_good_h2h = enriched.h2h_matches >= 5
+        has_clear_favorite = max_prob >= 0.50
+        has_form_data = bool(enriched.home_stats.form and enriched.away_stats.form)
+
         if data_quality == "INSUFFISANT":
-            # Pas assez de données fiables → toujours FAIBLE
             confidence = CONFIDENCE_LOW
-        elif max_prob >= conf_high:
-            # Très haute confiance
+        elif max_prob >= 0.55 and has_good_h2h and has_form_data:
             confidence = CONFIDENCE_HIGH
-        elif max_prob >= conf_medium:
-            # Confiance moyenne
+        elif max_prob >= 0.50 and has_clear_favorite:
+            confidence = CONFIDENCE_MEDIUM
+        elif max_prob >= 0.45 and (has_good_h2h or has_form_data):
             confidence = CONFIDENCE_MEDIUM
         else:
-            # Faible confiance
             confidence = CONFIDENCE_LOW
 
         # ========== Raisonnement ==========

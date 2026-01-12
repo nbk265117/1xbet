@@ -19,56 +19,61 @@ logger = logging.getLogger(__name__)
 class TicketGenerator:
     """Génère des tickets de paris optimisés"""
 
-    # Types de tickets - DIVERSIFIÉS
+    # Types de tickets - OPTIMISÉS (basé sur analyse 12/01/2026)
+    # Performance: Over 1.5 = 80%, Double Chance = ~70%, 1X2 = 43%
     TICKET_TYPES = {
         "safe": {
             "name": "Ticket Sécurisé",
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.DOUBLE_CHANCE_1X, BetType.DOUBLE_CHANCE_X2,
-                              BetType.OVER_1_5],
+            # PRIORITÉ: Over 1.5 (80%) + Double Chance (~70%)
+            "preferred_bets": [BetType.OVER_1_5, BetType.DOUBLE_CHANCE_1X,
+                              BetType.DOUBLE_CHANCE_X2],
             "max_matches": 5,
             "risk": "FAIBLE",
-            "max_same_type": 2  # Max 2 paris du même type
+            "max_same_type": 3  # Plus de Over 1.5 car très fiable
         },
         "balanced": {
             "name": "Ticket Mixte",
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN, BetType.OVER_1_5,
-                              BetType.DOUBLE_CHANCE_1X, BetType.DOUBLE_CHANCE_X2],  # BTTS Oui remplacé par Over 1.5
-            "max_matches": 5,
-            "risk": "MOYEN",
-            "max_same_type": 1  # Forcer la diversité - 1 seul pari par type
-        },
-        "goals": {
-            "name": "Ticket Buts",
-            "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.OVER_2_5, BetType.OVER_1_5, BetType.BTTS_NO],  # BTTS Oui retiré
+            # ÉVITER 1X2 simple (43%) - Préférer DC + Over
+            "preferred_bets": [BetType.OVER_1_5, BetType.DOUBLE_CHANCE_1X,
+                              BetType.DOUBLE_CHANCE_X2, BetType.OVER_2_5],
             "max_matches": 5,
             "risk": "MOYEN",
             "max_same_type": 2
         },
+        "goals": {
+            "name": "Ticket Buts",
+            "min_confidence": CONFIDENCE_MEDIUM,
+            # Over 1.5 prioritaire, puis Over 2.5
+            "preferred_bets": [BetType.OVER_1_5, BetType.OVER_2_5, BetType.BTTS_NO],
+            "max_matches": 5,
+            "risk": "MOYEN",
+            "max_same_type": 3
+        },
         "favorites": {
             "name": "Ticket Favoris",
             "min_confidence": CONFIDENCE_HIGH,
+            # 1X2 seulement avec confiance HIGH (prob >= 55%)
             "preferred_bets": [BetType.HOME_WIN, BetType.AWAY_WIN],
             "max_matches": 4,
             "risk": "MOYEN",
             "max_same_type": 3
         },
         "btts": {
-            "name": "Ticket Over/Under",  # Renommé car BTTS Oui n'est plus fiable
+            "name": "Ticket Over/Under",
             "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.OVER_2_5, BetType.OVER_1_5, BetType.BTTS_NO],  # Favoriser Over au lieu de BTTS Oui
+            # Over prioritaire - BTTS Non (63.8% réussite quand prob < 50%)
+            "preferred_bets": [BetType.OVER_1_5, BetType.OVER_2_5, BetType.BTTS_NO],
             "max_matches": 5,
             "risk": "MOYEN",
             "max_same_type": 3
         },
         "combo": {
             "name": "Ticket Combo",
-            "min_confidence": CONFIDENCE_MEDIUM,
-            "preferred_bets": [BetType.HOME_WIN_AND_OVER_1_5, BetType.AWAY_WIN_AND_OVER_1_5,
-                              BetType.BTTS_AND_OVER_2_5],
-            "max_matches": 4,
+            "min_confidence": CONFIDENCE_HIGH,  # Augmenté pour combos
+            "preferred_bets": [BetType.HOME_WIN_AND_OVER_1_5, BetType.AWAY_WIN_AND_OVER_1_5],
+            "max_matches": 3,  # Réduit car combos plus risqués
             "risk": "ÉLEVÉ",
             "max_same_type": 2
         }
