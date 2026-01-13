@@ -1,0 +1,1064 @@
+{
+  "date": "2026-01-13",
+  "generated_at": "2026-01-12T23:40:18.926995",
+  "total_matches": 13,
+  "predictions": [
+    {
+      "match": "Al Okhdood vs Al Kholood",
+      "league": "Pro League",
+      "date": "2026-01-13 15:25",
+      "match_description": "Al Okhdood en difficulté (LLLLD). Al Kholood en crise (LWLLL). H2H favorable à Al Kholood (4V-1N-1D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Al Kholood)",
+      "probabilities": {
+        "home": 29.8,
+        "draw": 31.4,
+        "away": 38.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.02,
+        "over_15_prob": 75.3,
+        "over_25_prob": 53.0,
+        "over_35_prob": 39.3,
+        "btts": "Non",
+        "btts_prob": 36.8,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Al Kholood MT)",
+        "probabilities": {
+          "home": 25.7,
+          "draw": 44.8,
+          "away": 29.5
+        },
+        "expected_goals": 1.27,
+        "over_05": "Oui",
+        "over_05_prob": 61.8,
+        "over_15": "Oui",
+        "over_15_prob": 43.8,
+        "btts": "Non",
+        "btts_prob": 12.9,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.75,
+        "over_05": "Oui",
+        "over_05_prob": 70.5,
+        "over_15": "Oui",
+        "over_15_prob": 52.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Al Kholood/Al Kholood)",
+        "probability": 21.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.4,
+        "home_avg": 4.4,
+        "away_avg": 5.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.9,
+        "over_35_prob": 50.0,
+        "over_45_prob": 35.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Okhdood: LLLLD",
+        "Forme Al Kholood: LWLLL",
+        "Classement: Al Okhdood 17e vs Al Kholood 13e",
+        "H2H: 1V-1N-4D",
+        "Al Okhdood: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "VfB Stuttgart vs Eintracht Frankfurt",
+      "league": "Bundesliga",
+      "date": "2026-01-13 17:30",
+      "match_description": "H2H favorable à Eintracht Frankfurt (5V-3N-2D). match à buts attendu (3.9 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (VfB Stuttgart)",
+      "probabilities": {
+        "home": 41.8,
+        "draw": 28.4,
+        "away": 29.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.94,
+        "over_15_prob": 80.0,
+        "over_25_prob": 67.1,
+        "over_35_prob": 55.9,
+        "btts": "Non",
+        "btts_prob": 40.9,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (VfB Stuttgart MT)",
+        "probabilities": {
+          "home": 37.5,
+          "draw": 40.4,
+          "away": 22.2
+        },
+        "expected_goals": 1.65,
+        "over_05": "Oui",
+        "over_05_prob": 68.8,
+        "over_15": "Oui",
+        "over_15_prob": 50.8,
+        "btts": "Non",
+        "btts_prob": 14.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.28,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 62.1
+      },
+      "ht_ft": {
+        "prediction": "1/1 (VfB Stuttgart/VfB Stuttgart)",
+        "probability": 22.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 5.0,
+        "away_avg": 4.6,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.5,
+        "over_35_prob": 48.5,
+        "over_45_prob": 33.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (64%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme VfB Stuttgart: WDWLL",
+        "Forme Eintracht Frankfurt: DDWLD",
+        "Classement: VfB Stuttgart 5e vs Eintracht Frankfurt 7e",
+        "H2H: 2V-3N-5D",
+        "Blessures VfB Stuttgart: Alexander Nubel (Injury), Dan Axel Zagadou (Injury)",
+        "Blessures Eintracht Frankfurt: Nathaniel Brown (Hamstring Injury), Ellyes Skhiri (Knee Problems)",
+        "VfB Stuttgart: enjeu europa"
+      ]
+    },
+    {
+      "match": "Al-Fateh vs Al Riyadh",
+      "league": "Pro League",
+      "date": "2026-01-13 17:30",
+      "match_description": "Al-Fateh en excellente forme (WWWWL). Al Riyadh en crise (DLLLL)",
+      "match_importance": "NORMAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Al-Fateh)",
+      "probabilities": {
+        "home": 48.9,
+        "draw": 30.9,
+        "away": 20.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.3,
+        "over_35_prob": 44.4,
+        "btts": "Non",
+        "btts_prob": 36.3,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Al-Fateh MT)",
+        "probabilities": {
+          "home": 39.4,
+          "draw": 41.8,
+          "away": 18.7
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Fateh/Al-Fateh)",
+        "probability": 26.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.2,
+        "home_avg": 4.0,
+        "away_avg": 6.2,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.6,
+        "expected_total": 4.8,
+        "over_35_prob": 56.5,
+        "over_45_prob": 43.8,
+        "over_55_prob": 31.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +3.5 (57%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Fateh: WWWWL",
+        "Forme Al Riyadh: DLLLL",
+        "Classement: Al-Fateh 10e vs Al Riyadh 15e",
+        "H2H: 1V-3N-1D"
+      ]
+    },
+    {
+      "match": "Damac vs Al-Ittihad FC",
+      "league": "Pro League",
+      "date": "2026-01-13 17:30",
+      "match_description": "Al-Ittihad FC en pleine confiance (WWWWW). H2H favorable à Al-Ittihad FC (5V-3N-2D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "2 (Al-Ittihad FC)",
+      "probabilities": {
+        "home": 21.8,
+        "draw": 31.3,
+        "away": 46.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 61.2,
+        "over_35_prob": 44.4,
+        "btts": "Non",
+        "btts_prob": 31.8,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Al-Ittihad FC MT)",
+        "probabilities": {
+          "home": 14.8,
+          "draw": 40.8,
+          "away": 44.5
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 11.1,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Al-Ittihad FC/Al-Ittihad FC)",
+        "probability": 28.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.4,
+        "home_avg": 4.4,
+        "away_avg": 8.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 4.2,
+        "over_35_prob": 50.0,
+        "over_45_prob": 35.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Damac: LLWDD",
+        "Forme Al-Ittihad FC: WWWWW",
+        "Classement: Damac 14e vs Al-Ittihad FC 6e",
+        "H2H: 2V-3N-5D"
+      ]
+    },
+    {
+      "match": "Borussia Dortmund vs Werder Bremen",
+      "league": "Bundesliga",
+      "date": "2026-01-13 19:30",
+      "match_description": "Borussia Dortmund en excellente forme (DWDWW). Werder Bremen en crise (DLLDL). écart au classement: Borussia Dortmund (2e) vs Werder Bremen (12e). H2H favorable à Borussia Dortmund (6V-2N-2D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Borussia Dortmund)",
+      "probabilities": {
+        "home": 53.4,
+        "draw": 31.6,
+        "away": 15.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.53,
+        "over_15_prob": 80.0,
+        "over_25_prob": 66.1,
+        "over_35_prob": 48.6,
+        "btts": "Non",
+        "btts_prob": 35.4,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Borussia Dortmund MT)",
+        "probabilities": {
+          "home": 47.5,
+          "draw": 39.9,
+          "away": 12.6
+        },
+        "expected_goals": 1.48,
+        "over_05": "Oui",
+        "over_05_prob": 65.7,
+        "over_15": "Oui",
+        "over_15_prob": 47.7,
+        "btts": "Non",
+        "btts_prob": 12.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.05,
+        "over_05": "Oui",
+        "over_05_prob": 75.9,
+        "over_15": "Oui",
+        "over_15_prob": 57.9
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Borussia Dortmund/Borussia Dortmund)",
+        "probability": 34.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 4.2,
+        "away_avg": 5.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.0,
+        "expected_total": 5.3,
+        "over_35_prob": 61.6,
+        "over_45_prob": 48.9,
+        "over_55_prob": 36.1,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +4.5 (49%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Borussia Dortmund: DWDWW",
+        "Forme Werder Bremen: DLLDL",
+        "Classement: Borussia Dortmund 2e vs Werder Bremen 12e",
+        "H2H: 6V-2N-2D",
+        "Blessures Borussia Dortmund: Emre Can (Adductor problems), Niklas Sule (Muscle Injury)",
+        "Blessures Werder Bremen: Mitchell Weiser (Ruptured cruciate ligament), Jens Stage (Foot injury)",
+        "Borussia Dortmund: enjeu title"
+      ]
+    },
+    {
+      "match": "Hamburger SV vs Bayer Leverkusen",
+      "league": "Bundesliga",
+      "date": "2026-01-13 19:30",
+      "match_description": "H2H favorable à Bayer Leverkusen (6V-1N-3D). match à buts attendu (3.6 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Bayer Leverkusen)",
+      "probabilities": {
+        "home": 29.5,
+        "draw": 31.2,
+        "away": 39.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.58,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.2,
+        "over_35_prob": 49.5,
+        "btts": "Non",
+        "btts_prob": 37.9,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Bayer Leverkusen MT)",
+        "probabilities": {
+          "home": 24.3,
+          "draw": 43.0,
+          "away": 32.7
+        },
+        "expected_goals": 1.51,
+        "over_05": "Oui",
+        "over_05_prob": 66.1,
+        "over_15": "Oui",
+        "over_15_prob": 48.1,
+        "btts": "Non",
+        "btts_prob": 13.3,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.08,
+        "over_05": "Oui",
+        "over_05_prob": 76.4,
+        "over_15": "Oui",
+        "over_15_prob": 58.4
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Bayer Leverkusen/Bayer Leverkusen)",
+        "probability": 20.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 11.6,
+        "home_avg": 4.0,
+        "away_avg": 7.6,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +10.5 (20%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.5,
+        "expected_total": 4.9,
+        "over_35_prob": 65.0,
+        "over_45_prob": 50.0,
+        "over_55_prob": 35.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Hamburger SV: LDLWW",
+        "Forme Bayer Leverkusen: LWWLL",
+        "Classement: Hamburger SV 13e vs Bayer Leverkusen 4e",
+        "H2H: 3V-1N-6D",
+        "Blessures Hamburger SV: Yussuf Yurary Poulsen (Strain), Jean-Luc Dompe (Ankle Injury)",
+        "Blessures Bayer Leverkusen: Martin Terrier (Achilles tendon rupture), Malik Tillman (Calf Injury)"
+      ]
+    },
+    {
+      "match": "FSV Mainz 05 vs 1. FC Heidenheim",
+      "league": "Bundesliga",
+      "date": "2026-01-13 19:30",
+      "match_description": "Match équilibré entre FSV Mainz 05 et 1. FC Heidenheim. Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (FSV Mainz 05)",
+      "probabilities": {
+        "home": 34.8,
+        "draw": 31.3,
+        "away": 33.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.74,
+        "over_15_prob": 70.3,
+        "over_25_prob": 51.2,
+        "over_35_prob": 34.3,
+        "btts": "Non",
+        "btts_prob": 32.5,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 35.0,
+          "draw": 43.9,
+          "away": 21.1
+        },
+        "expected_goals": 1.15,
+        "over_05": "Oui",
+        "over_05_prob": 59.7,
+        "over_15": "Oui",
+        "over_15_prob": 41.7,
+        "btts": "Non",
+        "btts_prob": 11.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.59,
+        "over_05": "Oui",
+        "over_05_prob": 67.6,
+        "over_15": "Oui",
+        "over_15_prob": 49.6
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.8,
+        "home_avg": 4.0,
+        "away_avg": 5.8,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.7,
+        "expected_total": 3.9,
+        "over_35_prob": 53.0,
+        "over_45_prob": 38.0,
+        "over_55_prob": 23.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme FSV Mainz 05: DDDLL",
+        "Forme 1. FC Heidenheim: DLLWW",
+        "Classement: FSV Mainz 05 18e vs 1. FC Heidenheim 17e",
+        "H2H: 1V-1N-2D",
+        "Blessures FSV Mainz 05: Lee Jae Sung (Cheekbone Fracture), Maxim Dal (Ruptured cruciate ligament)",
+        "Blessures 1. FC Heidenheim: Benedikt Gimber (Inguinal Hernia), Marvin Pieringer (Ankle Injury)",
+        "FSV Mainz 05: enjeu relegation"
+      ]
+    },
+    {
+      "match": "AS Roma vs Torino",
+      "league": "Coppa Italia",
+      "date": "2026-01-13 20:00",
+      "match_description": "H2H favorable à AS Roma (6V-2N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (AS Roma)",
+      "probabilities": {
+        "home": 47.8,
+        "draw": 32.5,
+        "away": 19.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.23,
+        "over_15_prob": 61.2,
+        "over_25_prob": 44.3,
+        "over_35_prob": 25.2,
+        "btts": "Non",
+        "btts_prob": 29.6,
+        "score_exact": "1-0",
+        "clean_sheet": "AS Roma gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (AS Roma MT)",
+        "probabilities": {
+          "home": 40.8,
+          "draw": 44.9,
+          "away": 14.3
+        },
+        "expected_goals": 0.94,
+        "over_05": "Oui",
+        "over_05_prob": 55.9,
+        "over_15": "Non",
+        "over_15_prob": 37.9,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.29,
+        "over_05": "Oui",
+        "over_05_prob": 62.3,
+        "over_15": "Non",
+        "over_15_prob": 44.3
+      },
+      "ht_ft": {
+        "prediction": "1/1 (AS Roma/AS Roma)",
+        "probability": 26.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 13.0,
+        "home_avg": 5.0,
+        "away_avg": 8.0,
+        "over_85_prob": 48.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 32.0,
+        "recommendation": "Corners +10.5 (32%) ~"
+      },
+      "cards": {
+        "expected_yellow": 4.0,
+        "expected_total": 4.1,
+        "over_35_prob": 48.9,
+        "over_45_prob": 36.1,
+        "over_55_prob": 23.4,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +3.5 (49%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 6V-2N-2D",
+        "Blessures AS Roma: Lorenzo Pellegrini (injured), L. Bailey (Thigh problems)",
+        "Blessures Torino: Aaron Ciammaglichella (Bruised Knee), A. Ismajli (Thigh problems)"
+      ]
+    },
+    {
+      "match": "Newcastle vs Manchester City",
+      "league": "League Cup",
+      "date": "2026-01-13 20:00",
+      "match_description": "H2H favorable à Manchester City (6V-2N-2D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Manchester City)",
+      "probabilities": {
+        "home": 30.6,
+        "draw": 31.3,
+        "away": 38.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 63.0,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 41.2,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "1 (Newcastle MT)",
+        "probabilities": {
+          "home": 25.5,
+          "draw": 42.7,
+          "away": 31.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 14.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Newcastle/Newcastle)",
+        "probability": 20.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.0,
+        "home_avg": 6.0,
+        "away_avg": 6.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.0,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-2N-6D",
+        "Blessures Newcastle: Joseph Willock (injured), Alexander Isak (other)",
+        "Blessures Manchester City: Joshua Wilson Esbrand (Calf Injury), Phil Foden (Injured Doubtful)"
+      ]
+    },
+    {
+      "match": "Bayeux vs Marseille",
+      "league": "Coupe de France",
+      "date": "2026-01-13 20:00",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Marseille)",
+      "probabilities": {
+        "home": 28.7,
+        "draw": 29.0,
+        "away": 42.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 72.2,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 38.6,
+        "score_exact": "2-4",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Marseille MT)",
+        "probabilities": {
+          "home": 13.9,
+          "draw": 32.3,
+          "away": 53.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 13.5,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Marseille/Marseille)",
+        "probability": 32.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 16.0,
+        "home_avg": 6.0,
+        "away_avg": 10.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Marseille: Facundo Medina (Red card Suspended), Adrien Rabiot (other)"
+      ]
+    },
+    {
+      "match": "Cultural Leonesa vs Athletic Club",
+      "league": "Copa del Rey",
+      "date": "2026-01-13 20:00",
+      "match_description": "Match équilibré entre Cultural Leonesa et Athletic Club",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Cultural Leonesa)",
+      "probabilities": {
+        "home": 37.3,
+        "draw": 28.2,
+        "away": 34.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.45,
+        "over_15_prob": 80.0,
+        "over_25_prob": 56.3,
+        "over_35_prob": 47.2,
+        "btts": "Non",
+        "btts_prob": 38.3,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Cultural Leonesa MT)",
+        "probabilities": {
+          "home": 23.1,
+          "draw": 42.4,
+          "away": 34.5
+        },
+        "expected_goals": 1.45,
+        "over_05": "Oui",
+        "over_05_prob": 65.1,
+        "over_15": "Oui",
+        "over_15_prob": 47.1,
+        "btts": "Non",
+        "btts_prob": 13.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.0,
+        "over_05": "Oui",
+        "over_05_prob": 75.1,
+        "over_15": "Oui",
+        "over_15_prob": 57.1
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Cultural Leonesa/Cultural Leonesa)",
+        "probability": 18.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 6.8,
+        "home_avg": 2.0,
+        "away_avg": 4.8,
+        "over_85_prob": 24.0,
+        "over_95_prob": 17.6,
+        "over_105_prob": 16.0,
+        "recommendation": "Corners +7.5 (32%) ~"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Cultural Leonesa: Eneko Satrústegui (Jumpers knee), Eneko Satrústegui (Jumpers knee)",
+        "Blessures Athletic Club: Yeray Alvarez Lopez (Red card Suspended), Oihan Sancet (Inner ligament injury)"
+      ]
+    },
+    {
+      "match": "Deportivo La Coruna vs Atletico Madrid",
+      "league": "Copa del Rey",
+      "date": "2026-01-13 20:00",
+      "match_description": "H2H favorable à Atletico Madrid (7V-3N-0D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Deportivo La Coruna)",
+      "probabilities": {
+        "home": 37.3,
+        "draw": 30.7,
+        "away": 31.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.0,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 31.5,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Deportivo La Coruna MT)",
+        "probabilities": {
+          "home": 21.6,
+          "draw": 42.3,
+          "away": 36.1
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Deportivo La Coruna/Deportivo La Coruna)",
+        "probability": 20.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 1.0,
+        "away_avg": 7.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.8,
+        "expected_total": 2.9,
+        "over_35_prob": 34.0,
+        "over_45_prob": 21.2,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (47%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 0V-3N-7D",
+        "Blessures Atletico Madrid: J. Giménez (Thigh problems), J. Giménez (Thigh problems)"
+      ]
+    },
+    {
+      "match": "Real Sociedad vs Osasuna",
+      "league": "Copa del Rey",
+      "date": "2026-01-13 20:00",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Real Sociedad)",
+      "probabilities": {
+        "home": 43.9,
+        "draw": 31.6,
+        "away": 24.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 53.9,
+        "over_35_prob": 48.0,
+        "btts": "Non",
+        "btts_prob": 38.3,
+        "score_exact": "2-3",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "2 (Osasuna MT)",
+        "probabilities": {
+          "home": 36.0,
+          "draw": 45.6,
+          "away": 18.4
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 13.4,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Osasuna/Osasuna)",
+        "probability": 21.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.0,
+        "home_avg": 2.0,
+        "away_avg": 7.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.2,
+        "expected_total": 2.2,
+        "over_35_prob": 30.0,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (45%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 4V-1N-5D",
+        "Blessures Real Sociedad: Jon Gorrotxategi (Injured Doubtful), Jon Gorrotxategi (Injured Doubtful)",
+        "Blessures Osasuna: Iker Benito (Injury), Iker Benito (Injured Doubtful)"
+      ]
+    }
+  ]
+}

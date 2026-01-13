@@ -1,0 +1,222 @@
+{
+  "date": "2026-01-12T23:40:18.930298",
+  "total_tickets": 4,
+  "tickets": [
+    {
+      "id": 1,
+      "name": "Ticket Sécurisé",
+      "confidence": "MOYEN",
+      "risk": "FAIBLE",
+      "total_odds": 3.14,
+      "selections": [
+        {
+          "match": "Damac vs Al-Ittihad FC",
+          "league": "Pro League",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.43,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Hamburger SV vs Bayer Leverkusen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.43,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Al Okhdood vs Al Kholood",
+          "league": "Pro League",
+          "date": "2026-01-13T15:25:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.16,
+          "reasoning": "Au moins 2 buts très probable (86%)"
+        },
+        {
+          "match": "VfB Stuttgart vs Eintracht Frankfurt",
+          "league": "Bundesliga",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.14,
+          "reasoning": "Au moins 2 buts très probable (88%)"
+        },
+        {
+          "match": "Al-Fateh vs Al Riyadh",
+          "league": "Pro League",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.16,
+          "reasoning": "Au moins 2 buts très probable (86%)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ticket Mixte",
+      "confidence": "MOYEN",
+      "risk": "MOYEN",
+      "total_odds": 4.01,
+      "selections": [
+        {
+          "match": "VfB Stuttgart vs Eintracht Frankfurt",
+          "league": "Bundesliga",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 14.0 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Borussia Dortmund vs Werder Bremen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 12.9 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Damac vs Al-Ittihad FC",
+          "league": "Pro League",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.43,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Hamburger SV vs Bayer Leverkusen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.43,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Al Okhdood vs Al Kholood",
+          "league": "Pro League",
+          "date": "2026-01-13T15:25:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.16,
+          "reasoning": "Au moins 2 buts très probable (86%)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ticket Over/Under",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 4.18,
+      "selections": [
+        {
+          "match": "VfB Stuttgart vs Eintracht Frankfurt",
+          "league": "Bundesliga",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 14.0 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Borussia Dortmund vs Werder Bremen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 12.9 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Hamburger SV vs Bayer Leverkusen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 10.8 buts attendus. H2H: 2.6 buts/match"
+        },
+        {
+          "match": "Bayeux vs Marseille",
+          "league": "Coupe de France",
+          "date": "2026-01-13T20:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Risque clean sheet élevé (dom: 35%, ext: 15%)"
+        },
+        {
+          "match": "Deportivo La Coruna vs Atletico Madrid",
+          "league": "Copa del Rey",
+          "date": "2026-01-13T20:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.33,
+          "reasoning": "Match déséquilibré (60 vs 85): clean sheet probable"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ticket Buts",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 4.18,
+      "selections": [
+        {
+          "match": "VfB Stuttgart vs Eintracht Frankfurt",
+          "league": "Bundesliga",
+          "date": "2026-01-13T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 14.0 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Borussia Dortmund vs Werder Bremen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 12.9 buts attendus. H2H: 3.2 buts/match"
+        },
+        {
+          "match": "Hamburger SV vs Bayer Leverkusen",
+          "league": "Bundesliga",
+          "date": "2026-01-13T19:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.3,
+          "reasoning": "Moyenne de 10.8 buts attendus. H2H: 2.6 buts/match"
+        },
+        {
+          "match": "Bayeux vs Marseille",
+          "league": "Coupe de France",
+          "date": "2026-01-13T20:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.43,
+          "reasoning": "Risque clean sheet élevé (dom: 35%, ext: 15%)"
+        },
+        {
+          "match": "Deportivo La Coruna vs Atletico Madrid",
+          "league": "Copa del Rey",
+          "date": "2026-01-13T20:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.33,
+          "reasoning": "Match déséquilibré (60 vs 85): clean sheet probable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4854 @@
+{
+  "date": "2026-01-14",
+  "generated_at": "2026-01-13T23:25:25.951713",
+  "total_matches": 60,
+  "predictions": [
+    {
+      "match": "Necaxa vs Monterrey",
+      "league": "Liga MX",
+      "date": "2026-01-14 01:00",
+      "match_description": "Necaxa en excellente forme (WDWWD). écart au classement: Necaxa (1e) vs Monterrey (15e). H2H favorable à Monterrey (8V-1N-1D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Necaxa)",
+      "probabilities": {
+        "home": 44.8,
+        "draw": 31.5,
+        "away": 23.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.6,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Necaxa MT)",
+        "probabilities": {
+          "home": 32.4,
+          "draw": 43.7,
+          "away": 23.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 12.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Necaxa/Necaxa)",
+        "probability": 21.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.0,
+        "home_avg": 6.6,
+        "away_avg": 2.4,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 4.2,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Necaxa: WDWWD",
+        "Forme Monterrey: LLWLW",
+        "Classement: Necaxa 1e vs Monterrey 15e",
+        "H2H: 1V-1N-8D",
+        "Blessures Necaxa: Agustin Oliveros (Injury), A. Oliveros (Shin injury)",
+        "Blessures Monterrey: Esteban Andrada (Bursitis), Esteban Andrada (Bursitis)",
+        "Necaxa: enjeu title"
+      ]
+    },
+    {
+      "match": "Pachuca vs Leon",
+      "league": "Liga MX",
+      "date": "2026-01-14 01:06",
+      "match_description": "Pachuca en difficulté (LLWLL). écart au classement: Leon (3e) vs Pachuca (18e). Enjeu: lutte pour le maintien",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Leon)",
+      "probabilities": {
+        "home": 32.1,
+        "draw": 31.3,
+        "away": 36.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.89,
+        "over_15_prob": 72.9,
+        "over_25_prob": 53.8,
+        "over_35_prob": 36.9,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Pachuca MT)",
+        "probabilities": {
+          "home": 33.0,
+          "draw": 43.6,
+          "away": 23.5
+        },
+        "expected_goals": 1.21,
+        "over_05": "Oui",
+        "over_05_prob": 60.8,
+        "over_15": "Oui",
+        "over_15_prob": 42.8,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.67,
+        "over_05": "Oui",
+        "over_05_prob": 69.1,
+        "over_15": "Oui",
+        "over_15_prob": 51.1
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Pachuca/Pachuca)",
+        "probability": 21.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 3.4,
+        "away_avg": 4.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.8,
+        "expected_total": 5.5,
+        "over_35_prob": 69.5,
+        "over_45_prob": 54.5,
+        "over_55_prob": 39.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Pachuca: LLWLL",
+        "Forme Leon: WLLDL",
+        "Classement: Pachuca 18e vs Leon 3e",
+        "H2H: 4V-3N-3D",
+        "Blessures Leon: A. Blanco (Wirst injury), A. Blanco (Wirst injury)",
+        "Pachuca: enjeu relegation"
+      ]
+    },
+    {
+      "match": "FC Juarez vs Guadalajara Chivas",
+      "league": "Liga MX",
+      "date": "2026-01-14 03:10",
+      "match_description": "match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Guadalajara Chivas)",
+      "probabilities": {
+        "home": 29.2,
+        "draw": 31.5,
+        "away": 39.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 57.3,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Guadalajara Chivas MT)",
+        "probabilities": {
+          "home": 22.5,
+          "draw": 44.8,
+          "away": 32.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Guadalajara Chivas/Guadalajara Chivas)",
+        "probability": 21.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 7.4,
+        "home_avg": 2.6,
+        "away_avg": 4.8,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.9,
+        "expected_total": 4.3,
+        "over_35_prob": 47.6,
+        "over_45_prob": 34.8,
+        "over_55_prob": 22.1,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (60%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme FC Juarez: WDLWL",
+        "Forme Guadalajara Chivas: WLDWW",
+        "Classement: FC Juarez 4e vs Guadalajara Chivas 2e",
+        "H2H: 2V-4N-4D",
+        "FC Juarez: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Al-Qadisiyah FC vs Al-Fayha",
+      "league": "Pro League",
+      "date": "2026-01-14 14:45",
+      "match_description": "Al-Qadisiyah FC en excellente forme (WWWDL). Al-Fayha en crise (DLLDL). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Al-Qadisiyah FC)",
+      "probabilities": {
+        "home": 46.4,
+        "draw": 30.8,
+        "away": 22.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.4,
+        "over_35_prob": 44.4,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Al-Qadisiyah FC MT)",
+        "probabilities": {
+          "home": 37.1,
+          "draw": 46.0,
+          "away": 16.9
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Qadisiyah FC/Al-Qadisiyah FC)",
+        "probability": 23.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 13.2,
+        "home_avg": 8.8,
+        "away_avg": 4.4,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.7,
+        "expected_total": 3.8,
+        "over_35_prob": 53.0,
+        "over_45_prob": 38.0,
+        "over_55_prob": 23.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Qadisiyah FC: WWWDL",
+        "Forme Al-Fayha: DLLDL",
+        "Classement: Al-Qadisiyah FC 5e vs Al-Fayha 12e",
+        "H2H: 2V-1N-3D",
+        "Blessures Al-Fayha: S. Ganvoula (Injury)",
+        "Al-Qadisiyah FC: enjeu europa"
+      ]
+    },
+    {
+      "match": "Senegal vs Egypt",
+      "league": "Africa Cup of Nations",
+      "date": "2026-01-14 17:00",
+      "match_description": "Match équilibré entre Senegal et Egypt. Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Senegal)",
+      "probabilities": {
+        "home": 44.3,
+        "draw": 33.1,
+        "away": 22.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.09,
+        "over_15_prob": 76.6,
+        "over_25_prob": 47.5,
+        "over_35_prob": 40.6,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Senegal MT)",
+        "probabilities": {
+          "home": 32.9,
+          "draw": 48.1,
+          "away": 19.0
+        },
+        "expected_goals": 1.3,
+        "over_05": "Oui",
+        "over_05_prob": 62.4,
+        "over_15": "Oui",
+        "over_15_prob": 44.4,
+        "btts": "Non",
+        "btts_prob": 10.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.79,
+        "over_05": "Oui",
+        "over_05_prob": 71.3,
+        "over_15": "Oui",
+        "over_15_prob": 53.3
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Senegal/Senegal)",
+        "probability": 23.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.2,
+        "home_avg": 6.0,
+        "away_avg": 4.2,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.0,
+        "expected_total": 4.5,
+        "over_35_prob": 57.5,
+        "over_45_prob": 42.5,
+        "over_55_prob": 27.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Senegal: WDW",
+        "Forme Egypt: DWW",
+        "Classement: Senegal 1e vs Egypt 1e",
+        "H2H: 2V-0N-1D",
+        "Senegal: enjeu title"
+      ]
+    },
+    {
+      "match": "Napoli vs Parma",
+      "league": "Serie A",
+      "date": "2026-01-14 17:30",
+      "match_description": "écart au classement: Napoli (3e) vs Parma (14e). H2H favorable à Napoli (6V-2N-2D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Napoli)",
+      "probabilities": {
+        "home": 51.1,
+        "draw": 29.8,
+        "away": 19.2
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.83,
+        "over_15_prob": 71.9,
+        "over_25_prob": 52.0,
+        "over_35_prob": 35.9,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Napoli MT)",
+        "probabilities": {
+          "home": 46.3,
+          "draw": 41.6,
+          "away": 12.1
+        },
+        "expected_goals": 1.19,
+        "over_05": "Oui",
+        "over_05_prob": 60.4,
+        "over_15": "Oui",
+        "over_15_prob": 42.4,
+        "btts": "Non",
+        "btts_prob": 9.8,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.64,
+        "over_05": "Oui",
+        "over_05_prob": 68.5,
+        "over_15": "Oui",
+        "over_15_prob": 50.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Napoli/Napoli)",
+        "probability": 32.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 5.2,
+        "away_avg": 4.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.6,
+        "expected_total": 3.6,
+        "over_35_prob": 51.9,
+        "over_45_prob": 37.0,
+        "over_55_prob": 21.9,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (67%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Napoli: DDWWL",
+        "Forme Parma: WLDWL",
+        "Classement: Napoli 3e vs Parma 14e",
+        "H2H: 6V-2N-2D",
+        "Blessures Napoli: Amir Rrahmani (Wound), R. Lukaku (Thigh problems)",
+        "Blessures Parma: J. Ondrejka (Leg Injury), J. Ondrejka (Leg Injury)",
+        "Napoli: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "VfL Wolfsburg vs FC St. Pauli",
+      "league": "Bundesliga",
+      "date": "2026-01-14 17:30",
+      "match_description": "Match équilibré entre VfL Wolfsburg et FC St. Pauli",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (VfL Wolfsburg)",
+      "probabilities": {
+        "home": 41.6,
+        "draw": 28.5,
+        "away": 30.0
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.96,
+        "over_15_prob": 74.3,
+        "over_25_prob": 53.2,
+        "over_35_prob": 38.3,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (VfL Wolfsburg MT)",
+        "probabilities": {
+          "home": 35.4,
+          "draw": 42.6,
+          "away": 22.0
+        },
+        "expected_goals": 1.24,
+        "over_05": "Oui",
+        "over_05_prob": 61.4,
+        "over_15": "Oui",
+        "over_15_prob": 43.4,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.72,
+        "over_05": "Oui",
+        "over_05_prob": 69.9,
+        "over_15": "Oui",
+        "over_15_prob": 51.9
+      },
+      "ht_ft": {
+        "prediction": "1/1 (VfL Wolfsburg/VfL Wolfsburg)",
+        "probability": 20.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 6.2,
+        "home_avg": 1.6,
+        "away_avg": 4.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.4,
+        "expected_total": 3.5,
+        "over_35_prob": 41.2,
+        "over_45_prob": 28.5,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (54%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme VfL Wolfsburg: LLWWD",
+        "Forme FC St. Pauli: DWDLL",
+        "Classement: VfL Wolfsburg 14e vs FC St. Pauli 16e",
+        "H2H: 0V-4N-0D",
+        "Blessures VfL Wolfsburg: Rogerio (Muscular problems), Kevin Paredes (Foot surgery)",
+        "Blessures FC St. Pauli: Karol Mets (Patellar tendon problems), Jackson Irvine (Foot surgery)"
+      ]
+    },
+    {
+      "match": "Al-Ahli Jeddah vs Al Taawon",
+      "league": "Pro League",
+      "date": "2026-01-14 17:30",
+      "match_description": "Al-Ahli Jeddah en excellente forme (WWWLW). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Al-Ahli Jeddah)",
+      "probabilities": {
+        "home": 43.8,
+        "draw": 30.8,
+        "away": 25.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.4,
+        "over_35_prob": 44.4,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Al-Ahli Jeddah MT)",
+        "probabilities": {
+          "home": 35.0,
+          "draw": 46.0,
+          "away": 18.9
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Al-Ahli Jeddah/Al-Ahli Jeddah)",
+        "probability": 21.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 4.4,
+        "away_avg": 5.2,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.7,
+        "expected_total": 5.2,
+        "over_35_prob": 57.8,
+        "over_45_prob": 45.1,
+        "over_55_prob": 32.3,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +3.5 (58%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al-Ahli Jeddah: WWWLW",
+        "Forme Al Taawon: WLWWD",
+        "Classement: Al-Ahli Jeddah 4e vs Al Taawon 3e",
+        "H2H: 5V-2N-3D",
+        "Al-Ahli Jeddah: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Al Shabab vs NEOM",
+      "league": "Pro League",
+      "date": "2026-01-14 17:30",
+      "match_description": "Al Shabab en difficulté (LLLLD)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (NEOM)",
+      "probabilities": {
+        "home": 27.2,
+        "draw": 32.4,
+        "away": 40.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.92,
+        "over_15_prob": 73.6,
+        "over_25_prob": 53.5,
+        "over_35_prob": 37.6,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (NEOM MT)",
+        "probabilities": {
+          "home": 25.4,
+          "draw": 44.6,
+          "away": 30.0
+        },
+        "expected_goals": 1.23,
+        "over_05": "Oui",
+        "over_05_prob": 61.1,
+        "over_15": "Oui",
+        "over_15_prob": 43.1,
+        "btts": "Non",
+        "btts_prob": 12.0,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.69,
+        "over_05": "Oui",
+        "over_05_prob": 69.5,
+        "over_15": "Oui",
+        "over_15_prob": 51.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (NEOM/NEOM)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 4.8,
+        "away_avg": 4.8,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.7,
+        "expected_total": 5.3,
+        "over_35_prob": 68.0,
+        "over_45_prob": 53.0,
+        "over_55_prob": 38.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Shabab: LLLLD",
+        "Forme NEOM: LWLWD",
+        "Classement: Al Shabab 16e vs NEOM 9e",
+        "H2H: 2V-1N-2D",
+        "Al Shabab: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "1. FC Köln vs Bayern München",
+      "league": "Bundesliga",
+      "date": "2026-01-14 19:30",
+      "match_description": "Bayern München en pleine confiance (WWDWW). écart au classement: Bayern München (1e) vs 1. FC Köln (11e). H2H favorable à Bayern München (8V-1N-1D). match à buts attendu (4.1 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "2 (Bayern München)",
+      "probabilities": {
+        "home": 20.4,
+        "draw": 31.0,
+        "away": 48.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.1,
+        "over_15_prob": 80.0,
+        "over_25_prob": 76.5,
+        "over_35_prob": 58.8,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-4",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Bayern München MT)",
+        "probabilities": {
+          "home": 14.4,
+          "draw": 37.8,
+          "away": 47.8
+        },
+        "expected_goals": 1.72,
+        "over_05": "Oui",
+        "over_05_prob": 70.0,
+        "over_15": "Oui",
+        "over_15_prob": 52.0,
+        "btts": "Non",
+        "btts_prob": 12.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.38,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 63.8
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Bayern München/Bayern München)",
+        "probability": 32.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.6,
+        "home_avg": 3.0,
+        "away_avg": 6.6,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.3,
+        "expected_total": 3.4,
+        "over_35_prob": 47.0,
+        "over_45_prob": 32.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme 1. FC Köln: DLLDD",
+        "Forme Bayern München: WWDWW",
+        "Classement: 1. FC Köln 11e vs Bayern München 1e",
+        "H2H: 1V-1N-8D",
+        "Blessures 1. FC Köln: Julian Pauli (Ankle Injury), Jacob Christensen (Injured Doubtful)",
+        "Blessures Bayern München: Hiroki Ito (Injury), Kingsley Coman (Injury)"
+      ]
+    },
+    {
+      "match": "1899 Hoffenheim vs Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "date": "2026-01-14 19:30",
+      "match_description": "match à buts attendu (4.1 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (1899 Hoffenheim)",
+      "probabilities": {
+        "home": 35.3,
+        "draw": 31.0,
+        "away": 33.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.09,
+        "over_15_prob": 80.0,
+        "over_25_prob": 68.5,
+        "over_35_prob": 58.7,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (1899 Hoffenheim MT)",
+        "probabilities": {
+          "home": 33.5,
+          "draw": 42.4,
+          "away": 24.1
+        },
+        "expected_goals": 1.72,
+        "over_05": "Oui",
+        "over_05_prob": 69.9,
+        "over_15": "Oui",
+        "over_15_prob": 51.9,
+        "btts": "Non",
+        "btts_prob": 13.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.37,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 63.7
+      },
+      "ht_ft": {
+        "prediction": "1/1 (1899 Hoffenheim/1899 Hoffenheim)",
+        "probability": 20.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.8,
+        "home_avg": 4.2,
+        "away_avg": 4.6,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.7,
+        "expected_total": 2.8,
+        "over_35_prob": 38.0,
+        "over_45_prob": 23.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (53%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme 1899 Hoffenheim: DWLWD",
+        "Forme Borussia Mönchengladbach: WLLWD",
+        "Classement: 1899 Hoffenheim 6e vs Borussia Mönchengladbach 10e",
+        "H2H: 3V-2N-5D",
+        "Blessures 1899 Hoffenheim: Ozan Kabak (Ruptured cruciate ligament), Adam Hlozek (Navicular Bone Fracture)",
+        "Blessures Borussia Mönchengladbach: Tim Kleindienst (Meniscus injur), Shuto Machino (Calf Problems)",
+        "1899 Hoffenheim: enjeu europa"
+      ]
+    },
+    {
+      "match": "RB Leipzig vs SC Freiburg",
+      "league": "Bundesliga",
+      "date": "2026-01-14 19:30",
+      "match_description": "SC Freiburg en pleine confiance (WWDLW). H2H favorable à RB Leipzig (7V-3N-0D). match à buts attendu (4.0 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (RB Leipzig)",
+      "probabilities": {
+        "home": 46.2,
+        "draw": 31.0,
+        "away": 22.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 4.03,
+        "over_15_prob": 80.0,
+        "over_25_prob": 67.9,
+        "over_35_prob": 57.6,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (RB Leipzig MT)",
+        "probabilities": {
+          "home": 39.1,
+          "draw": 41.7,
+          "away": 19.2
+        },
+        "expected_goals": 1.69,
+        "over_05": "Oui",
+        "over_05_prob": 69.5,
+        "over_15": "Oui",
+        "over_15_prob": 51.5,
+        "btts": "Non",
+        "btts_prob": 12.9,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.34,
+        "over_05": "Oui",
+        "over_05_prob": 80.0,
+        "over_15": "Oui",
+        "over_15_prob": 63.1
+      },
+      "ht_ft": {
+        "prediction": "1/1 (RB Leipzig/RB Leipzig)",
+        "probability": 25.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 11.0,
+        "home_avg": 6.2,
+        "away_avg": 4.8,
+        "over_85_prob": 60.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.3,
+        "expected_total": 3.4,
+        "over_35_prob": 39.9,
+        "over_45_prob": 27.2,
+        "over_55_prob": 17.0,
+        "red_card_prob": 21.2,
+        "recommendation": "Cartons +2.5 (53%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme RB Leipzig: LLWDW",
+        "Forme SC Freiburg: WWDLW",
+        "Classement: RB Leipzig 3e vs SC Freiburg 8e",
+        "H2H: 7V-3N-0D",
+        "Blessures RB Leipzig: Tidiam Gomis (Inner ligament injury), Lukas Klostermann (Injured Doubtful)",
+        "Blessures SC Freiburg: Daniel Kofi Kyereh (fitness), Max Rosenfelder (Hamstring Injury)",
+        "RB Leipzig: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Inter vs Lecce",
+      "league": "Serie A",
+      "date": "2026-01-14 19:45",
+      "match_description": "Inter en excellente forme (DWWWW). Lecce en crise (LLDLW). écart au classement: Inter (1e) vs Lecce (17e). H2H favorable à Inter (8V-1N-1D). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "ÉLEVÉ",
+      "result_1x2": "1 (Inter)",
+      "probabilities": {
+        "home": 58.2,
+        "draw": 30.1,
+        "away": 11.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.37,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.9,
+        "over_35_prob": 45.7,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Inter MT)",
+        "probabilities": {
+          "home": 54.9,
+          "draw": 37.6,
+          "away": 7.4
+        },
+        "expected_goals": 1.42,
+        "over_05": "Oui",
+        "over_05_prob": 64.5,
+        "over_15": "Oui",
+        "over_15_prob": 46.5,
+        "btts": "Non",
+        "btts_prob": 8.8,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.96,
+        "over_05": "Oui",
+        "over_05_prob": 74.2,
+        "over_15": "Oui",
+        "over_15_prob": 56.2
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Inter/Inter)",
+        "probability": 41.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.8,
+        "home_avg": 5.4,
+        "away_avg": 4.4,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.1,
+        "expected_total": 3.9,
+        "over_35_prob": 58.6,
+        "over_45_prob": 43.6,
+        "over_55_prob": 28.6,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Inter: DWWWW",
+        "Forme Lecce: LLDLW",
+        "Classement: Inter 1e vs Lecce 17e",
+        "H2H: 8V-1N-1D",
+        "Blessures Inter: Hakan Calhanoglu (Red card Suspended), Federico Dimarco (injured)",
+        "Blessures Lecce: Lameck Banda (Red card Suspended), F. Marchwiński (Jumpers knee)",
+        "Inter: enjeu title"
+      ]
+    },
+    {
+      "match": "Chelsea vs Arsenal",
+      "league": "League Cup",
+      "date": "2026-01-14 20:00",
+      "match_description": "H2H favorable à Arsenal (6V-3N-1D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Arsenal)",
+      "probabilities": {
+        "home": 30.3,
+        "draw": 31.5,
+        "away": 38.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 58.0,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 24.6,
+          "draw": 44.8,
+          "away": 30.6
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 14.8,
+        "score_exact": "1-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+9.5",
+        "expected": 10.7,
+        "home_avg": 3.7,
+        "away_avg": 7.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +9.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.2,
+        "expected_total": 5.6,
+        "over_35_prob": 63.8,
+        "over_45_prob": 51.0,
+        "over_55_prob": 38.3,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +4.5 (51%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 1V-3N-6D",
+        "Blessures Chelsea: Nicolas Jackson (Suspension), Oluwatosin Adarabioyo (Injured Doubtful)",
+        "Blessures Arsenal: Leandro Trossard (Injured Doubtful), Riccardo Calafiori (Bruise on the knee)"
+      ]
+    },
+    {
+      "match": "Alaves vs Rayo Vallecano",
+      "league": "Copa del Rey",
+      "date": "2026-01-14 20:00",
+      "match_description": "H2H favorable à Rayo Vallecano (6V-0N-3D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Alaves)",
+      "probabilities": {
+        "home": 38.8,
+        "draw": 29.2,
+        "away": 32.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 51.1,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-3",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Rayo Vallecano MT)",
+        "probabilities": {
+          "home": 30.0,
+          "draw": 46.3,
+          "away": 23.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Rayo Vallecano/Rayo Vallecano)",
+        "probability": 20.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 18.0,
+        "home_avg": 7.0,
+        "away_avg": 11.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 40.0,
+        "recommendation": "Corners +10.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.3,
+        "expected_total": 3.3,
+        "over_35_prob": 47.5,
+        "over_45_prob": 32.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 3V-0N-6D",
+        "Blessures Alaves: Hugo Novoa (Ankle problems), Hugo Novoa (Ankle problems)",
+        "Blessures Rayo Vallecano: Oscar Valentín (Injured Doubtful), A. Mumin (Jumpers knee)"
+      ]
+    },
+    {
+      "match": "Albacete vs Real Madrid",
+      "league": "Copa del Rey",
+      "date": "2026-01-14 20:00",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Albacete)",
+      "probabilities": {
+        "home": 39.4,
+        "draw": 29.7,
+        "away": 30.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 67.8,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 55.0,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Albacete MT)",
+        "probabilities": {
+          "home": 21.1,
+          "draw": 37.9,
+          "away": 41.1
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 19.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Albacete/Albacete)",
+        "probability": 18.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 16.0,
+        "home_avg": 5.0,
+        "away_avg": 11.0,
+        "over_85_prob": 48.0,
+        "over_95_prob": 40.0,
+        "over_105_prob": 32.0,
+        "recommendation": "Corners +10.5 (32%) ~"
+      },
+      "cards": {
+        "expected_yellow": 2.0,
+        "expected_total": 2.0,
+        "over_35_prob": 27.5,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (42%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Albacete: Pepe Sánchez (Wound), Pepe Sánchez (Wound)",
+        "Blessures Real Madrid: Antonio Rudiger (Suspension), Endrick (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "Real Betis vs Elche",
+      "league": "Copa del Rey",
+      "date": "2026-01-14 20:00",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Real Betis)",
+      "probabilities": {
+        "home": 45.8,
+        "draw": 30.9,
+        "away": 23.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.3,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "4-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Real Betis MT)",
+        "probabilities": {
+          "home": 40.4,
+          "draw": 42.5,
+          "away": 17.1
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 15.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Real Betis/Real Betis)",
+        "probability": 25.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.0,
+        "home_avg": 6.0,
+        "away_avg": 3.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.2,
+        "expected_total": 3.2,
+        "over_35_prob": 38.3,
+        "over_45_prob": 25.5,
+        "over_55_prob": 17.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (51%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 4V-3N-2D",
+        "Blessures Real Betis: Diego Javier Llorente Rios (Injured Doubtful), Marc Roca (Injured Doubtful)",
+        "Blessures Elche: Adam Boayar (Wound), Adam Boayar (Wound)"
+      ]
+    },
+    {
+      "match": "Nigeria vs Morocco",
+      "league": "Africa Cup of Nations",
+      "date": "2026-01-14 20:00",
+      "match_description": "Match équilibré entre Nigeria et Morocco. Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Morocco)",
+      "probabilities": {
+        "home": 29.8,
+        "draw": 32.9,
+        "away": 37.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.2,
+        "over_15_prob": 78.6,
+        "over_25_prob": 50.3,
+        "over_35_prob": 42.6,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Nigeria MT)",
+        "probabilities": {
+          "home": 22.5,
+          "draw": 47.5,
+          "away": 29.9
+        },
+        "expected_goals": 1.34,
+        "over_05": "Oui",
+        "over_05_prob": 63.2,
+        "over_15": "Oui",
+        "over_15_prob": 45.2,
+        "btts": "Non",
+        "btts_prob": 10.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.86,
+        "over_05": "Oui",
+        "over_05_prob": 72.4,
+        "over_15": "Oui",
+        "over_15_prob": 54.4
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Nigeria/Nigeria)",
+        "probability": 23.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.8,
+        "home_avg": 4.4,
+        "away_avg": 5.4,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (40%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.0,
+        "expected_total": 4.0,
+        "over_35_prob": 57.5,
+        "over_45_prob": 42.5,
+        "over_55_prob": 27.5,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +3.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Nigeria: WWW",
+        "Forme Morocco: WDW",
+        "Classement: Nigeria 1e vs Morocco 1e",
+        "H2H: 1V-0N-1D",
+        "Nigeria: enjeu title"
+      ]
+    },
+    {
+      "match": "Cruz Azul vs Atlas",
+      "league": "Liga MX",
+      "date": "2026-01-14 23:00",
+      "match_description": "Match équilibré entre Cruz Azul et Atlas. Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Cruz Azul)",
+      "probabilities": {
+        "home": 44.7,
+        "draw": 30.7,
+        "away": 24.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.32,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.9,
+        "over_35_prob": 44.8,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Cruz Azul MT)",
+        "probabilities": {
+          "home": 43.5,
+          "draw": 40.7,
+          "away": 15.8
+        },
+        "expected_goals": 1.4,
+        "over_05": "Oui",
+        "over_05_prob": 64.1,
+        "over_15": "Oui",
+        "over_15_prob": 46.1,
+        "btts": "Non",
+        "btts_prob": 11.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.93,
+        "over_05": "Oui",
+        "over_05_prob": 73.7,
+        "over_15": "Oui",
+        "over_15_prob": 55.7
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Cruz Azul/Cruz Azul)",
+        "probability": 27.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 5.2,
+        "away_avg": 2.8,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.7,
+        "expected_total": 4.8,
+        "over_35_prob": 68.0,
+        "over_45_prob": 53.0,
+        "over_55_prob": 38.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +3.5 (68%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Cruz Azul: LDDWD",
+        "Forme Atlas: WLDLW",
+        "Classement: Cruz Azul 13e vs Atlas 6e",
+        "H2H: 3V-4N-3D",
+        "Blessures Cruz Azul: A. Montaño (Jumpers knee), A. Montaño (Jumpers knee)",
+        "Blessures Atlas: É. Zaldívar (Jumpers knee), É. Zaldívar (Jumpers knee)"
+      ]
+    },
+    {
+      "match": "Capivariano vs Portuguesa",
+      "league": "Paulista - A1",
+      "date": "2026-01-14 00:30",
+      "match_description": "Match équilibré entre Capivariano et Portuguesa",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Portuguesa)",
+      "probabilities": {
+        "home": 28.9,
+        "draw": 33.2,
+        "away": 37.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.47,
+        "over_15_prob": 65.5,
+        "over_25_prob": 43.2,
+        "over_35_prob": 29.5,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 23.9,
+          "draw": 47.8,
+          "away": 28.3
+        },
+        "expected_goals": 1.04,
+        "over_05": "Oui",
+        "over_05_prob": 57.7,
+        "over_15": "Non",
+        "over_15_prob": 39.7,
+        "btts": "Non",
+        "btts_prob": 10.8,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.8,
+        "over_15": "Oui",
+        "over_15_prob": 46.8
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 24.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.0,
+        "home_avg": 5.0,
+        "away_avg": 4.0,
+        "over_85_prob": 32.0,
+        "over_95_prob": 17.6,
+        "over_105_prob": 16.0,
+        "recommendation": "Corners +7.5 (48%) ~"
+      },
+      "cards": {
+        "expected_yellow": 3.7,
+        "expected_total": 4.0,
+        "over_35_prob": 45.1,
+        "over_45_prob": 32.3,
+        "over_55_prob": 19.6,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (58%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Portuguesa: DDDDW",
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "Aliağa FAŞ vs Samsunspor",
+      "league": "Türkiye Kupası",
+      "date": "2026-01-14 10:00",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Aliağa FAŞ)",
+      "probabilities": {
+        "home": 39.7,
+        "draw": 30.2,
+        "away": 30.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 63.0,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 53.3,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Aliağa FAŞ MT)",
+        "probabilities": {
+          "home": 22.1,
+          "draw": 40.2,
+          "away": 37.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 18.6,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Aliağa FAŞ/Aliağa FAŞ)",
+        "probability": 19.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.4,
+        "expected_total": 1.6,
+        "over_35_prob": 20.0,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (34%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Samsunspor: Anthony Musaba (Hamstring Injury), Anthony Musaba (Hamstring Injury)"
+      ]
+    },
+    {
+      "match": "Antalyaspor vs Genclerbirligi",
+      "league": "Türkiye Kupası",
+      "date": "2026-01-14 12:30",
+      "match_description": "H2H favorable à Antalyaspor (5V-3N-2D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Antalyaspor)",
+      "probabilities": {
+        "home": 43.2,
+        "draw": 31.4,
+        "away": 25.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 56.7,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-3",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Genclerbirligi MT)",
+        "probabilities": {
+          "home": 30.8,
+          "draw": 45.3,
+          "away": 23.9
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.6,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Genclerbirligi/Genclerbirligi)",
+        "probability": 21.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.0,
+        "expected_total": 2.0,
+        "over_35_prob": 27.5,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (42%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 5V-3N-2D",
+        "Blessures Antalyaspor: Erdogan Yesilyurt (fitness), Bahadir Ozturk (Unknown Injury)",
+        "Blessures Genclerbirligi: Henry Chukwuemeka Onyekuru (fitness), H. Onyekuru (Wound)"
+      ]
+    },
+    {
+      "match": "Levadiakos vs Kifisia",
+      "league": "Cup",
+      "date": "2026-01-14 13:00",
+      "match_description": "Match équilibré entre Levadiakos et Kifisia",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Levadiakos)",
+      "probabilities": {
+        "home": 47.1,
+        "draw": 31.4,
+        "away": 21.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.02,
+        "over_15_prob": 75.3,
+        "over_25_prob": 55.0,
+        "over_35_prob": 39.3,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Levadiakos MT)",
+        "probabilities": {
+          "home": 40.0,
+          "draw": 43.1,
+          "away": 16.9
+        },
+        "expected_goals": 1.27,
+        "over_05": "Oui",
+        "over_05_prob": 61.8,
+        "over_15": "Oui",
+        "over_15_prob": 43.8,
+        "btts": "Non",
+        "btts_prob": 17.5,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.75,
+        "over_05": "Oui",
+        "over_05_prob": 70.5,
+        "over_15": "Oui",
+        "over_15_prob": 52.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Levadiakos/Levadiakos)",
+        "probability": 26.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+10.5",
+        "expected": 12.0,
+        "home_avg": 7.0,
+        "away_avg": 5.0,
+        "over_85_prob": 60.0,
+        "over_95_prob": 50.0,
+        "over_105_prob": 30.0,
+        "recommendation": "Corners +10.5 (30%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.8,
+        "expected_total": 5.8,
+        "over_35_prob": 84.5,
+        "over_45_prob": 69.5,
+        "over_55_prob": 54.5,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +4.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-3N-0D"
+      ]
+    },
+    {
+      "match": "El Kanemi Warriors vs Bayelsa United",
+      "league": "NPFL",
+      "date": "2026-01-14 14:00",
+      "match_description": "Match équilibré entre El Kanemi Warriors et Bayelsa United",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (El Kanemi Warriors)",
+      "probabilities": {
+        "home": 42.2,
+        "draw": 31.1,
+        "away": 26.6
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.23,
+        "over_15_prob": 61.2,
+        "over_25_prob": 43.2,
+        "over_35_prob": 25.2,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0",
+        "clean_sheet": "El Kanemi Warriors gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (El Kanemi Warriors MT)",
+        "probabilities": {
+          "home": 33.7,
+          "draw": 46.4,
+          "away": 19.9
+        },
+        "expected_goals": 0.94,
+        "over_05": "Oui",
+        "over_05_prob": 55.9,
+        "over_15": "Non",
+        "over_15_prob": 37.9,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.3,
+        "over_05": "Oui",
+        "over_05_prob": 62.3,
+        "over_15": "Non",
+        "over_15_prob": 44.3
+      },
+      "ht_ft": {
+        "prediction": "1/1 (El Kanemi Warriors/El Kanemi Warriors)",
+        "probability": 21.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.9,
+        "expected_total": 2.1,
+        "over_35_prob": 26.0,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (41%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme El Kanemi Warriors: WLWLD",
+        "Forme Bayelsa United: WLLWD",
+        "Classement: El Kanemi Warriors 16e vs Bayelsa United 11e",
+        "H2H: 1V-1N-1D",
+        "El Kanemi Warriors: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Barau FC vs Niger Tornadoes",
+      "league": "NPFL",
+      "date": "2026-01-14 14:30",
+      "match_description": "Match équilibré entre Barau FC et Niger Tornadoes",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Niger Tornadoes)",
+      "probabilities": {
+        "home": 29.0,
+        "draw": 31.1,
+        "away": 39.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.58,
+        "over_15_prob": 67.4,
+        "over_25_prob": 49.4,
+        "over_35_prob": 31.4,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 23.3,
+          "draw": 46.8,
+          "away": 29.9
+        },
+        "expected_goals": 1.08,
+        "over_05": "Oui",
+        "over_05_prob": 58.5,
+        "over_15": "Oui",
+        "over_15_prob": 40.5,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.5,
+        "over_05": "Oui",
+        "over_05_prob": 65.9,
+        "over_15": "Oui",
+        "over_15_prob": 47.9
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.6,
+        "expected_total": 2.7,
+        "over_35_prob": 31.0,
+        "over_45_prob": 18.3,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (44%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Niger Tornadoes: WWDLD",
+        "H2H: 0V-0N-1D"
+      ]
+    },
+    {
+      "match": "Remo Stars vs Ikorodu City",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "Match équilibré entre Remo Stars et Ikorodu City. Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Remo Stars)",
+      "probabilities": {
+        "home": 40.6,
+        "draw": 28.4,
+        "away": 31.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.99,
+        "over_15_prob": 74.8,
+        "over_25_prob": 56.8,
+        "over_35_prob": 38.8,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 33.1,
+          "draw": 43.2,
+          "away": 23.7
+        },
+        "expected_goals": 1.25,
+        "over_05": "Oui",
+        "over_05_prob": 61.6,
+        "over_15": "Oui",
+        "over_15_prob": 43.6,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.73,
+        "over_05": "Oui",
+        "over_05_prob": 70.2,
+        "over_15": "Oui",
+        "over_15_prob": 52.2
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 19.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.7,
+        "expected_total": 2.8,
+        "over_35_prob": 38.0,
+        "over_45_prob": 23.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (53%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Remo Stars: LWLWW",
+        "Forme Ikorodu City: WLWLD",
+        "Classement: Remo Stars 1e vs Ikorodu City 4e",
+        "H2H: 1V-1N-1D",
+        "Remo Stars: enjeu title"
+      ]
+    },
+    {
+      "match": "Shooting Stars vs Enyimba",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "H2H favorable à Enyimba (5V-3N-2D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Enyimba)",
+      "probabilities": {
+        "home": 33.7,
+        "draw": 31.5,
+        "away": 34.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.67,
+        "over_15_prob": 69.1,
+        "over_25_prob": 44.3,
+        "over_35_prob": 33.1,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 33.5,
+          "draw": 46.0,
+          "away": 20.5
+        },
+        "expected_goals": 1.12,
+        "over_05": "Oui",
+        "over_05_prob": 59.2,
+        "over_15": "Oui",
+        "over_15_prob": 41.2,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.55,
+        "over_05": "Oui",
+        "over_05_prob": 66.9,
+        "over_15": "Oui",
+        "over_15_prob": 48.9
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.7,
+        "expected_total": 2.7,
+        "over_35_prob": 38.0,
+        "over_45_prob": 23.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (53%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Shooting Stars: WLWLL",
+        "Forme Enyimba: LLWWW",
+        "Classement: Shooting Stars 8e vs Enyimba 6e",
+        "H2H: 2V-3N-5D"
+      ]
+    },
+    {
+      "match": "Kwara United vs Bendel Insurance",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "H2H favorable à Bendel Insurance (4V-5N-0D). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Bendel Insurance)",
+      "probabilities": {
+        "home": 30.0,
+        "draw": 31.1,
+        "away": 38.8
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.74,
+        "over_15_prob": 70.3,
+        "over_25_prob": 52.3,
+        "over_35_prob": 34.3,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 24.1,
+          "draw": 46.7,
+          "away": 29.1
+        },
+        "expected_goals": 1.15,
+        "over_05": "Oui",
+        "over_05_prob": 59.7,
+        "over_15": "Oui",
+        "over_15_prob": 41.7,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.59,
+        "over_05": "Oui",
+        "over_05_prob": 67.6,
+        "over_15": "Oui",
+        "over_15_prob": 49.6
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.5,
+        "expected_total": 1.7,
+        "over_35_prob": 20.0,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (34%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Kwara United: LWLWD",
+        "Forme Bendel Insurance: LWWLD",
+        "Classement: Kwara United 14e vs Bendel Insurance 5e",
+        "H2H: 0V-5N-4D"
+      ]
+    },
+    {
+      "match": "Wikki Tourist vs Warri Wolves",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "Match équilibré entre Wikki Tourist et Warri Wolves",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Warri Wolves)",
+      "probabilities": {
+        "home": 33.1,
+        "draw": 31.1,
+        "away": 35.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.36,
+        "over_15_prob": 63.5,
+        "over_25_prob": 45.5,
+        "over_35_prob": 27.5,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 26.6,
+          "draw": 46.7,
+          "away": 26.7
+        },
+        "expected_goals": 0.99,
+        "over_05": "Oui",
+        "over_05_prob": 56.8,
+        "over_15": "Non",
+        "over_15_prob": 38.8,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.37,
+        "over_05": "Oui",
+        "over_05_prob": 63.6,
+        "over_15": "Oui",
+        "over_15_prob": 45.6
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.2,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 24.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-3N-2D"
+      ]
+    },
+    {
+      "match": "Abia Warriors vs Plateau United",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "Plateau United en pleine confiance (WWLWW). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Abia Warriors)",
+      "probabilities": {
+        "home": 45.4,
+        "draw": 31.0,
+        "away": 23.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.63,
+        "over_15_prob": 68.3,
+        "over_25_prob": 44.6,
+        "over_35_prob": 32.3,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Abia Warriors MT)",
+        "probabilities": {
+          "home": 41.2,
+          "draw": 45.0,
+          "away": 13.8
+        },
+        "expected_goals": 1.1,
+        "over_05": "Oui",
+        "over_05_prob": 58.9,
+        "over_15": "Oui",
+        "over_15_prob": 40.9,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.52,
+        "over_05": "Oui",
+        "over_05_prob": 66.4,
+        "over_15": "Oui",
+        "over_15_prob": 48.4
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Abia Warriors/Abia Warriors)",
+        "probability": 25.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.1,
+        "expected_total": 3.3,
+        "over_35_prob": 44.0,
+        "over_45_prob": 29.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (59%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Abia Warriors: LWDWL",
+        "Forme Plateau United: WWLWW",
+        "Classement: Abia Warriors 3e vs Plateau United 7e",
+        "H2H: 5V-1N-4D",
+        "Abia Warriors: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Enugu Rangers vs Rivers United",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "H2H favorable à Rivers United (6V-2N-2D). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Rivers United)",
+      "probabilities": {
+        "home": 30.4,
+        "draw": 31.7,
+        "away": 37.9
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.2,
+        "over_15_prob": 60.6,
+        "over_25_prob": 40.0,
+        "over_35_prob": 24.6,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 30.1,
+          "draw": 46.7,
+          "away": 23.1
+        },
+        "expected_goals": 0.92,
+        "over_05": "Oui",
+        "over_05_prob": 55.6,
+        "over_15": "Non",
+        "over_15_prob": 37.6,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.27,
+        "over_05": "Oui",
+        "over_05_prob": 61.9,
+        "over_15": "Non",
+        "over_15_prob": 43.9
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.2,
+        "expected_total": 2.2,
+        "over_35_prob": 25.5,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (38%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Enugu Rangers: LWLLW",
+        "Forme Rivers United: WLWLW",
+        "Classement: Enugu Rangers 10e vs Rivers United 2e",
+        "H2H: 2V-2N-6D"
+      ]
+    },
+    {
+      "match": "Nasarawa United vs Kano Pillars",
+      "league": "NPFL",
+      "date": "2026-01-14 15:00",
+      "match_description": "Match équilibré entre Nasarawa United et Kano Pillars",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Nasarawa United)",
+      "probabilities": {
+        "home": 36.5,
+        "draw": 31.0,
+        "away": 32.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.17,
+        "over_15_prob": 60.0,
+        "over_25_prob": 41.0,
+        "over_35_prob": 24.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 37.9,
+          "draw": 44.9,
+          "away": 17.2
+        },
+        "expected_goals": 0.91,
+        "over_05": "Oui",
+        "over_05_prob": 55.4,
+        "over_15": "Non",
+        "over_15_prob": 37.4,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.26,
+        "over_05": "Oui",
+        "over_05_prob": 61.6,
+        "over_15": "Non",
+        "over_15_prob": 43.6
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 21.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.4,
+        "expected_total": 1.6,
+        "over_35_prob": 20.0,
+        "over_45_prob": 20.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (34%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Nasarawa United: LWWWD",
+        "Forme Kano Pillars: LWLWL",
+        "Classement: Nasarawa United 12e vs Kano Pillars 9e",
+        "H2H: 2V-5N-3D"
+      ]
+    },
+    {
+      "match": "İstanbulspor vs Trabzonspor",
+      "league": "Türkiye Kupası",
+      "date": "2026-01-14 15:00",
+      "match_description": "H2H favorable à Trabzonspor (4V-0N-0D). match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Trabzonspor)",
+      "probabilities": {
+        "home": 33.4,
+        "draw": 27.9,
+        "away": 38.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 63.5,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (İstanbulspor MT)",
+        "probabilities": {
+          "home": 19.9,
+          "draw": 38.9,
+          "away": 41.3
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.6,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (İstanbulspor/İstanbulspor)",
+        "probability": 23.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 0V-0N-4D",
+        "Blessures İstanbulspor: Baran Vardar (Cancer), Baran Vardar (Cancer)",
+        "Blessures Trabzonspor: Cihan Canak (Muscle Injury), Rayyan Baniya (Unknown Injury)"
+      ]
+    },
+    {
+      "match": "AEK Athens FC vs OFI",
+      "league": "Cup",
+      "date": "2026-01-14 15:00",
+      "match_description": "H2H favorable à AEK Athens FC (8V-0N-2D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (AEK Athens FC)",
+      "probabilities": {
+        "home": 51.6,
+        "draw": 29.5,
+        "away": 18.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.16,
+        "over_15_prob": 77.9,
+        "over_25_prob": 59.0,
+        "over_35_prob": 41.9,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (AEK Athens FC MT)",
+        "probabilities": {
+          "home": 49.2,
+          "draw": 39.2,
+          "away": 11.6
+        },
+        "expected_goals": 1.33,
+        "over_05": "Oui",
+        "over_05_prob": 62.9,
+        "over_15": "Oui",
+        "over_15_prob": 44.9,
+        "btts": "Non",
+        "btts_prob": 9.5,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.83,
+        "over_05": "Oui",
+        "over_05_prob": 72.0,
+        "over_15": "Oui",
+        "over_15_prob": 54.0
+      },
+      "ht_ft": {
+        "prediction": "1/1 (AEK Athens FC/AEK Athens FC)",
+        "probability": 34.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.3,
+        "expected_total": 4.3,
+        "over_35_prob": 52.7,
+        "over_45_prob": 39.9,
+        "over_55_prob": 27.2,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +3.5 (53%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 8V-0N-2D"
+      ]
+    },
+    {
+      "match": "Sharjah FC vs Al Bataeh",
+      "league": "Pro League",
+      "date": "2026-01-14 15:45",
+      "match_description": "Al Bataeh en crise (LLLWL). H2H favorable à Sharjah FC (5V-2N-1D)",
+      "match_importance": "NORMAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Sharjah FC)",
+      "probabilities": {
+        "home": 49.0,
+        "draw": 30.4,
+        "away": 20.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.3,
+        "over_15_prob": 80.0,
+        "over_25_prob": 59.3,
+        "over_35_prob": 44.4,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Sharjah FC MT)",
+        "probabilities": {
+          "home": 43.3,
+          "draw": 41.5,
+          "away": 15.2
+        },
+        "expected_goals": 1.39,
+        "over_05": "Oui",
+        "over_05_prob": 63.9,
+        "over_15": "Oui",
+        "over_15_prob": 45.9,
+        "btts": "Non",
+        "btts_prob": 11.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.91,
+        "over_05": "Oui",
+        "over_05_prob": 73.5,
+        "over_15": "Oui",
+        "over_15_prob": 55.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Sharjah FC/Sharjah FC)",
+        "probability": 29.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 9.2,
+        "home_avg": 6.2,
+        "away_avg": 3.0,
+        "over_85_prob": 40.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (60%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.3,
+        "expected_total": 4.5,
+        "over_35_prob": 62.0,
+        "over_45_prob": 47.0,
+        "over_55_prob": 32.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (62%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Sharjah FC: DWLLL",
+        "Forme Al Bataeh: LLLWL",
+        "Classement: Sharjah FC 10e vs Al Bataeh 14e",
+        "H2H: 5V-2N-1D",
+        "Blessures Sharjah FC: Cho Yu-Min (Injury), Cho Yu-Min (Injury)"
+      ]
+    },
+    {
+      "match": "Olympiakos Piraeus vs PAOK",
+      "league": "Cup",
+      "date": "2026-01-14 16:30",
+      "match_description": "Match équilibré entre Olympiakos Piraeus et PAOK",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Olympiakos Piraeus)",
+      "probabilities": {
+        "home": 45.2,
+        "draw": 31.9,
+        "away": 22.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 56.4,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "5-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Olympiakos Piraeus MT)",
+        "probabilities": {
+          "home": 36.8,
+          "draw": 44.2,
+          "away": 18.9
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 16.6,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Olympiakos Piraeus/Olympiakos Piraeus)",
+        "probability": 23.1,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.5,
+        "expected_total": 4.5,
+        "over_35_prob": 65.0,
+        "over_45_prob": 50.0,
+        "over_55_prob": 35.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +3.5 (65%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 6V-0N-4D",
+        "Blessures Olympiakos Piraeus: R. Yaremchuk (Injury), R. Yaremchuk (Injury)",
+        "Blessures PAOK: D. Berdos (Inactive), L. Gugeshashvili (Inactive)"
+      ]
+    },
+    {
+      "match": "Halide Edip Adıvar vs Fenerbahçe",
+      "league": "Türkiye Kupası",
+      "date": "2026-01-14 17:30",
+      "match_description": "Match équilibré entre Halide Edip Adıvar et Fenerbahçe",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Halide Edip Adıvar)",
+      "probabilities": {
+        "home": 38.4,
+        "draw": 29.4,
+        "away": 32.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.03,
+        "over_15_prob": 75.5,
+        "over_25_prob": 60.6,
+        "over_35_prob": 39.5,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Halide Edip Adıvar MT)",
+        "probabilities": {
+          "home": 17.7,
+          "draw": 36.4,
+          "away": 45.9
+        },
+        "expected_goals": 1.27,
+        "over_05": "Oui",
+        "over_05_prob": 61.9,
+        "over_15": "Oui",
+        "over_15_prob": 43.9,
+        "btts": "Non",
+        "btts_prob": 12.4,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.76,
+        "over_05": "Oui",
+        "over_05_prob": 70.6,
+        "over_15": "Oui",
+        "over_15_prob": 52.6
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Halide Edip Adıvar/Halide Edip Adıvar)",
+        "probability": 21.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.5,
+        "expected_total": 3.6,
+        "over_35_prob": 42.5,
+        "over_45_prob": 29.8,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (55%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures Fenerbahçe: Mert Yandas (fitness), Rodrigo Becao (Ruptured cruciate ligament)"
+      ]
+    },
+    {
+      "match": "Den Bosch vs PSV Eindhoven",
+      "league": "KNVB Beker",
+      "date": "2026-01-14 17:45",
+      "match_description": "match à buts attendu (3.5 buts prévus)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Den Bosch)",
+      "probabilities": {
+        "home": 38.7,
+        "draw": 29.6,
+        "away": 31.7
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 69.9,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-3",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (PSV Eindhoven MT)",
+        "probabilities": {
+          "home": 19.9,
+          "draw": 35.7,
+          "away": 44.4
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 15.4,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (PSV Eindhoven/PSV Eindhoven)",
+        "probability": 20.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+7.5",
+        "expected": 8.0,
+        "home_avg": 5.0,
+        "away_avg": 3.0,
+        "over_85_prob": 30.0,
+        "over_95_prob": 22.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +7.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 2.5,
+        "expected_total": 2.6,
+        "over_35_prob": 29.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 17.0,
+        "recommendation": "Cartons +2.5 (42%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures PSV Eindhoven: Joey Veerman (Thigh problems), Ricardo Pepi (Knee injury)"
+      ]
+    },
+    {
+      "match": "Panathinaikos vs Aris Thessalonikis",
+      "league": "Cup",
+      "date": "2026-01-14 18:30",
+      "match_description": "Match équilibré entre Panathinaikos et Aris Thessalonikis",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Panathinaikos)",
+      "probabilities": {
+        "home": 35.5,
+        "draw": 31.8,
+        "away": 32.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.56,
+        "over_15_prob": 67.1,
+        "over_25_prob": 46.4,
+        "over_35_prob": 31.1,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "X (Nul MT)",
+        "probabilities": {
+          "home": 34.3,
+          "draw": 45.3,
+          "away": 20.4
+        },
+        "expected_goals": 1.08,
+        "over_05": "Oui",
+        "over_05_prob": 58.4,
+        "over_15": "Oui",
+        "over_15_prob": 40.4,
+        "btts": "Non",
+        "btts_prob": 10.4,
+        "score_exact": "0-0"
+      },
+      "second_half": {
+        "expected_goals": 1.49,
+        "over_05": "Oui",
+        "over_05_prob": 65.8,
+        "over_15": "Oui",
+        "over_15_prob": 47.8
+      },
+      "ht_ft": {
+        "prediction": "X/X (Nul/Nul)",
+        "probability": 22.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 5.8,
+        "expected_total": 5.8,
+        "over_35_prob": 84.5,
+        "over_45_prob": 69.5,
+        "over_55_prob": 54.5,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +4.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 4V-3N-3D",
+        "Blessures Panathinaikos: Giorgos Kyriakopoulos (Injury), T. Jedvaj (Inactive)",
+        "Blessures Aris Thessalonikis: M. Alfarela (Bone Bruise), T. Kadewere (Inner ligament injury)"
+      ]
+    },
+    {
+      "match": "Fafe vs SC Braga",
+      "league": "Taça de Portugal",
+      "date": "2026-01-14 18:45",
+      "match_description": "Match équilibré entre Fafe et SC Braga",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (SC Braga)",
+      "probabilities": {
+        "home": 29.6,
+        "draw": 30.0,
+        "away": 40.3
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.33,
+        "over_15_prob": 80.0,
+        "over_25_prob": 62.0,
+        "over_35_prob": 44.9,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (SC Braga MT)",
+        "probabilities": {
+          "home": 17.2,
+          "draw": 39.6,
+          "away": 43.2
+        },
+        "expected_goals": 1.4,
+        "over_05": "Oui",
+        "over_05_prob": 64.1,
+        "over_15": "Oui",
+        "over_15_prob": 46.1,
+        "btts": "Non",
+        "btts_prob": 10.7,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.93,
+        "over_05": "Oui",
+        "over_05_prob": 73.7,
+        "over_15": "Oui",
+        "over_15_prob": 55.7
+      },
+      "ht_ft": {
+        "prediction": "2/2 (SC Braga/SC Braga)",
+        "probability": 24.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.2,
+        "expected_total": 2.2,
+        "over_35_prob": 25.5,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (38%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D",
+        "Blessures SC Braga: Jonatas Noro (Achilles tendon rupture), Jonatas Noro (Achilles tendon rupture)"
+      ]
+    },
+    {
+      "match": "Club Nacional vs Deportivo Maldonado",
+      "league": "Copa De La Liga Auf",
+      "date": "2026-01-14 00:30",
+      "match_description": "Match équilibré entre Club Nacional et Deportivo Maldonado",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Club Nacional)",
+      "probabilities": {
+        "home": 44.4,
+        "draw": 31.9,
+        "away": 23.7
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.48,
+        "over_15_prob": 65.6,
+        "over_25_prob": 47.6,
+        "over_35_prob": 29.6,
+        "btts": "Non",
+        "btts_prob": 30.0,
+        "score_exact": "1-0",
+        "clean_sheet": "Club Nacional gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Club Nacional MT)",
+        "probabilities": {
+          "home": 35.3,
+          "draw": 47.2,
+          "away": 17.5
+        },
+        "expected_goals": 1.04,
+        "over_05": "Oui",
+        "over_05_prob": 57.7,
+        "over_15": "Non",
+        "over_15_prob": 39.7,
+        "btts": "Non",
+        "btts_prob": 10.5,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.44,
+        "over_05": "Oui",
+        "over_05_prob": 64.8,
+        "over_15": "Oui",
+        "over_15_prob": 46.8
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Club Nacional/Club Nacional)",
+        "probability": 22.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 4.0,
+        "expected_total": 4.2,
+        "over_35_prob": 34.5,
+        "over_45_prob": 25.5,
+        "over_55_prob": 16.5,
+        "red_card_prob": 24.0,
+        "recommendation": "Cartons +3.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 5V-1N-4D",
+        "Blessures Club Nacional: G. Carneiro, G. Carneiro"
+      ]
+    },
+    {
+      "match": "Deportivo Saprissa vs Puntarenas FC",
+      "league": "Primera División",
+      "date": "2026-01-14 02:00",
+      "match_description": "H2H favorable à Deportivo Saprissa (7V-1N-2D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Deportivo Saprissa)",
+      "probabilities": {
+        "home": 47.9,
+        "draw": 31.1,
+        "away": 21.0
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 58.0,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Deportivo Saprissa MT)",
+        "probabilities": {
+          "home": 41.0,
+          "draw": 43.6,
+          "away": 15.5
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 11.1,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Deportivo Saprissa/Deportivo Saprissa)",
+        "probability": 26.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 4.6,
+        "expected_total": 4.8,
+        "over_35_prob": 66.5,
+        "over_45_prob": 51.5,
+        "over_55_prob": 36.5,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +3.5 (66%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Deportivo Saprissa: LDWWD",
+        "Forme Puntarenas FC: WDDLL",
+        "Classement: Deportivo Saprissa 2e vs Puntarenas FC 7e",
+        "H2H: 7V-1N-2D",
+        "Blessures Deportivo Saprissa: R. Blanco (Achilles tendon surgery), R. Blanco (Achilles tendon surgery)",
+        "Deportivo Saprissa: enjeu title"
+      ]
+    },
+    {
+      "match": "Prime Bangkok vs Chiangrai United",
+      "league": "FA Cup",
+      "date": "2026-01-14 10:00",
+      "match_description": "Match équilibré entre Prime Bangkok et Chiangrai United",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Chiangrai United)",
+      "probabilities": {
+        "home": 32.2,
+        "draw": 31.4,
+        "away": 36.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.2,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 58.0,
+        "score_exact": "1-6",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Chiangrai United MT)",
+        "probabilities": {
+          "home": 25.8,
+          "draw": 46.9,
+          "away": 27.2
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 20.3,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Chiangrai United/Chiangrai United)",
+        "probability": 22.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "Bangkok United vs Kanchanaburi",
+      "league": "FA Cup",
+      "date": "2026-01-14 11:00",
+      "match_description": "Match équilibré entre Bangkok United et Kanchanaburi",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Bangkok United)",
+      "probabilities": {
+        "home": 38.0,
+        "draw": 30.3,
+        "away": 31.8
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.4,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Bangkok United MT)",
+        "probabilities": {
+          "home": 39.9,
+          "draw": 40.0,
+          "away": 20.1
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Bangkok United/Bangkok United)",
+        "probability": 21.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 1V-2N-0D"
+      ]
+    },
+    {
+      "match": "Buriram United vs Pattani",
+      "league": "FA Cup",
+      "date": "2026-01-14 11:00",
+      "match_description": "Match équilibré entre Buriram United et Pattani",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Buriram United)",
+      "probabilities": {
+        "home": 39.6,
+        "draw": 28.4,
+        "away": 32.0
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 64.2,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "6-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Buriram United MT)",
+        "probabilities": {
+          "home": 32.3,
+          "draw": 43.3,
+          "away": 24.4
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 10.5,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Buriram United/Buriram United)",
+        "probability": 19.0,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "Sisaket United vs Ratchaburi",
+      "league": "FA Cup",
+      "date": "2026-01-14 11:00",
+      "match_description": "Match équilibré entre Sisaket United et Ratchaburi",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Sisaket United)",
+      "probabilities": {
+        "home": 37.4,
+        "draw": 30.4,
+        "away": 32.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 60.7,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Ratchaburi MT)",
+        "probabilities": {
+          "home": 22.1,
+          "draw": 41.9,
+          "away": 36.0
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 10.5,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Ratchaburi/Ratchaburi)",
+        "probability": 19.9,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "Khon Kaen United vs Nakhon Pathom",
+      "league": "FA Cup",
+      "date": "2026-01-14 11:30",
+      "match_description": "Match équilibré entre Khon Kaen United et Nakhon Pathom",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Khon Kaen United)",
+      "probabilities": {
+        "home": 46.1,
+        "draw": 30.9,
+        "away": 22.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 59.4,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Khon Kaen United MT)",
+        "probabilities": {
+          "home": 41.4,
+          "draw": 41.9,
+          "away": 16.7
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 13.3,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Khon Kaen United/Khon Kaen United)",
+        "probability": 26.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 3V-2N-5D"
+      ]
+    },
+    {
+      "match": "Lamphun Warrior vs Sukhothai FC",
+      "league": "FA Cup",
+      "date": "2026-01-14 11:30",
+      "match_description": "H2H favorable à Lamphun Warrior (6V-1N-3D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Lamphun Warrior)",
+      "probabilities": {
+        "home": 42.8,
+        "draw": 31.8,
+        "away": 25.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 58.4,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "3-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Lamphun Warrior MT)",
+        "probabilities": {
+          "home": 32.1,
+          "draw": 43.8,
+          "away": 24.1
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Lamphun Warrior/Lamphun Warrior)",
+        "probability": 21.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 6V-1N-3D"
+      ]
+    },
+    {
+      "match": "Ayutthaya FC vs Uttaradit",
+      "league": "FA Cup",
+      "date": "2026-01-14 12:00",
+      "match_description": "Match équilibré entre Ayutthaya FC et Uttaradit",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Ayutthaya FC)",
+      "probabilities": {
+        "home": 51.6,
+        "draw": 28.3,
+        "away": 20.1
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 65.2,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "3-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Ayutthaya FC MT)",
+        "probabilities": {
+          "home": 53.3,
+          "draw": 35.6,
+          "away": 11.1
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 7.7,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Ayutthaya FC/Ayutthaya FC)",
+        "probability": 37.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "Prachuap vs Bangkok Glass",
+      "league": "FA Cup",
+      "date": "2026-01-14 12:00",
+      "match_description": "H2H favorable à Bangkok Glass (4V-6N-0D)",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Bangkok Glass)",
+      "probabilities": {
+        "home": 30.3,
+        "draw": 31.8,
+        "away": 37.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.4,
+        "over_15_prob": 80.0,
+        "over_25_prob": 58.4,
+        "over_35_prob": 46.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "3-5",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Bangkok Glass MT)",
+        "probabilities": {
+          "home": 26.6,
+          "draw": 43.7,
+          "away": 29.7
+        },
+        "expected_goals": 1.43,
+        "over_05": "Oui",
+        "over_05_prob": 64.7,
+        "over_15": "Oui",
+        "over_15_prob": 46.7,
+        "btts": "Non",
+        "btts_prob": 12.2,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.97,
+        "over_05": "Oui",
+        "over_05_prob": 74.5,
+        "over_15": "Oui",
+        "over_15_prob": 56.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Bangkok Glass/Bangkok Glass)",
+        "probability": 21.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.1,
+        "over_35_prob": 25.5,
+        "over_45_prob": 16.5,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (34%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "H2H: 0V-6N-4D"
+      ]
+    },
+    {
+      "match": "Gharraf vs Naft",
+      "league": "Iraqi League",
+      "date": "2026-01-14 12:00",
+      "match_description": "Match équilibré entre Gharraf et Naft",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Naft)",
+      "probabilities": {
+        "home": 31.8,
+        "draw": 31.9,
+        "away": 36.3
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.3,
+        "over_15_prob": 62.3,
+        "over_25_prob": 37.8,
+        "over_35_prob": 26.3,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "0-1",
+        "clean_sheet": "Naft gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Naft MT)",
+        "probabilities": {
+          "home": 23.9,
+          "draw": 48.6,
+          "away": 27.5
+        },
+        "expected_goals": 0.96,
+        "over_05": "Oui",
+        "over_05_prob": 56.4,
+        "over_15": "Non",
+        "over_15_prob": 38.4,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.33,
+        "over_05": "Oui",
+        "over_05_prob": 63.0,
+        "over_15": "Non",
+        "over_15_prob": 45.0
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Naft/Naft)",
+        "probability": 23.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.6,
+        "expected_total": 1.9,
+        "over_35_prob": 18.8,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (32%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Naft: WLDDL",
+        "H2H: 2V-1N-2D"
+      ]
+    },
+    {
+      "match": "Al Kahrabaa vs Zakho",
+      "league": "Iraqi League",
+      "date": "2026-01-14 12:00",
+      "match_description": "Match équilibré entre Al Kahrabaa et Zakho",
+      "match_importance": "NORMAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Zakho)",
+      "probabilities": {
+        "home": 29.3,
+        "draw": 31.6,
+        "away": 39.1
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.34,
+        "over_15_prob": 63.2,
+        "over_25_prob": 42.2,
+        "over_35_prob": 27.2,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "0-1",
+        "clean_sheet": "Zakho gagne à 0",
+        "dc_btts": "X2"
+      },
+      "first_half": {
+        "result": "2 (Zakho MT)",
+        "probabilities": {
+          "home": 20.6,
+          "draw": 46.3,
+          "away": 33.1
+        },
+        "expected_goals": 0.98,
+        "over_05": "Oui",
+        "over_05_prob": 56.7,
+        "over_15": "Non",
+        "over_15_prob": 38.7,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.36,
+        "over_05": "Oui",
+        "over_05_prob": 63.5,
+        "over_15": "Oui",
+        "over_15_prob": 45.5
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Zakho/Zakho)",
+        "probability": 22.2,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.6,
+        "expected_total": 1.8,
+        "over_35_prob": 18.4,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (31%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Al Kahrabaa: LWLLD",
+        "Forme Zakho: DLDDW",
+        "Classement: Al Kahrabaa 17e vs Zakho 10e",
+        "H2H: 5V-1N-4D",
+        "Al Kahrabaa: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "Newroz vs Al Talaba",
+      "league": "Iraqi League",
+      "date": "2026-01-14 12:00",
+      "match_description": "Al Talaba en pleine confiance (WWDWL). écart au classement: Al Talaba (5e) vs Newroz (16e). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "2 (Al Talaba)",
+      "probabilities": {
+        "home": 25.9,
+        "draw": 31.7,
+        "away": 42.4
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.96,
+        "over_15_prob": 74.2,
+        "over_25_prob": 46.9,
+        "over_35_prob": 38.2,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "1-2",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "X2 + BTTS Oui"
+      },
+      "first_half": {
+        "result": "2 (Al Talaba MT)",
+        "probabilities": {
+          "home": 21.5,
+          "draw": 47.1,
+          "away": 31.4
+        },
+        "expected_goals": 1.24,
+        "over_05": "Oui",
+        "over_05_prob": 61.3,
+        "over_15": "Oui",
+        "over_15_prob": 43.3,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "0-1"
+      },
+      "second_half": {
+        "expected_goals": 1.71,
+        "over_05": "Oui",
+        "over_05_prob": 69.9,
+        "over_15": "Oui",
+        "over_15_prob": 51.9
+      },
+      "ht_ft": {
+        "prediction": "2/2 (Al Talaba/Al Talaba)",
+        "probability": 22.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 1.7,
+        "expected_total": 2.0,
+        "over_35_prob": 19.5,
+        "over_45_prob": 17.0,
+        "over_55_prob": 17.0,
+        "red_card_prob": 34.0,
+        "recommendation": "Cartons +2.5 (32%) ~",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Newroz: WWDLL",
+        "Forme Al Talaba: WWDWL",
+        "Classement: Newroz 16e vs Al Talaba 5e",
+        "H2H: 0V-0N-1D",
+        "Newroz: enjeu relegation_danger"
+      ]
+    },
+    {
+      "match": "JSK vs FC Renaissance",
+      "league": "Ligue 1",
+      "date": "2026-01-14 12:00",
+      "match_description": "JSK en excellente forme (WDWDW). écart au classement: JSK (1e) vs FC Renaissance (13e). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (JSK)",
+      "probabilities": {
+        "home": 45.3,
+        "draw": 31.2,
+        "away": 23.5
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 2.81,
+        "over_15_prob": 71.6,
+        "over_25_prob": 53.6,
+        "over_35_prob": 35.6,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0",
+        "clean_sheet": "JSK gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (JSK MT)",
+        "probabilities": {
+          "home": 36.1,
+          "draw": 46.4,
+          "away": 17.5
+        },
+        "expected_goals": 1.18,
+        "over_05": "Oui",
+        "over_05_prob": 60.3,
+        "over_15": "Oui",
+        "over_15_prob": 42.3,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.63,
+        "over_05": "Oui",
+        "over_05_prob": 68.4,
+        "over_15": "Oui",
+        "over_15_prob": 50.4
+      },
+      "ht_ft": {
+        "prediction": "1/1 (JSK/JSK)",
+        "probability": 22.6,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 4.0,
+        "over_35_prob": 32.7,
+        "over_45_prob": 23.7,
+        "over_55_prob": 14.7,
+        "red_card_prob": 24.0,
+        "recommendation": "Cartons +2.5 (42%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme JSK: WDWDW",
+        "Forme FC Renaissance: WLWWD",
+        "Classement: JSK 1e vs FC Renaissance 13e",
+        "H2H: 0V-1N-0D",
+        "JSK: enjeu title"
+      ]
+    },
+    {
+      "match": "Johor Darul Takzim FC vs Kuching FA",
+      "league": "Super League",
+      "date": "2026-01-14 12:15",
+      "match_description": "Johor Darul Takzim FC en excellente forme (WWWWW). Kuching FA en pleine confiance (WDWDW). H2H favorable à Johor Darul Takzim FC (8V-0N-0D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Johor Darul Takzim FC)",
+      "probabilities": {
+        "home": 52.0,
+        "draw": 29.5,
+        "away": 18.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 67.4,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "3-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Johor Darul Takzim FC MT)",
+        "probabilities": {
+          "home": 53.1,
+          "draw": 36.2,
+          "away": 10.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Johor Darul Takzim FC/Johor Darul Takzim FC)",
+        "probability": 37.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.8,
+        "expected_total": 3.9,
+        "over_35_prob": 54.5,
+        "over_45_prob": 39.5,
+        "over_55_prob": 24.5,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (70%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Johor Darul Takzim FC: WWWWW",
+        "Forme Kuching FA: WDWDW",
+        "Classement: Johor Darul Takzim FC 1e vs Kuching FA 3e",
+        "H2H: 8V-0N-0D",
+        "Johor Darul Takzim FC: enjeu title"
+      ]
+    },
+    {
+      "match": "Kuala Lumpur FA vs Penang",
+      "league": "Super League",
+      "date": "2026-01-14 12:15",
+      "match_description": "H2H favorable à Kuala Lumpur FA (6V-2N-2D). match à buts attendu (3.5 buts prévus). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Kuala Lumpur FA)",
+      "probabilities": {
+        "home": 47.4,
+        "draw": 30.7,
+        "away": 21.9
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 63.4,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Kuala Lumpur FA MT)",
+        "probabilities": {
+          "home": 42.0,
+          "draw": 40.9,
+          "away": 17.1
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Kuala Lumpur FA/Kuala Lumpur FA)",
+        "probability": 27.7,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.9,
+        "expected_total": 2.9,
+        "over_35_prob": 41.0,
+        "over_45_prob": 26.0,
+        "over_55_prob": 20.0,
+        "red_card_prob": 0.0,
+        "recommendation": "Cartons +2.5 (56%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Kuala Lumpur FA: DWDDL",
+        "Forme Penang: WWLWL",
+        "Classement: Kuala Lumpur FA 2e vs Penang 9e",
+        "H2H: 6V-2N-2D",
+        "Kuala Lumpur FA: enjeu title"
+      ]
+    },
+    {
+      "match": "Selangor vs Negeri Sembilan",
+      "league": "Super League",
+      "date": "2026-01-14 13:00",
+      "match_description": "Selangor en excellente forme (WLWWW). H2H favorable à Selangor (7V-1N-2D). match à buts attendu (3.5 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Selangor)",
+      "probabilities": {
+        "home": 48.6,
+        "draw": 30.9,
+        "away": 20.5
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.5,
+        "over_15_prob": 80.0,
+        "over_25_prob": 63.0,
+        "over_35_prob": 48.0,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Selangor MT)",
+        "probabilities": {
+          "home": 41.3,
+          "draw": 41.0,
+          "away": 17.7
+        },
+        "expected_goals": 1.47,
+        "over_05": "Oui",
+        "over_05_prob": 65.5,
+        "over_15": "Oui",
+        "over_15_prob": 47.5,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 2.03,
+        "over_05": "Oui",
+        "over_05_prob": 75.5,
+        "over_15": "Oui",
+        "over_15_prob": 57.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Selangor/Selangor)",
+        "probability": 27.8,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 2.8,
+        "expected_total": 2.9,
+        "over_35_prob": 39.5,
+        "over_45_prob": 24.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 25.0,
+        "recommendation": "Cartons +2.5 (54%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Selangor: WLWWW",
+        "Forme Negeri Sembilan: LWDLD",
+        "Classement: Selangor 4e vs Negeri Sembilan 6e",
+        "H2H: 7V-1N-2D",
+        "Selangor: enjeu champions_league"
+      ]
+    },
+    {
+      "match": "Melaka vs Pdrm",
+      "league": "Super League",
+      "date": "2026-01-14 13:00",
+      "match_description": "Melaka en difficulté (LLLLW). Pdrm en crise (LLLLL)",
+      "match_importance": "NORMAL",
+      "confidence": "MOYEN",
+      "result_1x2": "1 (Melaka)",
+      "probabilities": {
+        "home": 45.5,
+        "draw": 30.9,
+        "away": 23.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 2.96,
+        "over_15_prob": 74.4,
+        "over_25_prob": 58.2,
+        "over_35_prob": 38.4,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (Melaka MT)",
+        "probabilities": {
+          "home": 39.7,
+          "draw": 41.1,
+          "away": 19.2
+        },
+        "expected_goals": 1.24,
+        "over_05": "Oui",
+        "over_05_prob": 61.4,
+        "over_15": "Oui",
+        "over_15_prob": 43.4,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.72,
+        "over_05": "Oui",
+        "over_05_prob": 69.9,
+        "over_15": "Oui",
+        "over_15_prob": 51.9
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Melaka/Melaka)",
+        "probability": 25.3,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 9.5,
+        "home_avg": 5.0,
+        "away_avg": 4.8,
+        "over_85_prob": 20.0,
+        "over_95_prob": 11.0,
+        "over_105_prob": 10.0,
+        "recommendation": "Corners +8.5 (20%) ?"
+      },
+      "cards": {
+        "expected_yellow": 3.0,
+        "expected_total": 3.2,
+        "over_35_prob": 42.5,
+        "over_45_prob": 27.5,
+        "over_55_prob": 20.0,
+        "red_card_prob": 40.0,
+        "recommendation": "Cartons +2.5 (57%) ✓",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Melaka: LLLLW",
+        "Forme Pdrm: LLLLL",
+        "Classement: Melaka 12e vs Pdrm 13e",
+        "H2H: 0V-1N-0D"
+      ]
+    },
+    {
+      "match": "GOR Mahia vs Murang'a SEAL",
+      "league": "FKF Premier League",
+      "date": "2026-01-14 13:00",
+      "match_description": "Murang'a SEAL en pleine confiance (WWWDD). Enjeu: course au titre",
+      "match_importance": "CRUCIAL",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (GOR Mahia)",
+      "probabilities": {
+        "home": 40.9,
+        "draw": 28.5,
+        "away": 30.6
+      },
+      "goals": {
+        "over_under": "Over 2.5",
+        "expected_goals": 3.02,
+        "over_15_prob": 75.4,
+        "over_25_prob": 57.4,
+        "over_35_prob": 39.4,
+        "btts": "Oui",
+        "btts_prob": 50.0,
+        "score_exact": "2-1",
+        "clean_sheet": "Non recommandé",
+        "dc_btts": "1X + BTTS Oui"
+      },
+      "first_half": {
+        "result": "1 (GOR Mahia MT)",
+        "probabilities": {
+          "home": 33.3,
+          "draw": 43.4,
+          "away": 23.2
+        },
+        "expected_goals": 1.27,
+        "over_05": "Oui",
+        "over_05_prob": 61.9,
+        "over_15": "Oui",
+        "over_15_prob": 43.9,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.75,
+        "over_05": "Oui",
+        "over_05_prob": 70.6,
+        "over_15": "Oui",
+        "over_15_prob": 52.6
+      },
+      "ht_ft": {
+        "prediction": "1/1 (GOR Mahia/GOR Mahia)",
+        "probability": 19.4,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.2,
+        "expected_total": 3.3,
+        "over_35_prob": 27.3,
+        "over_45_prob": 18.3,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (36%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme GOR Mahia: DWWD",
+        "Forme Murang'a SEAL: WWWDD",
+        "Classement: GOR Mahia 2e vs Murang'a SEAL 9e",
+        "H2H: 2V-3N-0D",
+        "GOR Mahia: enjeu title"
+      ]
+    },
+    {
+      "match": "Police vs Mara Sugar",
+      "league": "FKF Premier League",
+      "date": "2026-01-14 13:00",
+      "match_description": "match potentiellement fermé (1.9 buts prévus). Enjeu: qualification européenne en jeu",
+      "match_importance": "IMPORTANT",
+      "confidence": "FAIBLE",
+      "result_1x2": "1 (Police)",
+      "probabilities": {
+        "home": 41.0,
+        "draw": 28.5,
+        "away": 30.4
+      },
+      "goals": {
+        "over_under": "Under 2.5",
+        "expected_goals": 1.87,
+        "over_15_prob": 54.6,
+        "over_25_prob": 36.6,
+        "over_35_prob": 20.0,
+        "btts": "Non",
+        "btts_prob": 15.0,
+        "score_exact": "1-0",
+        "clean_sheet": "Police gagne à 0",
+        "dc_btts": "1X"
+      },
+      "first_half": {
+        "result": "1 (Police MT)",
+        "probabilities": {
+          "home": 33.4,
+          "draw": 43.4,
+          "away": 23.1
+        },
+        "expected_goals": 0.78,
+        "over_05": "Non",
+        "over_05_prob": 53.1,
+        "over_15": "Non",
+        "over_15_prob": 35.1,
+        "btts": "Non",
+        "btts_prob": 5.2,
+        "score_exact": "1-0"
+      },
+      "second_half": {
+        "expected_goals": 1.08,
+        "over_05": "Non",
+        "over_05_prob": 58.5,
+        "over_15": "Non",
+        "over_15_prob": 40.5
+      },
+      "ht_ft": {
+        "prediction": "1/1 (Police/Police)",
+        "probability": 19.5,
+        "alternatives": []
+      },
+      "corners": {
+        "prediction": "+8.5",
+        "expected": 10.0,
+        "home_avg": 5.0,
+        "away_avg": 5.0,
+        "over_85_prob": 50.0,
+        "over_95_prob": 30.0,
+        "over_105_prob": 20.0,
+        "recommendation": "Corners +8.5 (50%) ✓"
+      },
+      "cards": {
+        "expected_yellow": 3.2,
+        "expected_total": 3.3,
+        "over_35_prob": 27.3,
+        "over_45_prob": 18.3,
+        "over_55_prob": 12.0,
+        "red_card_prob": 18.0,
+        "recommendation": "Cartons +2.5 (36%) ?",
+        "referee": "",
+        "referee_strictness": "MOYEN"
+      },
+      "reasoning": [
+        "Forme Police: DDLDW",
+        "Forme Mara Sugar: DLDWW",
+        "Classement: Police 6e vs Mara Sugar 12e",
+        "H2H: 2V-0N-1D",
+        "Police: enjeu europa"
+      ]
+    }
+  ]
+}

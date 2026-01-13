@@ -1,0 +1,222 @@
+{
+  "date": "2026-01-13T23:25:25.976391",
+  "total_tickets": 4,
+  "tickets": [
+    {
+      "id": 1,
+      "name": "Ticket Sécurisé",
+      "confidence": "MOYEN",
+      "risk": "FAIBLE",
+      "total_odds": 3.2,
+      "selections": [
+        {
+          "match": "1. FC Köln vs Bayern München",
+          "league": "Bundesliga",
+          "date": "2026-01-14T19:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.42,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Albacete vs Real Madrid",
+          "league": "Copa del Rey",
+          "date": "2026-01-14T20:00:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.52,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Necaxa vs Monterrey",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:00:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.14,
+          "reasoning": "Au moins 2 buts très probable (88%)"
+        },
+        {
+          "match": "Pachuca vs Leon",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:06:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.14,
+          "reasoning": "Au moins 2 buts très probable (88%)"
+        },
+        {
+          "match": "FC Juarez vs Guadalajara Chivas",
+          "league": "Liga MX",
+          "date": "2026-01-14T03:10:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.14,
+          "reasoning": "Au moins 2 buts très probable (88%)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ticket Mixte",
+      "confidence": "MOYEN",
+      "risk": "MOYEN",
+      "total_odds": 4.75,
+      "selections": [
+        {
+          "match": "Necaxa vs Monterrey",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:00:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 12.0 buts attendus. H2H: 2.4 buts/match"
+        },
+        {
+          "match": "Pachuca vs Leon",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:06:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 9.9 buts attendus. H2H: 2.8 buts/match"
+        },
+        {
+          "match": "1. FC Köln vs Bayern München",
+          "league": "Bundesliga",
+          "date": "2026-01-14T19:30:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.42,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "Albacete vs Real Madrid",
+          "league": "Copa del Rey",
+          "date": "2026-01-14T20:00:00+00:00",
+          "bet": "X2",
+          "confidence": "MOYEN",
+          "odds": 1.52,
+          "reasoning": "L'extérieur a de bonnes chances de ne pas perdre"
+        },
+        {
+          "match": "FC Juarez vs Guadalajara Chivas",
+          "league": "Liga MX",
+          "date": "2026-01-14T03:10:00+00:00",
+          "bet": "Over 1.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.14,
+          "reasoning": "Au moins 2 buts très probable (88%)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ticket Over/Under",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 10.95,
+      "selections": [
+        {
+          "match": "Necaxa vs Monterrey",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.75,
+          "reasoning": "Match déséquilibré (60 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Pachuca vs Leon",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:06:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.75,
+          "reasoning": "Match déséquilibré (60 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Nigeria vs Morocco",
+          "league": "Africa Cup of Nations",
+          "date": "2026-01-14T20:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.85,
+          "reasoning": "Risque clean sheet élevé (dom: 15%, ext: 35%)"
+        },
+        {
+          "match": "FC Juarez vs Guadalajara Chivas",
+          "league": "Liga MX",
+          "date": "2026-01-14T03:10:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 11.2 buts attendus. H2H: 2.6 buts/match"
+        },
+        {
+          "match": "Napoli vs Parma",
+          "league": "Serie A",
+          "date": "2026-01-14T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 9.0 buts attendus. H2H: 2.4 buts/match"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ticket Buts",
+      "confidence": "ÉLEVÉ",
+      "risk": "MOYEN",
+      "total_odds": 10.95,
+      "selections": [
+        {
+          "match": "Necaxa vs Monterrey",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.75,
+          "reasoning": "Match déséquilibré (60 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Pachuca vs Leon",
+          "league": "Liga MX",
+          "date": "2026-01-14T01:06:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.75,
+          "reasoning": "Match déséquilibré (60 vs 60): clean sheet probable"
+        },
+        {
+          "match": "Nigeria vs Morocco",
+          "league": "Africa Cup of Nations",
+          "date": "2026-01-14T20:00:00+00:00",
+          "bet": "BTTS Non",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.85,
+          "reasoning": "Risque clean sheet élevé (dom: 15%, ext: 35%)"
+        },
+        {
+          "match": "FC Juarez vs Guadalajara Chivas",
+          "league": "Liga MX",
+          "date": "2026-01-14T03:10:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 11.2 buts attendus. H2H: 2.6 buts/match"
+        },
+        {
+          "match": "Napoli vs Parma",
+          "league": "Serie A",
+          "date": "2026-01-14T17:30:00+00:00",
+          "bet": "Over 2.5",
+          "confidence": "ÉLEVÉ",
+          "odds": 1.39,
+          "reasoning": "Moyenne de 9.0 buts attendus. H2H: 2.4 buts/match"
+        }
+      ]
+    }
+  ]
+}
