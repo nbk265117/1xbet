@@ -52,6 +52,19 @@ class BettingBot:
         # Créer le dossier output si nécessaire
         Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
 
+        # Cache des ligues prioritaires
+        self._priority_league_ids = None
+
+    def _get_priority_leagues(self) -> set:
+        """Retourne les IDs des ligues prioritaires (priority 1-2)"""
+        if self._priority_league_ids is None:
+            from config.leagues import ALLOWED_LEAGUES
+            self._priority_league_ids = {
+                lid for lid, info in ALLOWED_LEAGUES.items()
+                if info.get("priority", 99) <= 2
+            }
+        return self._priority_league_ids
+
     def run(self, send_telegram: bool = True, save_output: bool = True, target_date: str = None) -> bool:
         """
         Exécute le bot pour générer les prédictions
@@ -73,13 +86,14 @@ class BettingBot:
             # 2. Récupérer les matchs
             if target_date:
                 logger.info(f"Fetching matches for {target_date}...")
-                matches = self.api.get_fixtures_by_date(target_date)
                 self._current_date_str = target_date
             else:
                 logger.info("Fetching tomorrow's matches...")
-                matches = self.api.get_tomorrow_fixtures()
                 self._current_date_str = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
-            logger.info(f"Found {len(matches)} matches in allowed leagues")
+
+            # Utiliser la nouvelle méthode qui charge tous les matchs importants
+            matches, league_stats = self.api.get_all_fixtures_by_date(self._current_date_str)
+            logger.info(f"Found {len(matches)} matches across {len(league_stats)} leagues")
 
             if not matches:
                 logger.warning("No matches found for tomorrow")
@@ -95,8 +109,16 @@ class BettingBot:
             enriched_matches = []
             enhanced_predictions = []
 
-            for i, match in enumerate(matches[:30]):  # Limiter pour éviter trop d'appels API
-                logger.info(f"  [{i+1}/{min(len(matches), 30)}] {match}")
+            # Limiter aux matchs prioritaires (priority 1-2) pour l'enrichissement
+            priority_matches = [m for m in matches if m.league_id in self._get_priority_leagues()]
+            other_matches = [m for m in matches if m.league_id not in self._get_priority_leagues()]
+
+            # Enrichir d'abord les matchs prioritaires, puis les autres si quota API disponible
+            matches_to_enrich = priority_matches[:40] + other_matches[:20]  # Max 60 matchs
+            logger.info(f"Enriching {len(matches_to_enrich)} matches ({len(priority_matches)} priority + {min(20, len(other_matches))} others)")
+
+            for i, match in enumerate(matches_to_enrich):  # Limiter pour éviter trop d'appels API
+                logger.info(f"  [{i+1}/{len(matches_to_enrich)}] {match}")
                 try:
                     # Enrichissement de base
                     enriched = self.api.enrich_match_data(match)

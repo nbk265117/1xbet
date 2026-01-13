@@ -1364,16 +1364,24 @@ class EnhancedMatchAnalyzer:
         away_goals = int(score_parts[1])
         btts_prob_raw = goals["btts_prob"]
 
-        # BTTS avec seuil de 45% (compromis entre précision et rappel)
-        # Analyse: Les faux BTTS Oui avaient une prob moyenne de 41.8%
-        if btts_prob_raw >= 0.45:
+        # BTTS - COHÉRENCE AVEC SCORE EXACT (fix du 13/01/2026)
+        # Le score exact est la prédiction principale, BTTS doit être cohérent
+        both_teams_score = home_goals > 0 and away_goals > 0
+
+        if both_teams_score:
+            # Si le score prédit montre les deux équipes marquent → BTTS = Oui
+            btts = "Oui"
+            btts_prob_final = max(btts_prob_raw, 0.50)  # Au moins 50% si on prédit BTTS
+            logger.debug(f"[BTTS] Oui (cohérent avec score {score_exact})")
+        elif btts_prob_raw >= 0.55:
+            # Prob très élevée mais score ne montre pas BTTS → ajuster le score
             btts = "Oui"
             btts_prob_final = btts_prob_raw
-            logger.debug(f"[BTTS] Oui (prob {btts_prob_raw:.1%} >= 50%)")
+            logger.debug(f"[BTTS] Oui (prob {btts_prob_raw:.1%} >= 55%)")
         else:
             btts = "Non"
             btts_prob_final = btts_prob_raw
-            logger.debug(f"[BTTS] Non (prob {btts_prob_raw:.1%} < 50%)")
+            logger.debug(f"[BTTS] Non (score {score_exact}, prob {btts_prob_raw:.1%})")
 
         # Clean sheet - Basé sur le score prédit uniquement
         if home_goals > 0 and away_goals == 0:
@@ -1548,17 +1556,24 @@ class EnhancedMatchAnalyzer:
         # ========== Team +1.5 ==========
         team_plus_15 = f"{home_team} +1.5 buts" if home_goals > away_goals else f"{away_team} +1.5 buts"
 
-        # ========== BTTS - CALCULÉ INDÉPENDAMMENT avec seuil strict ==========
-        # AMÉLIORATION 12/01/2026: BTTS basé sur probabilité brute (pas score)
+        # ========== BTTS - COHÉRENT AVEC SCORE EXACT (fix 13/01/2026) ==========
         btts_prob_raw = goals["btts_prob"]
+        both_teams_score = home_goals > 0 and away_goals > 0
 
-        # BTTS Oui seulement si prob >= 45% (les faux Oui avaient 41.8% en moyenne)
-        if btts_prob_raw >= 0.45:
+        if both_teams_score:
+            # Score prédit montre les deux équipes marquent → BTTS = Oui
+            btts = "Oui"
+            btts_prob_final = max(btts_prob_raw, 0.50)
+            logger.debug(f"[BTTS PRO] Oui (cohérent avec score {score_exact})")
+        elif btts_prob_raw >= 0.55:
+            # Prob très élevée → BTTS Oui malgré score
             btts = "Oui"
             btts_prob_final = btts_prob_raw
+            logger.debug(f"[BTTS PRO] Oui (prob {btts_prob_raw:.1%} >= 55%)")
         else:
             btts = "Non"
             btts_prob_final = btts_prob_raw
+            logger.debug(f"[BTTS PRO] Non (score {score_exact}, prob {btts_prob_raw:.1%})")
 
         # ========== Clean Sheet - Basé sur le score prédit ==========
         if home_goals > 0 and away_goals == 0:

@@ -17,9 +17,9 @@
         "predicted_odds": 1.16,
         "confidence": "ÉLEVÉ",
         "reasoning": "Au moins 2 buts très probable (86%)",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 3,
+        "away_score": 2,
+        "result": "Gagné"
       },
       {
         "match_id": 1378057,
@@ -31,9 +31,9 @@
         "predicted_odds": 1.14,
         "confidence": "ÉLEVÉ",
         "reasoning": "Au moins 2 buts très probable (88%)",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 3,
+        "away_score": 0,
+        "result": "Gagné"
       },
       {
         "match_id": 1378059,
@@ -45,9 +45,9 @@
         "predicted_odds": 1.36,
         "confidence": "MOYEN",
         "reasoning": "Le domicile ne devrait pas perdre ce match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 5,
+        "away_score": 0,
+        "result": "Gagné"
       },
       {
         "match_id": 1495631,
@@ -59,9 +59,9 @@
         "predicted_odds": 1.42,
         "confidence": "MOYEN",
         "reasoning": "Le domicile ne devrait pas perdre ce match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 0,
+        "away_score": 1,
+        "result": "Perdu"
       }
     ]
   },
@@ -83,9 +83,9 @@
         "predicted_odds": 1.39,
         "confidence": "ÉLEVÉ",
         "reasoning": "Moyenne de 8.9 buts attendus. H2H: 2.5 buts/match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 3,
+        "away_score": 0,
+        "result": "Gagné"
       },
       {
         "match_id": 1378059,
@@ -97,9 +97,9 @@
         "predicted_odds": 1.39,
         "confidence": "ÉLEVÉ",
         "reasoning": "Moyenne de 9.4 buts attendus. H2H: 1.5 buts/match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 5,
+        "away_score": 0,
+        "result": "Gagné"
       },
       {
         "match_id": 1391006,
@@ -111,9 +111,9 @@
         "predicted_odds": 1.39,
         "confidence": "ÉLEVÉ",
         "reasoning": "Moyenne de 10.4 buts attendus. H2H: 2.6 buts/match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 0,
+        "away_score": 1,
+        "result": "Perdu"
       },
       {
         "match_id": 1382133,
@@ -139,9 +139,9 @@
         "predicted_odds": 1.33,
         "confidence": "ÉLEVÉ",
         "reasoning": "Match déséquilibré (92 vs 60): clean sheet probable",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 4,
+        "away_score": 1,
+        "result": "Perdu"
       }
     ]
   },
@@ -163,9 +163,9 @@
         "predicted_odds": 1.39,
         "confidence": "ÉLEVÉ",
         "reasoning": "Moyenne de 8.9 buts attendus. H2H: 2.5 buts/match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 3,
+        "away_score": 0,
+        "result": "Gagné"
       },
       {
         "match_id": 1378059,
@@ -177,9 +177,9 @@
         "predicted_odds": 1.39,
         "confidence": "ÉLEVÉ",
         "reasoning": "Moyenne de 9.4 buts attendus. H2H: 1.5 buts/match",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 5,
+        "away_score": 0,
+        "result": "Gagné"
       },
       {
         "match_id": 1382133,
@@ -205,9 +205,9 @@
         "predicted_odds": 1.33,
         "confidence": "ÉLEVÉ",
         "reasoning": "Match déséquilibré (92 vs 60): clean sheet probable",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 4,
+        "away_score": 1,
+        "result": "Perdu"
       },
       {
         "match_id": 1436040,
@@ -219,9 +219,9 @@
         "predicted_odds": 1.16,
         "confidence": "ÉLEVÉ",
         "reasoning": "Au moins 2 buts très probable (86%)",
-        "home_score": null,
-        "away_score": null,
-        "result": "En attente"
+        "home_score": 3,
+        "away_score": 2,
+        "result": "Gagné"
       }
     ]
   }

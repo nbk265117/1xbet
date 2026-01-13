@@ -4,7 +4,7 @@ Service pour récupérer les données depuis API-Football
 import requests
 import logging
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional, Any
+from typing import List, Dict, Optional, Any, Tuple
 from config.settings import FOOTBALL_API_KEY, FOOTBALL_API_BASE_URL
 from config.leagues import is_league_allowed, get_league_name, get_league_priority
 from models.match import Match, Team
@@ -40,27 +40,38 @@ class FootballAPIService:
             logger.error(f"Request error: {e}")
             return None
 
-    def get_fixtures_by_date(self, date: str) -> List[Match]:
+    def get_fixtures_by_date(self, date: str, filter_leagues: bool = True) -> List[Match]:
         """
         Récupère les matchs pour une date donnée
         Args:
             date: Format YYYY-MM-DD
+            filter_leagues: Si True, filtre par ligues autorisées. Si False, retourne TOUS les matchs.
         Returns:
-            Liste des matchs filtrés par ligues autorisées
+            Liste des matchs (filtrés ou non selon filter_leagues)
         """
-        logger.info(f"Fetching fixtures for {date}")
+        logger.info(f"Fetching fixtures for {date} (filter={filter_leagues})")
 
         data = self._make_request("fixtures", {"date": date})
         if not data or "response" not in data:
             return []
 
         matches = []
+        skipped_leagues = set()
+
         for fixture in data["response"]:
             league_id = fixture["league"]["id"]
 
-            # Filtrer par ligues autorisées
-            if not is_league_allowed(league_id):
-                continue
+            # Filtrer les matchs amicaux et jeunes si filter_leagues est True
+            if filter_leagues:
+                # Exclure certaines catégories même avec filter_leagues=False
+                league_name = fixture["league"]["name"].lower()
+                if any(x in league_name for x in ["friendly", "u17", "u18", "u19", "u20", "u21", "u23", "women", "youth"]):
+                    continue
+
+                # Filtrer par ligues autorisées
+                if not is_league_allowed(league_id):
+                    skipped_leagues.add(f"{fixture['league']['name']} ({league_id})")
+                    continue
 
             match = self._parse_fixture(fixture)
             if match:
@@ -68,8 +79,74 @@ class FootballAPIService:
 
         # Trier par priorité de ligue
         matches.sort(key=lambda m: get_league_priority(m.league_id))
-        logger.info(f"Found {len(matches)} matches in allowed leagues")
+
+        if skipped_leagues and len(skipped_leagues) <= 10:
+            logger.debug(f"Skipped leagues: {skipped_leagues}")
+
+        logger.info(f"Found {len(matches)} matches {'in allowed leagues' if filter_leagues else 'total'}")
         return matches
+
+    def get_all_fixtures_by_date(self, date: str, exclude_friendlies: bool = True,
+                                   exclude_youth: bool = True) -> Tuple[List[Match], Dict]:
+        """
+        Récupère TOUS les matchs pour une date donnée (sans filtrage par ligue)
+        Args:
+            date: Format YYYY-MM-DD
+            exclude_friendlies: Exclure les matchs amicaux
+            exclude_youth: Exclure les matchs de jeunes (U17, U18, U19, U20, U21, U23)
+        Returns:
+            Tuple (Liste des matchs, Statistiques par ligue)
+        """
+        logger.info(f"Fetching ALL fixtures for {date}")
+
+        data = self._make_request("fixtures", {"date": date})
+        if not data or "response" not in data:
+            return [], {}
+
+        matches = []
+        stats_by_league = {}
+        excluded_keywords = []
+
+        if exclude_friendlies:
+            excluded_keywords.extend(["friendly", "friendlies", "amical"])
+        if exclude_youth:
+            excluded_keywords.extend(["u17", "u18", "u19", "u20", "u21", "u23", "youth", "junior", "academy"])
+
+        for fixture in data["response"]:
+            league_name = fixture["league"]["name"].lower()
+            league_id = fixture["league"]["id"]
+            country = fixture["league"]["country"]
+
+            # Exclure selon les paramètres
+            if any(kw in league_name for kw in excluded_keywords):
+                continue
+
+            # Exclure les matchs féminins par défaut
+            if "women" in league_name or " w " in league_name or league_name.endswith(" w"):
+                continue
+
+            match = self._parse_fixture(fixture)
+            if match:
+                matches.append(match)
+
+                # Stats par ligue
+                league_key = f"{fixture['league']['name']} ({country})"
+                if league_key not in stats_by_league:
+                    stats_by_league[league_key] = {
+                        "id": league_id,
+                        "country": country,
+                        "name": fixture["league"]["name"],
+                        "matches": 0,
+                        "is_allowed": is_league_allowed(league_id),
+                        "priority": get_league_priority(league_id)
+                    }
+                stats_by_league[league_key]["matches"] += 1
+
+        # Trier par priorité puis par nombre de matchs
+        matches.sort(key=lambda m: (get_league_priority(m.league_id), -1))
+
+        logger.info(f"Found {len(matches)} matches across {len(stats_by_league)} leagues")
+        return matches, stats_by_league
 
     def get_tomorrow_fixtures(self) -> List[Match]:
         """Récupère les matchs de demain"""
