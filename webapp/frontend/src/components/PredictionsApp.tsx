@@ -22,7 +22,10 @@ interface PredictionResponse {
   predictions: Prediction[];
 }
 
-const API_URL = import.meta.env.PUBLIC_API_URL || '';
+// Use relative URL for Netlify Functions, absolute for local dev
+const API_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+  ? 'http://localhost:8000'
+  : '';
 
 export default function PredictionsApp() {
   const today = new Date().toISOString().split('T')[0];
