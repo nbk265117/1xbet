@@ -250,6 +250,31 @@ const { title } = Astro.props;
   .over-under-cell {
     font-size: 0.9rem;
     color: #a0a0a0;
+    white-space: nowrap;
+  }
+
+  .score-cell {
+    font-weight: 600;
+    color: #fbbf24;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .btts-cell {
+    font-weight: 600;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .btts-yes {
+    background: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+  }
+
+  .btts-no {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
   }
 
   .confidence-cell {
@@ -345,9 +370,26 @@ const { title } = Astro.props;
     border-radius: 4px;
   }
 
-  .pick-ou {
+  .pick-score {
+    color: #fbbf24;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .pick-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
     color: #a0a0a0;
-    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .pick-details .btts-yes {
+    color: #4ade80;
+  }
+
+  .pick-details .btts-no {
+    color: #ef4444;
   }
 
   .pick-confidence {

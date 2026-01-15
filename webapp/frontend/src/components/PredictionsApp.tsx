@@ -12,6 +12,8 @@ interface Prediction {
   prediction: string;
   prediction_text: string;
   over_under: string;
+  btts: string;
+  exact_score: string;
   confidence: number;
   advice: string;
 }
@@ -119,7 +121,9 @@ export default function PredictionsApp() {
                   <th>Match</th>
                   <th>1X2 %</th>
                   <th>Prédiction</th>
-                  <th>Over/Under</th>
+                  <th>Score</th>
+                  <th>O/U</th>
+                  <th>BTTS</th>
                   <th>Confiance</th>
                 </tr>
               </thead>
@@ -139,7 +143,9 @@ export default function PredictionsApp() {
                     <td className={`prediction-cell ${getPredictionClass(pred.prediction)}`}>
                       <strong>{pred.prediction}</strong>
                     </td>
+                    <td className="score-cell">{pred.exact_score}</td>
                     <td className="over-under-cell">{pred.over_under}</td>
+                    <td className={`btts-cell ${pred.btts === 'Oui' ? 'btts-yes' : 'btts-no'}`}>{pred.btts}</td>
                     <td className="confidence-cell">
                       <span className="stars">{getConfidenceStars(pred.confidence)}</span>
                     </td>
@@ -155,8 +161,10 @@ export default function PredictionsApp() {
               <span className="legend-item"><strong>1</strong> = Victoire Domicile</span>
               <span className="legend-item"><strong>2</strong> = Victoire Extérieur</span>
               <span className="legend-item"><strong>X</strong> = Match Nul</span>
-              <span className="legend-item"><strong>1X</strong> = Double Chance Dom/Nul</span>
-              <span className="legend-item"><strong>X2</strong> = Double Chance Nul/Ext</span>
+              <span className="legend-item"><strong>1X</strong> = DC Dom/Nul</span>
+              <span className="legend-item"><strong>X2</strong> = DC Nul/Ext</span>
+              <span className="legend-item"><strong>BTTS</strong> = Les 2 équipes marquent</span>
+              <span className="legend-item"><strong>O/U</strong> = Over/Under 2.5</span>
             </div>
           </div>
 
@@ -172,7 +180,11 @@ export default function PredictionsApp() {
                     <div className="pick-match">{pred.home} vs {pred.away}</div>
                     <div className="pick-prediction">
                       <span className={getPredictionClass(pred.prediction)}>{pred.prediction}</span>
-                      <span className="pick-ou">{pred.over_under}</span>
+                      <span className="pick-score">{pred.exact_score}</span>
+                    </div>
+                    <div className="pick-details">
+                      <span>{pred.over_under}</span>
+                      <span className={pred.btts === 'Oui' ? 'btts-yes' : 'btts-no'}>BTTS: {pred.btts}</span>
                     </div>
                     <div className="pick-confidence">{getConfidenceStars(pred.confidence)}</div>
                   </div>

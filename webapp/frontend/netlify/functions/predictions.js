@@ -96,6 +96,59 @@ function determineOverUnder(goalsHome, goalsAway, advice) {
   return "Under 2.5";
 }
 
+function determineBTTS(teams, comparison) {
+  try {
+    const homeGoalsFor = parseFloat(teams?.home?.league?.goals?.for?.average?.total || 0);
+    const awayGoalsFor = parseFloat(teams?.away?.league?.goals?.for?.average?.total || 0);
+    const homeGoalsAgainst = parseFloat(teams?.home?.league?.goals?.against?.average?.total || 0);
+    const awayGoalsAgainst = parseFloat(teams?.away?.league?.goals?.against?.average?.total || 0);
+
+    // Si les deux équipes marquent en moyenne > 0.8 but et encaissent > 0.8 but
+    if (homeGoalsFor > 0.8 && awayGoalsFor > 0.8 && homeGoalsAgainst > 0.8 && awayGoalsAgainst > 0.8) {
+      return "Oui";
+    }
+    // Si une équipe a une défense très solide
+    if (homeGoalsAgainst < 0.5 || awayGoalsAgainst < 0.5) {
+      return "Non";
+    }
+    // Défaut basé sur les stats d'attaque
+    if (homeGoalsFor > 1 && awayGoalsFor > 1) {
+      return "Oui";
+    }
+    return "Non";
+  } catch {
+    return "Non";
+  }
+}
+
+function determineExactScore(prediction, teams, goalsHome, goalsAway) {
+  try {
+    const homeAvgFor = parseFloat(teams?.home?.league?.goals?.for?.average?.home || 1.2);
+    const awayAvgFor = parseFloat(teams?.away?.league?.goals?.for?.average?.away || 0.9);
+
+    // Arrondir les moyennes
+    let homeGoals = Math.round(homeAvgFor);
+    let awayGoals = Math.round(awayAvgFor);
+
+    // Ajuster selon la prédiction
+    if (prediction === "1" || prediction === "1X") {
+      homeGoals = Math.max(homeGoals, awayGoals + 1);
+    } else if (prediction === "2" || prediction === "X2") {
+      awayGoals = Math.max(awayGoals, homeGoals + 1);
+    } else if (prediction === "X") {
+      awayGoals = homeGoals;
+    }
+
+    // Limiter les scores extrêmes
+    homeGoals = Math.min(Math.max(homeGoals, 0), 4);
+    awayGoals = Math.min(Math.max(awayGoals, 0), 3);
+
+    return `${homeGoals}-${awayGoals}`;
+  } catch {
+    return "1-1";
+  }
+}
+
 async function fetchPrediction(fixtureId, fixtureInfo) {
   try {
     const resp = await fetch(`${BASE_URL}/predictions?fixture=${fixtureId}`, {
@@ -109,6 +162,8 @@ async function fetchPrediction(fixtureId, fixtureInfo) {
     const predictions = pred.predictions || {};
     const percent = predictions.percent || {};
     const goals = predictions.goals || {};
+    const teams = pred.teams || {};
+    const comparison = pred.comparison || {};
 
     const homePct = percent.home || "33%";
     const drawPct = percent.draw || "33%";
@@ -122,6 +177,8 @@ async function fetchPrediction(fixtureId, fixtureInfo) {
 
     const overUnder = determineOverUnder(goals.home, goals.away, advice);
     const confidence = getConfidence(homePct, awayPct, drawPct);
+    const btts = determineBTTS(teams, comparison);
+    const exactScore = determineExactScore(prediction, teams, goals.home, goals.away);
 
     return {
       id: fixtureId,
@@ -135,6 +192,8 @@ async function fetchPrediction(fixtureId, fixtureInfo) {
       prediction,
       prediction_text: text,
       over_under: overUnder,
+      btts,
+      exact_score: exactScore,
       confidence,
       advice
     };
