@@ -1,0 +1,430 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Prédictions de matchs de football avec analyse statistique" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+  }
+
+  .app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 2px solid #0f3460;
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #e94560, #0f3460);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+
+  .header p {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+  }
+
+  .search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .date-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .date-picker-container label {
+    font-weight: 500;
+    color: #e0e0e0;
+  }
+
+  .date-input {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #0f3460;
+    border-radius: 8px;
+    background: #1a1a2e;
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  .date-input:focus {
+    outline: none;
+    border-color: #e94560;
+  }
+
+  .submit-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #e94560, #0f3460);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .error-message {
+    background: rgba(233, 69, 96, 0.2);
+    border: 1px solid #e94560;
+    color: #ff6b6b;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .results-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #e94560;
+  }
+
+  .match-count {
+    text-align: center;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .predictions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .predictions-table th {
+    background: #0f3460;
+    padding: 15px 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .predictions-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .predictions-table tr:hover {
+    background: rgba(233, 69, 96, 0.1);
+  }
+
+  .time-cell {
+    font-weight: 600;
+    color: #e94560;
+    white-space: nowrap;
+  }
+
+  .league-cell {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .match-cell {
+    min-width: 250px;
+  }
+
+  .home-team {
+    color: #4ade80;
+  }
+
+  .vs {
+    color: #666;
+    margin: 0 8px;
+    font-size: 0.8rem;
+  }
+
+  .away-team {
+    color: #60a5fa;
+  }
+
+  .percent-cell {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+  }
+
+  .prediction-cell {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+
+  .pred-home {
+    background: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+  }
+
+  .pred-away {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+  }
+
+  .pred-draw {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+  }
+
+  .pred-home-draw {
+    background: rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+  }
+
+  .pred-draw-away {
+    background: rgba(236, 72, 153, 0.2);
+    color: #ec4899;
+  }
+
+  .over-under-cell {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+  }
+
+  .confidence-cell {
+    text-align: center;
+  }
+
+  .stars {
+    color: #fbbf24;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .legend {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .legend h3 {
+    margin-bottom: 15px;
+    color: #e94560;
+  }
+
+  .legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .legend-item {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+  }
+
+  .legend-item strong {
+    color: #fff;
+    margin-right: 5px;
+  }
+
+  .top-picks {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .top-picks h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fbbf24;
+  }
+
+  .picks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .pick-card {
+    background: rgba(15, 52, 96, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #0f3460;
+    transition: transform 0.2s;
+  }
+
+  .pick-card:hover {
+    transform: translateY(-3px);
+    border-color: #e94560;
+  }
+
+  .pick-league {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+  }
+
+  .pick-match {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .pick-prediction {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .pick-prediction span:first-child {
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .pick-ou {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+  }
+
+  .pick-confidence {
+    color: #fbbf24;
+    text-align: right;
+    letter-spacing: 2px;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #a0a0a0;
+  }
+
+  /* React DatePicker customization */
+  .react-datepicker {
+    background: #1a1a2e !important;
+    border: 2px solid #0f3460 !important;
+    font-family: inherit !important;
+  }
+
+  .react-datepicker__header {
+    background: #0f3460 !important;
+    border-bottom: 1px solid #16213e !important;
+  }
+
+  .react-datepicker__current-month,
+  .react-datepicker__day-name {
+    color: #fff !important;
+  }
+
+  .react-datepicker__day {
+    color: #e0e0e0 !important;
+  }
+
+  .react-datepicker__day:hover {
+    background: #e94560 !important;
+  }
+
+  .react-datepicker__day--selected {
+    background: #e94560 !important;
+    color: #fff !important;
+  }
+
+  .react-datepicker__day--keyboard-selected {
+    background: #0f3460 !important;
+  }
+
+  .react-datepicker__navigation-icon::before {
+    border-color: #fff !important;
+  }
+
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 1.8rem;
+    }
+
+    .search-section {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .predictions-table {
+      font-size: 0.85rem;
+    }
+
+    .predictions-table th,
+    .predictions-table td {
+      padding: 8px 5px;
+    }
+
+    .match-cell {
+      min-width: 180px;
+    }
+
+    .picks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
