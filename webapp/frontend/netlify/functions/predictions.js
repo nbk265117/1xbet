@@ -2,30 +2,40 @@ const API_KEY = "111a3d8d8abb91aacf250df4ea6f5116";
 const BASE_URL = "https://v3.football.api-sports.io";
 
 const PRIORITY_LEAGUES = {
+  // Top 5 European Leagues
   39: "Premier League",
   140: "La Liga",
   135: "Serie A",
   78: "Bundesliga",
-  61: "Ligue 1",
+  61: "Ligue 1 France",
+  // European Cups
   2: "Champions League",
   3: "Europa League",
   848: "Conference League",
-  262: "Liga MX",
+  // Other European Leagues
   94: "Primeira Liga",
   88: "Eredivisie",
   90: "KNVB Beker",
   144: "Jupiler Pro",
   203: "Super Lig",
   206: "Türkiye Kupası",
-  179: "Scottish Prem",
-  197: "Super League",
+  179: "Scottish Premiership",
+  197: "Super League Greece",
+  218: "Super League Greece",
+  // Americas
+  262: "Liga MX",
+  71: "Serie A Brazil",
+  128: "Argentina Liga",
+  // Middle East
   307: "Saudi Pro League",
-  305: "Qatar Stars",
+  305: "Qatar Stars League",
   301: "UAE Pro League",
   330: "Kuwait Premier",
   417: "Bahrain Premier",
-  895: "Egypt Cup",
-  233: "Egypt Premier",
+  // Africa
+  895: "Egypt League Cup",
+  233: "Egyptian Premier",
+  202: "Ligue 1 Tunisia",
 };
 
 function getConfidence(homePct, awayPct, drawPct) {
@@ -151,9 +161,15 @@ function determineExactScore(prediction, teams, goalsHome, goalsAway) {
 
 async function fetchPrediction(fixtureId, fixtureInfo) {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+
     const resp = await fetch(`${BASE_URL}/predictions?fixture=${fixtureId}`, {
-      headers: { "x-apisports-key": API_KEY }
+      headers: { "x-apisports-key": API_KEY },
+      signal: controller.signal
     });
+    clearTimeout(timeout);
+
     const data = await resp.json();
     const pred = data.response?.[0];
 
@@ -245,15 +261,40 @@ export const handler = async (event) => {
 
     // Filter important fixtures
     const importantFixtures = [];
+
+    // Excluded leagues (youth, amateur, etc.)
+    const excludedKeywords = ["Youth", "U20", "U21", "U19", "U18", "Reserve", "Amateur", "Women", "Feminin", "II", "III", "B "];
+
     for (const f of fixtures) {
       const leagueId = f.league.id;
       const leagueName = f.league.name;
+      const country = f.league.country;
 
-      const isPriority = leagueId in PRIORITY_LEAGUES;
-      const isImportantName = ["Serie A", "Liga", "Premier", "Bundesliga", "Ligue 1", "Champions", "Europa", "Cup", "Copa", "Coupe"]
-        .some(kw => leagueName.includes(kw));
+      // Skip youth/amateur leagues
+      if (excludedKeywords.some(kw => leagueName.includes(kw))) {
+        continue;
+      }
 
-      if (isPriority || isImportantName) {
+      const isPriority = PRIORITY_LEAGUES.hasOwnProperty(String(leagueId));
+
+      // More specific filtering for important leagues
+      const isTopLeague =
+        (leagueName === "Serie A" && country === "Italy") ||
+        (leagueName === "La Liga" && country === "Spain") ||
+        (leagueName === "Premier League" && country === "England") ||
+        (leagueName === "Bundesliga" && country === "Germany") ||
+        (leagueName === "Ligue 1" && country === "France") ||
+        leagueName.includes("Champions League") ||
+        leagueName.includes("Europa League") ||
+        leagueName.includes("Liga MX") ||
+        leagueName.includes("KNVB Beker") ||
+        leagueName.includes("Türkiye Kupası") ||
+        leagueName.includes("Stars League") ||
+        leagueName.includes("Pro League") ||
+        leagueName.includes("League Cup") ||
+        (leagueName.includes("Premier") && ["Kuwait", "Bahrain", "Egypt", "England"].includes(country));
+
+      if (isPriority || isTopLeague) {
         importantFixtures.push({
           id: f.fixture.id,
           time: f.fixture.date.substring(11, 16),
@@ -264,8 +305,9 @@ export const handler = async (event) => {
       }
     }
 
-    // Limit to 25 matches to avoid timeout
-    const limitedFixtures = importantFixtures.slice(0, 25);
+    // Sort by time and limit to 40 matches
+    importantFixtures.sort((a, b) => a.time.localeCompare(b.time));
+    const limitedFixtures = importantFixtures.slice(0, 40);
 
     // Fetch predictions in parallel
     const predictionPromises = limitedFixtures.map(fix => fetchPrediction(fix.id, fix));
