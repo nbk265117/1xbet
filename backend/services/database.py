@@ -59,6 +59,11 @@ class Database:
         """Collection des paris de l'utilisateur"""
         return self.db["user_bets"] if self.db else None
 
+    @property
+    def team_ratings(self):
+        """Collection des ratings Elo des équipes"""
+        return self.db["team_ratings"] if self.db else None
+
     # ==================== Prédictions ====================
 
     async def save_prediction(self, prediction: Dict[str, Any]) -> bool:

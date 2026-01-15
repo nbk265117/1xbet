@@ -54,13 +54,42 @@ class MatchAnalyzer:
 
     def __init__(self):
         self.home_advantage_factor = 0.08  # 8% d'avantage à domicile
+        self._elo_service = None
 
-    def _get_team_strength(self, team_name: str) -> int:
-        """Estime la force d'une équipe basée sur son nom"""
+    def _get_elo_service(self):
+        """Récupère le service Elo (lazy loading)"""
+        if self._elo_service is None:
+            try:
+                from services.elo_service import get_elo_service
+                self._elo_service = get_elo_service()
+            except ImportError:
+                pass
+        return self._elo_service
+
+    def _get_team_strength(self, team_name: str, team_id: int = 0, league_id: int = 0) -> int:
+        """
+        Estime la force d'une équipe
+
+        Priorité:
+        1. Service Elo (si disponible et team_id fourni)
+        2. KNOWN_TEAMS (fallback statique)
+        3. Valeur par défaut (60)
+        """
+        # Essayer le service Elo d'abord
+        elo_service = self._get_elo_service()
+        if elo_service and team_id:
+            elo_rating = elo_service.get_team_rating_sync(team_id, team_name, league_id)
+            if elo_rating != 1500:  # Si pas la valeur par défaut
+                strength = elo_service.elo_to_strength(elo_rating)
+                logger.debug(f"[ELO] {team_name}: Elo={elo_rating:.0f} → Strength={strength}")
+                return strength
+
+        # Fallback: KNOWN_TEAMS statique
         name_lower = team_name.lower()
         for known, strength in self.KNOWN_TEAMS.items():
             if known in name_lower or name_lower in known:
                 return strength
+
         return 60  # Force par défaut pour équipes inconnues
 
     def analyze_match(self, match: Match) -> Dict:
@@ -70,9 +99,17 @@ class MatchAnalyzer:
         """
         logger.info(f"Analyzing: {match}")
 
-        # Estimer la force des équipes si données insuffisantes
-        home_strength = self._get_team_strength(match.home_team.name)
-        away_strength = self._get_team_strength(match.away_team.name)
+        # Estimer la force des équipes (priorité: Elo > KNOWN_TEAMS > défaut)
+        home_strength = self._get_team_strength(
+            match.home_team.name,
+            team_id=match.home_team.id,
+            league_id=match.league_id
+        )
+        away_strength = self._get_team_strength(
+            match.away_team.name,
+            team_id=match.away_team.id,
+            league_id=match.league_id
+        )
         strength_diff = (home_strength - away_strength) / 100  # Entre -1 et 1
 
         # Calculer les scores pour chaque facteur

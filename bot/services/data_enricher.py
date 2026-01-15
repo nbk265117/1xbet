@@ -26,7 +26,7 @@ class TeamStats:
     """Statistiques enrichies d'une équipe"""
     name: str
     team_id: int = 0
-    form: str = ""  # Ex: "WWDLW"
+    form: str = ""  # Ex: "WWDLW" (5 derniers matchs)
     form_score: float = 0.0
     league_position: int = 0
     league_points: int = 0
@@ -51,6 +51,27 @@ class TeamStats:
     motivation: str = "normal"
     style: str = "balanced"
     avg_corners: float = 5.0
+
+    # Statistiques étendues (10 derniers matchs)
+    form_extended: str = ""  # Ex: "WWDLWLDWDW" (10 caractères)
+    goals_scored_last_10: int = 0
+    goals_conceded_last_10: int = 0
+    avg_goals_scored_10: float = 0.0
+    avg_goals_conceded_10: float = 0.0
+    wins_last_10: int = 0
+    draws_last_10: int = 0
+    losses_last_10: int = 0
+
+    # Expected Goals (xG)
+    xg_for_last_5: float = 0.0       # xG créés sur 5 matchs
+    xg_against_last_5: float = 0.0   # xG concédés sur 5 matchs
+    xg_for_last_10: float = 0.0      # xG créés sur 10 matchs
+    xg_against_last_10: float = 0.0  # xG concédés sur 10 matchs
+    avg_xg_per_match: float = 0.0    # Moyenne xG par match
+    xg_diff: float = 0.0             # Différence xG (créés - concédés)
+
+    # Elo Rating
+    elo_rating: float = 1500.0
 
     def __post_init__(self):
         if self.injuries is None:
@@ -83,6 +104,16 @@ class MatchEnrichedData:
     odds_home: float = 0.0
     odds_draw: float = 0.0
     odds_away: float = 0.0
+
+    # Données météo enrichies (OpenWeatherMap)
+    weather_temp: float = 20.0           # Température en °C
+    weather_feels_like: float = 20.0     # Ressenti
+    weather_humidity: int = 50           # Humidité %
+    weather_wind_speed: float = 5.0      # Vitesse vent m/s
+    weather_condition: str = ""          # Clear, Rain, Snow, etc.
+    weather_description: str = ""        # Description détaillée
+    weather_goals_impact: float = 0.0    # Impact sur les buts (-0.10 à 0)
+    weather_corners_impact: float = 0.0  # Impact sur les corners
 
     def __post_init__(self):
         if self.news is None:
@@ -256,6 +287,26 @@ class DynamicDataEnricher:
 
         # 4. Calculer le score de forme
         stats.form_score = self._calculate_form_score(stats.form)
+
+        # 5. Récupérer xG et stats des 10 derniers matchs
+        fixtures_stats = self.get_team_last_fixtures_stats(team_id, league_id, last=10)
+        if fixtures_stats:
+            # xG data (5 derniers matchs)
+            stats.xg_for_last_5 = fixtures_stats.get('total_xg_for', 0.0)
+            stats.xg_against_last_5 = fixtures_stats.get('total_xg_against', 0.0)
+            stats.avg_xg_per_match = fixtures_stats.get('avg_xg', 0.0)
+            stats.xg_diff = fixtures_stats.get('xg_diff', 0.0)
+
+            # Extended stats from 10 matches
+            stats.avg_goals_scored_10 = fixtures_stats.get('avg_goals_scored_10', 0.0)
+            stats.avg_goals_conceded_10 = fixtures_stats.get('avg_goals_conceded_10', 0.0)
+
+        # 6. Récupérer forme étendue et buts sur 10 matchs via API
+        form_data = self._get_team_form_extended(team_id)
+        if form_data:
+            stats.form_extended = form_data.get('form_extended', '')
+            stats.goals_scored_last_10 = form_data.get('goals_scored_10', 0)
+            stats.goals_conceded_last_10 = form_data.get('goals_conceded_10', 0)
 
         return stats
 
@@ -520,6 +571,71 @@ class DynamicDataEnricher:
 
         return min(100, score)
 
+    def _get_team_form_extended(self, team_id: int) -> Optional[Dict]:
+        """
+        Récupère la forme étendue (10 matchs) et les stats de buts
+        Utilise l'API fixtures avec status=FT
+        """
+        cache_key = f"form_extended_{team_id}"
+
+        if self._is_cache_valid(cache_key, 'team_stats'):
+            return self.cache[cache_key].get('data')
+
+        season = datetime.now().year if datetime.now().month >= 7 else datetime.now().year - 1
+        response = self._api_request('fixtures', {
+            'team': team_id,
+            'season': season,
+            'status': 'FT',
+            'last': 10
+        })
+
+        if not response:
+            return None
+
+        # Trier par date décroissante (plus récent d'abord)
+        matches = sorted(
+            response,
+            key=lambda x: x.get('fixture', {}).get('timestamp', 0),
+            reverse=True
+        )[:10]
+
+        form = ""
+        goals_for = 0
+        goals_against = 0
+
+        for m in matches:
+            home_goals = m.get('goals', {}).get('home', 0) or 0
+            away_goals = m.get('goals', {}).get('away', 0) or 0
+
+            is_home = m.get('teams', {}).get('home', {}).get('id') == team_id
+            team_goals = home_goals if is_home else away_goals
+            opponent_goals = away_goals if is_home else home_goals
+
+            goals_for += team_goals
+            goals_against += opponent_goals
+
+            if team_goals > opponent_goals:
+                form += "W"
+            elif team_goals < opponent_goals:
+                form += "L"
+            else:
+                form += "D"
+
+        result = {
+            'form_extended': form,
+            'goals_scored_10': goals_for,
+            'goals_conceded_10': goals_against,
+            'avg_goals_scored_10': round(goals_for / len(matches), 2) if matches else 0,
+            'avg_goals_conceded_10': round(goals_against / len(matches), 2) if matches else 0,
+        }
+
+        self.cache[cache_key] = {
+            'timestamp': time.time(),
+            'data': result
+        }
+
+        return result
+
     def _generate_context_news(self, home_stats: TeamStats, away_stats: TeamStats) -> List[str]:
         """Génère des news contextuelles basées sur les données"""
         news = []
@@ -746,10 +862,12 @@ class DynamicDataEnricher:
 
         return None
 
-    def get_team_last_fixtures_stats(self, team_id: int, league_id: int, last: int = 5) -> Optional[Dict]:
+    def get_team_last_fixtures_stats(self, team_id: int, league_id: int, last: int = 10) -> Optional[Dict]:
         """
         [PRO] Récupère les stats agrégées des derniers matchs d'une équipe
-        Corners, tirs, possession, etc.
+        Corners, tirs, possession, xG, etc.
+
+        Retourne les stats pour 5 ET 10 derniers matchs
         """
         cache_key = f"team_fixtures_stats_{team_id}_{league_id}_{last}"
 
@@ -769,21 +887,8 @@ class DynamicDataEnricher:
         if not response:
             return None
 
-        # Agréger les stats
-        aggregated = {
-            'matches': 0,
-            'total_corners': 0,
-            'total_shots': 0,
-            'total_shots_on_target': 0,
-            'total_possession': 0,
-            'total_fouls': 0,
-            'total_cards': 0,
-            'avg_corners': 0,
-            'avg_shots': 0,
-            'avg_possession': 0,
-            'xg_for': 0,
-            'xg_against': 0,
-        }
+        # Collecter les stats match par match
+        match_stats = []
 
         for fixture in response:
             fixture_id = fixture.get('fixture', {}).get('id')
@@ -793,36 +898,59 @@ class DynamicDataEnricher:
                 # Déterminer si l'équipe était à domicile ou à l'extérieur
                 is_home = fixture.get('teams', {}).get('home', {}).get('id') == team_id
                 team_stats = stats.get('home' if is_home else 'away', {})
+                opponent_stats = stats.get('away' if is_home else 'home', {})
 
-                aggregated['matches'] += 1
-                aggregated['total_corners'] += team_stats.get('Corner Kicks', 0) or 0
-                aggregated['total_shots'] += team_stats.get('Total Shots', 0) or 0
-                aggregated['total_shots_on_target'] += team_stats.get('Shots on Goal', 0) or 0
+                match_data = {
+                    'corners': team_stats.get('Corner Kicks', 0) or 0,
+                    'shots': team_stats.get('Total Shots', 0) or 0,
+                    'shots_on_target': team_stats.get('Shots on Goal', 0) or 0,
+                    'possession': team_stats.get('Ball Possession', 0) or 0,
+                    'fouls': team_stats.get('Fouls', 0) or 0,
+                    'yellow_cards': team_stats.get('Yellow Cards', 0) or 0,
+                    'red_cards': team_stats.get('Red Cards', 0) or 0,
+                    'xg_for': float(team_stats.get('expected_goals', 0) or 0),
+                    'xg_against': float(opponent_stats.get('expected_goals', 0) or 0),
+                }
+                match_stats.append(match_data)
 
-                possession = team_stats.get('Ball Possession', 0)
-                if isinstance(possession, (int, float)):
-                    aggregated['total_possession'] += possession
+        if not match_stats:
+            return None
 
-                aggregated['total_fouls'] += team_stats.get('Fouls', 0) or 0
+        def aggregate_stats(stats_list, label=''):
+            """Agrège les stats pour une liste de matchs"""
+            n = len(stats_list)
+            if n == 0:
+                return {}
 
-                yellow = team_stats.get('Yellow Cards', 0) or 0
-                red = team_stats.get('Red Cards', 0) or 0
-                aggregated['total_cards'] += yellow + red
+            return {
+                f'matches{label}': n,
+                f'total_corners{label}': sum(s['corners'] for s in stats_list),
+                f'total_shots{label}': sum(s['shots'] for s in stats_list),
+                f'total_xg_for{label}': sum(s['xg_for'] for s in stats_list),
+                f'total_xg_against{label}': sum(s['xg_against'] for s in stats_list),
+                f'avg_corners{label}': round(sum(s['corners'] for s in stats_list) / n, 2),
+                f'avg_shots{label}': round(sum(s['shots'] for s in stats_list) / n, 2),
+                f'avg_shots_on_target{label}': round(sum(s['shots_on_target'] for s in stats_list) / n, 2),
+                f'avg_possession{label}': round(sum(s['possession'] for s in stats_list) / n, 1),
+                f'avg_fouls{label}': round(sum(s['fouls'] for s in stats_list) / n, 2),
+                f'avg_cards{label}': round(sum(s['yellow_cards'] + s['red_cards'] for s in stats_list) / n, 2),
+                f'avg_xg{label}': round(sum(s['xg_for'] for s in stats_list) / n, 2),
+                f'avg_xg_against{label}': round(sum(s['xg_against'] for s in stats_list) / n, 2),
+                f'xg_diff{label}': round(sum(s['xg_for'] - s['xg_against'] for s in stats_list) / n, 2),
+            }
 
-                xg = team_stats.get('expected_goals', 0)
-                if xg:
-                    aggregated['xg_for'] += float(xg)
+        # Stats 5 derniers matchs
+        stats_5 = aggregate_stats(match_stats[:5], '')
+        # Stats 10 derniers matchs
+        stats_10 = aggregate_stats(match_stats[:10], '_10')
 
-        # Calculer les moyennes
-        if aggregated['matches'] > 0:
-            n = aggregated['matches']
-            aggregated['avg_corners'] = round(aggregated['total_corners'] / n, 2)
-            aggregated['avg_shots'] = round(aggregated['total_shots'] / n, 2)
-            aggregated['avg_possession'] = round(aggregated['total_possession'] / n, 1)
-            aggregated['avg_shots_on_target'] = round(aggregated['total_shots_on_target'] / n, 2)
-            aggregated['avg_fouls'] = round(aggregated['total_fouls'] / n, 2)
-            aggregated['avg_cards'] = round(aggregated['total_cards'] / n, 2)
-            aggregated['avg_xg'] = round(aggregated['xg_for'] / n, 2)
+        # Fusionner (les clés sans suffix sont pour 5 matchs)
+        aggregated = {**stats_5, **stats_10}
+
+        # Ajouter des aliases pour compatibilité
+        aggregated['matches'] = stats_5.get('matches', 0)
+        aggregated['xg_for'] = stats_5.get('total_xg_for', 0)
+        aggregated['xg_against'] = stats_5.get('total_xg_against', 0)
 
         self.cache[cache_key] = {
             'timestamp': time.time(),

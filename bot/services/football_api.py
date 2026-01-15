@@ -258,9 +258,13 @@ class FootballAPIService:
             "avg_goals": total_goals / len(matches) if matches else 0
         }
 
-    def get_team_form(self, team_id: int, last: int = 5) -> Dict:
-        """Récupère la forme récente d'une équipe"""
-        # Note: Le plan gratuit ne supporte pas le paramètre 'last', on utilise season
+    def get_team_form(self, team_id: int, last: int = 10) -> Dict:
+        """
+        Récupère la forme récente d'une équipe (5 et 10 derniers matchs)
+
+        Returns:
+            Dict avec stats 5 matchs et 10 matchs séparées
+        """
         from datetime import datetime
         season = datetime.now().year if datetime.now().month >= 8 else datetime.now().year - 1
         data = self._make_request("fixtures", {
@@ -269,16 +273,32 @@ class FootballAPIService:
             "status": "FT"  # Finished
         })
 
-        if not data or "response" not in data:
-            return {"form": "", "goals_scored": 0, "goals_conceded": 0, "wins": 0, "draws": 0, "losses": 0}
+        empty_result = {
+            # 5 derniers matchs
+            "form": "", "goals_scored": 0, "goals_conceded": 0,
+            "wins": 0, "draws": 0, "losses": 0,
+            # 10 derniers matchs
+            "form_extended": "", "goals_scored_10": 0, "goals_conceded_10": 0,
+            "wins_10": 0, "draws_10": 0, "losses_10": 0,
+        }
 
-        matches = data["response"]
-        form = ""
-        goals_scored = 0
-        goals_conceded = 0
-        wins = 0
-        draws = 0
-        losses = 0
+        if not data or "response" not in data:
+            return empty_result
+
+        # Trier par date décroissante (plus récent en premier)
+        matches = sorted(
+            data["response"],
+            key=lambda x: x.get("fixture", {}).get("timestamp", 0),
+            reverse=True
+        )
+
+        # Limiter aux 10 derniers matchs
+        matches = matches[:10]
+
+        form_all = ""
+        goals_scored_all = []
+        goals_conceded_all = []
+        results_all = []  # W, D, L
 
         for m in matches:
             home_goals = m["goals"]["home"] or 0
@@ -288,26 +308,52 @@ class FootballAPIService:
             team_goals = home_goals if is_home else away_goals
             opponent_goals = away_goals if is_home else home_goals
 
-            goals_scored += team_goals
-            goals_conceded += opponent_goals
+            goals_scored_all.append(team_goals)
+            goals_conceded_all.append(opponent_goals)
 
             if team_goals > opponent_goals:
-                form += "W"
-                wins += 1
+                form_all += "W"
+                results_all.append("W")
             elif team_goals < opponent_goals:
-                form += "L"
-                losses += 1
+                form_all += "L"
+                results_all.append("L")
             else:
-                form += "D"
-                draws += 1
+                form_all += "D"
+                results_all.append("D")
+
+        # Stats 5 derniers matchs
+        form_5 = form_all[:5]
+        goals_scored_5 = sum(goals_scored_all[:5])
+        goals_conceded_5 = sum(goals_conceded_all[:5])
+        results_5 = results_all[:5]
+        wins_5 = results_5.count("W")
+        draws_5 = results_5.count("D")
+        losses_5 = results_5.count("L")
+
+        # Stats 10 derniers matchs
+        form_10 = form_all[:10]
+        goals_scored_10 = sum(goals_scored_all[:10])
+        goals_conceded_10 = sum(goals_conceded_all[:10])
+        results_10 = results_all[:10]
+        wins_10 = results_10.count("W")
+        draws_10 = results_10.count("D")
+        losses_10 = results_10.count("L")
 
         return {
-            "form": form,
-            "goals_scored": goals_scored,
-            "goals_conceded": goals_conceded,
-            "wins": wins,
-            "draws": draws,
-            "losses": losses
+            # 5 derniers matchs (backward compatible)
+            "form": form_5,
+            "goals_scored": goals_scored_5,
+            "goals_conceded": goals_conceded_5,
+            "wins": wins_5,
+            "draws": draws_5,
+            "losses": losses_5,
+            # 10 derniers matchs (nouveau)
+            "form_extended": form_10,
+            "goals_scored_10": goals_scored_10,
+            "goals_conceded_10": goals_conceded_10,
+            "wins_10": wins_10,
+            "draws_10": draws_10,
+            "losses_10": losses_10,
         }
 
     def get_predictions(self, fixture_id: int) -> Dict:

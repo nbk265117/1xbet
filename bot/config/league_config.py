@@ -68,6 +68,10 @@ DEFAULT_CONFIG = {
     },
     "avg_goals_per_match": 2.5,
     "style": "balanced",
+    # Expected Goals (xG) - Poids pour blender xG avec les stats traditionnelles
+    "xg_weight": 0.25,  # 25% xG, 75% stats traditionnelles
+    # Météo - Impact activé par défaut
+    "weather_enabled": True,
 }
 
 # Configuration spécifique par ligue
@@ -103,6 +107,7 @@ LEAGUE_CONFIGS = {
         },
         "avg_goals_per_match": 2.8,
         "style": "attacking",
+        "xg_weight": 0.30,  # PL a de bonnes données xG
     },
 
     140: {  # La Liga
@@ -137,6 +142,7 @@ LEAGUE_CONFIGS = {
         },
         "avg_goals_per_match": 2.5,
         "style": "balanced",
+        "xg_weight": 0.28,
     },
 
     78: {  # Bundesliga
@@ -168,6 +174,7 @@ LEAGUE_CONFIGS = {
         },
         "avg_goals_per_match": 3.1,
         "style": "attacking",
+        "xg_weight": 0.28,
     },
 
     135: {  # Serie A

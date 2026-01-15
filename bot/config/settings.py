@@ -27,6 +27,9 @@ CONFIDENCE_HIGH = "ÉLEVÉ"
 CONFIDENCE_MEDIUM = "MOYEN"
 CONFIDENCE_LOW = "FAIBLE"
 
+# OpenWeatherMap Configuration (Free tier: 1000 calls/day)
+OPENWEATHERMAP_API_KEY = os.getenv("OPENWEATHERMAP_API_KEY", "")
+
 # Output Configuration
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "output")
 LOG_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "bot.log")

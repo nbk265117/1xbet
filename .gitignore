@@ -59,3 +59,7 @@ npm-debug.log
 .coverage
 htmlcov/
 1xbet-api-php/
+
+# Local Netlify folder
+.netlify
+bot/cache/

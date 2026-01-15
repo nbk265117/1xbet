@@ -97,13 +97,27 @@ class Team:
     name: str
     logo: Optional[str] = None
 
-    # Statistiques de forme
+    # Statistiques de forme (5 derniers matchs)
     form: str = ""  # Ex: "WWDLW"
     goals_scored_last_5: int = 0
     goals_conceded_last_5: int = 0
     wins_last_5: int = 0
     draws_last_5: int = 0
     losses_last_5: int = 0
+
+    # Statistiques étendues (10 derniers matchs)
+    form_extended: str = ""  # Ex: "WWDLWLDWDW" (10 caractères)
+    goals_scored_last_10: int = 0
+    goals_conceded_last_10: int = 0
+    wins_last_10: int = 0
+    draws_last_10: int = 0
+    losses_last_10: int = 0
+
+    # Expected Goals (xG)
+    xg_for_last_5: float = 0.0       # xG créés sur 5 matchs
+    xg_against_last_5: float = 0.0   # xG concédés sur 5 matchs
+    xg_for_last_10: float = 0.0      # xG créés sur 10 matchs
+    xg_against_last_10: float = 0.0  # xG concédés sur 10 matchs
 
     # Classement
     league_position: int = 0
@@ -120,6 +134,9 @@ class Team:
     # Clean sheets
     clean_sheets: int = 0
     failed_to_score: int = 0
+
+    # Elo Rating (dynamique)
+    elo_rating: float = 1500.0
 
 
 @dataclass

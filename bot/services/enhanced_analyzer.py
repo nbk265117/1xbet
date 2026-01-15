@@ -567,6 +567,31 @@ class EnhancedMatchAnalyzer:
         max_xg = self.avg_goals_per_match + 1.0  # Ex: Bundesliga 3.1 → max 4.1
         total_expected = min(total_expected, max_xg)
 
+        # ========== [NEW] INTÉGRATION xG (Expected Goals) ==========
+        # Poids xG configurable par ligue (défaut 25%)
+        xg_weight = self._current_config.get("xg_weight", 0.25)
+
+        if home_fixture_stats and away_fixture_stats:
+            home_xg = home_fixture_stats.get('avg_xg', 0)
+            home_xg_against = home_fixture_stats.get('avg_xg_against', 0)
+            away_xg = away_fixture_stats.get('avg_xg', 0)
+            away_xg_against = away_fixture_stats.get('avg_xg_against', 0)
+
+            # Si données xG disponibles, blender avec les expected goals traditionnels
+            if home_xg > 0 and away_xg > 0:
+                # xG-based expected goals
+                xg_expected_home = (home_xg * 0.6 + away_xg_against * 0.4)
+                xg_expected_away = (away_xg * 0.6 + home_xg_against * 0.4)
+
+                # Blend: (1 - xg_weight) * traditional + xg_weight * xG-based
+                expected_home = (expected_home * (1 - xg_weight)) + (xg_expected_home * xg_weight)
+                expected_away = (expected_away * (1 - xg_weight)) + (xg_expected_away * xg_weight)
+                total_expected = expected_home + expected_away
+
+                logger.info(f"[xG] Intégré avec poids {xg_weight:.0%}: "
+                           f"home_xg={home_xg:.2f}, away_xg={away_xg:.2f}, "
+                           f"total_expected={total_expected:.2f}")
+
         # [PRO] Ajuster avec les prédictions API
         if api_predictions:
             api_goals_home = api_predictions.get('goals_home')
@@ -585,6 +610,17 @@ class EnhancedMatchAnalyzer:
         # Ajuster avec H2H (seulement si données fiables)
         if enriched.h2h_avg_goals > 0 and enriched.h2h_matches >= 3:
             total_expected = (total_expected * 0.7) + (enriched.h2h_avg_goals * 0.3)
+
+        # ========== [NEW] IMPACT MÉTÉO ==========
+        # Appliquer l'impact de la météo sur les buts attendus
+        weather_enabled = self._current_config.get("weather_enabled", True)
+        if weather_enabled and hasattr(enriched, 'weather_goals_impact') and enriched.weather_goals_impact != 0:
+            weather_factor = 1 + enriched.weather_goals_impact  # Ex: 1 + (-0.05) = 0.95
+            total_expected *= weather_factor
+            expected_home *= weather_factor
+            expected_away *= weather_factor
+            logger.info(f"[WEATHER] Impact {enriched.weather_goals_impact:+.0%} sur buts: "
+                       f"total_expected={total_expected:.2f}, condition={enriched.weather_condition}")
 
         # CAP FINAL adapté à la ligue
         total_expected = min(total_expected, max_xg)
@@ -1034,22 +1070,52 @@ class EnhancedMatchAnalyzer:
 
         return description, importance
 
-    def _form_to_score(self, form: str) -> float:
-        """Convertit la forme en score (0-100)"""
+    def _form_to_score(self, form: str, use_extended: bool = False) -> float:
+        """
+        Convertit la forme en score (0-100) avec decay temporel
+
+        Args:
+            form: Chaîne de forme (ex: "WWDLW" ou "WWDLWLDWDW")
+            use_extended: Si True, analyse 10 matchs au lieu de 5
+
+        Returns:
+            Score de forme (0-100)
+        """
         if not form:
             return 50
 
+        max_matches = 10 if use_extended else 5
+        form_chars = form[:max_matches].upper()
+
         score = 0
-        weights = [1.5, 1.3, 1.1, 0.9, 0.7]
+        max_possible = 0
 
-        for i, result in enumerate(form[:5].upper()):
-            w = weights[i] if i < len(weights) else 0.5
+        # Decay linéaire: match le plus récent = 1.0, le plus ancien = 0.5
+        # Pour 10 matchs: [1.0, 0.95, 0.90, 0.85, 0.80, 0.75, 0.70, 0.65, 0.60, 0.55]
+        for i, result in enumerate(form_chars):
+            # Decay: 5% de réduction par match plus ancien
+            weight = max(0.5, 1.0 - (i * 0.05))
+
             if result == 'W':
-                score += 20 * w
+                score += 20 * weight
             elif result == 'D':
-                score += 10 * w
+                score += 10 * weight
+            # L = 0 points
 
-        return min(100, score)
+            # Max possible pour ce match
+            max_possible += 20 * weight
+
+        # Normaliser à 0-100
+        if max_possible > 0:
+            normalized_score = (score / max_possible) * 100
+        else:
+            normalized_score = 50
+
+        return min(100, max(0, normalized_score))
+
+    def _form_to_score_extended(self, form: str) -> float:
+        """Alias pour analyse étendue sur 10 matchs"""
+        return self._form_to_score(form, use_extended=True)
 
     def _get_motivation_diff(self, home: TeamStats, away: TeamStats) -> float:
         """Calcule la différence de motivation"""
