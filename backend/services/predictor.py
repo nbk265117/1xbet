@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Optional
 import uuid
 
 from models.match import (
@@ -12,8 +12,34 @@ from models.match import (
 )
 
 
+# =============================================================================
+# CONFIGURATION ALGORITHME v2.0 - Basé sur analyse du 25/01/2026
+# =============================================================================
+
+# Ligues défensives à éviter pour Over 2.5
+DEFENSIVE_LEAGUES = [
+    "jordan", "thailand", "greece", "morocco", "iran",
+    "saudi arabia",  # Sauf matchs avec Expected > 3.5
+]
+
+# Ligues offensives à privilégier
+OFFENSIVE_LEAGUES = [
+    "switzerland", "netherlands", "hong kong", "mexico",
+    "laos", "singapore", "gibraltar",
+]
+
+# Seuils pour Over 2.5
+THRESHOLDS = {
+    "over_25_safe": 3.5,      # Expected >= 3.5 = 87% de réussite
+    "over_25_moderate": 3.0,  # Expected 3.0-3.5 = 50% de réussite (risqué)
+    "over_15_safe": 2.5,      # Expected >= 2.5 = 77% de réussite
+    "failed_to_score_max": 0.35,  # Si équipe rate > 35% des matchs = danger
+    "h2h_min_goals": 2.5,     # Moyenne H2H minimum pour Over 2.5
+}
+
+
 class MatchPredictor:
-    """Moteur de prédiction basé sur l'analyse de données"""
+    """Moteur de prédiction basé sur l'analyse de données - v2.0"""
 
     def __init__(self):
         # Poids pour chaque facteur de prédiction
@@ -24,6 +50,395 @@ class MatchPredictor:
             "home_advantage": 0.15,
             "injuries": 0.15,
             "league_position": 0.15,
+        }
+
+    # =========================================================================
+    # NOUVELLES MÉTHODES OVER/UNDER - v2.0
+    # =========================================================================
+
+    def calculate_expected_goals(
+        self,
+        home_goals_for: float,
+        home_goals_against: float,
+        away_goals_for: float,
+        away_goals_against: float
+    ) -> float:
+        """
+        Calcule les Expected Goals pour un match.
+        Formule: (home_for + away_against)/2 + (away_for + home_against)/2
+        """
+        if home_goals_for + away_goals_for == 0:
+            return 0.0
+
+        expected = (home_goals_for + away_goals_against) / 2 + (away_goals_for + home_goals_against) / 2
+        return round(expected, 2)
+
+    def check_failed_to_score_risk(
+        self,
+        home_failed_to_score: int,
+        home_matches: int,
+        away_failed_to_score: int,
+        away_matches: int
+    ) -> Dict[str, any]:
+        """
+        Vérifie le risque de "failed to score" pour chaque équipe.
+        Retourne un dict avec les taux et les alertes.
+        """
+        home_rate = home_failed_to_score / home_matches if home_matches > 0 else 0
+        away_rate = away_failed_to_score / away_matches if away_matches > 0 else 0
+
+        alerts = []
+        risk_level = "low"
+
+        if home_rate > THRESHOLDS["failed_to_score_max"]:
+            alerts.append(f"⚠️ Home team fails to score {home_rate*100:.0f}% of matches")
+            risk_level = "high"
+
+        if away_rate > THRESHOLDS["failed_to_score_max"]:
+            alerts.append(f"⚠️ Away team fails to score {away_rate*100:.0f}% of matches")
+            risk_level = "high"
+
+        return {
+            "home_rate": round(home_rate, 2),
+            "away_rate": round(away_rate, 2),
+            "alerts": alerts,
+            "risk_level": risk_level
+        }
+
+    def check_big_team_away_risk(
+        self,
+        away_team_strength: float,
+        home_team_strength: float,
+        league: str
+    ) -> Dict[str, any]:
+        """
+        Détecte si une grande équipe joue en déplacement contre une petite.
+        Ces matchs sont souvent défensifs (ex: Raja Casablanca).
+        """
+        strength_diff = away_team_strength - home_team_strength
+
+        if strength_diff > 0.3:  # Grande équipe en déplacement
+            return {
+                "is_risky": True,
+                "alert": "⚠️ Grande équipe en déplacement - risque de jeu défensif",
+                "recommendation": "Éviter Over 2.5, préférer Under 2.5 ou 1X2"
+            }
+
+        return {"is_risky": False, "alert": None, "recommendation": None}
+
+    def check_league_defensive(self, league: str, country: str) -> Dict[str, any]:
+        """
+        Vérifie si la ligue est connue pour être défensive.
+        """
+        league_lower = league.lower()
+        country_lower = country.lower()
+
+        for defensive in DEFENSIVE_LEAGUES:
+            if defensive in league_lower or defensive in country_lower:
+                return {
+                    "is_defensive": True,
+                    "alert": f"⚠️ {country} - Ligue défensive, Over 2.5 risqué",
+                    "min_expected": 4.0  # Exiger Expected plus élevé
+                }
+
+        for offensive in OFFENSIVE_LEAGUES:
+            if offensive in league_lower or offensive in country_lower:
+                return {
+                    "is_defensive": False,
+                    "is_offensive": True,
+                    "bonus": "✅ Ligue offensive - Over 2.5 recommandé"
+                }
+
+        return {"is_defensive": False, "is_offensive": False}
+
+    def predict_over_under(
+        self,
+        expected_goals: float,
+        h2h_avg_goals: float,
+        league_info: Dict,
+        failed_to_score_info: Dict,
+        big_team_away_info: Dict
+    ) -> Dict[str, any]:
+        """
+        Prédit Over/Under avec niveau de confiance et recommandations.
+        Retourne les prédictions pour Over 2.5, Over 1.5, et alertes.
+        """
+        result = {
+            "expected_goals": expected_goals,
+            "over_25": {"recommended": False, "confidence": "low", "probability": 0},
+            "over_15": {"recommended": False, "confidence": "low", "probability": 0},
+            "alerts": [],
+            "recommendation": None
+        }
+
+        # Collecter les alertes
+        result["alerts"].extend(failed_to_score_info.get("alerts", []))
+        if big_team_away_info.get("is_risky"):
+            result["alerts"].append(big_team_away_info["alert"])
+        if league_info.get("is_defensive"):
+            result["alerts"].append(league_info["alert"])
+
+        # Ajuster le seuil si ligue défensive
+        over_25_threshold = THRESHOLDS["over_25_safe"]
+        if league_info.get("is_defensive"):
+            over_25_threshold = league_info.get("min_expected", 4.0)
+
+        # =====================================================================
+        # OVER 2.5 ANALYSIS
+        # =====================================================================
+        if expected_goals >= over_25_threshold:
+            # Expected >= 3.5 (ou 4.0 pour ligues défensives) = TRÈS SÛR
+            result["over_25"] = {
+                "recommended": True,
+                "confidence": "very_high",
+                "probability": 87,
+                "verdict": "🔥 TRÈS SÛR"
+            }
+            result["recommendation"] = "✅ Over 2.5 RECOMMANDÉ"
+
+        elif expected_goals >= THRESHOLDS["over_25_moderate"]:
+            # Expected 3.0-3.5 = RISQUÉ (50% seulement)
+            # Vérifier les facteurs de risque
+            risk_count = len(result["alerts"])
+
+            if risk_count == 0 and h2h_avg_goals >= THRESHOLDS["h2h_min_goals"]:
+                result["over_25"] = {
+                    "recommended": True,
+                    "confidence": "medium",
+                    "probability": 60,
+                    "verdict": "⚠️ MOYEN - Prudence"
+                }
+                result["recommendation"] = "⚠️ Over 2.5 possible mais risqué"
+            else:
+                result["over_25"] = {
+                    "recommended": False,
+                    "confidence": "low",
+                    "probability": 40,
+                    "verdict": "❌ ÉVITER"
+                }
+                result["recommendation"] = "❌ Over 2.5 NON recommandé - Trop de risques"
+
+        else:
+            # Expected < 3.0 = NE PAS PRENDRE
+            result["over_25"] = {
+                "recommended": False,
+                "confidence": "very_low",
+                "probability": 30,
+                "verdict": "❌ ÉVITER"
+            }
+            result["recommendation"] = "❌ Over 2.5 NON recommandé - Expected trop bas"
+
+        # =====================================================================
+        # OVER 1.5 ANALYSIS (Alternative plus sûre)
+        # =====================================================================
+        if expected_goals >= THRESHOLDS["over_15_safe"]:
+            result["over_15"] = {
+                "recommended": True,
+                "confidence": "high",
+                "probability": 77,
+                "verdict": "✅ SÛR"
+            }
+        elif expected_goals >= 2.0:
+            result["over_15"] = {
+                "recommended": True,
+                "confidence": "medium",
+                "probability": 65,
+                "verdict": "⚠️ ACCEPTABLE"
+            }
+        else:
+            result["over_15"] = {
+                "recommended": False,
+                "confidence": "low",
+                "probability": 50,
+                "verdict": "❌ RISQUÉ"
+            }
+
+        # =====================================================================
+        # ONE TEAM OVER 1.5 (Une équipe marque 2+ buts)
+        # =====================================================================
+        # Cette stratégie a 68% de réussite
+        if expected_goals >= 3.0:
+            result["one_team_over_15"] = {
+                "recommended": True,
+                "confidence": "high",
+                "probability": 68,
+                "verdict": "✅ BON"
+            }
+
+        return result
+
+    def analyze_match_for_over_under(self, api_prediction_data: Dict) -> Dict[str, any]:
+        """
+        Analyse complète d'un match pour Over/Under à partir des données API.
+
+        Args:
+            api_prediction_data: Données de l'endpoint /predictions de l'API
+
+        Returns:
+            Dict avec analyse complète et recommandations
+        """
+        try:
+            pred = api_prediction_data.get('response', [{}])[0]
+            if not pred:
+                return {"error": "No prediction data"}
+
+            # Extraire les données des équipes
+            home = pred.get('teams', {}).get('home', {})
+            away = pred.get('teams', {}).get('away', {})
+            league = pred.get('league', {})
+
+            home_league = home.get('league', {})
+            away_league = away.get('league', {})
+
+            # Goals averages
+            home_goals_for = float(home_league.get('goals', {}).get('for', {}).get('average', {}).get('total', 0) or 0)
+            home_goals_against = float(home_league.get('goals', {}).get('against', {}).get('average', {}).get('total', 0) or 0)
+            away_goals_for = float(away_league.get('goals', {}).get('for', {}).get('average', {}).get('total', 0) or 0)
+            away_goals_against = float(away_league.get('goals', {}).get('against', {}).get('average', {}).get('total', 0) or 0)
+
+            # Calcul Expected Goals
+            expected_goals = self.calculate_expected_goals(
+                home_goals_for, home_goals_against,
+                away_goals_for, away_goals_against
+            )
+
+            # Failed to score stats
+            home_fts = home_league.get('failed_to_score', {}).get('total', 0)
+            home_matches = home_league.get('fixtures', {}).get('played', {}).get('total', 1)
+            away_fts = away_league.get('failed_to_score', {}).get('total', 0)
+            away_matches = away_league.get('fixtures', {}).get('played', {}).get('total', 1)
+
+            fts_info = self.check_failed_to_score_risk(
+                home_fts, home_matches,
+                away_fts, away_matches
+            )
+
+            # League analysis
+            league_name = league.get('name', '')
+            country = league.get('country', '')
+            league_info = self.check_league_defensive(league_name, country)
+
+            # Big team away analysis
+            home_form_score = self.calculate_form_score(list(home_league.get('form', '') or ''))
+            away_form_score = self.calculate_form_score(list(away_league.get('form', '') or ''))
+            big_team_info = self.check_big_team_away_risk(
+                away_form_score, home_form_score, league_name
+            )
+
+            # H2H analysis
+            h2h = pred.get('h2h', [])
+            h2h_avg_goals = 0
+            if h2h:
+                total_goals = sum(
+                    (m.get('goals', {}).get('home', 0) or 0) + (m.get('goals', {}).get('away', 0) or 0)
+                    for m in h2h[:5]
+                )
+                h2h_avg_goals = total_goals / min(5, len(h2h))
+
+            # Generate Over/Under prediction
+            over_under = self.predict_over_under(
+                expected_goals, h2h_avg_goals,
+                league_info, fts_info, big_team_info
+            )
+
+            return {
+                "match": f"{home.get('name', 'Home')} vs {away.get('name', 'Away')}",
+                "league": f"{league_name} ({country})",
+                "expected_goals": expected_goals,
+                "h2h_avg_goals": round(h2h_avg_goals, 2),
+                "stats": {
+                    "home_goals_for": home_goals_for,
+                    "home_goals_against": home_goals_against,
+                    "away_goals_for": away_goals_for,
+                    "away_goals_against": away_goals_against,
+                    "home_failed_to_score_rate": fts_info["home_rate"],
+                    "away_failed_to_score_rate": fts_info["away_rate"],
+                },
+                "over_under": over_under,
+                "should_bet_over_25": over_under["over_25"]["recommended"],
+                "should_bet_over_15": over_under["over_15"]["recommended"],
+                "alerts": over_under["alerts"],
+                "final_recommendation": over_under["recommendation"]
+            }
+
+        except Exception as e:
+            return {"error": str(e)}
+
+    def filter_matches_for_over_25(
+        self,
+        matches_analysis: List[Dict],
+        min_expected: float = 3.5
+    ) -> List[Dict]:
+        """
+        Filtre les matchs pour Over 2.5 selon les nouveaux critères.
+
+        Args:
+            matches_analysis: Liste des analyses de matchs
+            min_expected: Expected Goals minimum (défaut 3.5 = 87% réussite)
+
+        Returns:
+            Liste des matchs filtrés et triés par Expected
+        """
+        filtered = []
+
+        for match in matches_analysis:
+            if match.get("error"):
+                continue
+
+            over_under = match.get("over_under", {})
+            over_25 = over_under.get("over_25", {})
+
+            # Appliquer les critères stricts
+            if over_25.get("recommended") and over_25.get("confidence") in ["very_high", "high"]:
+                filtered.append(match)
+
+        # Trier par Expected Goals décroissant
+        filtered.sort(key=lambda x: x.get("expected_goals", 0), reverse=True)
+
+        return filtered
+
+    def generate_safe_over_25_ticket(
+        self,
+        matches_analysis: List[Dict],
+        max_matches: int = 8
+    ) -> Dict[str, any]:
+        """
+        Génère un ticket sécurisé pour Over 2.5 avec les meilleurs matchs.
+
+        Args:
+            matches_analysis: Liste des analyses de matchs
+            max_matches: Nombre maximum de matchs (recommandé: 5-8)
+
+        Returns:
+            Dict avec le ticket et les statistiques
+        """
+        # Filtrer avec critères stricts (Expected >= 3.5)
+        safe_matches = self.filter_matches_for_over_25(matches_analysis, min_expected=3.5)
+
+        # Limiter le nombre de matchs
+        selected = safe_matches[:max_matches]
+
+        # Calculer la probabilité combinée
+        combined_prob = 1.0
+        for match in selected:
+            prob = match.get("over_under", {}).get("over_25", {}).get("probability", 50) / 100
+            combined_prob *= prob
+
+        return {
+            "ticket_type": "SAFE_OVER_25",
+            "matches_count": len(selected),
+            "matches": [
+                {
+                    "match": m["match"],
+                    "league": m["league"],
+                    "expected": m["expected_goals"],
+                    "confidence": m["over_under"]["over_25"]["confidence"],
+                    "verdict": m["over_under"]["over_25"]["verdict"]
+                }
+                for m in selected
+            ],
+            "combined_probability": round(combined_prob * 100, 2),
+            "recommendation": f"✅ Ticket SAFE avec {len(selected)} matchs - Probabilité: {round(combined_prob * 100, 1)}%"
         }
 
     def calculate_form_score(self, form: List[str]) -> float:
