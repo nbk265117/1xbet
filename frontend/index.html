@@ -225,7 +225,233 @@
             font-size: 1.8em;
             color: #00ff88;
         }
-    
+
+        /* Bouton Random Ticket */
+        .random-btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .random-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.6);
+        }
+        .random-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Modal Ticket */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 50px rgba(0, 212, 255, 0.3);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+        .modal-header {
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 18px 18px 0 0;
+        }
+        .modal-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .close-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .close-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .modal-body {
+            padding: 20px 30px;
+        }
+        .ticket-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .ticket-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .ticket-stat {
+            text-align: center;
+        }
+        .ticket-stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        .ticket-stat-label {
+            font-size: 0.85em;
+            color: #aaa;
+        }
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .ticket-table th {
+            background: rgba(0, 212, 255, 0.2);
+            padding: 12px;
+            text-align: left;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        .ticket-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .ticket-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        .ticket-match {
+            font-weight: 500;
+        }
+        .ticket-league {
+            color: #888;
+            font-size: 0.85em;
+        }
+        .ticket-prob {
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .ticket-prob.excellent { background: rgba(0, 200, 83, 0.3); color: #00e676; }
+        .ticket-prob.high { background: rgba(0, 188, 212, 0.3); color: #00e5ff; }
+        .ticket-prob.medium { background: rgba(255, 152, 0, 0.3); color: #ffc107; }
+        .ticket-prob.low { background: rgba(244, 67, 54, 0.3); color: #ff5722; }
+
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .action-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-regenerate {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+        }
+        .btn-regenerate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        .btn-copy {
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: #000;
+        }
+        .btn-copy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+        }
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00c853;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            z-index: 2000;
+            display: none;
+        }
+        .copy-toast.show {
+            display: block;
+            animation: fadeInOut 2s ease;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            20% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+        }
+        .ticket-number-select {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ticket-number-select label {
+            color: #aaa;
+        }
+        .ticket-number-select select {
+            padding: 8px 15px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -298,7 +524,73 @@
         
         <div class="filter-section">
             <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher un match, une équipe ou un pays..." onkeyup="filterMatches()">
+            <br><br>
+            <button class="random-btn" onclick="generateRandomTicket()">
+                🎲 GENERER TICKET RANDOM
+            </button>
         </div>
+
+        <!-- Modal Ticket -->
+        <div class="modal-overlay" id="ticketModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">🎫 TICKET 1XBET - OVER 2.5</div>
+                    <button class="close-btn" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="ticket-info">
+                        <div class="ticket-stats">
+                            <div class="ticket-stat">
+                                <div class="ticket-stat-value" id="ticketCount">20</div>
+                                <div class="ticket-stat-label">Matchs</div>
+                            </div>
+                            <div class="ticket-stat">
+                                <div class="ticket-stat-value" id="ticketAvgProb">0%</div>
+                                <div class="ticket-stat-label">Prob. Moyenne</div>
+                            </div>
+                            <div class="ticket-stat">
+                                <div class="ticket-stat-value" id="ticketMinProb">0%</div>
+                                <div class="ticket-stat-label">Prob. Min</div>
+                            </div>
+                        </div>
+                        <div class="ticket-number-select">
+                            <label>Nombre de matchs:</label>
+                            <select id="matchCountSelect" onchange="regenerateTicket()">
+                                <option value="5">5 matchs</option>
+                                <option value="10">10 matchs</option>
+                                <option value="15">15 matchs</option>
+                                <option value="20" selected>20 matchs</option>
+                                <option value="30">30 matchs</option>
+                                <option value="50">50 matchs</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table class="ticket-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Match</th>
+                                <th>Ligue</th>
+                                <th>Prob.</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ticketBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="action-btn btn-regenerate" onclick="regenerateTicket()">
+                        🔄 Nouveau Ticket
+                    </button>
+                    <button class="action-btn btn-copy" onclick="copyTicket()">
+                        📋 Copier Liste
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="copy-toast" id="copyToast">✅ Liste copiée dans le presse-papier!</div>
 
         <div class="country-section" data-country="Netherlands">
             <div class="country-header" onclick="toggleSection(this)">
@@ -5518,6 +5810,32 @@
     </div>
     
     <script>
+        // Collecter tous les matchs au chargement
+        let allMatches = [];
+        let currentTicket = [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.match-row');
+            rows.forEach((row, index) => {
+                const date = row.querySelector('.date')?.textContent || '';
+                const matchName = row.querySelector('.match-name')?.textContent || '';
+                const league = row.querySelector('.league')?.textContent || '';
+                const probText = row.querySelector('.progress-text')?.textContent || '70%';
+                const prob = parseInt(probText.replace('%', ''));
+                const country = row.closest('.country-section')?.getAttribute('data-country') || '';
+
+                allMatches.push({
+                    id: index + 1,
+                    date: date,
+                    match: matchName,
+                    league: league,
+                    country: country,
+                    probability: prob
+                });
+            });
+            console.log('Matchs chargés:', allMatches.length);
+        });
+
         function toggleSection(header) {
             const table = header.nextElementSibling;
             if (table.style.display === 'none') {
@@ -5526,12 +5844,12 @@
                 table.style.display = 'none';
             }
         }
-        
+
         function filterMatches() {
             const searchTerm = document.getElementById('searchBox').value.toLowerCase();
             const rows = document.querySelectorAll('.match-row');
             const sections = document.querySelectorAll('.country-section');
-            
+
             rows.forEach(row => {
                 const text = row.getAttribute('data-search');
                 if (text.includes(searchTerm)) {
@@ -5540,8 +5858,7 @@
                     row.style.display = 'none';
                 }
             });
-            
-            // Show/hide country sections based on visible rows
+
             sections.forEach(section => {
                 const visibleRows = section.querySelectorAll('.match-row:not([style*="display: none"])');
                 if (visibleRows.length === 0 && searchTerm !== '') {
@@ -5551,6 +5868,99 @@
                 }
             });
         }
+
+        function generateRandomTicket() {
+            const count = parseInt(document.getElementById('matchCountSelect').value);
+
+            // Mélanger et prendre N matchs aléatoires
+            const shuffled = [...allMatches].sort(() => Math.random() - 0.5);
+            currentTicket = shuffled.slice(0, count);
+
+            // Trier par date
+            currentTicket.sort((a, b) => {
+                const [dayA, monthA] = a.date.split('/').map(Number);
+                const [dayB, monthB] = b.date.split('/').map(Number);
+                if (monthA !== monthB) return monthA - monthB;
+                return dayA - dayB;
+            });
+
+            displayTicket();
+            document.getElementById('ticketModal').classList.add('active');
+        }
+
+        function regenerateTicket() {
+            generateRandomTicket();
+        }
+
+        function displayTicket() {
+            const tbody = document.getElementById('ticketBody');
+            const avgProb = currentTicket.reduce((sum, m) => sum + m.probability, 0) / currentTicket.length;
+            const minProb = Math.min(...currentTicket.map(m => m.probability));
+
+            document.getElementById('ticketCount').textContent = currentTicket.length;
+            document.getElementById('ticketAvgProb').textContent = avgProb.toFixed(1) + '%';
+            document.getElementById('ticketMinProb').textContent = minProb + '%';
+
+            tbody.innerHTML = currentTicket.map((match, i) => {
+                let probClass = 'low';
+                if (match.probability >= 85) probClass = 'excellent';
+                else if (match.probability >= 78) probClass = 'high';
+                else if (match.probability >= 70) probClass = 'medium';
+
+                return `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td style="color: #00ff88;">${match.date}</td>
+                        <td class="ticket-match">${match.match}</td>
+                        <td class="ticket-league">${match.league}</td>
+                        <td><span class="ticket-prob ${probClass}">${match.probability}%</span></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function closeModal() {
+            document.getElementById('ticketModal').classList.remove('active');
+        }
+
+        function copyTicket() {
+            const lines = [
+                '🎫 TICKET 1XBET - OVER 2.5 GOALS',
+                '================================',
+                ''
+            ];
+
+            currentTicket.forEach((match, i) => {
+                lines.push(`${i + 1}. ${match.date} | ${match.match} (${match.probability}%)`);
+                lines.push(`   📍 ${match.league}`);
+            });
+
+            const avgProb = currentTicket.reduce((sum, m) => sum + m.probability, 0) / currentTicket.length;
+            lines.push('');
+            lines.push('================================');
+            lines.push(`📊 ${currentTicket.length} matchs | Prob. moyenne: ${avgProb.toFixed(1)}%`);
+            lines.push('🎯 Pari: OVER 2.5 GOALS sur chaque match');
+
+            navigator.clipboard.writeText(lines.join('\n')).then(() => {
+                const toast = document.getElementById('copyToast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            });
+        }
+
+        // Fermer modal en cliquant à l'extérieur
+        document.getElementById('ticketModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Fermer avec Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
