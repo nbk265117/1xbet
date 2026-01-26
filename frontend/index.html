@@ -124,19 +124,58 @@
             margin-bottom: 30px;
             text-align: center;
         }
+        .filter-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
         .search-box {
             padding: 15px 25px;
             font-size: 1em;
             border: none;
             border-radius: 30px;
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
             background: rgba(255,255,255,0.1);
             color: #fff;
             outline: none;
         }
         .search-box::placeholder {
             color: #888;
+        }
+        .date-filter {
+            padding: 15px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+        .date-filter::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+        .clear-date-btn {
+            padding: 15px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255, 82, 82, 0.3);
+            color: #ff5252;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .clear-date-btn:hover {
+            background: rgba(255, 82, 82, 0.5);
+        }
+        .date-info {
+            color: #00ff88;
+            font-size: 0.9em;
+            margin-top: 10px;
         }
         footer {
             text-align: center;
@@ -208,11 +247,30 @@
             .filter-section {
                 margin-bottom: 15px;
             }
+            .filter-row {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
             .search-box {
                 padding: 12px 15px;
                 font-size: 14px;
                 width: 100%;
+                max-width: 100%;
                 border-radius: 25px;
+            }
+            .date-filter {
+                padding: 12px 15px;
+                font-size: 14px;
+                width: 100%;
+                max-width: 200px;
+            }
+            .clear-date-btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            .date-info {
+                font-size: 0.8em;
             }
             .random-btn {
                 padding: 15px 20px;
@@ -842,8 +900,13 @@
         </header>
         
         <div class="filter-section">
-            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher un match, une équipe ou un pays..." onkeyup="filterMatches()">
-            <br><br>
+            <div class="filter-row">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher un match, une équipe ou un pays..." onkeyup="filterMatches()">
+                <input type="date" class="date-filter" id="dateFilter" onchange="filterMatches()">
+                <button class="clear-date-btn" onclick="clearDateFilter()">✕ Clear</button>
+            </div>
+            <div class="date-info" id="dateInfo"></div>
+            <br>
             <button class="random-btn" onclick="generateRandomTicket()">
                 🎲 GENERER TICKET RANDOM
             </button>
@@ -7026,13 +7089,33 @@
 
         function filterMatches() {
             const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const dateFilter = document.getElementById('dateFilter').value;
+            const dateInfo = document.getElementById('dateInfo');
             const rows = document.querySelectorAll('.match-row');
             const sections = document.querySelectorAll('.country-section');
 
+            // Convertir la date sélectionnée en format "DD/MM"
+            let filterDate = '';
+            if (dateFilter) {
+                const d = new Date(dateFilter);
+                const day = String(d.getDate()).padStart(2, '0');
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                filterDate = `${day}/${month}`;
+            }
+
+            let visibleCount = 0;
             rows.forEach(row => {
                 const text = row.getAttribute('data-search');
-                if (text.includes(searchTerm)) {
+                const dateCell = row.querySelector('.date');
+                const rowDate = dateCell ? dateCell.textContent.substring(0, 5) : '';
+
+                // Vérifier les deux filtres
+                const matchesSearch = text.includes(searchTerm);
+                const matchesDate = !filterDate || rowDate === filterDate;
+
+                if (matchesSearch && matchesDate) {
                     row.style.display = '';
+                    visibleCount++;
                 } else {
                     row.style.display = 'none';
                 }
@@ -7040,12 +7123,27 @@
 
             sections.forEach(section => {
                 const visibleRows = section.querySelectorAll('.match-row:not([style*="display: none"])');
-                if (visibleRows.length === 0 && searchTerm !== '') {
+                if (visibleRows.length === 0 && (searchTerm !== '' || filterDate !== '')) {
                     section.style.display = 'none';
                 } else {
                     section.style.display = '';
                 }
             });
+
+            // Afficher info sur la date filtrée
+            if (filterDate) {
+                const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+                const d = new Date(dateFilter);
+                const formattedDate = `${d.getDate()} ${months[d.getMonth()]} 2026`;
+                dateInfo.textContent = `📅 ${visibleCount} match(s) le ${formattedDate}`;
+            } else {
+                dateInfo.textContent = '';
+            }
+        }
+
+        function clearDateFilter() {
+            document.getElementById('dateFilter').value = '';
+            filterMatches();
         }
 
         function generateRandomTicket() {
