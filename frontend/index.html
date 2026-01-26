@@ -569,6 +569,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>🌍</th>
                                 <th>Date</th>
                                 <th>Match</th>
                                 <th>Ligue</th>
@@ -5814,6 +5815,50 @@
         let allMatches = [];
         let currentTicket = [];
 
+        // Mapping des drapeaux par pays
+        const countryFlags = {
+            'Netherlands': '🇳🇱',
+            'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+            'Germany': '🇩🇪',
+            'Switzerland': '🇨🇭',
+            'France': '🇫🇷',
+            'Saudi-Arabia': '🇸🇦',
+            'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+            'Belgium': '🇧🇪',
+            'Spain': '🇪🇸',
+            'Hungary': '🇭🇺',
+            'Argentina': '🇦🇷',
+            'Italy': '🇮🇹',
+            'Austria': '🇦🇹',
+            'Portugal': '🇵🇹',
+            'Denmark': '🇩🇰',
+            'Czech-Republic': '🇨🇿',
+            'Sweden': '🇸🇪',
+            'Norway': '🇳🇴',
+            'Mexico': '🇲🇽',
+            'USA': '🇺🇸',
+            'Turkey': '🇹🇷',
+            'Greece': '🇬🇷',
+            'Poland': '🇵🇱',
+            'Romania': '🇷🇴',
+            'Brazil': '🇧🇷',
+            'Japan': '🇯🇵',
+            'Australia': '🇦🇺',
+            'World': '🌍',
+            'Hong-Kong': '🇭🇰',
+            'Egypt': '🇪🇬',
+            'Israel': '🇮🇱',
+            'Croatia': '🇭🇷',
+            'Serbia': '🇷🇸',
+            'Ukraine': '🇺🇦',
+            'Russia': '🇷🇺',
+            'China': '🇨🇳',
+            'South-Korea': '🇰🇷',
+            'Colombia': '🇨🇴',
+            'Chile': '🇨🇱',
+            'Peru': '🇵🇪'
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
             const rows = document.querySelectorAll('.match-row');
             rows.forEach((row, index) => {
@@ -5822,7 +5867,19 @@
                 const league = row.querySelector('.league')?.textContent || '';
                 const probText = row.querySelector('.progress-text')?.textContent || '70%';
                 const prob = parseInt(probText.replace('%', ''));
-                const country = row.closest('.country-section')?.getAttribute('data-country') || '';
+                const countrySection = row.closest('.country-section');
+                const country = countrySection?.getAttribute('data-country') || '';
+
+                // Extraire le drapeau depuis le header du pays
+                const countryNameEl = countrySection?.querySelector('.country-name');
+                let flag = countryFlags[country] || '🏳️';
+                if (countryNameEl) {
+                    const text = countryNameEl.textContent;
+                    const emojiMatch = text.match(/^[\p{Emoji}\u200d]+/u);
+                    if (emojiMatch) {
+                        flag = emojiMatch[0].trim();
+                    }
+                }
 
                 allMatches.push({
                     id: index + 1,
@@ -5830,6 +5887,7 @@
                     match: matchName,
                     league: league,
                     country: country,
+                    flag: flag,
                     probability: prob
                 });
             });
@@ -5910,6 +5968,7 @@
                 return `
                     <tr>
                         <td>${i + 1}</td>
+                        <td style="font-size: 1.3em;">${match.flag}</td>
                         <td style="color: #00ff88;">${match.date}</td>
                         <td class="ticket-match">${match.match}</td>
                         <td class="ticket-league">${match.league}</td>
@@ -5931,8 +5990,8 @@
             ];
 
             currentTicket.forEach((match, i) => {
-                lines.push(`${i + 1}. ${match.date} | ${match.match} (${match.probability}%)`);
-                lines.push(`   📍 ${match.league}`);
+                lines.push(`${i + 1}. ${match.flag} ${match.date} | ${match.match} (${match.probability}%)`);
+                lines.push(`   📍 ${match.league} - ${match.country}`);
             });
 
             const avgProb = currentTicket.reduce((sum, m) => sum + m.probability, 0) / currentTicket.length;
