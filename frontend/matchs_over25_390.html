@@ -1,0 +1,3292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 390 Matchs Over 2.5 - Jan/Fév/Mars 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        .stat-label {
+            color: #aaa;
+            margin-top: 5px;
+        }
+        .country-section {
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .country-header {
+            background: linear-gradient(90deg, #0f3460, #16213e);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .country-header:hover {
+            background: linear-gradient(90deg, #1a4a7a, #1e3a5f);
+        }
+        .country-name {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .country-count {
+            background: #00ff88;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: rgba(0,212,255,0.2);
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #00d4ff;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        .match-name {
+            font-weight: 500;
+        }
+        .league {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        .date {
+            color: #00ff88;
+            font-weight: 500;
+        }
+        .expected {
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .filter-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .search-box {
+            padding: 15px 25px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            outline: none;
+        }
+        .search-box::placeholder {
+            color: #888;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            td, th {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 MATCHS OVER 2.5 GOALS</h1>
+            <p style="color: #888; font-size: 1.2em;">Janvier - Février - Mars 2026</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">354</div>
+                    <div class="stat-label">Matchs Sélectionnés</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">~3092</div>
+                    <div class="stat-label">Matchs Analysés</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">11.4%</div>
+                    <div class="stat-label">Taux de Sélection</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">29</div>
+                    <div class="stat-label">Pays</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="filter-section">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher un match, une équipe ou un pays..." onkeyup="filterMatches()">
+        </div>
+
+        <div class="country-section" data-country="Netherlands">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇳🇱 NETHERLANDS</span>
+                <span class="country-count">48 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="ado den haag vs vitesse netherlands eerste divisie">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">ADO Den Haag vs Vitesse</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="waalwijk vs jong utrecht netherlands eerste divisie">
+                        <td>2</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Waalwijk vs Jong Utrecht</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="roda vs vvv venlo netherlands eerste divisie">
+                        <td>3</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Roda vs VVV Venlo</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="de graafschap vs den bosch netherlands eerste divisie">
+                        <td>4</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">De Graafschap vs Den Bosch</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong az vs almere city fc netherlands eerste divisie">
+                        <td>5</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Jong AZ vs Almere City FC</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="psv eindhoven vs feyenoord netherlands eredivisie">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">PSV Eindhoven vs Feyenoord</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc volendam vs go ahead eagles netherlands eredivisie">
+                        <td>7</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">FC Volendam vs GO Ahead Eagles</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="excelsior vs ajax netherlands eredivisie">
+                        <td>8</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Excelsior vs Ajax</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="heerenveen vs utrecht netherlands eredivisie">
+                        <td>9</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Heerenveen vs Utrecht</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong psv u21 vs cambuur netherlands eerste divisie">
+                        <td>10</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Jong PSV U21 vs Cambuur</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong utrecht vs vvv venlo netherlands eerste divisie">
+                        <td>11</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Jong Utrecht vs VVV Venlo</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong ajax vs willem ii netherlands eerste divisie">
+                        <td>12</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Jong Ajax vs Willem II</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dordrecht vs helmond sport netherlands eerste divisie">
+                        <td>13</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Dordrecht vs Helmond Sport</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="emmen vs jong utrecht netherlands eerste divisie">
+                        <td>14</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Emmen vs Jong Utrecht</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="roda vs ado den haag netherlands eerste divisie">
+                        <td>15</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Roda vs ADO Den Haag</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="de graafschap vs jong ajax netherlands eerste divisie">
+                        <td>16</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">De Graafschap vs Jong Ajax</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="helmond sport vs den bosch netherlands eerste divisie">
+                        <td>17</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Helmond Sport vs Den Bosch</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc oss vs vitesse netherlands eerste divisie">
+                        <td>18</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">FC OSS vs Vitesse</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="pec zwolle vs fc volendam netherlands eredivisie">
+                        <td>19</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">PEC Zwolle vs FC Volendam</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fortuna sittard vs sparta rotterdam netherlands eredivisie">
+                        <td>20</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Fortuna Sittard vs Sparta Rotterdam</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="twente vs heerenveen netherlands eredivisie">
+                        <td>21</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Twente vs Heerenveen</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="groningen vs psv eindhoven netherlands eredivisie">
+                        <td>22</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Groningen vs PSV Eindhoven</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="cambuur vs almere city fc netherlands eerste divisie">
+                        <td>23</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Cambuur vs Almere City FC</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="utrecht vs feyenoord netherlands eredivisie">
+                        <td>24</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Utrecht vs Feyenoord</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="az alkmaar vs ajax netherlands eredivisie">
+                        <td>25</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">AZ Alkmaar vs Ajax</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="go ahead eagles vs telstar netherlands eredivisie">
+                        <td>26</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">GO Ahead Eagles vs Telstar</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="willem ii vs waalwijk netherlands eerste divisie">
+                        <td>27</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Willem II vs Waalwijk</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong psv u21 vs fc oss netherlands eerste divisie">
+                        <td>28</td>
+                        <td class="date">09/02</td>
+                        <td class="match-name">Jong PSV U21 vs FC OSS</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong az vs dordrecht netherlands eerste divisie">
+                        <td>29</td>
+                        <td class="date">09/02</td>
+                        <td class="match-name">Jong AZ vs Dordrecht</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nec nijmegen vs utrecht netherlands eredivisie">
+                        <td>30</td>
+                        <td class="date">11/02</td>
+                        <td class="match-name">NEC Nijmegen vs Utrecht</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="go ahead eagles vs heerenveen netherlands eredivisie">
+                        <td>31</td>
+                        <td class="date">11/02</td>
+                        <td class="match-name">GO Ahead Eagles vs Heerenveen</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong psv u21 vs de graafschap netherlands eerste divisie">
+                        <td>32</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Jong PSV U21 vs De Graafschap</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc volendam vs psv eindhoven netherlands eredivisie">
+                        <td>33</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">FC Volendam vs PSV Eindhoven</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="almere city fc vs helmond sport netherlands eerste divisie">
+                        <td>34</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Almere City FC vs Helmond Sport</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc oss vs jong az netherlands eerste divisie">
+                        <td>35</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">FC OSS vs Jong AZ</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dordrecht vs emmen netherlands eerste divisie">
+                        <td>36</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Dordrecht vs Emmen</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="waalwijk vs roda netherlands eerste divisie">
+                        <td>37</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Waalwijk vs Roda</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="groningen vs utrecht netherlands eredivisie">
+                        <td>38</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Groningen vs Utrecht</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dordrecht vs jong ajax netherlands eerste divisie">
+                        <td>39</td>
+                        <td class="date">20/02</td>
+                        <td class="match-name">Dordrecht vs Jong Ajax</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="ajax vs nec nijmegen netherlands eredivisie">
+                        <td>40</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Ajax vs NEC Nijmegen</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jong az vs den bosch netherlands eerste divisie">
+                        <td>41</td>
+                        <td class="date">23/02</td>
+                        <td class="match-name">Jong AZ vs Den Bosch</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vitesse vs jong az netherlands eerste divisie">
+                        <td>42</td>
+                        <td class="date">27/02</td>
+                        <td class="match-name">Vitesse vs Jong AZ</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="heerenveen vs sparta rotterdam netherlands eredivisie">
+                        <td>43</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Heerenveen vs Sparta Rotterdam</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="pec zwolle vs ajax netherlands eredivisie">
+                        <td>44</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">PEC Zwolle vs Ajax</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sparta rotterdam vs pec zwolle netherlands eredivisie">
+                        <td>45</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Sparta Rotterdam vs PEC Zwolle</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="cambuur vs jong utrecht netherlands eerste divisie">
+                        <td>46</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Cambuur vs Jong Utrecht</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="go ahead eagles vs twente netherlands eredivisie">
+                        <td>47</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">GO Ahead Eagles vs Twente</td>
+                        <td class="league">Eredivisie</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="waalwijk vs jong az netherlands eerste divisie">
+                        <td>48</td>
+                        <td class="date">13/03</td>
+                        <td class="match-name">Waalwijk vs Jong AZ</td>
+                        <td class="league">Eerste Divisie</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="England">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENGLAND</span>
+                <span class="country-count">43 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="crewe alexandra u21 vs hull city u21 england professional development league">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Crewe Alexandra U21 vs Hull City U21</td>
+                        <td class="league">Professional Development League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="manchester united u21 vs brighton u21 england premier league 2 division one">
+                        <td>2</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Manchester United U21 vs Brighton U21</td>
+                        <td class="league">Premier League 2 Division One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="blackburn rovers u21 vs birmingham city u21 england premier league 2 division one">
+                        <td>3</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Blackburn Rovers U21 vs Birmingham City U21</td>
+                        <td class="league">Premier League 2 Division One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="crystal palace u21 vs derby county u21 england premier league 2 division one">
+                        <td>4</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Crystal Palace U21 vs Derby County U21</td>
+                        <td class="league">Premier League 2 Division One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nottingham forest u21 vs reading u21 england premier league 2 division one">
+                        <td>5</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Nottingham Forest U21 vs Reading U21</td>
+                        <td class="league">Premier League 2 Division One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="manchester united vs fulham england premier league">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Manchester United vs Fulham</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="tottenham vs manchester city england premier league">
+                        <td>7</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Tottenham vs Manchester City</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="aston villa vs brentford england premier league">
+                        <td>8</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Aston Villa vs Brentford</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sunderland vs burnley england premier league">
+                        <td>9</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Sunderland vs Burnley</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hull city vs watford england championship">
+                        <td>10</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Hull City vs Watford</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="barnet vs crewe england league two">
+                        <td>11</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Barnet vs Crewe</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="notts county vs gillingham england league two">
+                        <td>12</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Notts County vs Gillingham</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="portsmouth vs ipswich england championship">
+                        <td>13</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Portsmouth vs Ipswich</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fulham vs everton england premier league">
+                        <td>14</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Fulham vs Everton</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="stockport county vs leyton orient england league one">
+                        <td>15</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Stockport County vs Leyton Orient</td>
+                        <td class="league">League One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fleetwood town vs bromley england league two">
+                        <td>16</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Fleetwood Town vs Bromley</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="wrexham vs millwall england championship">
+                        <td>17</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Wrexham vs Millwall</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="stevenage vs barnsley england league one">
+                        <td>18</td>
+                        <td class="date">10/02</td>
+                        <td class="match-name">Stevenage vs Barnsley</td>
+                        <td class="league">League One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="west ham vs manchester united england premier league">
+                        <td>19</td>
+                        <td class="date">10/02</td>
+                        <td class="match-name">West Ham vs Manchester United</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="shrewsbury vs barrow england league two">
+                        <td>20</td>
+                        <td class="date">10/02</td>
+                        <td class="match-name">Shrewsbury vs Barrow</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="aston villa vs brighton england premier league">
+                        <td>21</td>
+                        <td class="date">11/02</td>
+                        <td class="match-name">Aston Villa vs Brighton</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="tranmere vs crawley town england league two">
+                        <td>22</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Tranmere vs Crawley Town</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="qpr vs blackburn england championship">
+                        <td>23</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">QPR vs Blackburn</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="bradford vs stockport county england league one">
+                        <td>24</td>
+                        <td class="date">17/02</td>
+                        <td class="match-name">Bradford vs Stockport County</td>
+                        <td class="league">League One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="southampton vs charlton england championship">
+                        <td>25</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Southampton vs Charlton</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hull city vs qpr england championship">
+                        <td>26</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Hull City vs QPR</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="watford vs derby england championship">
+                        <td>27</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Watford vs Derby</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="stoke city vs leicester england championship">
+                        <td>28</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Stoke City vs Leicester</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="everton vs manchester united england premier league">
+                        <td>29</td>
+                        <td class="date">23/02</td>
+                        <td class="match-name">Everton vs Manchester United</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="salford city vs shrewsbury england league two">
+                        <td>30</td>
+                        <td class="date">24/02</td>
+                        <td class="match-name">Salford City vs Shrewsbury</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="wrexham vs portsmouth england championship">
+                        <td>31</td>
+                        <td class="date">24/02</td>
+                        <td class="match-name">Wrexham vs Portsmouth</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hull city vs derby england championship">
+                        <td>32</td>
+                        <td class="date">24/02</td>
+                        <td class="match-name">Hull City vs Derby</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="bristol city vs watford england championship">
+                        <td>33</td>
+                        <td class="date">27/02</td>
+                        <td class="match-name">Bristol City vs Watford</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="charlton vs wrexham england championship">
+                        <td>34</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Charlton vs Wrexham</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fulham vs tottenham england premier league">
+                        <td>35</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Fulham vs Tottenham</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="manchester united vs crystal palace england premier league">
+                        <td>36</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Manchester United vs Crystal Palace</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="barnsley vs wycombe england league one">
+                        <td>37</td>
+                        <td class="date">03/03</td>
+                        <td class="match-name">Barnsley vs Wycombe</td>
+                        <td class="league">League One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="charlton vs birmingham england championship">
+                        <td>38</td>
+                        <td class="date">07/03</td>
+                        <td class="match-name">Charlton vs Birmingham</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="newport county vs colchester england league two">
+                        <td>39</td>
+                        <td class="date">07/03</td>
+                        <td class="match-name">Newport County vs Colchester</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="doncaster vs blackpool england league one">
+                        <td>40</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Doncaster vs Blackpool</td>
+                        <td class="league">League One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="reading vs plymouth england league one">
+                        <td>41</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Reading vs Plymouth</td>
+                        <td class="league">League One</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="burnley vs bournemouth england premier league">
+                        <td>42</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Burnley vs Bournemouth</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="swindon town vs milton keynes dons england league two">
+                        <td>43</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Swindon Town vs Milton Keynes Dons</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Germany">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇩🇪 GERMANY</span>
+                <span class="country-count">29 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="paderborn ii vs schalke 04 ii germany regionalliga - west">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Paderborn II vs Schalke 04 II</td>
+                        <td class="league">Regionalliga - West</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc st. pauli vs rb leipzig germany bundesliga">
+                        <td>2</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">FC St. Pauli vs RB Leipzig</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="werder bremen vs 1899 hoffenheim germany bundesliga">
+                        <td>3</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Werder Bremen vs 1899 Hoffenheim</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="1. fc magdeburg vs hannover 96 germany 2. bundesliga">
+                        <td>4</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">1. FC Magdeburg vs Hannover 96</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vfb stuttgart vs sc freiburg germany bundesliga">
+                        <td>5</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">VfB Stuttgart vs SC Freiburg</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dynamo dresden vs arminia bielefeld germany 2. bundesliga">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Dynamo Dresden vs Arminia Bielefeld</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hertha bsc vs sv darmstadt 98 germany 2. bundesliga">
+                        <td>7</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Hertha BSC vs SV Darmstadt 98</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="union berlin vs eintracht frankfurt germany bundesliga">
+                        <td>8</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Union Berlin vs Eintracht Frankfurt</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="preußen münster vs vfl bochum germany 2. bundesliga">
+                        <td>9</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Preußen Münster vs VfL Bochum</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vfl wolfsburg vs borussia dortmund germany bundesliga">
+                        <td>10</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">VfL Wolfsburg vs Borussia Dortmund</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sv darmstadt 98 vs 1. fc kaiserslautern germany 2. bundesliga">
+                        <td>11</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">SV Darmstadt 98 vs 1. FC Kaiserslautern</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc schalke 04 vs dynamo dresden germany 2. bundesliga">
+                        <td>12</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">FC Schalke 04 vs Dynamo Dresden</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="bayern münchen vs 1899 hoffenheim germany bundesliga">
+                        <td>13</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Bayern München vs 1899 Hoffenheim</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="1. fc köln vs rb leipzig germany bundesliga">
+                        <td>14</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">1. FC Köln vs RB Leipzig</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hannover 96 vs holstein kiel germany 2. bundesliga">
+                        <td>15</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Hannover 96 vs Holstein Kiel</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="arminia bielefeld vs eintracht braunschweig germany 2. bundesliga">
+                        <td>16</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Arminia Bielefeld vs Eintracht Braunschweig</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="1899 hoffenheim vs sc freiburg germany bundesliga">
+                        <td>17</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">1899 Hoffenheim vs SC Freiburg</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="eintracht braunschweig vs sv darmstadt 98 germany 2. bundesliga">
+                        <td>18</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Eintracht Braunschweig vs SV Darmstadt 98</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hertha bsc vs hannover 96 germany 2. bundesliga">
+                        <td>19</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Hertha BSC vs Hannover 96</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vfl wolfsburg vs fc augsburg germany bundesliga">
+                        <td>20</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">VfL Wolfsburg vs FC Augsburg</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="rb leipzig vs borussia dortmund germany bundesliga">
+                        <td>21</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">RB Leipzig vs Borussia Dortmund</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sv elversberg vs eintracht braunschweig germany 2. bundesliga">
+                        <td>22</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">SV Elversberg vs Eintracht Braunschweig</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="holstein kiel vs sv elversberg germany 2. bundesliga">
+                        <td>23</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Holstein Kiel vs SV Elversberg</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="arminia bielefeld vs hannover 96 germany 2. bundesliga">
+                        <td>24</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Arminia Bielefeld vs Hannover 96</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vfb stuttgart vs vfl wolfsburg germany bundesliga">
+                        <td>25</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">VfB Stuttgart vs VfL Wolfsburg</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="eintracht braunschweig vs preußen münster germany 2. bundesliga">
+                        <td>26</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Eintracht Braunschweig vs Preußen Münster</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vfl bochum vs 1. fc kaiserslautern germany 2. bundesliga">
+                        <td>27</td>
+                        <td class="date">06/03</td>
+                        <td class="match-name">VfL Bochum vs 1. FC Kaiserslautern</td>
+                        <td class="league">2. Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="1899 hoffenheim vs vfl wolfsburg germany bundesliga">
+                        <td>28</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">1899 Hoffenheim vs VfL Wolfsburg</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sc freiburg vs union berlin germany bundesliga">
+                        <td>29</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">SC Freiburg vs Union Berlin</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Switzerland">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇨🇭 SWITZERLAND</span>
+                <span class="country-count">29 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="stade lausanne-ouchy vs fc vaduz switzerland challenge league">
+                        <td>1</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Stade Lausanne-Ouchy vs FC Vaduz</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="yverdon sport vs fc aarau switzerland challenge league">
+                        <td>2</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Yverdon Sport vs FC Aarau</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="servette fc vs fc sion switzerland super league">
+                        <td>3</td>
+                        <td class="date">31/01</td>
+                        <td class="match-name">Servette FC vs FC Sion</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="bsc young boys vs fc zurich switzerland super league">
+                        <td>4</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">BSC Young Boys vs FC Zurich</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc luzern vs fc st. gallen switzerland super league">
+                        <td>5</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">FC Luzern vs FC ST. Gallen</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc basel 1893 vs fc thun switzerland super league">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">FC Basel 1893 vs FC Thun</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="grasshoppers vs bsc young boys switzerland super league">
+                        <td>7</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Grasshoppers vs BSC Young Boys</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc winterthur vs fc lugano switzerland super league">
+                        <td>8</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">FC Winterthur vs FC Lugano</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc sion vs fc luzern switzerland super league">
+                        <td>9</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">FC Sion vs FC Luzern</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="rapperswil vs yverdon sport switzerland challenge league">
+                        <td>10</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Rapperswil vs Yverdon Sport</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc aarau vs fc wil 1900 switzerland challenge league">
+                        <td>11</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">FC Aarau vs FC WIL 1900</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="servette fc vs fc thun switzerland super league">
+                        <td>12</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Servette FC vs FC Thun</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lausanne vs fc st. gallen switzerland super league">
+                        <td>13</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Lausanne vs FC ST. Gallen</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc basel 1893 vs fc zurich switzerland super league">
+                        <td>14</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">FC Basel 1893 vs FC Zurich</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="neuchatel xamax fc vs stade lausanne-ouchy switzerland challenge league">
+                        <td>15</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Neuchatel Xamax FC vs Stade Lausanne-Ouchy</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc luzern vs grasshoppers switzerland super league">
+                        <td>16</td>
+                        <td class="date">10/02</td>
+                        <td class="match-name">FC Luzern vs Grasshoppers</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc zurich vs fc winterthur switzerland super league">
+                        <td>17</td>
+                        <td class="date">11/02</td>
+                        <td class="match-name">FC Zurich vs FC Winterthur</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc st. gallen vs bsc young boys switzerland super league">
+                        <td>18</td>
+                        <td class="date">11/02</td>
+                        <td class="match-name">FC ST. Gallen vs BSC Young Boys</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc lugano vs servette fc switzerland super league">
+                        <td>19</td>
+                        <td class="date">11/02</td>
+                        <td class="match-name">FC Lugano vs Servette FC</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc thun vs lausanne switzerland super league">
+                        <td>20</td>
+                        <td class="date">12/02</td>
+                        <td class="match-name">FC Thun vs Lausanne</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc sion vs fc basel 1893 switzerland super league">
+                        <td>21</td>
+                        <td class="date">12/02</td>
+                        <td class="match-name">FC Sion vs FC Basel 1893</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="stade lausanne-ouchy vs fc aarau switzerland challenge league">
+                        <td>22</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Stade Lausanne-Ouchy vs FC Aarau</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc wil 1900 vs rapperswil switzerland challenge league">
+                        <td>23</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">FC WIL 1900 vs Rapperswil</td>
+                        <td class="league">Challenge League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc st. gallen vs grasshoppers switzerland super league">
+                        <td>24</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">FC ST. Gallen vs Grasshoppers</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc thun vs fc luzern switzerland super league">
+                        <td>25</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">FC Thun vs FC Luzern</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="grasshoppers vs fc lugano switzerland super league">
+                        <td>26</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Grasshoppers vs FC Lugano</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc luzern vs bsc young boys switzerland super league">
+                        <td>27</td>
+                        <td class="date">04/03</td>
+                        <td class="match-name">FC Luzern vs BSC Young Boys</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc lugano vs fc luzern switzerland super league">
+                        <td>28</td>
+                        <td class="date">07/03</td>
+                        <td class="match-name">FC Lugano vs FC Luzern</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc zurich vs fc sion switzerland super league">
+                        <td>29</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">FC Zurich vs FC Sion</td>
+                        <td class="league">Super League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="France">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇫🇷 FRANCE</span>
+                <span class="country-count">19 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="la roche vf vs granville france national 2 - group a">
+                        <td>1</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">La Roche VF vs Granville</td>
+                        <td class="league">National 2 - Group A</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lyon vs lille france ligue 1">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Lyon vs Lille</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="strasbourg vs paris saint germain france ligue 1">
+                        <td>3</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Strasbourg vs Paris Saint Germain</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="angers vs metz france ligue 1">
+                        <td>4</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Angers vs Metz</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="metz vs lille france ligue 1">
+                        <td>5</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Metz vs Lille</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dunkerque vs guingamp france ligue 2">
+                        <td>6</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Dunkerque vs Guingamp</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="red star fc 93 vs pau france ligue 2">
+                        <td>7</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">RED Star FC 93 vs PAU</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="boulogne vs rodez france ligue 2">
+                        <td>8</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Boulogne vs Rodez</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="saint etienne vs montpellier france ligue 2">
+                        <td>9</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Saint Etienne vs Montpellier</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="pau vs boulogne france ligue 2">
+                        <td>10</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">PAU vs Boulogne</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="guingamp vs saint etienne france ligue 2">
+                        <td>11</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Guingamp vs Saint Etienne</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lens vs monaco france ligue 1">
+                        <td>12</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">Lens vs Monaco</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="angers vs lille france ligue 1">
+                        <td>13</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">Angers vs Lille</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="clermont foot vs dunkerque france ligue 2">
+                        <td>14</td>
+                        <td class="date">27/02</td>
+                        <td class="match-name">Clermont Foot vs Dunkerque</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="toulouse vs marseille france ligue 1">
+                        <td>15</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Toulouse vs Marseille</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lille vs lorient france ligue 1">
+                        <td>16</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Lille vs Lorient</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lyon vs paris fc france ligue 1">
+                        <td>17</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Lyon vs Paris FC</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="grenoble vs saint etienne france ligue 2">
+                        <td>18</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Grenoble vs Saint Etienne</td>
+                        <td class="league">Ligue 2</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="metz vs toulouse france ligue 1">
+                        <td>19</td>
+                        <td class="date">15/03</td>
+                        <td class="match-name">Metz vs Toulouse</td>
+                        <td class="league">Ligue 1</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Saudi-Arabia">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇸🇦 SAUDI-ARABIA</span>
+                <span class="country-count">18 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="al baten vs al-raed saudi-arabia division 1">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Al Baten vs Al-Raed</td>
+                        <td class="league">Division 1</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-hazm vs damac saudi-arabia pro league">
+                        <td>2</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Al-Hazm vs Damac</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-ittihad fc vs al okhdood saudi-arabia pro league">
+                        <td>3</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Al-Ittihad FC vs Al Okhdood</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-ittihad fc vs al najma saudi-arabia pro league">
+                        <td>4</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Al-Ittihad FC vs Al Najma</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al riyadh vs al-nassr saudi-arabia pro league">
+                        <td>5</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Al Riyadh vs Al-Nassr</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-hilal saudi fc vs al-ahli jeddah saudi-arabia pro league">
+                        <td>6</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Al-Hilal Saudi FC vs Al-Ahli Jeddah</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al khaleej saihat vs al-qadisiyah fc saudi-arabia pro league">
+                        <td>7</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Al Khaleej Saihat vs Al-Qadisiyah FC</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-ettifaq vs al taawon saudi-arabia pro league">
+                        <td>8</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Al-Ettifaq vs Al Taawon</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-nassr vs al-ittihad fc saudi-arabia pro league">
+                        <td>9</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Al-Nassr vs Al-Ittihad FC</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="neom vs al riyadh saudi-arabia pro league">
+                        <td>10</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">NEOM vs Al Riyadh</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-ettifaq vs damac saudi-arabia pro league">
+                        <td>11</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Al-Ettifaq vs Damac</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al taawon vs al khaleej saihat saudi-arabia pro league">
+                        <td>12</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Al Taawon vs Al Khaleej Saihat</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-qadisiyah fc vs al-fateh saudi-arabia pro league">
+                        <td>13</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Al-Qadisiyah FC vs Al-Fateh</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-qadisiyah fc vs neom saudi-arabia pro league">
+                        <td>14</td>
+                        <td class="date">12/02</td>
+                        <td class="match-name">Al-Qadisiyah FC vs NEOM</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="damac vs al taawon saudi-arabia pro league">
+                        <td>15</td>
+                        <td class="date">12/02</td>
+                        <td class="match-name">Damac vs Al Taawon</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-hilal saudi fc vs al-ettifaq saudi-arabia pro league">
+                        <td>16</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Al-Hilal Saudi FC vs Al-Ettifaq</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al riyadh vs al khaleej saihat saudi-arabia pro league">
+                        <td>17</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Al Riyadh vs Al Khaleej Saihat</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al taawon vs al-fateh saudi-arabia pro league">
+                        <td>18</td>
+                        <td class="date">05/03</td>
+                        <td class="match-name">Al Taawon vs Al-Fateh</td>
+                        <td class="league">Pro League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Scotland">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🏴󠁧󠁢󠁳󠁣󠁴󠁿 SCOTLAND</span>
+                <span class="country-count">17 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="east kilbride vs spartans scotland league two">
+                        <td>1</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">East Kilbride vs Spartans</td>
+                        <td class="league">League Two</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="arbroath vs airdrie united scotland challenge cup">
+                        <td>2</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Arbroath vs Airdrie United</td>
+                        <td class="league">Challenge Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="inverness ct vs stenhousemuir scotland challenge cup">
+                        <td>3</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Inverness CT vs Stenhousemuir</td>
+                        <td class="league">Challenge Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="queen's park vs raith rovers scotland challenge cup">
+                        <td>4</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Queen's Park vs Raith Rovers</td>
+                        <td class="league">Challenge Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="celtic vs falkirk scotland premiership">
+                        <td>5</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Celtic vs Falkirk</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hibernian vs rangers scotland premiership">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Hibernian vs Rangers</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hibernian vs dundee utd scotland premiership">
+                        <td>7</td>
+                        <td class="date">04/02</td>
+                        <td class="match-name">Hibernian vs Dundee Utd</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="livingston vs falkirk scotland premiership">
+                        <td>8</td>
+                        <td class="date">04/02</td>
+                        <td class="match-name">Livingston vs Falkirk</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="rangers vs kilmarnock scotland premiership">
+                        <td>9</td>
+                        <td class="date">04/02</td>
+                        <td class="match-name">Rangers vs Kilmarnock</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="falkirk vs dundee utd scotland premiership">
+                        <td>10</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Falkirk vs Dundee Utd</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="rangers vs heart of midlothian scotland premiership">
+                        <td>11</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">Rangers vs Heart Of Midlothian</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="heart of midlothian vs falkirk scotland premiership">
+                        <td>12</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Heart Of Midlothian vs Falkirk</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dundee utd vs kilmarnock scotland premiership">
+                        <td>13</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Dundee Utd vs Kilmarnock</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="livingston vs rangers scotland premiership">
+                        <td>14</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">Livingston vs Rangers</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="partick vs arbroath scotland championship">
+                        <td>15</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Partick vs Arbroath</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="morton vs st johnstone scotland championship">
+                        <td>16</td>
+                        <td class="date">07/03</td>
+                        <td class="match-name">Morton vs ST Johnstone</td>
+                        <td class="league">Championship</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="kilmarnock vs heart of midlothian scotland premiership">
+                        <td>17</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Kilmarnock vs Heart Of Midlothian</td>
+                        <td class="league">Premiership</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Mexico">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇲🇽 MEXICO</span>
+                <span class="country-count">16 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="querétaro w vs toluca w mexico liga mx femenil">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Querétaro W vs Toluca W</td>
+                        <td class="league">Liga MX Femenil</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="necaxa w vs pachuca w mexico liga mx femenil">
+                        <td>2</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Necaxa W vs Pachuca W</td>
+                        <td class="league">Liga MX Femenil</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="león w vs monterrey w mexico liga mx femenil">
+                        <td>3</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">León W vs Monterrey W</td>
+                        <td class="league">Liga MX Femenil</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="deportivo ayense vs aguacateros cdu mexico liga premier serie b">
+                        <td>4</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Deportivo Ayense vs Aguacateros CDU</td>
+                        <td class="league">Liga Premier Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="poza rica vs artesanos metepec mexico liga premier serie b">
+                        <td>5</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Poza Rica vs Artesanos Metepec</td>
+                        <td class="league">Liga Premier Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="monterrey vs club tijuana mexico liga mx">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Monterrey vs Club Tijuana</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="club america vs necaxa mexico liga mx">
+                        <td>7</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Club America vs Necaxa</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="leon vs tigres uanl mexico liga mx">
+                        <td>8</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Leon vs Tigres UANL</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="necaxa vs atletico san luis mexico liga mx">
+                        <td>9</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Necaxa vs Atletico San Luis</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="mazatlán vs guadalajara chivas mexico liga mx">
+                        <td>10</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Mazatlán vs Guadalajara Chivas</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="u.n.a.m. - pumas vs monterrey mexico liga mx">
+                        <td>11</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">U.N.A.M. - Pumas vs Monterrey</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="club queretaro vs fc juarez mexico liga mx">
+                        <td>12</td>
+                        <td class="date">23/02</td>
+                        <td class="match-name">Club Queretaro vs FC Juarez</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="monterrey vs cruz azul mexico liga mx">
+                        <td>13</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Monterrey vs Cruz Azul</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="atlas vs guadalajara chivas mexico liga mx">
+                        <td>14</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Atlas vs Guadalajara Chivas</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="club tijuana vs santos laguna mexico liga mx">
+                        <td>15</td>
+                        <td class="date">09/03</td>
+                        <td class="match-name">Club Tijuana vs Santos Laguna</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="toluca vs fc juarez mexico liga mx">
+                        <td>16</td>
+                        <td class="date">09/03</td>
+                        <td class="match-name">Toluca vs FC Juarez</td>
+                        <td class="league">Liga MX</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Turkey">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇹🇷 TURKEY</span>
+                <span class="country-count">16 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="sakaryaspor vs bb bodrumspor turkey 1. lig">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Sakaryaspor vs BB Bodrumspor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hekimoğlu trabzon vs belediye derincespor turkey 2. lig">
+                        <td>2</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Hekimoğlu Trabzon vs Belediye Derincespor</td>
+                        <td class="league">2. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="beyoğlu yeni çarşı vs elazığspor turkey 2. lig">
+                        <td>3</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Beyoğlu Yeni Çarşı vs Elazığspor</td>
+                        <td class="league">2. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="muş menderesspor vs kırklarelispor turkey 2. lig">
+                        <td>4</td>
+                        <td class="date">28/01</td>
+                        <td class="match-name">Muş Menderesspor vs Kırklarelispor</td>
+                        <td class="league">2. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="boluspor vs sakaryaspor turkey 1. lig">
+                        <td>5</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Boluspor vs Sakaryaspor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="genclerbirligi vs gazişehir gaziantep turkey süper lig">
+                        <td>6</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Genclerbirligi vs Gazişehir Gaziantep</td>
+                        <td class="league">Süper Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="erokspor vs ümraniyespor turkey 1. lig">
+                        <td>7</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Erokspor vs Ümraniyespor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="keçiörengücü vs bandırmaspor turkey 1. lig">
+                        <td>8</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Keçiörengücü vs Bandırmaspor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="erokspor vs manisa bbsk turkey 1. lig">
+                        <td>9</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Erokspor vs Manisa BBSK</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="76 iğdır belediyespor vs erokspor turkey 1. lig">
+                        <td>10</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">76 Iğdır Belediyespor vs Erokspor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="gazişehir gaziantep vs trabzonspor turkey süper lig">
+                        <td>11</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">Gazişehir Gaziantep vs Trabzonspor</td>
+                        <td class="league">Süper Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="manisa bbsk vs yeni çorumspor turkey 1. lig">
+                        <td>12</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Manisa BBSK vs Yeni Çorumspor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="bb bodrumspor vs erokspor turkey 1. lig">
+                        <td>13</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">BB Bodrumspor vs Erokspor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="manisa bbsk vs sarıyer turkey 1. lig">
+                        <td>14</td>
+                        <td class="date">11/03</td>
+                        <td class="match-name">Manisa BBSK vs Sarıyer</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="genclerbirligi vs beşiktaş turkey süper lig">
+                        <td>15</td>
+                        <td class="date">15/03</td>
+                        <td class="match-name">Genclerbirligi vs Beşiktaş</td>
+                        <td class="league">Süper Lig</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="bandırmaspor vs 76 iğdır belediyespor turkey 1. lig">
+                        <td>16</td>
+                        <td class="date">15/03</td>
+                        <td class="match-name">Bandırmaspor vs 76 Iğdır Belediyespor</td>
+                        <td class="league">1. Lig</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Poland">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇵🇱 POLAND</span>
+                <span class="country-count">15 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="motor lublin vs pogon szczecin poland ekstraklasa">
+                        <td>1</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Motor Lublin vs Pogon Szczecin</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nieciecza vs cracovia krakow poland ekstraklasa">
+                        <td>2</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Nieciecza vs Cracovia Krakow</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lechia gdansk vs cracovia krakow poland ekstraklasa">
+                        <td>3</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Lechia Gdansk vs Cracovia Krakow</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="korona kielce vs zaglebie lubin poland ekstraklasa">
+                        <td>4</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Korona Kielce vs Zaglebie Lubin</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="gornik zabrze vs lech poznan poland ekstraklasa">
+                        <td>5</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Gornik Zabrze vs Lech Poznan</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="jagiellonia vs motor lublin poland ekstraklasa">
+                        <td>6</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Jagiellonia vs Motor Lublin</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="pogon szczecin vs nieciecza poland ekstraklasa">
+                        <td>7</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Pogon Szczecin vs Nieciecza</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="raków częstochowa vs radomiak radom poland ekstraklasa">
+                        <td>8</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Raków Częstochowa vs Radomiak Radom</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="radomiak radom vs korona kielce poland ekstraklasa">
+                        <td>9</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Radomiak Radom vs Korona Kielce</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="cracovia krakow vs jagiellonia poland ekstraklasa">
+                        <td>10</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Cracovia Krakow vs Jagiellonia</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="motor lublin vs lechia gdansk poland ekstraklasa">
+                        <td>11</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">Motor Lublin vs Lechia Gdansk</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="widzew łódź vs cracovia krakow poland ekstraklasa">
+                        <td>12</td>
+                        <td class="date">20/02</td>
+                        <td class="match-name">Widzew Łódź vs Cracovia Krakow</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lechia gdansk vs zaglebie lubin poland ekstraklasa">
+                        <td>13</td>
+                        <td class="date">23/02</td>
+                        <td class="match-name">Lechia Gdansk vs Zaglebie Lubin</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nieciecza vs radomiak radom poland ekstraklasa">
+                        <td>14</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Nieciecza vs Radomiak Radom</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="motor lublin vs korona kielce poland ekstraklasa">
+                        <td>15</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Motor Lublin vs Korona Kielce</td>
+                        <td class="league">Ekstraklasa</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Spain">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇪🇸 SPAIN</span>
+                <span class="country-count">14 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="tenerife ii vs rayo vallecano ii spain segunda división rfef - group 5">
+                        <td>1</td>
+                        <td class="date">28/01</td>
+                        <td class="match-name">Tenerife II vs Rayo Vallecano II</td>
+                        <td class="league">Segunda División RFEF - Group 5</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="granada cf vs racing santander spain segunda división">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Granada CF vs Racing Santander</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="real betis vs valencia spain la liga">
+                        <td>3</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Real Betis vs Valencia</td>
+                        <td class="league">La Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="almeria vs ad ceuta fc spain segunda división">
+                        <td>4</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Almeria vs AD Ceuta FC</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="castellón vs fc andorra spain segunda división">
+                        <td>5</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Castellón vs FC Andorra</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="mallorca vs sevilla spain la liga">
+                        <td>6</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Mallorca vs Sevilla</td>
+                        <td class="league">La Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="mirandes vs malaga spain segunda división">
+                        <td>7</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Mirandes vs Malaga</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="mallorca vs real betis spain la liga">
+                        <td>8</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">Mallorca vs Real Betis</td>
+                        <td class="league">La Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="albacete vs sporting gijon spain segunda división">
+                        <td>9</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">Albacete vs Sporting Gijon</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="almeria vs fc andorra spain segunda división">
+                        <td>10</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">Almeria vs FC Andorra</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="almeria vs cordoba spain segunda división">
+                        <td>11</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">Almeria vs Cordoba</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="real sociedad ii vs castellón spain segunda división">
+                        <td>12</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Real Sociedad II vs Castellón</td>
+                        <td class="league">Segunda División</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="villarreal vs elche spain la liga">
+                        <td>13</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Villarreal vs Elche</td>
+                        <td class="league">La Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="real betis vs celta vigo spain la liga">
+                        <td>14</td>
+                        <td class="date">15/03</td>
+                        <td class="match-name">Real Betis vs Celta Vigo</td>
+                        <td class="league">La Liga</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Hungary">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇭🇺 HUNGARY</span>
+                <span class="country-count">11 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="paks vs ferencvarosi tc hungary nb i">
+                        <td>1</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Paks vs Ferencvarosi TC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="diosgyori vtk vs kisvarda fc hungary nb i">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Diosgyori VTK vs Kisvarda FC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="zalaegerszegi te vs nyiregyhaza hungary nb i">
+                        <td>3</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Zalaegerszegi TE vs Nyiregyhaza</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="kisvarda fc vs kazincbarcikai hungary nb i">
+                        <td>4</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Kisvarda FC vs Kazincbarcikai</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="ujpest vs debreceni vsc hungary nb i">
+                        <td>5</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Ujpest vs Debreceni VSC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="zalaegerszegi te vs debreceni vsc hungary nb i">
+                        <td>6</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Zalaegerszegi TE vs Debreceni VSC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nyiregyhaza vs kisvarda fc hungary nb i">
+                        <td>7</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Nyiregyhaza vs Kisvarda FC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="mtk budapest vs ferencvarosi tc hungary nb i">
+                        <td>8</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">MTK Budapest vs Ferencvarosi TC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="kazincbarcikai vs puskas academy hungary nb i">
+                        <td>9</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Kazincbarcikai vs Puskas Academy</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="diosgyori vtk vs zalaegerszegi te hungary nb i">
+                        <td>10</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Diosgyori VTK vs Zalaegerszegi TE</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="ujpest vs kisvarda fc hungary nb i">
+                        <td>11</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Ujpest vs Kisvarda FC</td>
+                        <td class="league">NB I</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Argentina">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇦🇷 ARGENTINA</span>
+                <span class="country-count">10 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="gimnasia m. vs san lorenzo argentina liga profesional argentina">
+                        <td>1</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Gimnasia M. vs San Lorenzo</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="atletico tucuman vs huracan argentina liga profesional argentina">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Atletico Tucuman vs Huracan</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="tigre vs racing club argentina liga profesional argentina">
+                        <td>3</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Tigre vs Racing Club</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="independiente vs lanus argentina liga profesional argentina">
+                        <td>4</td>
+                        <td class="date">13/02</td>
+                        <td class="match-name">Independiente vs Lanus</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="independ. rivadavia vs belgrano cordoba argentina liga profesional argentina">
+                        <td>5</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">Independ. Rivadavia vs Belgrano Cordoba</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="newells old boys vs estudiantes l.p. argentina liga profesional argentina">
+                        <td>6</td>
+                        <td class="date">25/02</td>
+                        <td class="match-name">Newells Old Boys vs Estudiantes L.P.</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="tigre vs gimnasia l.p. argentina liga profesional argentina">
+                        <td>7</td>
+                        <td class="date">02/03</td>
+                        <td class="match-name">Tigre vs Gimnasia L.P.</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="banfield vs gimnasia l.p. argentina liga profesional argentina">
+                        <td>8</td>
+                        <td class="date">11/03</td>
+                        <td class="match-name">Banfield vs Gimnasia L.P.</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="rosario central vs banfield argentina liga profesional argentina">
+                        <td>9</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Rosario Central vs Banfield</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="belgrano cordoba vs talleres cordoba argentina liga profesional argentina">
+                        <td>10</td>
+                        <td class="date">15/03</td>
+                        <td class="match-name">Belgrano Cordoba vs Talleres Cordoba</td>
+                        <td class="league">Liga Profesional Argentina</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Italy">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇮🇹 ITALY</span>
+                <span class="country-count">8 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="bologna vs ac milan italy serie a">
+                        <td>1</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Bologna vs AC Milan</td>
+                        <td class="league">Serie A</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="cesena vs pescara italy serie b">
+                        <td>2</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Cesena vs Pescara</td>
+                        <td class="league">Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="padova vs carrarese italy serie b">
+                        <td>3</td>
+                        <td class="date">10/02</td>
+                        <td class="match-name">Padova vs Carrarese</td>
+                        <td class="league">Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="carrarese vs monza italy serie b">
+                        <td>4</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Carrarese vs Monza</td>
+                        <td class="league">Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="inter vs genoa italy serie a">
+                        <td>5</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Inter vs Genoa</td>
+                        <td class="league">Serie A</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="carrarese vs catanzaro italy serie b">
+                        <td>6</td>
+                        <td class="date">04/03</td>
+                        <td class="match-name">Carrarese vs Catanzaro</td>
+                        <td class="league">Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="venezia vs reggiana italy serie b">
+                        <td>7</td>
+                        <td class="date">07/03</td>
+                        <td class="match-name">Venezia vs Reggiana</td>
+                        <td class="league">Serie B</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sudtirol vs pescara italy serie b">
+                        <td>8</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">Sudtirol vs Pescara</td>
+                        <td class="league">Serie B</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Portugal">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇵🇹 PORTUGAL</span>
+                <span class="country-count">7 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="benfica b vs lusitânia lourosa portugal segunda liga">
+                        <td>1</td>
+                        <td class="date">29/01</td>
+                        <td class="match-name">Benfica B vs Lusitânia Lourosa</td>
+                        <td class="league">Segunda Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="sporting cp vs nacional portugal primeira liga">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Sporting CP vs Nacional</td>
+                        <td class="league">Primeira Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc porto b vs academico viseu portugal segunda liga">
+                        <td>3</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">FC Porto B vs Academico Viseu</td>
+                        <td class="league">Segunda Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="união de leiria vs fc porto b portugal segunda liga">
+                        <td>4</td>
+                        <td class="date">15/02</td>
+                        <td class="match-name">União de Leiria vs FC Porto B</td>
+                        <td class="league">Segunda Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="academico viseu vs maritimo portugal segunda liga">
+                        <td>5</td>
+                        <td class="date">01/03</td>
+                        <td class="match-name">Academico Viseu vs Maritimo</td>
+                        <td class="league">Segunda Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lusitânia lourosa vs sporting cp b portugal segunda liga">
+                        <td>6</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Lusitânia Lourosa vs Sporting CP B</td>
+                        <td class="league">Segunda Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc porto vs moreirense portugal primeira liga">
+                        <td>7</td>
+                        <td class="date">15/03</td>
+                        <td class="match-name">FC Porto vs Moreirense</td>
+                        <td class="league">Primeira Liga</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Austria">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇦🇹 AUSTRIA</span>
+                <span class="country-count">6 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="lask linz vs fc bw linz austria cup">
+                        <td>1</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Lask Linz vs FC BW Linz</td>
+                        <td class="league">Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="scr altach vs sturm graz austria cup">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">SCR Altach vs Sturm Graz</td>
+                        <td class="league">Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="wolfsberger ac vs red bull salzburg austria cup">
+                        <td>3</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Wolfsberger AC vs Red Bull Salzburg</td>
+                        <td class="league">Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="red bull salzburg vs austria vienna austria bundesliga">
+                        <td>4</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Red Bull Salzburg vs Austria Vienna</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="rapid vienna vs tsv hartberg austria bundesliga">
+                        <td>5</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Rapid Vienna vs TSV Hartberg</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="lask linz vs wolfsberger ac austria bundesliga">
+                        <td>6</td>
+                        <td class="date">08/03</td>
+                        <td class="match-name">Lask Linz vs Wolfsberger AC</td>
+                        <td class="league">Bundesliga</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Croatia">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇭🇷 CROATIA</span>
+                <span class="country-count">6 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="dinamo zagreb vs vukovar croatia hnl">
+                        <td>1</td>
+                        <td class="date">02/02</td>
+                        <td class="match-name">Dinamo Zagreb vs Vukovar</td>
+                        <td class="league">HNL</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hnk rijeka vs dinamo zagreb croatia hnl">
+                        <td>2</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">HNK Rijeka vs Dinamo Zagreb</td>
+                        <td class="league">HNL</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nk slaven belupo vs nk lokomotiva zagreb croatia hnl">
+                        <td>3</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">NK Slaven Belupo vs NK Lokomotiva Zagreb</td>
+                        <td class="league">HNL</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vukovar vs nk slaven belupo croatia hnl">
+                        <td>4</td>
+                        <td class="date">21/02</td>
+                        <td class="match-name">Vukovar vs NK Slaven Belupo</td>
+                        <td class="league">HNL</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hnk rijeka vs nk lokomotiva zagreb croatia hnl">
+                        <td>5</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">HNK Rijeka vs NK Lokomotiva Zagreb</td>
+                        <td class="league">HNL</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nk varazdin vs vukovar croatia hnl">
+                        <td>6</td>
+                        <td class="date">14/03</td>
+                        <td class="match-name">NK Varazdin vs Vukovar</td>
+                        <td class="league">HNL</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Australia">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇦🇺 AUSTRALIA</span>
+                <span class="country-count">5 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="wellington phoenix vs melbourne city australia a-league">
+                        <td>1</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Wellington Phoenix vs Melbourne City</td>
+                        <td class="league">A-League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="adelaide united vs macarthur australia a-league">
+                        <td>2</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Adelaide United vs Macarthur</td>
+                        <td class="league">A-League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="brisbane roar vs central coast mariners australia a-league">
+                        <td>3</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Brisbane Roar vs Central Coast Mariners</td>
+                        <td class="league">A-League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="adelaide united vs newcastle jets australia a-league">
+                        <td>4</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Adelaide United vs Newcastle Jets</td>
+                        <td class="league">A-League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="newcastle jets vs macarthur australia a-league">
+                        <td>5</td>
+                        <td class="date">22/02</td>
+                        <td class="match-name">Newcastle Jets vs Macarthur</td>
+                        <td class="league">A-League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Qatar">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇶🇦 QATAR</span>
+                <span class="country-count">5 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="umm salal vs al-duhail sc qatar stars league">
+                        <td>1</td>
+                        <td class="date">05/02</td>
+                        <td class="match-name">UMM Salal vs Al-Duhail SC</td>
+                        <td class="league">Stars League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-sailiya vs al-gharafa qatar stars league">
+                        <td>2</td>
+                        <td class="date">05/02</td>
+                        <td class="match-name">Al-Sailiya vs Al-Gharafa</td>
+                        <td class="league">Stars League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="qatar sc vs al-rayyan sc qatar stars league">
+                        <td>3</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Qatar SC vs Al-Rayyan SC</td>
+                        <td class="league">Stars League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al-arabi sc vs al shamal qatar stars league">
+                        <td>4</td>
+                        <td class="date">07/02</td>
+                        <td class="match-name">Al-Arabi SC vs Al Shamal</td>
+                        <td class="league">Stars League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="al shamal vs qatar sc qatar stars league">
+                        <td>5</td>
+                        <td class="date">28/02</td>
+                        <td class="match-name">Al Shamal vs Qatar SC</td>
+                        <td class="league">Stars League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Belgium">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇧🇪 BELGIUM</span>
+                <span class="country-count">4 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="liège vs lommel united belgium challenger pro league">
+                        <td>1</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Liège vs Lommel United</td>
+                        <td class="league">Challenger Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="club brugge ii vs kortrijk belgium challenger pro league">
+                        <td>2</td>
+                        <td class="date">27/01</td>
+                        <td class="match-name">Club Brugge II vs Kortrijk</td>
+                        <td class="league">Challenger Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="union st. gilloise vs club brugge kv belgium jupiler pro league">
+                        <td>3</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Union St. Gilloise vs Club Brugge KV</td>
+                        <td class="league">Jupiler Pro League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="gent vs zulte waregem belgium jupiler pro league">
+                        <td>4</td>
+                        <td class="date">13/03</td>
+                        <td class="match-name">Gent vs Zulte Waregem</td>
+                        <td class="league">Jupiler Pro League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Czech-Republic">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇨🇿 CZECH-REPUBLIC</span>
+                <span class="country-count">4 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="karviná vs plzen czech-republic czech liga">
+                        <td>1</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Karviná vs Plzen</td>
+                        <td class="league">Czech Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="pardubice vs slavia praha czech-republic czech liga">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Pardubice vs Slavia Praha</td>
+                        <td class="league">Czech Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="slovan liberec vs zlin czech-republic czech liga">
+                        <td>3</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Slovan Liberec vs Zlin</td>
+                        <td class="league">Czech Liga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="karviná vs slavia praha czech-republic czech liga">
+                        <td>4</td>
+                        <td class="date">14/02</td>
+                        <td class="match-name">Karviná vs Slavia Praha</td>
+                        <td class="league">Czech Liga</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Denmark">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇩🇰 DENMARK</span>
+                <span class="country-count">4 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="aarhus vs odense denmark superliga">
+                        <td>1</td>
+                        <td class="date">06/02</td>
+                        <td class="match-name">Aarhus vs Odense</td>
+                        <td class="league">Superliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc midtjylland vs fc copenhagen denmark superliga">
+                        <td>2</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">FC Midtjylland vs FC Copenhagen</td>
+                        <td class="league">Superliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="fc nordsjaelland vs sonderjyske denmark superliga">
+                        <td>3</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">FC Nordsjaelland vs Sonderjyske</td>
+                        <td class="league">Superliga</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vejle vs fc fredericia denmark superliga">
+                        <td>4</td>
+                        <td class="date">09/02</td>
+                        <td class="match-name">Vejle vs FC Fredericia</td>
+                        <td class="league">Superliga</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Romania">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇷🇴 ROMANIA</span>
+                <span class="country-count">4 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="fcsb vs csikszereda romania liga i">
+                        <td>1</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">FCSB vs Csikszereda</td>
+                        <td class="league">Liga I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="farul constanta vs universitatea craiova romania liga i">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Farul Constanta vs Universitatea Craiova</td>
+                        <td class="league">Liga I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="uta arad vs cfr 1907 cluj romania liga i">
+                        <td>3</td>
+                        <td class="date">04/02</td>
+                        <td class="match-name">Uta Arad vs CFR 1907 Cluj</td>
+                        <td class="league">Liga I</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="dinamo bucuresti vs universitatea craiova romania liga i">
+                        <td>4</td>
+                        <td class="date">09/02</td>
+                        <td class="match-name">Dinamo Bucuresti vs Universitatea Craiova</td>
+                        <td class="league">Liga I</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Singapore">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🏳️ SINGAPORE</span>
+                <span class="country-count">4 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="young lions vs tanjong pagar singapore premier league">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Young Lions vs Tanjong Pagar</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="hougang united vs young lions singapore premier league">
+                        <td>2</td>
+                        <td class="date">30/01</td>
+                        <td class="match-name">Hougang United vs Young Lions</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="tampines rovers vs tanjong pagar singapore premier league">
+                        <td>3</td>
+                        <td class="date">31/01</td>
+                        <td class="match-name">Tampines Rovers vs Tanjong Pagar</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="home united vs balestier khalsa singapore premier league">
+                        <td>4</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Home United vs Balestier Khalsa</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Brazil">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇧🇷 BRAZIL</span>
+                <span class="country-count">3 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="piauí vs parnahyba brazil piauiense">
+                        <td>1</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Piauí vs Parnahyba</td>
+                        <td class="league">Piauiense</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vasco da gama ac vs adesg brazil acreano">
+                        <td>2</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Vasco da Gama AC vs ADESG</td>
+                        <td class="league">Acreano</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="vilavelhense vs real noroeste brazil capixaba">
+                        <td>3</td>
+                        <td class="date">26/01</td>
+                        <td class="match-name">Vilavelhense vs Real Noroeste</td>
+                        <td class="league">Capixaba</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Israel">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇮🇱 ISRAEL</span>
+                <span class="country-count">3 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="maccabi haifa vs kafr qasim israel state cup">
+                        <td>1</td>
+                        <td class="date">03/02</td>
+                        <td class="match-name">Maccabi Haifa vs Kafr Qasim</td>
+                        <td class="league">State Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="maccabi bnei raina vs hapoel beer sheva israel state cup">
+                        <td>2</td>
+                        <td class="date">04/02</td>
+                        <td class="match-name">Maccabi Bnei Raina vs Hapoel Beer Sheva</td>
+                        <td class="league">State Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="maccabi kabilio jaffa vs maccabi tel aviv israel state cup">
+                        <td>3</td>
+                        <td class="date">05/02</td>
+                        <td class="match-name">Maccabi Kabilio Jaffa vs Maccabi Tel Aviv</td>
+                        <td class="league">State Cup</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="World">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🌍 WORLD</span>
+                <span class="country-count">3 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="azam vs nairobi united world caf confederation cup">
+                        <td>1</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Azam vs Nairobi United</td>
+                        <td class="league">CAF Confederation Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="olympique safi vs san-pédro world caf confederation cup">
+                        <td>2</td>
+                        <td class="date">01/02</td>
+                        <td class="match-name">Olympique Safi vs San-Pédro</td>
+                        <td class="league">CAF Confederation Cup</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="nairobi united vs wydad ac world caf confederation cup">
+                        <td>3</td>
+                        <td class="date">08/02</td>
+                        <td class="match-name">Nairobi United vs Wydad AC</td>
+                        <td class="league">CAF Confederation Cup</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Hong-Kong">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🏳️ HONG-KONG</span>
+                <span class="country-count">2 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="eastern vs north district hong-kong premier league">
+                        <td>1</td>
+                        <td class="date">28/01</td>
+                        <td class="match-name">Eastern vs North District</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                    <tr class="match-row" data-search="kitchee vs southern district hong-kong premier league">
+                        <td>2</td>
+                        <td class="date">31/01</td>
+                        <td class="match-name">Kitchee vs Southern District</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="country-section" data-country="Egypt">
+            <div class="country-header" onclick="toggleSection(this)">
+                <span class="country-name">🇪🇬 EGYPT</span>
+                <span class="country-count">1 matchs</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Ligue</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="match-row" data-search="kahraba ismailia vs zamalek sc egypt premier league">
+                        <td>1</td>
+                        <td class="date">04/02</td>
+                        <td class="match-name">Kahraba Ismailia vs Zamalek SC</td>
+                        <td class="league">Premier League</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>🤖 Généré avec l'algorithme Over 2.5 v2.0</p>
+            <p>Expected Goals ≥ 2.5 | Sans alertes FTS | Top Leagues</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleSection(header) {
+            const table = header.nextElementSibling;
+            if (table.style.display === 'none') {
+                table.style.display = 'table';
+            } else {
+                table.style.display = 'none';
+            }
+        }
+        
+        function filterMatches() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const rows = document.querySelectorAll('.match-row');
+            const sections = document.querySelectorAll('.country-section');
+            
+            rows.forEach(row => {
+                const text = row.getAttribute('data-search');
+                if (text.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            
+            // Show/hide country sections based on visible rows
+            sections.forEach(section => {
+                const visibleRows = section.querySelectorAll('.match-row:not([style*="display: none"])');
+                if (visibleRows.length === 0 && searchTerm !== '') {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
