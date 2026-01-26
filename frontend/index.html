@@ -6174,6 +6174,17 @@
             generateRandomTicket();
         }
 
+        // Formater la date avec le mois complet
+        function formatDate(dateStr) {
+            const months = {
+                '01': 'Jan', '02': 'Fév', '03': 'Mar', '04': 'Avr',
+                '05': 'Mai', '06': 'Juin', '07': 'Juil', '08': 'Août',
+                '09': 'Sep', '10': 'Oct', '11': 'Nov', '12': 'Déc'
+            };
+            const [day, month] = dateStr.split('/');
+            return `${day} ${months[month]} 2026`;
+        }
+
         function displayTicket() {
             const tbody = document.getElementById('ticketBody');
             const avgProb = currentTicket.reduce((sum, m) => sum + m.probability, 0) / currentTicket.length;
@@ -6193,7 +6204,7 @@
                     <tr>
                         <td>${i + 1}</td>
                         <td style="font-size: 1.3em;">${match.flag}</td>
-                        <td style="color: #00ff88;">${match.date}</td>
+                        <td style="color: #00ff88; white-space: nowrap;">${formatDate(match.date)}</td>
                         <td class="ticket-match">${match.match}</td>
                         <td class="ticket-league">${match.league}</td>
                         <td><span class="ticket-prob ${probClass}">${match.probability}%</span></td>
@@ -6214,7 +6225,7 @@
             ];
 
             currentTicket.forEach((match, i) => {
-                lines.push(`${i + 1}. ${match.flag} ${match.date} | ${match.match} (${match.probability}%)`);
+                lines.push(`${i + 1}. ${match.flag} ${formatDate(match.date)} | ${match.match} (${match.probability}%)`);
                 lines.push(`   📍 ${match.league} - ${match.country}`);
             });
 
